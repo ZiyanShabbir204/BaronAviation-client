@@ -94,10 +94,54 @@ export default function Hero3() {
     }
   };
   // Custom theme with the #eb662b color
+  // const theme = createTheme({
+  //   palette: {
+  //     primary: {
+  //       main: "#E5A812", // Set the main color to #eb662b
+  //     },
+  //   },
+  // });
+
   const theme = createTheme({
     palette: {
       primary: {
         main: "#E5A812", // Set the main color to #eb662b
+      },
+    },
+    components: {
+      MuiTextField: {
+        styleOverrides: {
+          root: {
+            "& .MuiInputBase-root": {
+              color: "#fff", // Set text color
+            },
+          },
+        },
+      },
+      MuiSvgIcon: {
+        styleOverrides: {
+          root: {
+            color: "#fff", // Set icon color
+          },
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          "& .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#9e9e9e", // Default border color
+          },
+          "&:hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#66bb6a", // Hover border color
+          },
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#4caf50", // Focused border color
+          },
+          "&:not(.Mui-focused):hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#9e9e9e", // Border color when not focused or hovered
+          },
+        },
       },
     },
   });
@@ -126,110 +170,8 @@ export default function Hero3() {
                 Travel Experts
                 <br className="md:d-none" />
                 In World!
-                {/* <img src="/img/hero/3/brush.svg" alt="brush stroke" /> */}
               </h1>
 
-              {/* <div
-              data-aos="fade-up"
-              data-aos-delay="300"
-              className="hero__filter mt-60 lg:mt-30"
-            >
-              <div
-                ref={dropDownContainer}
-                className="searchForm -type-1 shadow-1"
-              >
-                <div className="searchForm__form">
-                  <div className="searchFormItem js-select-control js-form-dd">
-                    <div
-                      className="searchFormItem__button"
-                      onClick={() =>
-                        setCurrentActiveDD((pre) =>
-                          pre == "location" ? "" : "location",
-                        )
-                      }
-                    >
-                      <div className="searchFormItem__icon size-50 rounded-full bg-accent-1-05 flex-center">
-                        <i className="text-20 icon-pin"></i>
-                      </div>
-                      <div className="searchFormItem__content">
-                        <h5>Where</h5>
-                        <div className="js-select-control-chosen">
-                          {" "}
-                          {location ? location : "Search destinations"}
-                        </div>
-                      </div>
-                    </div>
-
-                    <Location
-                      setLocation={setLocation}
-                      active={currentActiveDD === "location"}
-                    />
-                  </div>
-
-                  <div className="searchFormItem js-select-control js-form-dd js-calendar">
-                    <div
-                      className="searchFormItem__button"
-                      onClick={() =>
-                        setCurrentActiveDD((pre) =>
-                          pre == "calender" ? "" : "calender",
-                        )
-                      }
-                    >
-                      <div className="searchFormItem__icon size-50 rounded-full bg-accent-1-05 flex-center">
-                        <i className="text-20 icon-calendar"></i>
-                      </div>
-                      <div className="searchFormItem__content">
-                        <h5>When</h5>
-                        <div>
-                          <span className="js-first-date">
-                            {" "}
-                            <Calender active={currentActiveDD === "calender"} />
-                          </span>
-                          <span className="js-last-date"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="searchFormItem js-select-control js-form-dd">
-                    <div
-                      className="searchFormItem__button"
-                      onClick={() =>
-                        setCurrentActiveDD((pre) =>
-                          pre == "tourType" ? "" : "tourType",
-                        )
-                      }
-                    >
-                      <div className="searchFormItem__icon size-50 rounded-full bg-accent-1-05 flex-center">
-                        <i className="text-20 icon-flag"></i>
-                      </div>
-                      <div className="searchFormItem__content">
-                        <h5>Tour Type</h5>
-                        <div className="js-select-control-chosen">
-                          {" "}
-                          {tourType ? tourType : "All tour"}
-                        </div>
-                      </div>
-                    </div>
-
-                    <TourType
-                      setTourType={setTourType}
-                      active={currentActiveDD === "tourType"}
-                    />
-                  </div>
-                </div>
-
-                <div className="searchForm__button">
-                  <button
-                    onClick={() => navigate("/tour-list-2")}
-                    className="button -black bg-vivid-orange rounded-200 text-black"
-                  >
-                    <i className="icon-search text-16 mr-10"></i>
-                    Search
-                  </button>
-                </div>
-              </div>
-            </div> */}
               <div
                 ref={dropDownContainer}
                 data-aos={"fade-up"}
@@ -265,7 +207,7 @@ export default function Hero3() {
                             },
                           }}
                           InputLabelProps={{
-                            style: { color: "white" },
+                            style: { color: "#E5A812" },
                           }}
                         />
                       </div>
@@ -290,7 +232,7 @@ export default function Hero3() {
                             },
                           }}
                           InputLabelProps={{
-                            style: { color: "white" },
+                            style: { color: "#E5A812" },
                           }}
                         />
                       </div>
@@ -360,18 +302,18 @@ export default function Hero3() {
                               <TextField
                                 {...params}
                                 fullWidth
-                                InputProps={{
-                                  ...params.InputProps,
-                                  style: {
-                                    color: "white",
-                                    backgroundColor: "#1c1c1c",
-                                  }, // Font color and background
-                                  classes: {
-                                    notchedOutline: "border-color", // Custom border color class
+                                sx={{
+                                  "& .MuiOutlinedInput-root": {
+                                    "& fieldset": {
+                                      borderColor: "red",
+                                    },
+                                    "&:hover fieldset": {
+                                      borderColor: "green",
+                                    },
+                                    "&.Mui-focused fieldset": {
+                                      borderColor: "purple",
+                                    },
                                   },
-                                }}
-                                InputLabelProps={{
-                                  style: { color: "white" }, // Label color
                                 }}
                               />
                             )}
@@ -420,13 +362,25 @@ export default function Hero3() {
             <div className="col-xl-7 col-lg-7">
               <div className="hero__image">
                 <div>
-                  <img src="/img/hero/3/image2.jpg" alt="image" />
-                  <img src="/img/hero/3/image1.jpg" alt="image" />
+                  <img
+                    src="/img/hero/3/image2.jpg"
+                    alt="image"
+                    style={{
+                      borderRadius: "50% 50% 5% 5%",
+                    }}
+                  />
+                  <img
+                    src="/img/hero/3/image1.jpg"
+                    alt="image"
+                    style={{
+                      borderRadius: "5% 5% 50% 50%",
+                    }}
+                  />
                 </div>
                 <img
                   src="/img/hero/3/image3.jpg"
                   alt="image"
-                  style={{ width: "260px" }}
+                  style={{ width: "300px" }}
                 />
               </div>
             </div>
