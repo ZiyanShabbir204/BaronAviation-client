@@ -4,6 +4,7 @@ import Login from "@/components/pages/Login";
 import React from "react";
 
 import MetaComponent from "@/components/common/MetaComponent";
+import Header3 from "@/components/layout/header/Header3";
 
 const metadata = {
   title: "Login || ViaTour - Travel & Tour Reactjs Template",
@@ -15,7 +16,7 @@ export default function LoginPage() {
     <>
       <MetaComponent meta={metadata} />
       <main>
-        <Header1 />
+        <Header3 />
         <Login />
         <FooterOne />
       </main>

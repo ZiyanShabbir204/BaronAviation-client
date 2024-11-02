@@ -121,29 +121,29 @@ export default function Hero3() {
       MuiSvgIcon: {
         styleOverrides: {
           root: {
-            color: "#fff", // Set icon color
+            color: "#E5A812", // Set icon color
           },
         },
       },
     },
-    MuiOutlinedInput: {
-      styleOverrides: {
-        root: {
-          "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#9e9e9e", // Default border color
-          },
-          "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#66bb6a", // Hover border color
-          },
-          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#4caf50", // Focused border color
-          },
-          "&:not(.Mui-focused):hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#9e9e9e", // Border color when not focused or hovered
-          },
-        },
-      },
-    },
+    // MuiOutlinedInput: {
+    //   styleOverrides: {
+    //     root: {
+    //       "& .MuiOutlinedInput-notchedOutline": {
+    //         borderColor: "#9e9e9e", // Default border color
+    //       },
+    //       "&:hover .MuiOutlinedInput-notchedOutline": {
+    //         borderColor: "#66bb6a", // Hover border color
+    //       },
+    //       "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+    //         borderColor: "#4caf50", // Focused border color
+    //       },
+    //       "&:not(.Mui-focused):hover .MuiOutlinedInput-notchedOutline": {
+    //         borderColor: "#9e9e9e", // Border color when not focused or hovered
+    //       },
+    //     },
+    //   },
+    // },
   });
 
   return (
@@ -234,6 +234,7 @@ export default function Hero3() {
                           InputLabelProps={{
                             style: { color: "#E5A812" },
                           }}
+                          
                         />
                       </div>
 
