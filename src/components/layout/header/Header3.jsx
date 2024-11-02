@@ -48,16 +48,16 @@ export default function Header3() {
           </div>
 
           <div className="header__logo">
-            <Link to="/" className="header__logo">
-              <img src="/img/hero/3/logo.PNG" alt="logo icon" style={{width:"100px"}} />
+            <Link to="/" className="header__logo baron-logo">
+              <img src="/img/hero/3/logo.PNG" alt="logo icon" />
             </Link>
-            <Link to="/" className="header__logo">
-              <img src="/img/hero/3/logo-text.PNG" alt="logo icon"  style={{width:"235px"}}/>
+            <Link to="/" className="header__logo baron-text">
+              <img src="/img/hero/3/logo-text.PNG" alt="logo icon" />
             </Link>
 
             {/* <Menu /> */}
           </div>
-{/* 
+          {/* 
           <div className="headerMobile__right">
             <button
               onClick={() => pageNavigate("/tour-list-1")}
@@ -83,7 +83,10 @@ export default function Header3() {
               Help
             </Link> */}
 
-            <Link to="/register" className="button -sm -outline-black   rounded-200 text-black ml-30 bg-vivid-orange">
+            <Link
+              to="/register"
+              className="button -sm -outline-black   rounded-200 text-black ml-30 bg-vivid-orange"
+            >
               Sign up
             </Link>
 

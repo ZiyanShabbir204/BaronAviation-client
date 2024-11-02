@@ -212,7 +212,10 @@ body {
 
 }
 
+.icon-main-menu {
+  color: var(--color-vivid-orange);
 
+}
 
 
 
@@ -2679,7 +2682,8 @@ h6 {
 
 @media (max-width: 767px) {
   .header.-type-3 .header__container {
-    height: 57px;
+    height: 75px;
+    flex-direction: row-reverse;
   }
 }
 
@@ -2687,6 +2691,32 @@ h6 {
   display: flex;
   align-items: center;
 }
+
+
+
+.header.-type-3 .header__logo .baron-logo {
+  width: 100px;
+}
+
+
+.header.-type-3 .header__logo .baron-text {
+  width: 235px;
+}
+
+
+@media (max-width: 767px) {
+  .header.-type-3 .header__logo .baron-logo {
+    width: 70px;
+  }
+
+
+  .header.-type-3 .header__logo .baron-text {
+    width: 170px;
+  }
+}
+
+
+
 
 .header.-type-3 .header__right {
   display: flex;
@@ -7204,7 +7234,7 @@ h6 {
   flex-direction: column;
   height: 100%;
   padding: 40px;
-  background-color: white;
+  background-color: black;
   z-index: 1;
 }
 
@@ -7228,7 +7258,8 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-light-1);
+  background-color: var(--color-vivid-orange);
+  color: #fff;
 }
 
 .menu__content {
@@ -7278,7 +7309,7 @@ h6 {
 }
 
 .menuNav__item a:hover {
-  color: var(--color-accent-1);
+  color: var(--color-vivid-orange);
 }
 
 .submenu {
@@ -11565,7 +11596,7 @@ h6 {
 }
 
 .text-accent-1 {
-  color: var(--color-accent-1);
+  color: var(--color-vivid-orange);
 }
 
 .text-accent-1-dark {
