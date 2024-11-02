@@ -241,6 +241,7 @@ export default function Hero3() {
                         {/* Date Time Picker */}
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                           <DateTimePicker
+                            fullWidth
                             label="Select Date & Time"
                             value={selectedDate}
                             onChange={(newValue) => setSelectedDate(newValue)}

@@ -171,6 +171,15 @@ body {
 
 }
 
+.MuiPickersToolbar-root.MuiDateTimePickerToolbar-root span {
+  color: white !important;
+}
+
+.MuiClock-clock .MuiClock-wrapper SPAN {
+  color: white !important;
+
+}
+
 
 .MuiPickersDay-dayWithMargin.MuiPickersDay-today {
   border-color: #E5A812 !important
@@ -3800,7 +3809,7 @@ h6 {
 
 @media (max-width: 575px) {
   .hero.-type-3 .hero__title {
-    font-size: 40px;
+    font-size: 9vw;
   }
 }
 
@@ -3838,7 +3847,17 @@ h6 {
 
 @media (max-width: 767px) {
   .hero.-type-3 .hero__image {
-    margin-top: 40px;
+    margin-top: 50px;
+  }
+
+  .hero.-type-3 .hero__image>div {
+    display: none !important;
+  }
+
+  .hero.-type-3 .hero__image>img {
+    width: 100% !important;
+    margin: 0 !important;
+    margin-top: -200px !important;
   }
 }
 
@@ -4646,7 +4665,26 @@ h6 {
     height: auto;
     padding: 0;
     border-radius: 12px !important;
+    width: 100%;
+    padding: 10px;
+    padding-top: 20px;
   }
+
+
+  .searchForm.-type-1 .searchForm__form>div {
+    flex-direction: column;
+    gap: 20px !important;
+  }
+
+  .searchForm.-type-1 .searchForm__button {
+    height: auto !important;
+    margin: 20px 0px !important;
+  }
+
+  .searchForm.-type-1 .searchFormItem>div {
+    width: 100% !important;
+  }
+
 }
 
 .searchForm.-type-1 .searchForm__form {
