@@ -177,6 +177,14 @@ body {
 
 .MuiClock-clock .MuiClock-wrapper SPAN {
   color: white !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: var(--color-vivid-orange) !important
+}
+
+.MuiInputLabel-formControl {
+  color: var(--color-vivid-orange) !important;
 
 }
 
@@ -191,7 +199,7 @@ body {
 }
 
 .border-color {
-  border-color: #E5A812 !important
+  border-color: var(--color-vivid-orange) !important
 }
 
 
