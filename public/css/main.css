@@ -4729,7 +4729,7 @@ h6 {
   }
 
   .image-bar {
-    display: none;
+    /* display: none; */
   }
 
   .searchForm.-type-1 .searchForm__form>div {

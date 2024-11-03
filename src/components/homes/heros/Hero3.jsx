@@ -131,16 +131,7 @@ export default function Hero3() {
   return (
     <ThemeProvider theme={theme}>
       <section className="hero -type-3">
-        <div
-          className="container"
-          style={{
-            paddingTop: "100px",
-            position: "relative",
-            paddingBottom: "35px",
-          }}
-        >
-          <div className="image-bar"></div>
-
+        <div className="container" style={{}}>
           <div
             className="row justify-between"
             style={{ position: "relative", zIndex: 6 }}
@@ -151,7 +142,7 @@ export default function Hero3() {
                 data-aos-delay="200"
                 className="hero__subtitle mb-20 md:mb-10 text-vivid-orange"
               >
-                One site, 300,000+ experiences you'll remember
+                Unforgettable Luxury Helicopter Trips
               </div>
 
               <h1
@@ -159,11 +150,24 @@ export default function Hero3() {
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                Your Adventure Travel Experts In World!
+                Reimagine Your Leisure Flying Experience with Baron
               </h1>
             </div>
-            <div className="col-xl-7 col-lg-7" style={{ position: "relative" }}>
-              <img src="/img/hero/3/heli.png" alt="heli" />
+            <div
+              className="col-xl-7 col-lg-7"
+              style={{
+                position: "relative",
+                paddingTop: "100px",
+                paddingBottom: "60px",
+              }}
+            >
+              <div className="image-bar"></div>
+
+              <img
+                src="/img/hero/3/heli.png"
+                alt="heli"
+                style={{ position: "relative", zIndex: 6 }}
+              />
             </div>
           </div>
         </div>
