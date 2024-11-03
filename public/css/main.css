@@ -2681,6 +2681,7 @@ h6 {
   align-items: center;
   justify-content: space-between;
   height: 88px;
+  padding: 0;
 }
 
 @media (max-width: 767px) {
