@@ -150,7 +150,7 @@ export default function Hero3() {
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                Reimagine Your Leisure Flying Experience with Baron
+                Luxury Travel Redefined
               </h1>
             </div>
             <div
@@ -164,7 +164,7 @@ export default function Hero3() {
               <div className="image-bar"></div>
 
               <img
-                src="/img/hero/3/heli.png"
+                src="/img/hero/3/heli-light-blue.png"
                 alt="heli"
                 style={{ position: "relative", zIndex: 6 }}
               />
