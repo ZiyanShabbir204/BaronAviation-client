@@ -216,6 +216,10 @@ body {
 
 }
 
+.hero__subtitle {
+  font-size: 20px;
+}
+
 
 
 [data-anim-wrap] {
