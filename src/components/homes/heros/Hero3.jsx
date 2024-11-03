@@ -151,13 +151,13 @@ export default function Hero3() {
       <section className="hero -type-3">
         <div className="container">
           <div className="row justify-between">
-            <div className="col-xl-5 col-lg-5">
+            <div className="col-xl-5 col-lg-5 ">
               <div
                 data-aos="fade-up"
                 data-aos-delay="200"
                 className="hero__subtitle mb-20 md:mb-10 text-vivid-orange"
               >
-                One site, 300,000+ experiences you'll remember
+                Unforgettable Luxury Helicopter Trips
               </div>
 
               <h1
@@ -165,200 +165,8 @@ export default function Hero3() {
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                Your Adventure
-                <br className="md:d-none" />
-                Travel Experts
-                <br className="md:d-none" />
-                In World!
+                Reimagine Your Leisure Flying Experience with Baron
               </h1>
-
-              <div
-                ref={dropDownContainer}
-                data-aos={"fade-up"}
-                data-aos-delay="200"
-                className="mt-60 md:mt-35"
-              >
-                <div
-                  className="searchForm -type-1 flex-column"
-                  style={{ height: "auto" }}
-                >
-                  <div
-                    className="searchForm__form d-flex flex-column"
-                    style={{ gap: "20px" }}
-                  >
-                    <div className="d-flex" style={{ gap: "10px" }}>
-                      <div className="searchFormItem">
-                        {/* From Field */}
-                        <TextField
-                          error={
-                            errors.fromLocation && Boolean(errors.fromLocation)
-                          }
-                          label="From"
-                          variant="outlined"
-                          fullWidth
-                          value={fromLocation}
-                          onChange={(e) => setFromLocation(e.target.value)}
-                          color="primary"
-                          helperText={errors.fromLocation && "From is Required"}
-                          InputProps={{
-                            style: { color: "white" },
-                            classes: {
-                              notchedOutline: "border-color",
-                            },
-                          }}
-                          InputLabelProps={{
-                            style: { color: "#E5A812" },
-                          }}
-                        />
-                      </div>
-
-                      <div className="searchFormItem">
-                        {/* To Field */}
-                        <TextField
-                          error={
-                            errors.toLocation && Boolean(errors.toLocation)
-                          }
-                          label="To"
-                          variant="outlined"
-                          fullWidth
-                          value={toLocation}
-                          onChange={(e) => setToLocation(e.target.value)}
-                          color="primary"
-                          helperText={errors.toLocation && "To is Required"}
-                          InputProps={{
-                            style: { color: "white" },
-                            classes: {
-                              notchedOutline: "border-color",
-                            },
-                          }}
-                          InputLabelProps={{
-                            style: { color: "#E5A812" },
-                          }}
-                          
-                        />
-                      </div>
-
-                      <div className="searchFormItem">
-                        {/* Date Time Picker */}
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                          <DateTimePicker
-                            fullWidth
-                            label="Select Date & Time"
-                            value={selectedDate}
-                            onChange={(newValue) => setSelectedDate(newValue)}
-                            shouldDisableTime={(timeValue, clockType) => {
-                              const disabledDateTimes = [
-                                "2024-10-24T00:15:00.000Z", // Oct 24, 12:15 AM
-                                "2024-10-31T10:40:00.000Z", // Oct 31, 10:40 AM
-                                "2024-10-22T08:20:00.000Z", // Oct 22, 8:20 AM
-                                "2024-10-22T18:05:00.000Z", // Oct 22, 6:05 PM
-                              ];
-
-                              const selectedDateString = selectedDate
-                                ?.toISOString()
-                                .split("T")[0];
-                              const matchingDisabledTimes =
-                                disabledDateTimes.filter(
-                                  (disabledDateTime) =>
-                                    new Date(disabledDateTime)
-                                      .toISOString()
-                                      .split("T")[0] === selectedDateString
-                                );
-
-                              if (matchingDisabledTimes.length === 0)
-                                return false;
-
-                              if (clockType === "hours") {
-                                return matchingDisabledTimes.some(
-                                  (disabledDateTime) => {
-                                    const disabledHour = new Date(
-                                      disabledDateTime
-                                    ).getHours();
-                                    return timeValue === disabledHour;
-                                  }
-                                );
-                              }
-
-                              if (clockType === "minutes") {
-                                return matchingDisabledTimes.some(
-                                  (disabledDateTime) => {
-                                    const disabledTime = new Date(
-                                      disabledDateTime
-                                    );
-                                    const disabledHour =
-                                      disabledTime.getHours();
-                                    const disabledMinute =
-                                      disabledTime.getMinutes();
-                                    return (
-                                      disabledHour ===
-                                        new Date(selectedDate).getHours() &&
-                                      timeValue === disabledMinute
-                                    );
-                                  }
-                                );
-                              }
-
-                              return false;
-                            }}
-                            renderInput={(params) => (
-                              <TextField
-                                {...params}
-                                fullWidth
-                                sx={{
-                                  "& .MuiOutlinedInput-root": {
-                                    "& fieldset": {
-                                      borderColor: "red",
-                                    },
-                                    "&:hover fieldset": {
-                                      borderColor: "green",
-                                    },
-                                    "&.Mui-focused fieldset": {
-                                      borderColor: "purple",
-                                    },
-                                  },
-                                }}
-                              />
-                            )}
-                          />
-                        </LocalizationProvider>
-                      </div>
-                    </div>
-
-                    {/* {user?.role === "cooperate_customer" && (
-                    <div className="searchFormItem">
-                      <TextField
-                        label="Flying Person"
-                        variant="outlined"
-                        error={
-                          errors.flyingPerson && Boolean(errors.flyingPerson)
-                        }
-                        fullWidth
-                        value={flyingPerson}
-                        onChange={(e) => setFlyingPerson(e.target.value)}
-                        color="primary"
-                        helperText={
-                          errors.flyingPerson && "Flying person is Required"
-                        }
-                      />
-                    </div>
-                  )} */}
-                  </div>
-
-                  <div
-                    className="searchForm__button"
-                    style={{ margin: "5px 10px", height: "35px" }}
-                  >
-                    <Button
-                      onClick={requestHandler}
-                      variant="contained"
-                      fullWidth
-                      className=" bg-vivid-orange button -sm -outline-black "
-                    >
-                      Request
-                    </Button>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div className="col-xl-7 col-lg-7">
