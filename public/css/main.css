@@ -2688,6 +2688,8 @@ h6 {
   .header.-type-3 .header__container {
     height: 75px;
     flex-direction: row-reverse;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
