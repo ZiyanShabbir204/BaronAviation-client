@@ -3,13 +3,23 @@ import Location from "@/components/common/dropdownSearch/Location";
 import TourType from "@/components/common/dropdownSearch/TourType";
 import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { TextField, Button } from "@mui/material";
+import {
+  TextField,
+  Button,
+  Popover,
+  IconButton,
+  Typography,
+  Stack,
+} from "@mui/material";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import axios from "axios";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+
 import { useSnackbar } from "notistack";
 
 export default function Hero3() {
@@ -27,6 +37,11 @@ export default function Hero3() {
     toLocation: "",
   });
   const { enqueueSnackbar } = useSnackbar();
+
+  const [adults, setAdults] = useState(1);
+  const [children, setChildren] = useState(0);
+  const [travelerAnchorEl, setTravelerAnchorEl] = useState(null);
+  const [errorTravelerMessage, setTravelerMessage] = useState("");
 
   const dropDownContainer = useRef();
   useEffect(() => {
@@ -127,6 +142,29 @@ export default function Hero3() {
       },
     },
   });
+
+  const handleTravelerClick = (event) => {
+    setTravelerAnchorEl(event.currentTarget);
+  };
+
+  const handleTravelerClose = () => {
+    setTravelerAnchorEl(null);
+  };
+
+  const handleIncrease = (setter, value) => {
+    if (adults + children < 5) {
+      setter(value + 1);
+    } else {
+      setTravelerMessage("Only up to 5 travelers are allowed.");
+    }
+  };
+
+  const handleDecrease = (setter, value) => {
+    if (value > 0 && adults + children > 1) {
+      setter(value - 1);
+      setTravelerMessage("");
+    }
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -230,6 +268,79 @@ export default function Hero3() {
                   }}
                 />
               </div>
+
+              <div className="searchFormItem">
+                <TextField
+                  label="Travelers"
+                  value={`${adults} Adults, ${children} Children`}
+                  onClick={handleTravelerClick}
+                  fullWidth
+                  variant="outlined"
+                  InputProps={{
+                    readOnly: true,
+                  }}
+                />
+              </div>
+
+              <Popover
+                open={Boolean(travelerAnchorEl)}
+                anchorEl={travelerAnchorEl}
+                onClose={handleTravelerClose}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+              >
+                <div style={{ padding: "20px", width: "300px" }}>
+                  <Stack
+                    direction="row"
+                    alignItems="center"
+                    justifyContent="space-between"
+                  >
+                    <Typography variant="subtitle1">Adults</Typography>
+                    <div className="d-flex align-items-center">
+                      <IconButton
+                        onClick={() => handleDecrease(setAdults, adults)}
+                      >
+                        <RemoveIcon />
+                      </IconButton>
+                      <Typography variant="body1">{adults}</Typography>
+                      <IconButton
+                        onClick={() => handleIncrease(setAdults, adults)}
+                      >
+                        <AddIcon />
+                      </IconButton>
+                    </div>
+                  </Stack>
+
+                  <Stack
+                    direction="row"
+                    alignItems="center"
+                    justifyContent="space-between"
+                  >
+                    <Typography variant="subtitle1">Children</Typography>
+                    <div className="d-flex align-items-center">
+                      <IconButton
+                        onClick={() => handleDecrease(setChildren, children)}
+                      >
+                        <RemoveIcon />
+                      </IconButton>
+                      <Typography variant="body1">{children}</Typography>
+                      <IconButton
+                        onClick={() => handleIncrease(setChildren, children)}
+                      >
+                        <AddIcon />
+                      </IconButton>
+                    </div>
+                  </Stack>
+
+                  {errorTravelerMessage && (
+                    <Typography variant="caption" align="center" width="100%">
+                      {errorTravelerMessage}
+                    </Typography>
+                  )}
+                </div>
+              </Popover>
 
               <div className="searchFormItem">
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
