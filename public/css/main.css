@@ -17,9 +17,10 @@ body {
   background: #000 !important;
 }
 
-a:hover{
+a:hover {
   color: var(--color-vivid-orange);
 }
+
 .ratio {
   position: relative;
   display: block;
@@ -1403,10 +1404,11 @@ input.text-white::placeholder {
   display: flex;
 }
 
-.book-now-btn{
+.book-now-btn {
   cursor: pointer;
 
 }
+
 .form-checkbox label {
   margin: 0;
   margin-left: 10px;
@@ -2158,9 +2160,11 @@ h6 {
   background-color: white;
   z-index: 1000;
 }
-.hover-vivid-orange:hover{
+
+.hover-vivid-orange:hover {
   color: var(--color-vivid-orange);
 }
+
 .header.-type-1 .header__container {
   display: flex;
   align-items: center;
@@ -2706,6 +2710,7 @@ h6 {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 10px;
+    padding-bottom: 10px;
 
   }
 }
@@ -3393,7 +3398,8 @@ h6 {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.menu__footer{
+
+.menu__footer {
   display: none;
 }
 
@@ -3402,7 +3408,8 @@ h6 {
     padding-top: 40px;
     padding-bottom: 40px;
   }
-  .menu__footer{
+
+  .menu__footer {
     display: flex;
     justify-content: center;
   }
@@ -8663,6 +8670,7 @@ h6 {
     margin-top: 20px;
     margin-bottom: 10px;
   }
+
   .lg\:py-0 {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
