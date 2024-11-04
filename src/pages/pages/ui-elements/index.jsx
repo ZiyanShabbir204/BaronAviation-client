@@ -14,7 +14,7 @@ const metadata = {
 export default function UIElementsPage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Header1 />
         <PageHeader />

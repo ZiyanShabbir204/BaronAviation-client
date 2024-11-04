@@ -1,12 +1,12 @@
 @font-face {
-  font-family: 'Capitalis';
-  src: url('../fonts/minicaps.ttf') format('truetype');
+  font-family: 'Felix-Titling';
+  src: url('../fonts/felix-titling.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 * {
-  font-family: 'Capitalis', sans-serif;
+  font-family: 'Felix-Titling', sans-serif;
 }
 
 body {

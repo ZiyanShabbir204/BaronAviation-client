@@ -15,7 +15,7 @@ const metadata = {
 export default function ContactPage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Header1 />
         <Map />

@@ -13,9 +13,10 @@ const metadata = {
 export default function BlogListPage2() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
 
       <main>
+        
         <Header1 />
         <Hero1 />
         <BlogList2 />

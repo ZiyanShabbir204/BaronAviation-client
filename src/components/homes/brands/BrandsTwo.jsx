@@ -41,6 +41,7 @@ export default function BrandsTwo() {
                       height: "30px",
                       width: "100px",
                       objectFit: "contain",
+                       filter: "brightness(0) invert(1)"
                     }}
                     src={elm}
                     alt="image"

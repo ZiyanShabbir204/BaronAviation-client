@@ -13,7 +13,7 @@ const metadata = {
 export default function BlogListPage1() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      ""
 
       <main>
         <Header1 />

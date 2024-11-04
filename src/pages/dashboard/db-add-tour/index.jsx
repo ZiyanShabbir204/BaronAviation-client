@@ -11,7 +11,7 @@ const metadata = {
 export default function DBAddTourPage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <AddTour />
       </main>

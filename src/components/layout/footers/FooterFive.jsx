@@ -47,10 +47,10 @@ export default function FooterFive() {
 
                 <div className="y-gap-10 mt-20">
                   <a className="d-block" href="#">
-                    328 Queensberry Street, North Melbourne VIC3051, Australia.
+                    Plot 10, Interactive Plaza, E-11/13, Islamabad, Pakistan
                   </a>
                   <a className="d-block" href="#">
-                    hi@viatours.com
+                    sales@baronaviation.com
                   </a>
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default function FooterFive() {
         <div className="footer__bottom">
           <div className="row y-gap-5 justify-between items-center">
             <div className="col-auto">
-              <div>© Copyright Viatours {new Date().getFullYear()}</div>
+              <div>© COPYRIGHT THE BARON AVIATION {new Date().getFullYear()}</div>
             </div>
 
             <div className="col-auto">

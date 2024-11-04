@@ -18,7 +18,7 @@ const metadata = {
 export default function TourListPage10() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <div style={{ borderBottom: "1px solid #E7E6E6" }}>
           <Header1 />

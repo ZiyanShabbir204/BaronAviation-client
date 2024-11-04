@@ -11,7 +11,7 @@ const metadata = {
 export default function DBListingPage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <DBListing />
       </main>

@@ -23,7 +23,7 @@ const metadata = {
 export default function HomePage6() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Header5 />
         <Hero6 />

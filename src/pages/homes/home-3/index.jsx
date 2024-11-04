@@ -16,14 +16,14 @@ import React from "react";
 import MetaComponent from "@/components/common/MetaComponent";
 
 const metadata = {
-  title: "Home-3 || ViaTour - Travel & Tour Reactjs Template",
-  description: "ViaTour - Travel & Tour Reactjs Template",
+  title: "Baron Aviation - Luxury Flying",
+  description: "Baron Aviation - Luxury Flying",
 };
 
 export default function HomePage3() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Header3 />
         <Hero3 />

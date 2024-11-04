@@ -11,7 +11,7 @@ const metadata = {
 export default function DBProfilePage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Profile />
       </main>

@@ -11,7 +11,7 @@ const metadata = {
 export default function DBMessagesPage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Messages />
       </main>

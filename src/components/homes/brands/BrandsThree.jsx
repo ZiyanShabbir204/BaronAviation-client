@@ -49,6 +49,9 @@ export default function BrandsThree() {
                       height: "30px",
                       width: "100px",
                       objectFit: "contain",
+                      path : {
+                        fill: "#FFFFFF"
+                      }
                     }}
                     src={elm}
                     alt="image"
