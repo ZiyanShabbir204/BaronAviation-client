@@ -15,12 +15,7 @@ export default function FooterThree() {
                     <i className="icon-headphone text-50"></i>
                   </div>
 
-                  <div className="col-auto">
-                    <div className="text-20 fw-500">
-                      Speak to our expert at
-                      <span className="text-accent-2">0-000-000-0000</span>
-                    </div>
-                  </div>
+                 
                 </div>
               </div>
 
