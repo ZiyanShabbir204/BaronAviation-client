@@ -10,13 +10,7 @@ export default function FooterThree() {
           <div className="footer__info">
             <div className="row y-gap-20 justify-between">
               <div className="col-auto">
-                <div className="row y-gap-20 items-center">
-                  <div className="col-auto">
-                    <i className="icon-headphone text-50"></i>
-                  </div>
-
-                 
-                </div>
+               
               </div>
 
               <div className="col-auto">
