@@ -351,6 +351,10 @@
   .header.-type-10 .headerMobile__left {
     display: block !important;
   }
+
+  .link-container{
+    display: none;
+  }
 }
 
 @media (max-width:767px) {

@@ -21,7 +21,7 @@ export default function FooterSeven() {
                   <div className="col-auto">
                     <div className="text-20 fw-500">
                       Speak to our expert at
-                      <span className="text-accent-1">1-800-453-6744</span>
+                      <span className="text-accent-1">0-000-000-0000</span>
                     </div>
                   </div>
                 </div>

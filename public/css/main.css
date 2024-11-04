@@ -13,6 +13,9 @@ body {
   background: #000 !important;
 }
 
+a:hover{
+  color: var(--color-vivid-orange);
+}
 .ratio {
   position: relative;
   display: block;
@@ -2147,12 +2150,14 @@ h6 {
   background-color: white;
   z-index: 1000;
 }
-
+.hover-vivid-orange:hover{
+  color: var(--color-vivid-orange);
+}
 .header.-type-1 .header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 88px;
+  height: 120px;
 }
 
 @media (max-width: 767px) {
@@ -2169,6 +2174,7 @@ h6 {
 .header.-type-1 .header__right {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 @media (max-width: 767px) {
@@ -2680,16 +2686,19 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 88px;
+  height: auto;
   padding: 0;
+  padding-top: 10px;
 }
 
 @media (max-width: 767px) {
   .header.-type-3 .header__container {
-    height: 75px;
+    height: auto;
     flex-direction: row-reverse;
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 10px;
+
   }
 }
 
@@ -3376,11 +3385,18 @@ h6 {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+.menu__footer{
+  display: none;
+}
 
 @media (max-width: 767px) {
   .footer.-type-1 .footer__content {
     padding-top: 40px;
     padding-bottom: 40px;
+  }
+  .menu__footer{
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -4712,12 +4728,10 @@ h6 {
 }
 
 .image-bar {
-  width: 100%;
-  height: 30px;
   background-color: var(--color-vivid-orange);
   top: 0;
   position: absolute;
-  width: 20%;
+  width: 25%;
   height: 100%;
   z-index: 4;
   right: 204px;

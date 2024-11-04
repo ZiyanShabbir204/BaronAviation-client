@@ -18,7 +18,7 @@ export default function FooterThree() {
                   <div className="col-auto">
                     <div className="text-20 fw-500">
                       Speak to our expert at
-                      <span className="text-accent-2">1-800-453-6744</span>
+                      <span className="text-accent-2">0-000-000-0000</span>
                     </div>
                   </div>
                 </div>
@@ -42,12 +42,12 @@ export default function FooterThree() {
                 <h4 className="text-20 fw-500">Contact</h4>
 
                 <div className="y-gap-10 mt-20">
-                  <a className="d-block" href="#">
+                  <p className="d-block">
                     Plot 10, Interactive Plaza, E-11/13, Islamabad, Pakistan
-                  </a>
-                  <a className="d-block" href="#">
+                  </p>
+                  <p className="d-block" >
                     sales@baronaviation.com
-                  </a>
+                  </p>
                 </div>
               </div>
 

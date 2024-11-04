@@ -198,37 +198,37 @@ export const destinationsThree = [
 export const destinationsFour = [
   {
     id: 1,
-    title: "City Tours",
+    title: "Swat Valley",
     image: "/img/destinationCards/3/1.jpg",
     count: 100, // change the count to a number type
   },
   {
     id: 2,
-    title: "Cultural Tours",
+    title: "Fairy Meadows",
     image: "/img/destinationCards/3/2.jpg",
     count: 100,
   },
   {
     id: 3,
-    title: "Day Cruises",
+    title: "Deosai National Park",
     image: "/img/destinationCards/3/3.jpg",
     count: 100,
   },
   {
     id: 4,
-    title: "Bus Tours",
+    title: "Rhotas Fort",
     image: "/img/destinationCards/3/4.jpg",
     count: 100,
   },
   {
     id: 5,
-    title: "Beach Tours",
+    title: "Passu Cones",
     image: "/img/destinationCards/3/5.jpg",
     count: 100,
   },
   {
     id: 6,
-    title: "Food Tours",
+    title: "Nathia Gali",
     image: "/img/destinationCards/3/6.jpg",
     count: 100,
   },

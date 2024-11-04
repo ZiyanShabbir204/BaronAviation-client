@@ -55,7 +55,7 @@ export default function MobileMenu({ mobileMenuOpen, setMobileMenuOpen }) {
                     className={
                       elm.submenu.some(
                         (elm) =>
-                          elm.href.split("/")[1] == pathname?.split("/")[1],
+                          elm.href.split("/")[1] == pathname?.split("/")[1]
                       )
                         ? "activeMenu"
                         : ""
@@ -106,22 +106,19 @@ export default function MobileMenu({ mobileMenuOpen, setMobileMenuOpen }) {
         </div>
 
         <div className="menu__footer">
-          <i className="icon-headphone text-50"></i>
+          <Link
+            to="/register"
+            className="button -sm -outline-black rounded-200 text-black ml-30 bg-vivid-orange"
+          >
+            Sign up
+          </Link>
 
-          <div className="text-20 lh-12 fw-500 mt-20">
-            <div>Speak to our expert at</div>
-            <div className="text-accent-1">1-800-453-6744</div>
-          </div>
-
-          <div className="d-flex items-center x-gap-10 pt-30">
-            {socialMediaLinks.map((elm, i) => (
-              <div key={i}>
-                <a href={elm.href} className="d-block">
-                  <i className={elm.class}></i>
-                </a>
-              </div>
-            ))}
-          </div>
+          <Link
+            to="/login"
+            className="button -sm -outline-black rounded-200 text-black ml-30 bg-vivid-orange"
+          >
+            Log in
+          </Link>
         </div>
       </div>
     </div>

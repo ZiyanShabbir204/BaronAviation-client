@@ -19,7 +19,7 @@ export default function FooterSix() {
                   <div className="col-auto">
                     <div className="text-20 fw-500 text-white text-white">
                       Speak to our expert at
-                      <span className="text-white">1-800-453-6744</span>
+                      <span className="text-white">0-000-000-0000</span>
                     </div>
                   </div>
                 </div>
