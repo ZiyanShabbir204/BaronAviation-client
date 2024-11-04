@@ -2,7 +2,8 @@ import Calender from "@/components/common/dropdownSearch/Calender";
 import Location from "@/components/common/dropdownSearch/Location";
 import TourType from "@/components/common/dropdownSearch/TourType";
 import React, { useEffect, useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 import {
   TextField,
   Button,
@@ -19,6 +20,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import axios from "axios";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { Link as ScrollLink, scroller } from "react-scroll";
 
 import { useSnackbar } from "notistack";
 
@@ -44,6 +46,17 @@ export default function Hero3() {
   const [errorTravelerMessage, setTravelerMessage] = useState("");
 
   const dropDownContainer = useRef();
+
+  const scrollToBookNow = () => {
+    scroller.scrollTo("bookNow", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+      offset: -window.innerHeight / 2, // Adjusts the offset to center
+    });
+  };
+
+
   useEffect(() => {
     const handleClick = (event) => {
       if (
@@ -178,18 +191,35 @@ export default function Hero3() {
               <div
                 data-aos="fade-up"
                 data-aos-delay="200"
-                className="hero__subtitle mb-20 md:mb-10 text-vivid-orange"
+                className="hero__subtitle mb-20 md:mb-10 text-white"
               >
-                Unforgettable Luxury Helicopter Trips
+                Unforgettable Helicopter Trips
               </div>
 
               <h1
-                className="hero__title text-vivid-orange"
+                className="hero__title text-vivid-orange  mb-20 md:mb-10"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
                 Luxury Travel Redefined
               </h1>
+              {/* <Link
+              to="#bookNow"
+              className="button -sm -outline-black rounded-200 text-black  bg-vivid-orange"
+            >
+              Book Now
+            </Link> */}
+
+              <button
+                // to="bookNow"
+                // smooth={true}
+                // duration={500}
+
+                onClick={scrollToBookNow}           
+                className="button -sm -outline-black rounded-200 text-black book-now-btn bg-vivid-orange"
+              >
+                Book Now
+              </button>
             </div>
             <div
               className="col-xl-7 col-lg-7"
@@ -209,14 +239,19 @@ export default function Hero3() {
             </div>
           </div>
         </div>
+
       </section>
+
       <div
         ref={dropDownContainer}
         data-aos={"fade-up"}
         data-aos-delay="200"
         className="mt-60 md:mt-35 container"
+      
+
       >
         <div
+        id="bookNow"
           className="searchForm -type-1 flex-column"
           style={{ height: "auto" }}
         >

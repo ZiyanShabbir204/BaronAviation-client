@@ -5,6 +5,10 @@
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   font-family: 'Felix-Titling', sans-serif;
 }
@@ -1399,6 +1403,10 @@ input.text-white::placeholder {
   display: flex;
 }
 
+.book-now-btn{
+  cursor: pointer;
+
+}
 .form-checkbox label {
   margin: 0;
   margin-left: 10px;
@@ -7362,6 +7370,7 @@ h6 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: -100px;
 }
 
 .submenu {
@@ -8649,6 +8658,11 @@ h6 {
 }
 
 @media (max-width: 991px) {
+
+  .header-custom {
+    margin-top: 00px;
+    margin-bottom: 10px;
+  }
   .lg\:py-0 {
     padding-top: 0px !important;
     padding-bottom: 0px !important;
