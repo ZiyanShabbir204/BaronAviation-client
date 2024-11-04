@@ -52,10 +52,9 @@ export default function Hero3() {
       duration: 800,
       delay: 0,
       smooth: "easeInOutQuart",
-      offset: -window.innerHeight / 2, // Adjusts the offset to center
+      offset: -window.innerHeight / 3, // Adjusts the offset to center
     });
   };
-
 
   useEffect(() => {
     const handleClick = (event) => {
@@ -215,7 +214,7 @@ export default function Hero3() {
                 // smooth={true}
                 // duration={500}
 
-                onClick={scrollToBookNow}           
+                onClick={scrollToBookNow}
                 className="button -sm -outline-black rounded-200 text-black book-now-btn bg-vivid-orange"
               >
                 Book Now
@@ -239,7 +238,6 @@ export default function Hero3() {
             </div>
           </div>
         </div>
-
       </section>
 
       <div
@@ -247,11 +245,9 @@ export default function Hero3() {
         data-aos={"fade-up"}
         data-aos-delay="200"
         className="mt-60 md:mt-35 container"
-      
-
       >
         <div
-        id="bookNow"
+          id="bookNow"
           className="searchForm -type-1 flex-column"
           style={{ height: "auto" }}
         >
