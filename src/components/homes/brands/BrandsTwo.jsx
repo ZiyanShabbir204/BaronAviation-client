@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function BrandsTwo() {
   return (
-    <section className="layout-pt-xl">
+    <section className="logo-slider-section">
       <div className="container">
         <div data-aos="fade-up" data-aos-delay="" className="">
           <Swiper

@@ -10,7 +10,7 @@ html {
 }
 
 * {
-  font-family: 'Felix-Titling', sans-serif;
+  font-family: 'Felix-Titling', sans-serif !important;
 }
 
 body {
@@ -159,8 +159,16 @@ a:hover {
   --color-success-2: #5B7052;
   --color-vivid-orange: #E5A812;
   --color-gray: #121212;
+  --color-dark-gray:#222222;
+  --color-light-gray : #35363a;
 
 
+
+}
+
+.logo-slider-section{
+  padding: 60px 0;
+  background: var(--color-dark-gray);
 }
 
 .MuiPaper-root {
@@ -2514,6 +2522,9 @@ h6 {
   padding: 0 30px;
   height: 90px;
 }
+.header_left-flex{
+  flex: 1;
+}
 
 .header__search .headerSearchRecent__item:hover {
   background-color: var(--bg-1, #F5F5F5);
@@ -2722,23 +2733,23 @@ h6 {
 
 
 
-.header.-type-3 .header__logo .baron-logo {
-  width: 100px;
+.header.-type-10 .header__logo .baron-logo {
+  width: 70px;
 }
 
 
-.header.-type-3 .header__logo .baron-text {
-  width: 235px;
+.header.-type-10 .header__logo .baron-text {
+  width: 200px;
 }
 
 
 @media (max-width: 767px) {
-  .header.-type-3 .header__logo .baron-logo {
+  .header.-type-10 .header__logo .baron-logo {
     width: 70px;
   }
 
 
-  .header.-type-3 .header__logo .baron-text {
+  .header.-type-10 .header__logo .baron-text {
     width: 170px;
   }
 }
@@ -2824,6 +2835,8 @@ h6 {
 .header .desktopNav {
   display: flex;
   align-items: center;
+  flex: 1;
+  justify-content: center;
 }
 
 .header .desktopNav>* {
@@ -3221,7 +3234,7 @@ h6 {
 
 .header.-type-9.-is-sticky {
   transform: none;
-  background-color: #131313;
+  background-color: var(--color-dark-gray);
 }
 
 .header.-type-9 .header__container {
@@ -3284,7 +3297,23 @@ h6 {
 }
 
 .header.-type-10.-is-sticky {
-  background-color: #131313;
+  background-color: var(--color-dark-gray);
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+
+}
+.button-gradient {
+  background: linear-gradient(45deg, #c18e11, #e2a612);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.4s ease; /* Smooth transition */
+}
+
+.button-gradient:hover {
+  background: linear-gradient(45deg, #e2a612, #c18e11); /* Swap colors on hover */
+  color: white;
 }
 
 .header.-type-10 .header__container {
@@ -4625,7 +4654,7 @@ h6 {
 }
 
 .hero.-type-10 .hero__title {
-  font-size: 70px;
+  font-size: 50px;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -4726,9 +4755,8 @@ h6 {
 
 .searchForm.-type-1 {
   display: flex;
-  background-color: var(--color-gray);
+  background-color: var(--color-light-gray);
   padding: 10px;
-  border-radius: 12px;
   height: 80px;
   width: 100%;
   padding: 40px 20px;
@@ -4811,6 +4839,7 @@ h6 {
   height: 35px;
   padding: 0 30px;
   margin-top: 20px;
+  color: white;
 }
 
 @media (max-width: 767px) {

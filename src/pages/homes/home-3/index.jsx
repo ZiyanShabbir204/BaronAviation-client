@@ -25,7 +25,7 @@ export default function HomePage3() {
     <>
       
       <main>
-        <Header3 />
+        {/* <Header3 /> */}
         <Hero3 />
         <BrandsTwo />
         <DestinationsThree />

@@ -355,7 +355,7 @@
   resolved "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-6.1.6.tgz"
   integrity sha512-nz1SlR9TdBYYPz4qKoNasMPRiGb4PaIHFkzLzhju0YVYS5QSuFF2+n7CsiHMIDcHv3piPu/xDWI53ruhOqvZwQ==
 
-"@mui/icons-material@^5.4.1 || ^6.0.0", "@mui/icons-material@^6.0.2":
+"@mui/icons-material@^5.4.1 || ^6.0.0", "@mui/icons-material@^6.1.6":
   version "6.1.6"
   resolved "https://registry.npmjs.org/@mui/icons-material/-/icons-material-6.1.6.tgz"
   integrity sha512-5r9urIL2lxXb/sPN3LFfFYEibsXJUb986HhhIeu1gOcte460pwdSiEhBSxkAuyT8Dj7jvu9MjqSBmSumQELo8A==

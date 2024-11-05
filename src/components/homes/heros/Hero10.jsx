@@ -1,3 +1,4 @@
+import FlightRequestMenu from "@/components/flightRequest/FlightRequestMenu";
 import { useNavigate } from "react-router-dom";
 
 const tags = [
@@ -25,33 +26,73 @@ const tags = [
 export default function Hero10() {
   const navigate = useNavigate();
   return (
-    <section className="hero -type-10">
-      <div className="hero__bg">
-        <img src="/img/hero/10/1.jpg" alt="background" />
+    <section className="hero -type-10" style={{ position: "relative", overflow: "hidden" }}>
+      <div
+        className="hero__bg"
+        
+      >
+        {/* <img src="/img/hero/10/1.jpg" alt="background" /> */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: -1, // Place behind other elements
+          }}
+        >
+          <source src="/video/background.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.1)", // 10% black overlay
+            zIndex: -1,
+          }}
+        ></div>
       </div>
 
       <div className="container">
         <div className="row justify-center text-center">
           <div className="col-xl-9 col-lg-10">
             <div className="hero__content">
+            <div
+                data-aos="fade-up"
+                data-aos-delay="250"
+                className="hero__text text-white "
+              >
+               READY TO FLY LUXURY
+              </div>
               <h1
                 data-aos="fade-up"
                 data-aos-delay="100"
                 className="hero__title text-white"
               >
-                Choose a Country For Your <br className="lg:d-none" />
-                Next Adventure?
+                AVIATION REVOLUTIONIZED
+                   
               </h1>
 
               <div
                 data-aos="fade-up"
                 data-aos-delay="250"
-                className="hero__text text-white mt-20"
+                className="hero__text text-white"
               >
-                From local escapes to far-flung adventures
+                Travel in Comfort with Baron
               </div>
+              <FlightRequestMenu/>
 
-              <div className="hero__search">
+              {/* <div className="hero__search">
                 <svg
                   width="20"
                   height="20"
@@ -74,12 +115,10 @@ export default function Hero10() {
                 <button onClick={() => navigate("/tour-list-5")}>
                   <i className="icon-search"></i>
                 </button>
-              </div>
+              </div> */}
 
-              <div data-aos="fade-up" data-aos-delay="300" className="heroTags">
-                <div className="heroTags__title text-white">
-                  Or browse the selected type
-                </div>
+              {/* <div data-aos="fade-up" data-aos-delay="300" className="heroTags">
+                
 
                 <div className="heroTags__tags">
                   {tags.map((elm, i) => (
@@ -91,7 +130,7 @@ export default function Hero10() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -23,12 +23,10 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { Link as ScrollLink, scroller } from "react-scroll";
 
 import { useSnackbar } from "notistack";
+import FlightRequestMenu from "@/components/flightRequest/FlightRequestMenu";
 
 export default function Hero3() {
   const [currentActiveDD, setCurrentActiveDD] = useState("");
-  const [location, setLocation] = useState("");
-  const [calender, setCalender] = useState("");
-  const [tourType, setTourType] = useState("");
   const navigate = useNavigate();
   const [fromLocation, setFromLocation] = useState("");
   const [toLocation, setToLocation] = useState("");
@@ -83,10 +81,6 @@ export default function Hero3() {
     if (!toLocation.trim()) {
       formErrors.toLocation = "to is required";
     }
-
-    // if (!flyingPerson.trim() && user?.role == "cooperate_customer") {
-    //   formErrors.flyingPerson = "Flying Person is required";
-    // }
 
     // Check if there are any errors
     if (Object.keys(formErrors).length > 0) {
@@ -240,7 +234,7 @@ export default function Hero3() {
         </div>
       </section>
 
-      <div
+      {/* <div
         ref={dropDownContainer}
         data-aos={"fade-up"}
         data-aos-delay="200"
@@ -464,7 +458,8 @@ export default function Hero3() {
             </Button>
           </div>
         </div>
-      </div>
+      </div> */}
+      <FlightRequestMenu/>
     </ThemeProvider>
   );
 }
