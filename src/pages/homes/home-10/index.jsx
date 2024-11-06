@@ -16,6 +16,7 @@ import React from "react";
 import MetaComponent from "@/components/common/MetaComponent";
 import BrandsTwo from "@/components/homes/brands/BrandsTwo";
 import About from "@/components/about/About";
+import FlightRequestMenu from "@/components/flightRequest/FlightRequestMenu";
 
 const metadata = {
   title: "Home-1 || ViaTour - Travel & Tour Reactjs Template",
@@ -28,6 +29,7 @@ export default function HomePage10() {
       <main>
         <Header9 />
         <Hero10 />
+        <FlightRequestMenu />
         <BrandsTwo />
         <About />
         <Tour2 />

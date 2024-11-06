@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import "./flightRequest.css";
 import GroupsIcon from "@mui/icons-material/Groups";
 import {
   TextField,
@@ -58,6 +59,7 @@ const FlightRequestMenu = () => {
       document.removeEventListener("click", handleClick);
     };
   }, []);
+ 
 
   const requestHandler = async () => {
     let formErrors = {};
@@ -153,255 +155,272 @@ const FlightRequestMenu = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <div
-        ref={dropDownContainer}
-        data-aos={"fade-up"}
-        data-aos-delay="200"
-        className="mt-60 md:mt-35 container"
-      >
+      <div className="requet-menu">
+        <div className="request-menu-left">
+        </div>
+
         <div
-          id="bookNow"
-          className="searchForm -type-1 flex-column"
-          style={{ height: "auto" }}
-        >
-          <div
-            className="searchForm__form d-flex flex-column"
-            style={{ gap: "20px" }}
+            id="bookNow"
+            className="searchForm -type-1 flex-column"
+            style={{ height: "auto" }}
+            ref={dropDownContainer}
+
           >
-            <div className="d-flex" style={{ gap: "10px" }}>
-              <div className="searchFormItem">
-                <TextField
-                  error={errors.toLocation && Boolean(errors.toLocation)}
-                  //   label="To"
-                  placeholder="To"
-                  variant="outlined"
-                  fullWidth
-                  value={toLocation}
-                  onChange={(e) => setToLocation(e.target.value)}
-                  color="primary"
-                  helperText={errors.toLocation && "To is Required"}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <LocationOnIcon
-                          style={{ color: "#e2a612", marginBottom: "5px" }}
-                        />
-                      </InputAdornment>
-                    ),
-                    style: { color: "white" },
-                    classes: {
-                      notchedOutline: "border-color",
-                    },
-                  }}
-                  InputLabelProps={{
-                    style: { color: "#e2a612" },
-                  }}
-                />
-              </div>
-              <div className="searchFormItem">
-                <TextField
-                  error={errors.fromLocation && Boolean(errors.fromLocation)}
-                  label="From"
-                  variant="outlined"
-                  fullWidth
-                  value={fromLocation}
-                  onChange={(e) => setToLocation(e.target.value)}
-                  color="primary"
-                  helperText={errors.fromLocation && "From is Required"}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <LocationOnIcon style={{ color: "#e2a612" }} />
-                      </InputAdornment>
-                    ),
-                    style: { color: "white" },
-                    classes: {
-                      notchedOutline: "border-color",
-                    },
-                  }}
-                  InputLabelProps={{
-                    style: { color: "#e2a612" },
-                  }}
-                />
-              </div>
-
-              <div className="searchFormItem">
-                <TextField
-                  label="Travelers"
-                  value={`${adults} Adults, ${children} Children`}
-                  onClick={handleTravelerClick}
-                  fullWidth
-                  variant="outlined"
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <GroupsIcon style={{ color: "#e2a612" }} />
-                      </InputAdornment>
-                    ),
-                    style: { color: "white" },
-                    classes: {
-                      notchedOutline: "border-color",
-                    },
-                  }}
-                  InputLabelProps={{
-                    style: { color: "#e2a612" },
-                  }}
-                />
-              </div>
-
-              <Popover
-                open={Boolean(travelerAnchorEl)}
-                anchorEl={travelerAnchorEl}
-                onClose={handleTravelerClose}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-              >
-                <div style={{ padding: "20px", width: "300px" }}>
-                  <Stack
-                    direction="row"
-                    alignItems="center"
-                    justifyContent="space-between"
-                  >
-                    <Typography variant="subtitle1">Adults</Typography>
-                    <div className="d-flex align-items-center">
-                      <IconButton
-                        onClick={() => handleDecrease(setAdults, adults)}
-                      >
-                        <RemoveIcon />
-                      </IconButton>
-                      <Typography variant="body1">{adults}</Typography>
-                      <IconButton
-                        onClick={() => handleIncrease(setAdults, adults)}
-                      >
-                        <AddIcon />
-                      </IconButton>
-                    </div>
-                  </Stack>
-
-                  <Stack
-                    direction="row"
-                    alignItems="center"
-                    justifyContent="space-between"
-                  >
-                    <Typography variant="subtitle1">Children</Typography>
-                    <div className="d-flex align-items-center">
-                      <IconButton
-                        onClick={() => handleDecrease(setChildren, children)}
-                      >
-                        <RemoveIcon />
-                      </IconButton>
-                      <Typography variant="body1">{children}</Typography>
-                      <IconButton
-                        onClick={() => handleIncrease(setChildren, children)}
-                      >
-                        <AddIcon />
-                      </IconButton>
-                    </div>
-                  </Stack>
-
-                  {errorTravelerMessage && (
-                    <Typography variant="caption" align="center" width="100%">
-                      {errorTravelerMessage}
-                    </Typography>
-                  )}
-                </div>
-              </Popover>
-
-              <div className="searchFormItem">
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DateTimePicker
-                    fullWidth
-                    label="Select Date & Time"
-                    value={selectedDate}
-                    onChange={(newValue) => setSelectedDate(newValue)}
-                    shouldDisableTime={(timeValue, clockType) => {
-                      const disabledDateTimes = [
-                        "2024-10-24T00:15:00.000Z", // Oct 24, 12:15 AM
-                        "2024-10-31T10:40:00.000Z", // Oct 31, 10:40 AM
-                        "2024-10-22T08:20:00.000Z", // Oct 22, 8:20 AM
-                        "2024-10-22T18:05:00.000Z", // Oct 22, 6:05 PM
-                      ];
-
-                      const selectedDateString = selectedDate
-                        ?.toISOString()
-                        .split("T")[0];
-                      const matchingDisabledTimes = disabledDateTimes.filter(
-                        (disabledDateTime) =>
-                          new Date(disabledDateTime)
-                            .toISOString()
-                            .split("T")[0] === selectedDateString
-                      );
-
-                      if (matchingDisabledTimes.length === 0) return false;
-
-                      if (clockType === "hours") {
-                        return matchingDisabledTimes.some(
-                          (disabledDateTime) => {
-                            const disabledHour = new Date(
-                              disabledDateTime
-                            ).getHours();
-                            return timeValue === disabledHour;
-                          }
-                        );
+            <div
+              className="searchForm__form d-flex flex-column"
+              style={{ gap: "20px" }}
+            >
+              <div className="request-menu-right" style={{ gap: "10px" }}>
+                <h1 className="text-vivid-orange">What's Your Destination?</h1>
+                <div className="location-menu">
+                  <div className="searchFormItem">
+                    <TextField
+                      error={errors.toLocation && Boolean(errors.toLocation)}
+                      //   label="To"
+                      placeholder="To"
+                      variant="outlined"
+                      fullWidth
+                      value={toLocation}
+                      onChange={(e) => setToLocation(e.target.value)}
+                      color="primary"
+                      helperText={errors.toLocation && "To is Required"}
+                      InputProps={{
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <LocationOnIcon
+                              style={{ color: "#e2a612", marginBottom: "5px" }}
+                            />
+                          </InputAdornment>
+                        ),
+                        style: { color: "white" },
+                        classes: {
+                          notchedOutline: "border-color",
+                        },
+                      }}
+                      InputLabelProps={{
+                        style: { color: "#e2a612" },
+                      }}
+                    />
+                  </div>
+                  <div className="searchFormItem">
+                    <TextField
+                      error={
+                        errors.fromLocation && Boolean(errors.fromLocation)
                       }
+                      label="From"
+                      variant="outlined"
+                      fullWidth
+                      value={fromLocation}
+                      onChange={(e) => setToLocation(e.target.value)}
+                      color="primary"
+                      helperText={errors.fromLocation && "From is Required"}
+                      InputProps={{
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <LocationOnIcon style={{ color: "#e2a612" }} />
+                          </InputAdornment>
+                        ),
+                        style: { color: "white" },
+                        classes: {
+                          notchedOutline: "border-color",
+                        },
+                      }}
+                      InputLabelProps={{
+                        style: { color: "#e2a612" },
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="info-menu">
+                  <div className="searchFormItem">
+                    <TextField
+                      label="Travelers"
+                      value={`${adults} Adults, ${children} Children`}
+                      onClick={handleTravelerClick}
+                      fullWidth
+                      variant="outlined"
+                      InputProps={{
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <GroupsIcon style={{ color: "#e2a612" }} />
+                          </InputAdornment>
+                        ),
+                        style: { color: "white" },
+                        classes: {
+                          notchedOutline: "border-color",
+                        },
+                      }}
+                      InputLabelProps={{
+                        style: { color: "#e2a612" },
+                      }}
+                    />
+                  </div>
 
-                      if (clockType === "minutes") {
-                        return matchingDisabledTimes.some(
-                          (disabledDateTime) => {
-                            const disabledTime = new Date(disabledDateTime);
-                            const disabledHour = disabledTime.getHours();
-                            const disabledMinute = disabledTime.getMinutes();
-                            return (
-                              disabledHour ===
-                                new Date(selectedDate).getHours() &&
-                              timeValue === disabledMinute
+                  <Popover
+                    open={Boolean(travelerAnchorEl)}
+                    anchorEl={travelerAnchorEl}
+                    onClose={handleTravelerClose}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "left",
+                    }}
+                  >
+                    <div style={{ padding: "20px", width: "300px" }}>
+                      <Stack
+                        direction="row"
+                        alignItems="center"
+                        justifyContent="space-between"
+                      >
+                        <Typography variant="subtitle1">Adults</Typography>
+                        <div className="d-flex align-items-center">
+                          <IconButton
+                            onClick={() => handleDecrease(setAdults, adults)}
+                          >
+                            <RemoveIcon />
+                          </IconButton>
+                          <Typography variant="body1">{adults}</Typography>
+                          <IconButton
+                            onClick={() => handleIncrease(setAdults, adults)}
+                          >
+                            <AddIcon />
+                          </IconButton>
+                        </div>
+                      </Stack>
+
+                      <Stack
+                        direction="row"
+                        alignItems="center"
+                        justifyContent="space-between"
+                      >
+                        <Typography variant="subtitle1">Children</Typography>
+                        <div className="d-flex align-items-center">
+                          <IconButton
+                            onClick={() =>
+                              handleDecrease(setChildren, children)
+                            }
+                          >
+                            <RemoveIcon />
+                          </IconButton>
+                          <Typography variant="body1">{children}</Typography>
+                          <IconButton
+                            onClick={() =>
+                              handleIncrease(setChildren, children)
+                            }
+                          >
+                            <AddIcon />
+                          </IconButton>
+                        </div>
+                      </Stack>
+
+                      {errorTravelerMessage && (
+                        <Typography
+                          variant="caption"
+                          align="center"
+                          width="100%"
+                        >
+                          {errorTravelerMessage}
+                        </Typography>
+                      )}
+                    </div>
+                  </Popover>
+
+                  <div className="searchFormItem">
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                      <DateTimePicker
+                        fullWidth
+                        label="Select Date & Time"
+                        value={selectedDate}
+                        onChange={(newValue) => setSelectedDate(newValue)}
+                        shouldDisableTime={(timeValue, clockType) => {
+                          const disabledDateTimes = [
+                            "2024-10-24T00:15:00.000Z", // Oct 24, 12:15 AM
+                            "2024-10-31T10:40:00.000Z", // Oct 31, 10:40 AM
+                            "2024-10-22T08:20:00.000Z", // Oct 22, 8:20 AM
+                            "2024-10-22T18:05:00.000Z", // Oct 22, 6:05 PM
+                          ];
+
+                          const selectedDateString = selectedDate
+                            ?.toISOString()
+                            .split("T")[0];
+                          const matchingDisabledTimes =
+                            disabledDateTimes.filter(
+                              (disabledDateTime) =>
+                                new Date(disabledDateTime)
+                                  .toISOString()
+                                  .split("T")[0] === selectedDateString
+                            );
+
+                          if (matchingDisabledTimes.length === 0) return false;
+
+                          if (clockType === "hours") {
+                            return matchingDisabledTimes.some(
+                              (disabledDateTime) => {
+                                const disabledHour = new Date(
+                                  disabledDateTime
+                                ).getHours();
+                                return timeValue === disabledHour;
+                              }
                             );
                           }
-                        );
-                      }
 
-                      return false;
-                    }}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        fullWidth
-                        sx={{
-                          "& .MuiOutlinedInput-root": {
-                            "& fieldset": {
-                              borderColor: "red",
-                            },
-                            "&:hover fieldset": {
-                              borderColor: "green",
-                            },
-                            "&.Mui-focused fieldset": {
-                              borderColor: "purple",
-                            },
-                          },
+                          if (clockType === "minutes") {
+                            return matchingDisabledTimes.some(
+                              (disabledDateTime) => {
+                                const disabledTime = new Date(disabledDateTime);
+                                const disabledHour = disabledTime.getHours();
+                                const disabledMinute =
+                                  disabledTime.getMinutes();
+                                return (
+                                  disabledHour ===
+                                    new Date(selectedDate).getHours() &&
+                                  timeValue === disabledMinute
+                                );
+                              }
+                            );
+                          }
+
+                          return false;
                         }}
+                        renderInput={(params) => (
+                          <TextField
+                            {...params}
+                            fullWidth
+                            sx={{
+                              "& .MuiOutlinedInput-root": {
+                                "& fieldset": {
+                                  borderColor: "red",
+                                },
+                                "&:hover fieldset": {
+                                  borderColor: "green",
+                                },
+                                "&.Mui-focused fieldset": {
+                                  borderColor: "purple",
+                                },
+                              },
+                            }}
+                          />
+                        )}
                       />
-                    )}
-                  />
-                </LocalizationProvider>
-              </div>
-              <Button
-                onClick={requestHandler}
-                variant="contained"
-                fullWidth
-                className=" button button-gradient text-white"
-                style={{ width: "max-content", color: "white" }}
-              >
-                Request
-              </Button>
-              {/* <div className="searchForm__button">
+                    </LocalizationProvider>
+                  </div>
+                </div>
+
+                <Button
+                  onClick={requestHandler}
+                  variant="contained"
+                  fullWidth
+                  className=" button button-gradient text-white -md"
+                  style={{ width: "max-content", color: "white" }}
+                >
+                  Request
+                </Button>
+                {/* <div className="searchForm__button">
             
             </div> */}
+              </div>
             </div>
-          </div>
 
-          {/* <div className="searchForm__button">
+            {/* <div className="searchForm__button">
             <Button
               onClick={requestHandler}
               variant="contained"
@@ -411,7 +430,7 @@ const FlightRequestMenu = () => {
               Request
             </Button>
           </div> */}
-        </div>
+          </div>
       </div>
     </ThemeProvider>
   );

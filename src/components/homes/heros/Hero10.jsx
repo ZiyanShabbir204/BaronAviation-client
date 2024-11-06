@@ -1,5 +1,6 @@
 import FlightRequestMenu from "@/components/flightRequest/FlightRequestMenu";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { scroller } from "react-scroll";
 
 const tags = [
   {
@@ -25,6 +26,15 @@ const tags = [
 ];
 export default function Hero10() {
   const navigate = useNavigate();
+  const scrollToBookNow = () => {
+    scroller.scrollTo("bookNow", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+      offset: -window.innerHeight / 3, // Adjusts the offset to center
+    });
+  };
+
   return (
     <section
       className="hero -type-10"
@@ -94,10 +104,11 @@ export default function Hero10() {
                 data-aos="fade-up"
                 data-aos-delay="250"
                 className="button -md  button-gradient text-white fly-btn"
+                to="bookNow"
+                onClick={scrollToBookNow}
               >
                 LET'S FLY
               </button>
-              <FlightRequestMenu />
             </div>
           </div>
         </div>

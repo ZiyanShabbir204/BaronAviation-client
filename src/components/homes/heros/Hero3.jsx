@@ -204,9 +204,6 @@ export default function Hero3() {
             </Link> */}
 
               <button
-                // to="bookNow"
-                // smooth={true}
-                // duration={500}
 
                 onClick={scrollToBookNow}
                 className="button -sm -outline-black rounded-200 text-black book-now-btn bg-vivid-orange"
