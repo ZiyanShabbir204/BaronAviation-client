@@ -5,7 +5,7 @@ import { TextField, Button, ThemeProvider, createTheme } from "@mui/material";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#e2a612", // Adjust as per requirement
+      main: "#d69b11", // Adjust as per requirement
     },
   },
   components: {
@@ -17,10 +17,10 @@ const theme = createTheme({
             borderColor: "white", // Set default border color to white
           },
           "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#e2a612", // Set hover border color
+            borderColor: "#d69b11", // Set hover border color
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#e2a612", // Set focused border color
+            borderColor: "#d69b11", // Set focused border color
           },
         },
       },
@@ -95,7 +95,7 @@ export default function Login() {
                     },
                   }}
                   InputLabelProps={{
-                    style: { color: "#e2a612" },
+                    style: { color: "#d69b11" },
                   }}
                 />
 
@@ -116,7 +116,7 @@ export default function Login() {
                     },
                   }}
                   InputLabelProps={{
-                    style: { color: "#e2a612" },
+                    style: { color: "#d69b11" },
                   }}
                   className="mt-20"
                 />

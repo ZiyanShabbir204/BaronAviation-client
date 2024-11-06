@@ -7,7 +7,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -24,10 +23,11 @@ h5,
 h6,
 .text-rajdhani {
   font-family: "Rajdhani", serif !important;
+  text-transform: uppercase;
 }
 
 
-.MuiInputBase-adornedEnd{
+.MuiInputBase-adornedEnd {
   flex-direction: row-reverse !important;
 }
 
@@ -175,7 +175,7 @@ a:hover {
   --color-error-2: #AB3331;
   --color-success-1: #DEF2D7;
   --color-success-2: #5B7052;
-  --color-vivid-orange: #e2a612;
+  --color-vivid-orange: #d69b11;
   --color-gray: #121212;
   --color-dark-gray: #222222;
   --color-light-gray: #35363a;
@@ -223,7 +223,7 @@ a:hover {
 
 
 .MuiPickersDay-dayWithMargin.MuiPickersDay-today {
-  border-color: #e2a612 !important
+  border-color: #d69b11 !important
 }
 
 .MuiDayCalendar-header>span {
@@ -3336,7 +3336,7 @@ h6 {
 }
 
 .button-gradient {
-  background: linear-gradient(45deg, #c18e11, #e2a612);
+  background: linear-gradient(45deg, #c18e11, #d69b11);
   color: white;
   padding: 10px 20px;
   border: none;
@@ -3347,7 +3347,7 @@ h6 {
 }
 
 .button-gradient:hover {
-  background: linear-gradient(45deg, #e2a612, #c18e11);
+  background: linear-gradient(45deg, #d69b11, #c18e11);
   /* Swap colors on hover */
   color: white;
 }

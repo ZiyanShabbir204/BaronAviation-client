@@ -6,7 +6,7 @@ import axios from "axios";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#e2a612", // Customize as needed
+      main: "#d69b11", // Customize as needed
     },
   },
   components: {
@@ -18,10 +18,10 @@ const theme = createTheme({
             borderColor: "white", // Default border color
           },
           "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#e2a612", // Hover border color
+            borderColor: "#d69b11", // Hover border color
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#e2a612", // Focused border color
+            borderColor: "#d69b11", // Focused border color
           },
         },
       },
@@ -121,7 +121,7 @@ export default function Register() {
                   onChange={handleInputChange}
                   error={Boolean(errors.username)}
                   helperText={errors.username}
-                  InputLabelProps={{ style: { color: "#e2a612" } }}
+                  InputLabelProps={{ style: { color: "#d69b11" } }}
                   className="mb-3"
                 />
 
@@ -134,7 +134,7 @@ export default function Register() {
                   onChange={handleInputChange}
                   error={Boolean(errors.phoneNumber)}
                   helperText={errors.phoneNumber}
-                  InputLabelProps={{ style: { color: "#e2a612" } }}
+                  InputLabelProps={{ style: { color: "#d69b11" } }}
                   className="mb-3"
                 />
 
@@ -147,7 +147,7 @@ export default function Register() {
                   onChange={handleInputChange}
                   error={Boolean(errors.email)}
                   helperText={errors.email}
-                  InputLabelProps={{ style: { color: "#e2a612" } }}
+                  InputLabelProps={{ style: { color: "#d69b11" } }}
                   className="mb-3"
                 />
 
@@ -161,7 +161,7 @@ export default function Register() {
                   onChange={handleInputChange}
                   error={Boolean(errors.password)}
                   helperText={errors.password}
-                  InputLabelProps={{ style: { color: "#e2a612" } }}
+                  InputLabelProps={{ style: { color: "#d69b11" } }}
                   className="mb-3"
                 />
 
@@ -175,7 +175,7 @@ export default function Register() {
                   onChange={handleInputChange}
                   error={Boolean(errors.confirmPassword)}
                   helperText={errors.confirmPassword}
-                  InputLabelProps={{ style: { color: "#e2a612" } }}
+                  InputLabelProps={{ style: { color: "#d69b11" } }}
                   className="mb-3"
                 />
 

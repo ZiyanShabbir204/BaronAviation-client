@@ -118,7 +118,7 @@ export default function Hero3() {
   // const theme = createTheme({
   //   palette: {
   //     primary: {
-  //       main: "#e2a612", // Set the main color to #eb662b
+  //       main: "#d69b11", // Set the main color to #eb662b
   //     },
   //   },
   // });
@@ -126,7 +126,7 @@ export default function Hero3() {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#e2a612", // Set the main color to #eb662b
+        main: "#d69b11", // Set the main color to #eb662b
       },
     },
     components: {
@@ -142,7 +142,7 @@ export default function Hero3() {
       MuiSvgIcon: {
         styleOverrides: {
           root: {
-            color: "#e2a612", // Set icon color
+            color: "#d69b11", // Set icon color
           },
         },
       },
@@ -204,7 +204,6 @@ export default function Hero3() {
             </Link> */}
 
               <button
-
                 onClick={scrollToBookNow}
                 className="button -sm -outline-black rounded-200 text-black book-now-btn bg-vivid-orange"
               >
@@ -264,7 +263,7 @@ export default function Hero3() {
                     },
                   }}
                   InputLabelProps={{
-                    style: { color: "#e2a612" },
+                    style: { color: "#d69b11" },
                   }}
                 />
               </div>
@@ -286,7 +285,7 @@ export default function Hero3() {
                     },
                   }}
                   InputLabelProps={{
-                    style: { color: "#e2a612" },
+                    style: { color: "#d69b11" },
                   }}
                 />
               </div>

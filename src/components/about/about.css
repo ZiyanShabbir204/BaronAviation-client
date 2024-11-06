@@ -20,7 +20,7 @@
 
 .tag {
     background-color: rgba(226, 166, 18, 0.2);
-    color: #e2a612;
+    color: #d69b11;
     width: fit-content;
     padding: 5px 20px;
     border-radius: 2px;
@@ -68,7 +68,7 @@
 .perk-container {
     padding: 30px 20px;
     border-radius: 20px;
-    background: linear-gradient(45deg, #c18e11, #e2a612);
+    background: linear-gradient(45deg, #c18e11, #d69b11);
 }
 
 .perk-container ul {
@@ -111,7 +111,7 @@
 
 
 .travel-partner-container {
-    background: linear-gradient(45deg, #c18e11, #e2a612);
+    background: linear-gradient(45deg, #c18e11, #d69b11);
     margin-top: 20px;
     border-radius: 10px;
     display: flex;
