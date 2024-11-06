@@ -20,7 +20,7 @@ export default function About() {
           <div className="tag"> TOP CHOICE</div>
           <h1 className="about-text-heading">
             IN EXCLUSIVE CORPORATE AIR TRAVEL, POWERED BY{" "}
-            <span className="text-vivid-orange">BARON</span>
+            <span className="text-vivid-orange text-rajdhani">BARON</span>
           </h1>
           <p className="about-text-para">
             At Baron Aviation, we provide{" "}
