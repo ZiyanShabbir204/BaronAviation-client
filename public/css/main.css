@@ -5,16 +5,31 @@
   font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+
 html {
   scroll-behavior: smooth;
 }
 
 * {
-  font-family: 'Felix-Titling', sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-rajdhani {
+  font-family: "Rajdhani", serif !important;
+}
+
+
+
 body {
-  background: #000 !important;
+  background: #191919 !important;
 }
 
 a:hover {
@@ -157,16 +172,16 @@ a:hover {
   --color-error-2: #AB3331;
   --color-success-1: #DEF2D7;
   --color-success-2: #5B7052;
-  --color-vivid-orange: #E5A812;
+  --color-vivid-orange: #e2a612;
   --color-gray: #121212;
-  --color-dark-gray:#222222;
-  --color-light-gray : #35363a;
+  --color-dark-gray: #222222;
+  --color-light-gray: #35363a;
 
 
 
 }
 
-.logo-slider-section{
+.logo-slider-section {
   padding: 60px 0;
   background: var(--color-dark-gray);
 }
@@ -205,7 +220,7 @@ a:hover {
 
 
 .MuiPickersDay-dayWithMargin.MuiPickersDay-today {
-  border-color: #E5A812 !important
+  border-color: #e2a612 !important
 }
 
 .MuiDayCalendar-header>span {
@@ -2084,6 +2099,12 @@ h6 {
   text-align: left;
 }
 
+.fly-btn {
+  margin: auto;
+  margin-top: 15px;
+  width: 300px;
+}
+
 @media (max-width: 1199px) {
   .xl\:text-center {
     text-align: center !important;
@@ -2522,7 +2543,8 @@ h6 {
   padding: 0 30px;
   height: 90px;
 }
-.header_left-flex{
+
+.header_left-flex {
   flex: 1;
 }
 
@@ -3301,6 +3323,7 @@ h6 {
   box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
 
 }
+
 .button-gradient {
   background: linear-gradient(45deg, #c18e11, #e2a612);
   color: white;
@@ -3308,11 +3331,13 @@ h6 {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.4s ease; /* Smooth transition */
+  transition: 0.4s ease;
+  /* Smooth transition */
 }
 
 .button-gradient:hover {
-  background: linear-gradient(45deg, #e2a612, #c18e11); /* Swap colors on hover */
+  background: linear-gradient(45deg, #e2a612, #c18e11);
+  /* Swap colors on hover */
   color: white;
 }
 
@@ -3626,6 +3651,10 @@ h6 {
   .hero.-type-1 .hero__title {
     font-size: 40px;
   }
+}
+
+.hero__text {
+  font-size: 20px;
 }
 
 .hero.-type-1 .hero__text {

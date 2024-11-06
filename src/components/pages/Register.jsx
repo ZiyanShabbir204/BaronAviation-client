@@ -6,7 +6,7 @@ import axios from "axios";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#E5A812", // Customize as needed
+      main: "#e2a612", // Customize as needed
     },
   },
   components: {
@@ -18,10 +18,10 @@ const theme = createTheme({
             borderColor: "white", // Default border color
           },
           "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#E5A812", // Hover border color
+            borderColor: "#e2a612", // Hover border color
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#E5A812", // Focused border color
+            borderColor: "#e2a612", // Focused border color
           },
         },
       },
@@ -59,10 +59,13 @@ export default function Register() {
     // Field validations
     if (!formData.username.trim()) newErrors.username = "Username is required";
     if (!formData.email.trim()) newErrors.email = "Email is required";
-    if (!formData.phoneNumber.trim()) newErrors.phoneNumber = "Phone number is required";
+    if (!formData.phoneNumber.trim())
+      newErrors.phoneNumber = "Phone number is required";
     if (!formData.password.trim()) newErrors.password = "Password is required";
-    if (!formData.confirmPassword.trim()) newErrors.confirmPassword = "Please confirm your password";
-    else if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = "Passwords do not match";
+    if (!formData.confirmPassword.trim())
+      newErrors.confirmPassword = "Please confirm your password";
+    else if (formData.password !== formData.confirmPassword)
+      newErrors.confirmPassword = "Passwords do not match";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -105,7 +108,10 @@ export default function Register() {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="border-1 rounded-12 px-60 py-60 md:px-25 md:py-30 bg-gray">
+              <form
+                onSubmit={handleSubmit}
+                className="border-1 rounded-12 px-60 py-60 md:px-25 md:py-30 bg-gray"
+              >
                 <TextField
                   label="Username"
                   name="username"
@@ -115,10 +121,10 @@ export default function Register() {
                   onChange={handleInputChange}
                   error={Boolean(errors.username)}
                   helperText={errors.username}
-                  InputLabelProps={{ style: { color: "#E5A812" } }}
+                  InputLabelProps={{ style: { color: "#e2a612" } }}
                   className="mb-3"
                 />
-                
+
                 <TextField
                   label="Phone Number"
                   name="phoneNumber"
@@ -128,7 +134,7 @@ export default function Register() {
                   onChange={handleInputChange}
                   error={Boolean(errors.phoneNumber)}
                   helperText={errors.phoneNumber}
-                  InputLabelProps={{ style: { color: "#E5A812" } }}
+                  InputLabelProps={{ style: { color: "#e2a612" } }}
                   className="mb-3"
                 />
 
@@ -141,7 +147,7 @@ export default function Register() {
                   onChange={handleInputChange}
                   error={Boolean(errors.email)}
                   helperText={errors.email}
-                  InputLabelProps={{ style: { color: "#E5A812" } }}
+                  InputLabelProps={{ style: { color: "#e2a612" } }}
                   className="mb-3"
                 />
 
@@ -155,7 +161,7 @@ export default function Register() {
                   onChange={handleInputChange}
                   error={Boolean(errors.password)}
                   helperText={errors.password}
-                  InputLabelProps={{ style: { color: "#E5A812" } }}
+                  InputLabelProps={{ style: { color: "#e2a612" } }}
                   className="mb-3"
                 />
 
@@ -169,7 +175,7 @@ export default function Register() {
                   onChange={handleInputChange}
                   error={Boolean(errors.confirmPassword)}
                   helperText={errors.confirmPassword}
-                  InputLabelProps={{ style: { color: "#E5A812" } }}
+                  InputLabelProps={{ style: { color: "#e2a612" } }}
                   className="mb-3"
                 />
 

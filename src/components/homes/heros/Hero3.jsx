@@ -118,7 +118,7 @@ export default function Hero3() {
   // const theme = createTheme({
   //   palette: {
   //     primary: {
-  //       main: "#E5A812", // Set the main color to #eb662b
+  //       main: "#e2a612", // Set the main color to #eb662b
   //     },
   //   },
   // });
@@ -126,7 +126,7 @@ export default function Hero3() {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#E5A812", // Set the main color to #eb662b
+        main: "#e2a612", // Set the main color to #eb662b
       },
     },
     components: {
@@ -142,7 +142,7 @@ export default function Hero3() {
       MuiSvgIcon: {
         styleOverrides: {
           root: {
-            color: "#E5A812", // Set icon color
+            color: "#e2a612", // Set icon color
           },
         },
       },
@@ -267,7 +267,7 @@ export default function Hero3() {
                     },
                   }}
                   InputLabelProps={{
-                    style: { color: "#E5A812" },
+                    style: { color: "#e2a612" },
                   }}
                 />
               </div>
@@ -289,7 +289,7 @@ export default function Hero3() {
                     },
                   }}
                   InputLabelProps={{
-                    style: { color: "#E5A812" },
+                    style: { color: "#e2a612" },
                   }}
                 />
               </div>
@@ -459,7 +459,7 @@ export default function Hero3() {
           </div>
         </div>
       </div> */}
-      <FlightRequestMenu/>
+      <FlightRequestMenu />
     </ThemeProvider>
   );
 }

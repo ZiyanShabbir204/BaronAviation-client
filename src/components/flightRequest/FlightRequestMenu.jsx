@@ -105,7 +105,7 @@ const FlightRequestMenu = () => {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#E5A812", // Set the main color to #eb662b
+        main: "#e2a612", // Set the main color to #eb662b
       },
     },
     components: {
@@ -121,7 +121,7 @@ const FlightRequestMenu = () => {
       MuiSvgIcon: {
         styleOverrides: {
           root: {
-            color: "#E5A812", // Set icon color
+            color: "#e2a612", // Set icon color
           },
         },
       },
@@ -172,9 +172,9 @@ const FlightRequestMenu = () => {
               <div className="searchFormItem">
                 <TextField
                   error={errors.toLocation && Boolean(errors.toLocation)}
-                //   label="To"
-                placeholder="To"
-                  variant='outlined'
+                  //   label="To"
+                  placeholder="To"
+                  variant="outlined"
                   fullWidth
                   value={toLocation}
                   onChange={(e) => setToLocation(e.target.value)}
@@ -183,7 +183,9 @@ const FlightRequestMenu = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <LocationOnIcon style={{ color: "#E5A812", marginBottom: "5px" }} />
+                        <LocationOnIcon
+                          style={{ color: "#e2a612", marginBottom: "5px" }}
+                        />
                       </InputAdornment>
                     ),
                     style: { color: "white" },
@@ -192,7 +194,7 @@ const FlightRequestMenu = () => {
                     },
                   }}
                   InputLabelProps={{
-                    style: { color: "#E5A812" },
+                    style: { color: "#e2a612" },
                   }}
                 />
               </div>
@@ -209,7 +211,7 @@ const FlightRequestMenu = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <LocationOnIcon style={{ color: "#E5A812" }} />
+                        <LocationOnIcon style={{ color: "#e2a612" }} />
                       </InputAdornment>
                     ),
                     style: { color: "white" },
@@ -218,7 +220,7 @@ const FlightRequestMenu = () => {
                     },
                   }}
                   InputLabelProps={{
-                    style: { color: "#E5A812" },
+                    style: { color: "#e2a612" },
                   }}
                 />
               </div>
@@ -233,7 +235,7 @@ const FlightRequestMenu = () => {
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <GroupsIcon style={{ color: "#E5A812" }} />
+                        <GroupsIcon style={{ color: "#e2a612" }} />
                       </InputAdornment>
                     ),
                     style: { color: "white" },
@@ -242,7 +244,7 @@ const FlightRequestMenu = () => {
                     },
                   }}
                   InputLabelProps={{
-                    style: { color: "#E5A812" },
+                    style: { color: "#e2a612" },
                   }}
                 />
               </div>
@@ -389,7 +391,7 @@ const FlightRequestMenu = () => {
                 variant="contained"
                 fullWidth
                 className=" button button-gradient text-white"
-                style={{width:"max-content", color:"white"}}
+                style={{ width: "max-content", color: "white" }}
               >
                 Request
               </Button>
@@ -397,7 +399,6 @@ const FlightRequestMenu = () => {
             
             </div> */}
             </div>
-           
           </div>
 
           {/* <div className="searchForm__button">
