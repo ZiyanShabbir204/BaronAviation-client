@@ -8,6 +8,9 @@ export default function BrandsTwo() {
   return (
     <section className="logo-slider-section">
       <div className="container">
+        <h2 className="trusted-corporate text-vivid-orange">
+          TRUSTED BY THE CORPORATES
+        </h2>
         <div data-aos="fade-up" data-aos-delay="" className="">
           <Swiper
             spaceBetween={30}
@@ -41,7 +44,7 @@ export default function BrandsTwo() {
                       height: "30px",
                       width: "100px",
                       objectFit: "contain",
-                       filter: "brightness(0) invert(1)"
+                      filter: "brightness(0) invert(1)",
                     }}
                     src={elm}
                     alt="image"

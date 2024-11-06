@@ -735,6 +735,11 @@ button:focus {
   padding: 16px 35px;
 }
 
+.hero.-type-10 {
+  height: 100vh;
+  min-height: 600px;
+}
+
 .button.-h-50 {
   height: 50px;
 }
@@ -4660,16 +4665,14 @@ h6 {
 
 .hero.-type-10 {
   position: relative;
-  padding-top: 250px;
-  padding-bottom: 100px;
   z-index: 5;
+  display: flex;
+  align-items: center;
 }
 
-@media (max-width: 767px) {
-  .hero.-type-10 {
-    padding-top: 120px;
-    padding-bottom: 60px;
-  }
+.trusted-corporate {
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .hero.-type-10 .hero__bg {
