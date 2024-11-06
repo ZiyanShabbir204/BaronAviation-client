@@ -27,6 +27,9 @@ h6,
 }
 
 
+.MuiInputBase-adornedEnd{
+  flex-direction: row-reverse !important;
+}
 
 body {
   background: #191919 !important;

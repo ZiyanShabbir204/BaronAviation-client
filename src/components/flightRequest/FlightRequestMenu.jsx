@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import "./flightRequest.css";
 import GroupsIcon from "@mui/icons-material/Groups";
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday"; // Custom icon
 import {
   TextField,
   Button,
@@ -378,6 +379,7 @@ const FlightRequestMenu = () => {
                               }
                             );
                           }
+                        
 
                           return false;
                         }}
@@ -386,6 +388,7 @@ const FlightRequestMenu = () => {
                             {...params}
                             fullWidth
                             sx={{
+                                flexDirection: 'row-reverse',
                               "& .MuiOutlinedInput-root": {
                                 "& fieldset": {
                                   borderColor: "red",
@@ -400,6 +403,7 @@ const FlightRequestMenu = () => {
                             }}
                           />
                         )}
+                        className="datePicker"
                       />
                     </LocalizationProvider>
                   </div>

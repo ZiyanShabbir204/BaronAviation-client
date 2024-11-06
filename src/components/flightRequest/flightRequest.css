@@ -37,3 +37,7 @@
     display: none;
   }
 }
+.datePicker{
+    display: flex;
+    flex-direction: row-reverse ;
+}
