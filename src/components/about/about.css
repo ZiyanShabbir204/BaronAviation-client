@@ -61,7 +61,8 @@
 .perk-container {
     padding: 30px 20px;
     border-radius: 20px;
-    background: linear-gradient(45deg, #c18e11, #f6bc16);
+    background: linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828);
+
 }
 
 .perk-container ul {
@@ -104,7 +105,8 @@
 
 
 .travel-partner-container {
-    background: linear-gradient(45deg, #c18e11, #f6bc16);
+    background: linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828);
+
     margin-top: 20px;
     border-radius: 10px;
     display: flex;

@@ -8,7 +8,9 @@ export default function OfferServices() {
       <div className="container">
         <div>
           <div className="tag">What We Offer</div>
-          <h1 className="text-vivid-orange">Baron's Exclusive Services</h1>
+          <h1 className="text-gradient-vivid-orange">
+            Baron's Exclusive Services
+          </h1>
           <p>
             Experience aviation like never before with Baron’s exclusive
             services, designed for those who demand the best. From personalized

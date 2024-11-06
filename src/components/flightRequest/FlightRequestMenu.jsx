@@ -169,7 +169,7 @@ const FlightRequestMenu = () => {
             style={{ gap: "20px" }}
           >
             <div className="request-menu-right" style={{ gap: "10px" }}>
-              <h1 className="text-vivid-orange">What's Your Destination?</h1>
+              <h1 className=" hero-heading">What's Your Destination?</h1>
               <div className="location-menu">
                 <div className="searchFormItem">
                   <TextField
