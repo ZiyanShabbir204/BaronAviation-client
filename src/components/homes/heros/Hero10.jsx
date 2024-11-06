@@ -87,7 +87,10 @@ export default function Hero10() {
               <h1
                 data-aos="fade-up"
                 data-aos-delay="100"
-                className="hero__title text-white"
+                className="hero__title text-white hero-heading"
+                style={{
+                  fontSize: "60px",
+                }}
               >
                 WHERE PRESTIGE TAKES FLIGHT
               </h1>

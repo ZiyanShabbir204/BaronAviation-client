@@ -3345,7 +3345,7 @@ h6 {
 }
 
 .button-gradient {
-  background: linear-gradient(45deg, #c18e11, #f6bc16);
+  background: linear-gradient(45deg, #e2a612, #c18e11);
   color: white;
   padding: 10px 20px;
   border: none;
@@ -3356,8 +3356,7 @@ h6 {
 }
 
 .button-gradient:hover {
-  background: linear-gradient(45deg, #f6bc16, #c18e11);
-  /* Swap colors on hover */
+  background: linear-gradient(45deg, #c18e11, #e2a612);
   color: white;
 }
 
@@ -6435,8 +6434,8 @@ h6 {
 
 .cta.-type-2 {
   position: relative;
-  padding-top: 160px;
-  padding-bottom: 160px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   z-index: 0;
 }
 
@@ -6465,6 +6464,28 @@ h6 {
   max-width: 100%;
   width: 1530px;
   border-radius: 12px;
+  background: linear-gradient(135deg, #191919, #1e1e1e, #222222, #2a2a2a, #191919);
+
+}
+
+
+.hero-heading {
+
+  background-image: radial-gradient(circle, #ffffff, #a6a6a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -6488,6 +6509,8 @@ h6 {
   top: 0;
   right: 0;
   bottom: 0;
+  width: 50%;
+
 }
 
 @media (max-width: 1199px) {
