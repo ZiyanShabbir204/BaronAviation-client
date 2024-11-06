@@ -18,14 +18,7 @@
     grid-column: span 2;
 }
 
-.tag {
-    background-color: rgba(226, 166, 18, 0.2);
-    color: #d69b11;
-    width: fit-content;
-    padding: 5px 20px;
-    border-radius: 2px;
-    margin-bottom: 10px;
-}
+
 
 .about-text-heading {
     font-size: 50px;
@@ -68,7 +61,7 @@
 .perk-container {
     padding: 30px 20px;
     border-radius: 20px;
-    background: linear-gradient(45deg, #c18e11, #d69b11);
+    background: linear-gradient(45deg, #c18e11, #f6bc16);
 }
 
 .perk-container ul {
@@ -111,7 +104,7 @@
 
 
 .travel-partner-container {
-    background: linear-gradient(45deg, #c18e11, #d69b11);
+    background: linear-gradient(45deg, #c18e11, #f6bc16);
     margin-top: 20px;
     border-radius: 10px;
     display: flex;

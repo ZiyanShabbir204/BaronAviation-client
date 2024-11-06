@@ -198,12 +198,12 @@
 }
 
 .activeMenu {
-  color: #d69b11 !important;
+  color: #f6bc16 !important;
 }
 
 
 .rmdp-range {
-  background-color: #d69b11 !important;
+  background-color: #f6bc16 !important;
 }
 
 .rmdp-today span {
@@ -211,15 +211,15 @@
 }
 
 .rmdp-day:not(.rmdp-disabled, .rmdp-day-hidden) span:hover {
-  background-color: #d69b11 !important;
+  background-color: #f6bc16 !important;
 }
 
 .rmdp-week-day {
-  color: #d69b11 !important;
+  color: #f6bc16 !important;
 }
 
 .rmdp-arrow {
-  border-color: #d69b11 !important;
+  border-color: #f6bc16 !important;
 }
 
 @media (max-width:1150px) {

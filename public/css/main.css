@@ -175,13 +175,22 @@ a:hover {
   --color-error-2: #AB3331;
   --color-success-1: #DEF2D7;
   --color-success-2: #5B7052;
-  --color-vivid-orange: #d69b11;
+  --color-vivid-orange: #f6bc16;
   --color-gray: #121212;
   --color-dark-gray: #222222;
   --color-light-gray: #35363a;
 
 
 
+}
+
+.tag {
+  background-color: rgba(226, 166, 18, 0.2);
+  color: #f6bc16;
+  width: fit-content;
+  padding: 5px 20px;
+  border-radius: 2px;
+  margin-bottom: 10px;
 }
 
 .logo-slider-section {
@@ -223,7 +232,7 @@ a:hover {
 
 
 .MuiPickersDay-dayWithMargin.MuiPickersDay-today {
-  border-color: #d69b11 !important
+  border-color: #f6bc16 !important
 }
 
 .MuiDayCalendar-header>span {
@@ -3336,7 +3345,7 @@ h6 {
 }
 
 .button-gradient {
-  background: linear-gradient(45deg, #c18e11, #d69b11);
+  background: linear-gradient(45deg, #c18e11, #f6bc16);
   color: white;
   padding: 10px 20px;
   border: none;
@@ -3347,7 +3356,7 @@ h6 {
 }
 
 .button-gradient:hover {
-  background: linear-gradient(45deg, #d69b11, #c18e11);
+  background: linear-gradient(45deg, #f6bc16, #c18e11);
   /* Swap colors on hover */
   color: white;
 }
@@ -7042,7 +7051,7 @@ h6 {
 
 .accordion.-simple .accordion__icon {
   background-color: rgba(235, 102, 43, 0.05) !important;
-  color: var(--color-accent-1) !important;
+  color: var(--color-vivid-orange) !important;
   transition: all 0.2s ease-out;
 }
 
@@ -7063,7 +7072,7 @@ h6 {
 }
 
 .accordion.-simple .accordion__item.is-active .accordion__icon {
-  background-color: var(--color-accent-1) !important;
+  background-color: var(--color-vivid-orange) !important;
   color: white !important;
 }
 

@@ -17,6 +17,9 @@ import MetaComponent from "@/components/common/MetaComponent";
 import BrandsTwo from "@/components/homes/brands/BrandsTwo";
 import About from "@/components/about/About";
 import FlightRequestMenu from "@/components/flightRequest/FlightRequestMenu";
+import Tour1 from "@/components/homes/tours/Tour1";
+import FeaturesOne from "@/components/homes/features/FeaturesOne";
+import OfferServices from "@/components/offerServices/OfferServices";
 
 const metadata = {
   title: "Home-1 || ViaTour - Travel & Tour Reactjs Template",
@@ -32,7 +35,10 @@ export default function HomePage10() {
         <FlightRequestMenu />
         <BrandsTwo />
         <About />
-        <Tour2 />
+        <FeaturesOne />
+        <OfferServices />
+
+        {/* <Tour2 />
         <Features8 />
         <Features9 />
         <TrendingDestinations4 />
@@ -42,7 +48,7 @@ export default function HomePage10() {
         <TestimonialsSix />
         <ArticlesOne />
         <Banner15 />
-        <FooterFour />
+        <FooterFour /> */}
       </main>
     </>
   );

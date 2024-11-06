@@ -1,27 +1,27 @@
 export const features = [
   {
     id: 1,
-    iconSrc: "/img/icons/1/ticket.svg",
-    title: "Ultimate flexibility",
-    text: "You're in control, with free cancellation and payment options to satisfy any plan or budget.",
+    iconSrc: "/img/icon/heli-white.png",
+    title: "Uncompromised Safety Standards",
+    text: "Baron prioritizes your safety with rigorous maintenance and expert pilots, ensuring every journey is secure and worry-free. Enjoy the experience with confidence",
   },
   {
     id: 2,
-    iconSrc: "/img/icons/1/hot-air-balloon.svg",
-    title: "Memorable experiences",
-    text: "Browse and book tours and activities so incredible, you'll want to tell your friends.",
+    iconSrc: "/img/icon/heli-white.png",
+    title: "Tailored Travel Plans",
+    text: "We believe in making every journey unique. From itinerary customization to special accommodations, our team will craft a travel plan that suits your preferences, style, and pace.",
   },
   {
     id: 3,
-    iconSrc: "/img/icons/1/diamond.svg",
-    title: "Quality at our core",
-    text: "High-quality standards. Millions of reviews. A tourz company.",
+    iconSrc: "/img/icon/heli-white.png",
+    title: "Unmatched Comfort and Luxury",
+    text: "Experience the thrill of smooth rides in top-of-the-line helicopters, meticulously maintained for your comfort and safety. Our fleet is tailored to meet the highest standards of luxury travel.",
   },
   {
     id: 4,
-    iconSrc: "/img/icons/1/medal.svg",
-    title: "Award-winning support",
-    text: "New price? New plan? No problem. We're here to help, 24/7.",
+    iconSrc: "/img/icon/heli-white.png",
+    title: "Memorable Experiences",
+    text: "we turn travel into unforgettable memories. With personalized service and meticulous attention to detail, every journey is crafted to leave a lasting impression.",
   },
 ];
 export const featuresFour = [

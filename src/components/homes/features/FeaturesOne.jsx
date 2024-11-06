@@ -8,8 +8,11 @@ export default function FeaturesOne() {
       <div className="container">
         <div className="row">
           <div className="col-auto">
-            <h2 data-aos="fade-up" className="text-30 md:text-24">
-              Why choose Tourz
+            <h2
+              data-aos="fade-up"
+              className="text-30 md:text-24 text-vivid-orange"
+            >
+              WHY CHOOSE BARON AVIATION
             </h2>
           </div>
         </div>
@@ -25,7 +28,7 @@ export default function FeaturesOne() {
                   <img src={elm.iconSrc} alt="icon" />
                 </div>
 
-                <h3 className="featureIcon__title text-18 fw-500 mt-30">
+                <h3 className="featureIcon__title text-18 fw-500 mt-30 text-vivid-orange">
                   {elm.title}
                 </h3>
                 <p className="featureIcon__text mt-10">{elm.text}</p>
