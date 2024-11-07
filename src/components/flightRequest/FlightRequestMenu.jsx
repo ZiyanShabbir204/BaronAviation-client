@@ -174,8 +174,7 @@ const FlightRequestMenu = () => {
                 <div className="searchFormItem">
                   <TextField
                     error={errors.toLocation && Boolean(errors.toLocation)}
-                    //   label="To"
-                    placeholder="To"
+                    label="To"
                     variant="outlined"
                     fullWidth
                     value={toLocation}
