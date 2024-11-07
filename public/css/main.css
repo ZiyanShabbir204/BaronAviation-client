@@ -2587,7 +2587,7 @@ h6 {
 }
 
 .header .desktopNav__item a:hover {
-  color: var(--color-accent-1);
+  color: var(--color-vivid-orange);
 }
 
 .header .desktopNavMega {
@@ -3464,7 +3464,7 @@ h6 {
 .footer.-type-1 .footer__info {
   padding-top: 80px;
   padding-bottom: 48px;
-  border-bottom: 1px solid rgba(235, 102, 43, 0.15);
+  border-bottom: 1px solid #f6bc162e;
 }
 
 @media (max-width: 767px) {

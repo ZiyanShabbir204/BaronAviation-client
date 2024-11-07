@@ -3,6 +3,37 @@
   max-width: 1000px;
 }
 
+.video-left-button {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+
+}
+
+.video-right-button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+
+.video-button {
+  border: 1px solid #f6bc16;
+  color: #f6bc16;
+  transition: all ease-in 100ms;
+}
+
+.video-button:hover {
+  background: linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828);
+  color: white;
+}
+
+
+
+
+
 @media (max-width: 1440px) {
   .video-container {
     max-width: 500px;

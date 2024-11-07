@@ -15,13 +15,15 @@ export default function FooterTwo() {
               <div className="col-auto">
                 <div className="row y-gap-20 items-center">
                   <div className="col-auto">
-                    <i className="icon-headphone text-50"></i>
+                    <i className="icon-headphone text-50  hero-heading"></i>
                   </div>
 
                   <div className="col-auto">
-                    <div className="text-20 fw-500">
-                      Speak to our expert at
-                      <span className="">0-000-000-0000</span>
+                    <div className="text-20 fw-500  hero-heading">
+                      Speak to our expert at{" "}
+                      <span className="text-gradient-vivid-orange">
+                        0-000-000-0000
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -29,7 +31,9 @@ export default function FooterTwo() {
 
               <div className="col-auto">
                 <div className="footerSocials">
-                  <div className="footerSocials__title">Follow Us</div>
+                  <div className="footerSocials__title  hero-heading">
+                    Follow Us
+                  </div>
 
                   <div className="footerSocials__icons">
                     <Socials />
@@ -42,7 +46,9 @@ export default function FooterTwo() {
           <div className="footer__content">
             <div className="row y-gap-40 justify-between">
               <div className="col-lg-4 col-md-6">
-                <h4 className="text-20 fw-500">Contact</h4>
+                <h4 className="text-20 fw-500 text-gradient-vivid-orange">
+                  Contact
+                </h4>
 
                 <div className="y-gap-10 mt-20">
                   <a className="d-block" href="#">
@@ -57,7 +63,9 @@ export default function FooterTwo() {
               <FooterLinks />
 
               <div className="col-lg-3 col-md-6">
-                <h4 className="text-20 fw-500">Newsletter</h4>
+                <h4 className="text-20 fw-500 text-gradient-vivid-orange">
+                  Newsletter
+                </h4>
                 <p className="mt-20">
                   Subscribe to the free newsletter and stay up to date
                 </p>

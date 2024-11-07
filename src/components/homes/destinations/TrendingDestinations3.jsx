@@ -17,6 +17,17 @@ export default function TrendingDestinations3() {
               Trending destinations
             </h2>
           </div>
+          <div className="col-auto">
+            <Link
+              to="#"
+              data-aos="fade-up"
+              data-aos-delay=""
+              className="buttonArrow d-flex items-center "
+            >
+              <span>See all</span>
+              <i className="icon-arrow-top-right text-16 ml-10"></i>
+            </Link>
+          </div>
         </div>
 
         <div
@@ -33,6 +44,7 @@ export default function TrendingDestinations3() {
 
                 <div className="featureCard__content">
                   <h3 className="text-16 fw-500 text-white">{elm.title}</h3>
+                  <p className="text-white lh-16">{elm.tourCount}+ Tours</p>
                 </div>
               </Link>
             </div>

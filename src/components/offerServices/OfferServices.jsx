@@ -8,7 +8,14 @@ export default function OfferServices() {
       <div className="container">
         <div className="row">
           <div className="col-lg-6 col-md-7 offer-service-text">
-            <div className="tag">What We Offer</div>
+            <div
+              className="tag"
+              style={{
+                color: "white",
+              }}
+            >
+              What We Offer
+            </div>
             <h1 className="text-gradient-vivid-orange">
               Baron's Exclusive Services
             </h1>

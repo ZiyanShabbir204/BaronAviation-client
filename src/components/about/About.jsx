@@ -8,8 +8,20 @@ export default function About() {
           <div className="travel-partner-container">
             <h1 className="travel-partner-number">O1</h1>
             <div className="travel-partner-text">
-              <p>Luxury</p>
-              <p>Travel Partner </p>
+              <p
+                style={{
+                  lineHeight: 1.2,
+                }}
+              >
+                LUXURY
+              </p>
+              <p
+                style={{
+                  lineHeight: 1,
+                }}
+              >
+                Travel Partner{" "}
+              </p>
             </div>
           </div>
         </div>

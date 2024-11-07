@@ -449,36 +449,43 @@ export const destinationCards2 = [
     id: 2,
     title: "Islamabad",
     imgSrc: "/img/places/islamabad.jpg",
+    tourCount: 120,
   },
   {
     id: 3,
     title: "Lahore",
     imgSrc: "/img/places/lahore.jpg",
+    tourCount: 80,
   },
   {
     id: 4,
     title: "Faisalabad",
     imgSrc: "/img/places/faisalbad.jpg",
+    tourCount: 180,
   },
   {
     id: 5,
     title: "Gujranwala",
     imgSrc: "/img/places/gujranwala.jpeg",
+    tourCount: 220,
   },
   {
     id: 6,
     title: "Multan",
     imgSrc: "/img/places/multan.jpg",
+    tourCount: 50,
   },
   {
     id: 7,
     title: "Quetta",
     imgSrc: "/img/places/quetta.jpg",
+    tourCount: 190,
   },
   {
     id: 8,
     title: "Swat",
     imgSrc: "/img/places/sawt.jpg",
+    tourCount: 250,
   },
 ];
 
