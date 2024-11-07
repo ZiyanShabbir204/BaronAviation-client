@@ -1,6 +1,6 @@
 .about-grid-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: 240px 240px repeat(4, 1fr);
     grid-template-rows: 1fr auto;
     gap: 10px;
     column-gap: 20px;
@@ -22,10 +22,12 @@
 
 .about-text-heading {
     font-size: 50px;
+    line-height: 1;
+    margin-bottom: 5px;
 }
 
 .about-text-para {
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 20px;
 
 }
@@ -42,7 +44,7 @@
     position: relative;
     padding-left: 30px;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .bullet-points li::before {
@@ -59,8 +61,8 @@
 }
 
 .perk-container {
-    padding: 30px 20px;
-    border-radius: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
     background: linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828);
 
 }
@@ -76,7 +78,7 @@
     position: relative;
     padding-left: 30px;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 15px;
     width: 80%;
 }
 

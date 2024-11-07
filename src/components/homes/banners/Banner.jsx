@@ -21,11 +21,9 @@ export default function Banner() {
               zIndex: -1, // Place behind other elements
             }}
           >
-            <source src="/video/banner.mp4" type="video/mp4" />
+            <source src="/video/banner-2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <img src="/img/cta/2/shape.svg" alt="image" />
-          <img src="/img/cta/2/shape2.svg" alt="image" />
         </div>
       </div>
 

@@ -23,7 +23,6 @@ const metadata = {
 export default function HomePage6() {
   return (
     <>
-      
       <main>
         <Header5 />
         <Hero6 />

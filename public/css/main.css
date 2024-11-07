@@ -3346,6 +3346,10 @@ h6 {
 
 }
 
+.background-dark-gray {
+  background: var(--color-dark-gray);
+}
+
 .button-gradient {
   background: linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828);
 
@@ -5573,6 +5577,7 @@ h6 {
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 12px;
+  height: 175px;
 }
 
 .featureCard.-type-6 .featureCard__image::after {
@@ -14738,12 +14743,12 @@ table.table-4.-border-bottom tbody>tr {
 }
 
 .toTopButton svg {
-  fill: var(--color-accent-1);
+  fill: var(--color-vivid-orange);
   transition: 0.2s;
 }
 
 .toTopButton:hover {
-  background-color: var(--color-accent-1);
+  background: linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828);
 }
 
 .toTopButton:hover svg {

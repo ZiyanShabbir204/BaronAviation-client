@@ -288,7 +288,9 @@ const FlightRequestMenu = () => {
                       alignItems="center"
                       justifyContent="space-between"
                     >
-                      <Typography variant="subtitle1">Children</Typography>
+                      <Typography variant="subtitle1">
+                        Kid (1–10 years)
+                      </Typography>
                       <div className="d-flex align-items-center">
                         <IconButton
                           onClick={() => handleDecrease(setChildren, children)}

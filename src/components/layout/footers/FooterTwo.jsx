@@ -5,11 +5,9 @@ import Socials from "../components/Socials";
 
 export default function FooterTwo() {
   return (
-    <footer className="footer -type-1 -dark bg-dark-1 text-white">
+    <footer className="footer -type-1 -dark background-dark-gray text-white">
       <div className="footer__main">
-        <div className="footer__bg">
-          <img src="/img/footer/1/bg.svg" alt="image" />
-        </div>
+        <div className="footer__bg"></div>
 
         <div className="container">
           <div className="footer__info">
@@ -68,20 +66,6 @@ export default function FooterTwo() {
                   <input type="Email" placeholder="Your email address" />
                   <button>Send</button>
                 </div>
-
-                <h4 className="text-20 fw-500 mt-30">Mobile Apps</h4>
-
-                <div className="mt-10">
-                  <a className="d-flex items-center" href="#">
-                    <i className="icon-apple text-16 mr-10"></i>
-                    iOS App
-                  </a>
-
-                  <a className="d-flex items-center mt-10" href="#">
-                    <i className="icon-android text-16 mr-10"></i>
-                    Android App
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -92,7 +76,9 @@ export default function FooterTwo() {
         <div className="footer__bottom">
           <div className="row y-gap-5 justify-between items-center">
             <div className="col-auto">
-              <div>© COPYRIGHT THE BARON AVIATION {new Date().getFullYear()}</div>
+              <div>
+                © COPYRIGHT THE BARON AVIATION {new Date().getFullYear()}
+              </div>
             </div>
 
             <div className="col-auto">
