@@ -84,7 +84,7 @@ export default function FooterTwo() {
         <div className="footer__bottom">
           <div className="row y-gap-5 justify-between items-center">
             <div className="col-auto">
-              <div>
+              <div className="text-gradient-vivid-orange">
                 © COPYRIGHT THE BARON AVIATION {new Date().getFullYear()}
               </div>
             </div>
