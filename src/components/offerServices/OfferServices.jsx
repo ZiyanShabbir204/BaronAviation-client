@@ -52,15 +52,18 @@ export default function OfferServices() {
                   <Swiper
                     spaceBetween={30}
                     className="w-100"
-                    style={{ maxWidth: "100%" }}
+                    style={{ maxWidth: "80%" }}
                     modules={[EffectCards]}
                     effect="cards"
+                    centeredSlides
                     grabCursor={true}
+                    
                   >
                     {testimonialsFive.map((elm, i) => (
                       <SwiperSlide key={i}>
-                        <div className="testimonials -type-2 shadow-1 bg-white rounded-24 pt-50 px-40 pb-30">
-                          <div className="d-flex items-center justify-between">
+                        <div className="testimonials -type-2 shadow-1 bg-white rounded-24 ">
+                        <img src={elm.img} alt="image" />
+                          {/* <div className="d-flex items-center justify-between">
                             <div className="text-18 fw-500 text-accent-1">
                               {elm.comment}
                             </div>
@@ -96,7 +99,7 @@ export default function OfferServices() {
                               </div>
                               <div className="lh-16">{elm.role}</div>
                             </div>
-                          </div>
+                          </div> */}
                         </div>
                       </SwiperSlide>
                     ))}
