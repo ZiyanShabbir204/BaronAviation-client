@@ -19,7 +19,7 @@ export default function BlogSinglePage() {
 
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
 
       <main>
         <Header1 />

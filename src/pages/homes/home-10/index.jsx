@@ -14,6 +14,16 @@ import Header9 from "@/components/layout/header/Header9";
 import React from "react";
 
 import MetaComponent from "@/components/common/MetaComponent";
+import BrandsTwo from "@/components/homes/brands/BrandsTwo";
+import About from "@/components/about/About";
+import FlightRequestMenu from "@/components/flightRequest/FlightRequestMenu";
+import Tour1 from "@/components/homes/tours/Tour1";
+import FeaturesOne from "@/components/homes/features/FeaturesOne";
+import OfferServices from "@/components/offerServices/OfferServices";
+import Banner from "@/components/homes/banners/Banner";
+import TrendingDestinations3 from "@/components/homes/destinations/TrendingDestinations3";
+import FooterTwo from "@/components/layout/footers/FooterTwo";
+import YoutubeVideo from "@/components/youtubeVideo/YoutubeVideo";
 
 const metadata = {
   title: "Home-1 || ViaTour - Travel & Tour Reactjs Template",
@@ -23,11 +33,20 @@ const metadata = {
 export default function HomePage10() {
   return (
     <>
-      <MetaComponent meta={metadata} />
       <main>
         <Header9 />
         <Hero10 />
-        <Tour2 />
+        <FlightRequestMenu />
+        <BrandsTwo />
+        <About />
+        <FeaturesOne />
+        <Banner />
+        <OfferServices />
+        <TrendingDestinations3 />
+        <YoutubeVideo />
+        <FooterTwo />
+
+        {/* <Tour2 />
         <Features8 />
         <Features9 />
         <TrendingDestinations4 />
@@ -37,7 +56,7 @@ export default function HomePage10() {
         <TestimonialsSix />
         <ArticlesOne />
         <Banner15 />
-        <FooterFour />
+        <FooterFour /> */}
       </main>
     </>
   );

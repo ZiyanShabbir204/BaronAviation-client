@@ -13,7 +13,7 @@ const metadata = {
 export default function BookingPage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Header1 />
         <BookingPages />

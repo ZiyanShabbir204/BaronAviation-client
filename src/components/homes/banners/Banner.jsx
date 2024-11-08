@@ -5,12 +5,25 @@ export default function Banner() {
   return (
     <section className="cta -type-2">
       <div className="cta__bg">
-        <img src="/img/cta/2/bg.png" alt="image" />
-
         <div className="cta__image">
-          <img src="/img/cta/2/1.png" alt="image" />
-          <img src="/img/cta/2/shape.svg" alt="image" />
-          <img src="/img/cta/2/shape2.svg" alt="image" />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              zIndex: -1, // Place behind other elements
+            }}
+          >
+            <source src="/video/banner-2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
 
@@ -23,12 +36,15 @@ export default function Banner() {
                 data-aos-delay=""
                 className="text-40 md:text-30  lh-13"
               >
-                Grab up to <span className="text-accent-1">35% off</span>
-                <br className="lg:d-none" />
-                on your favorite
-                <br className="lg:d-none" />
-                Destination
+                Enjoy <span className="text-vivid-orange"> 10% off</span> your
+                first flight with Baron
               </h2>
+
+              <p data-aos="fade-up" data-aos-delay="" className="mt-10">
+                Use promo code{" "}
+                <span className="text-vivid-orange"> BaronAviator10 </span>to
+                unlock your elite experience.
+              </p>
 
               <p data-aos="fade-up" data-aos-delay="" className="mt-10">
                 Limited time offer, don't miss the opportunity
@@ -38,7 +54,7 @@ export default function Banner() {
                 <button
                   data-aos="fade-right"
                   data-aos-delay=""
-                  className="button -md -dark-1 bg-accent-1 text-white"
+                  className="button -md -dark-1 button-gradient text-white"
                 >
                   <Link to="/tour-list-1">
                     Book Now

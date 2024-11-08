@@ -21,7 +21,7 @@ export default function TourSinglePage2() {
 
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
 
       <main>
         <Header1 />

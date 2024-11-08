@@ -11,7 +11,7 @@ const metadata = {
 export default function DBBookingPage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <DbBooking />
       </main>

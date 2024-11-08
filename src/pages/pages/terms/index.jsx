@@ -14,7 +14,7 @@ const metadata = {
 export default function TermsPage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Header1 />
         <PageHeader />

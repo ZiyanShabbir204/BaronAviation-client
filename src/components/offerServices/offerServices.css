@@ -1,0 +1,9 @@
+@media (max-width: 991px) {
+    .offer-service-image {
+        display: none;
+    }
+
+    .offer-service-text {
+        width: 100% !important;
+    }
+}

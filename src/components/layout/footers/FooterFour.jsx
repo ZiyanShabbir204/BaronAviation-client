@@ -19,7 +19,7 @@ export default function FooterFour() {
                   <div className="col-auto">
                     <div className="text-20 fw-500 text-white text-white">
                       Speak to our expert at
-                      <span className="text-white">1-800-453-6744</span>
+                      <span className="text-white">0-000-000-0000</span>
                     </div>
                   </div>
                 </div>
@@ -53,7 +53,7 @@ export default function FooterFour() {
                       Australia.
                     </a>
                     <a className="d-block" href="#">
-                      hi@viatours.com
+                      sales@baronaviation.com
                     </a>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ export default function FooterFour() {
           <div className="footer__bottom">
             <div className="row y-gap-5 justify-between items-center">
               <div className="col-auto text-white">
-                <div>© Copyright Viatours {new Date().getFullYear()}</div>
+                <div>© COPYRIGHT THE BARON AVIATION {new Date().getFullYear()}</div>
               </div>
 
               <div className="col-auto">

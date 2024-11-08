@@ -198,12 +198,12 @@
 }
 
 .activeMenu {
-  color: #E5A812 !important;
+  color: #f6bc16 !important;
 }
 
 
 .rmdp-range {
-  background-color: #E5A812 !important;
+  background-color: #f6bc16 !important;
 }
 
 .rmdp-today span {
@@ -211,15 +211,15 @@
 }
 
 .rmdp-day:not(.rmdp-disabled, .rmdp-day-hidden) span:hover {
-  background-color: #E5A812 !important;
+  background-color: #f6bc16 !important;
 }
 
 .rmdp-week-day {
-  color: #E5A812 !important;
+  color: #f6bc16 !important;
 }
 
 .rmdp-arrow {
-  border-color: #E5A812 !important;
+  border-color: #f6bc16 !important;
 }
 
 @media (max-width:1150px) {
@@ -350,6 +350,10 @@
   .header.-type-9 .headerMobile__left,
   .header.-type-10 .headerMobile__left {
     display: block !important;
+  }
+
+  .link-container {
+    display: none;
   }
 }
 

@@ -1,0 +1,43 @@
+.request-menu-left{
+    width: 60%;
+    border-radius: 0px 20px 20px 0px;
+    background-image: url("/img/helicopter/heli-4.jpeg");
+    background-position: center;
+    background-size: cover;
+    
+}
+.requet-menu{
+    display: flex;
+    gap: 10px;
+    margin: 60px 0px;
+
+}
+
+.request-menu-right{
+    display: flex;
+    flex-direction: column;
+    gap: 20px  !important;
+
+}
+.info-menu{
+    display: flex;
+    gap: 20px;
+}
+.location-menu{
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 767px) {
+    .info-menu, .location-menu {
+        flex-direction: column;
+    }
+
+  .request-menu-left {
+    display: none;
+  }
+}
+.datePicker{
+    display: flex;
+    flex-direction: row-reverse ;
+}

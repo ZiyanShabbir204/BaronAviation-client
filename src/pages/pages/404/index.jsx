@@ -11,7 +11,7 @@ const metadata = {
 export default function NotFoundPage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Header1 />
         <section className="nopage mt-header">

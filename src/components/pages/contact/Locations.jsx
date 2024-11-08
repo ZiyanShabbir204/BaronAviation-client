@@ -3,7 +3,7 @@ const locations = [
     id: 1,
     title: "North America",
     address: "1 Dundas St W Suite 2500 Toronto ON M5G 1Z3, Canada",
-    contact: "1-800-453-6744 canada@tourz.com",
+    contact: "0-000-000-0000 canada@tourz.com",
   },
   {
     id: 2,

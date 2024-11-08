@@ -1,4 +1,6 @@
-import { useNavigate } from "react-router-dom";
+import FlightRequestMenu from "@/components/flightRequest/FlightRequestMenu";
+import { Link, useNavigate } from "react-router-dom";
+import { scroller } from "react-scroll";
 
 const tags = [
   {
@@ -24,74 +26,92 @@ const tags = [
 ];
 export default function Hero10() {
   const navigate = useNavigate();
+  const scrollToBookNow = () => {
+    scroller.scrollTo("bookNow", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+      offset: -window.innerHeight / 3, // Adjusts the offset to center
+    });
+  };
+
   return (
-    <section className="hero -type-10">
+    <section
+      className="hero -type-10"
+      style={{ position: "relative", overflow: "hidden" }}
+    >
       <div className="hero__bg">
-        <img src="/img/hero/10/1.jpg" alt="background" />
+        {/* <img src="/img/hero/10/1.jpg" alt="background" /> */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: -1, // Place behind other elements
+          }}
+        >
+          <source src="/video/background.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.3)", // 10% black overlay
+            zIndex: -1,
+          }}
+        ></div>
       </div>
 
       <div className="container">
         <div className="row justify-center text-center">
           <div className="col-xl-9 col-lg-10">
             <div className="hero__content">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="250"
+                className="hero__text text-white text-rajdhani"
+              >
+                READY TO FLY LUXURY?
+              </div>
               <h1
                 data-aos="fade-up"
                 data-aos-delay="100"
-                className="hero__title text-white"
+                className="hero__title text-white hero-heading"
+                style={{
+                  fontSize: "60px",
+                }}
               >
-                Choose a Country For Your <br className="lg:d-none" />
-                Next Adventure?
+                WHERE PRESTIGE TAKES FLIGHT
               </h1>
 
               <div
                 data-aos="fade-up"
                 data-aos-delay="250"
-                className="hero__text text-white mt-20"
+                className="hero__text text-white text-rajdhani"
               >
-                From local escapes to far-flung adventures
+                Travel in Executive Luxury with Baron
               </div>
 
-              <div className="hero__search">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10.0001 4.29932C7.95277 4.29932 6.28711 5.96498 6.28711 8.01232C6.28711 10.0597 7.95277 11.7253 10.0001 11.7253C12.0475 11.7253 13.7131 10.0597 13.7131 8.01232C13.7131 5.96498 12.0475 4.29932 10.0001 4.29932ZM10.0001 10.162C8.8148 10.162 7.85047 9.19764 7.85047 8.01232C7.85047 6.82701 8.8148 5.86268 10.0001 5.86268C11.1854 5.86268 12.1498 6.82701 12.1498 8.01232C12.1498 9.19764 11.1854 10.162 10.0001 10.162Z"
-                    fill="#05073C"
-                  />
-                  <path
-                    d="M10.0006 0C5.58258 0 1.98828 3.59434 1.98828 8.01231V8.23379C1.98828 10.4682 3.2693 13.0719 5.79586 15.9726C7.62742 18.0754 9.4334 19.5416 9.50934 19.603L10.0006 20L10.4918 19.6031C10.5678 19.5417 12.3738 18.0754 14.2053 15.9726C16.7318 13.0719 18.0129 10.4682 18.0129 8.23383V8.01234C18.0129 3.59434 14.4186 0 10.0006 0ZM16.4495 8.23383C16.4495 12.0098 11.5843 16.5807 10.0006 17.9683C8.41648 16.5803 3.55164 12.0095 3.55164 8.23383V8.01234C3.55164 4.45641 6.44465 1.5634 10.0006 1.5634C13.5565 1.5634 16.4495 4.45641 16.4495 8.01234V8.23383Z"
-                    fill="#05073C"
-                  />
-                </svg>
-
-                <input type="text" placeholder="Search destinations" />
-
-                <button onClick={() => navigate("/tour-list-5")}>
-                  <i className="icon-search"></i>
-                </button>
-              </div>
-
-              <div data-aos="fade-up" data-aos-delay="300" className="heroTags">
-                <div className="heroTags__title text-white">
-                  Or browse the selected type
-                </div>
-
-                <div className="heroTags__tags">
-                  {tags.map((elm, i) => (
-                    <div key={i}>
-                      <button>
-                        <i className={` ${elm.iconClass} text-26"`}></i>
-                        <span>{elm.label}</span>
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <button
+                data-aos="fade-up"
+                data-aos-delay="250"
+                className="button -md  button-gradient text-white fly-btn"
+                to="bookNow"
+                onClick={scrollToBookNow}
+              >
+                LET'S FLY
+              </button>
             </div>
           </div>
         </div>

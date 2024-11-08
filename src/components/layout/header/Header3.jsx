@@ -17,7 +17,7 @@ export default function Header3() {
 
   // Add a class to the element when scrolled 50px
   const handleScroll = () => {
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 2) {
       setAddClass(true);
     } else {
       setAddClass(false);
@@ -57,8 +57,8 @@ export default function Header3() {
 
             {/* <Menu /> */}
           </div>
-          {/* 
-          <div className="headerMobile__right">
+          
+          {/* <div className="headerMobile__right">
             <button
               onClick={() => pageNavigate("/tour-list-1")}
               className="d-flex"
@@ -75,17 +75,28 @@ export default function Header3() {
           </div> */}
 
           <div className="header__right">
-            {/* <div className="ml-30">
-              <Currency />
+            <div className="link-container">
+           
+            <Link to="#" className="ml-20 text-white hover-vivid-orange ">
+              Home
+            </Link>
+            <Link to="#" className="ml-20 text-white hover-vivid-orange">
+              About Us
+            </Link>
+
+            <Link to="#" className="ml-20 text-white hover-vivid-orange">
+              Contact
+            </Link>
+            <Link to="#" className="ml-20 text-white hover-vivid-orange">
+              Our Blogs
+            </Link>
+
             </div>
-
-            <Link to="/help-center" className="ml-20">
-              Help
-            </Link> */}
-
+            
+            <div className="d-flex  width-[100%] ">
             <Link
               to="/register"
-              className="button -sm -outline-black   rounded-200 text-black ml-30 bg-vivid-orange"
+              className="button -sm -outline-black rounded-200 text-black ml-30 bg-vivid-orange"
             >
               Sign up
             </Link>
@@ -96,6 +107,10 @@ export default function Header3() {
             >
               Log in
             </Link>
+
+            </div>
+
+            
           </div>
         </div>
       </header>

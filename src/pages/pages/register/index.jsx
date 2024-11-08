@@ -14,7 +14,7 @@ const metadata = {
 export default function RegisterPage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Header3 />
         <Register />

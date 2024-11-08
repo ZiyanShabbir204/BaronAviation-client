@@ -5,7 +5,7 @@ import { TextField, Button, ThemeProvider, createTheme } from "@mui/material";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#E5A812", // Adjust as per requirement
+      main: "#f6bc16", // Adjust as per requirement
     },
   },
   components: {
@@ -17,10 +17,10 @@ const theme = createTheme({
             borderColor: "white", // Set default border color to white
           },
           "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#E5A812", // Set hover border color
+            borderColor: "#f6bc16", // Set hover border color
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#E5A812", // Set focused border color
+            borderColor: "#f6bc16", // Set focused border color
           },
         },
       },
@@ -75,7 +75,10 @@ export default function Login() {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="border-1 rounded-12 px-60 py-60 md:px-25 md:py-30 bg-gray">
+              <form
+                onSubmit={handleSubmit}
+                className="border-1 rounded-12 px-60 py-60 md:px-25 md:py-30 bg-gray"
+              >
                 <TextField
                   id="username"
                   label="Username"
@@ -85,7 +88,6 @@ export default function Login() {
                   onChange={(e) => setUsername(e.target.value)}
                   error={Boolean(errors.username)}
                   helperText={errors.username}
-        
                   InputProps={{
                     style: { color: "white" },
                     classes: {
@@ -93,7 +95,7 @@ export default function Login() {
                     },
                   }}
                   InputLabelProps={{
-                    style: { color: "#E5A812" },
+                    style: { color: "#f6bc16" },
                   }}
                 />
 
@@ -114,7 +116,7 @@ export default function Login() {
                     },
                   }}
                   InputLabelProps={{
-                    style: { color: "#E5A812" },
+                    style: { color: "#f6bc16" },
                   }}
                   className="mt-20"
                 />

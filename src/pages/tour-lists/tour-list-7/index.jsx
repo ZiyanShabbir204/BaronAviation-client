@@ -17,7 +17,7 @@ const metadata = {
 export default function TourListPage7() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Header1 />
         <Hero1 />

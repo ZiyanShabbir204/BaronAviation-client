@@ -12,7 +12,7 @@ const metadata = {
 export default function TourListPage8() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Header1 />
         <TourList6 />

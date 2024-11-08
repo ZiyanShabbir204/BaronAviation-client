@@ -14,7 +14,7 @@ const metadata = {
 export default function LoginPage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      {/*  */}
       <main>
         <Header3 />
         <Login />

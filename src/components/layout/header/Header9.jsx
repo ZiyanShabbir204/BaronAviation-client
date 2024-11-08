@@ -47,13 +47,16 @@ export default function Header9() {
             </button>
           </div>
 
-          <div className="header__left">
+          <div className="header__left header_left-flex">
             <div className="header__logo">
-              <Link to="/" className="header__logo">
-                <img src="/img/general/logo-light.svg" alt="logo icon" />
-              </Link>
+            <Link to="/" className="header__logo baron-logo">
+              <img src="/img/hero/3/logo.PNG" alt="logo icon" />
+            </Link>
+            <Link to="/" className="header__logo baron-text">
+              <img src="/img/hero/3/logo-text.PNG" alt="logo icon" />
+            </Link>
 
-              <div className="text-white">
+              <div className="text-white" style={{flex:1}}>
                 <Menu />
               </div>
             </div>
@@ -76,21 +79,13 @@ export default function Header9() {
           </div>
 
           <div className="header__right">
-            <div className="text-white">
-              <Currency
-                parentClass={
-                  "headerDropdown -hover-light text-white js-form-dd"
-                }
-              />
-            </div>
-
-            <Link to="/register" className="text-white ml-10">
+            <Link to="/register"className="button -sm  button-gradient text-white" >
               Sign up
             </Link>
 
             <Link
               to="/login"
-              className="button -sm -outline-white text-white rounded-200 ml-30"
+              className="button -sm button-gradient text-white ml-30"
             >
               Log in
             </Link>

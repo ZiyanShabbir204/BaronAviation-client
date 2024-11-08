@@ -19,7 +19,7 @@ const metadata = {
 export default function DestinationsPage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Header1 />
         <Hero />

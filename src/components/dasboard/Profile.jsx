@@ -220,7 +220,7 @@ export default function Profile() {
             </div>
 
             <div className="text-center pt-30">
-              © Copyright Viatours {new Date().getFullYear()}
+              © COPYRIGHT THE BARON AVIATION {new Date().getFullYear()}
             </div>
           </div>
         </div>

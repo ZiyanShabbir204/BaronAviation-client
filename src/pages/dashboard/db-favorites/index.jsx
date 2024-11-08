@@ -11,7 +11,7 @@ const metadata = {
 export default function DBFavoritesPage() {
   return (
     <>
-      <MetaComponent meta={metadata} />
+      
       <main>
         <Favorites />
       </main>
