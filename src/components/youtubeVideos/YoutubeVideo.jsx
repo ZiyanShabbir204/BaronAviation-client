@@ -1,9 +1,13 @@
 import ModalVideoComponent from "@/components/common/ModalVideo";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function YoutubeVideo({ videoId, thumbnail }) {
+export default function YoutubeVideo({ videoId, thumbnail, onToggle }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    onToggle(isOpen);
+  }, [isOpen]);
   return (
     <>
       <div className="video relative container">

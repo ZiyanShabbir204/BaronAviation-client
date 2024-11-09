@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { tourData } from "@/data/tours";
@@ -8,6 +8,7 @@ import "./style.css";
 import { videoData } from "./data";
 
 export default function YoutubeVideos() {
+  const [autoplay, setAutoPlay] = useState(true);
   return (
     <>
       <section className="layout-pt-xl layout-pb-xl">
@@ -37,13 +38,16 @@ export default function YoutubeVideos() {
                     }}
                     modules={[Navigation, Pagination, Autoplay]}
                     loop
-                    autoplay
+                    autoplay={false}
                   >
                     {videoData.map((elm, i) => (
                       <SwiperSlide key={i}>
                         <YoutubeVideo
                           videoId={elm.videoId}
                           thumbnail={elm.thumbnail}
+                          onToggle={(open) => {
+                            setAutoPlay(!open);
+                          }}
                         />
                       </SwiperSlide>
                     ))}
@@ -70,7 +74,7 @@ export default function YoutubeVideos() {
               modules={[Navigation, Pagination, Autoplay]}
               slidesPerView={5}
               loop
-              autoplay
+              autoplay={false}
               centeredSlides
               breakpoints={{
                 300: {
