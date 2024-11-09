@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { tourData } from "@/data/tours";
 
 import YoutubeVideo from "./YoutubeVideo";
@@ -35,8 +35,9 @@ export default function YoutubeVideos() {
                       prevEl: ".js-slider1-prev",
                       nextEl: ".js-slider1-next",
                     }}
-                    modules={[Navigation, Pagination]}
+                    modules={[Navigation, Pagination, Autoplay]}
                     loop
+                    autoplay
                   >
                     {videoData.map((elm, i) => (
                       <SwiperSlide key={i}>
@@ -66,9 +67,10 @@ export default function YoutubeVideos() {
                 prevEl: ".js-slider1-prev",
                 nextEl: ".js-slider1-next",
               }}
-              modules={[Navigation, Pagination]}
+              modules={[Navigation, Pagination, Autoplay]}
               slidesPerView={5}
               loop
+              autoplay
               centeredSlides
               breakpoints={{
                 300: {
