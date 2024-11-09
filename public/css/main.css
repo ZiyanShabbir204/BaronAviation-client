@@ -5738,6 +5738,18 @@ h6 {
   z-index: -1;
 }
 
+.pageHeader.-type-1 .pageHeader__bg .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust color and opacity as needed */
+  pointer-events: none;
+  /* Ensures the overlay doesn’t block interactions */
+}
+
 @media (max-width: 991px) {
   .pageHeader.-type-1 .pageHeader__bg {
     right: 0;
@@ -5776,9 +5788,8 @@ h6 {
 
 .pageHeader.-type-1 .pageHeader__title {
   font-size: 70px;
-  font-weight: 600;
+  font-weight: 700 !important;
   line-height: 1.2;
-  color: white;
 }
 
 @media (max-width: 991px) {
@@ -5796,6 +5807,7 @@ h6 {
 .pageHeader.-type-1 .pageHeader__text {
   color: white;
   margin-top: 10px;
+  font-size: 22px;
 }
 
 .pageHeader.-type-2 {
@@ -6498,7 +6510,8 @@ h6 {
   background-clip: text;
   color: transparent;
 }
-.bg-gradient-vivid-orange{
+
+.bg-gradient-vivid-orange {
   background: linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828);
 }
 

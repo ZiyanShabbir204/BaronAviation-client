@@ -5,7 +5,7 @@ export default function ModalVideoComponent({ isOpen, setIsOpen, videoId }) {
     <ModalVideo
       channel="youtube"
       isOpen={isOpen}
-      videoId="L61p2uyiMSo"
+      videoId={videoId}
       onClose={() => setIsOpen(false)}
     />
   );

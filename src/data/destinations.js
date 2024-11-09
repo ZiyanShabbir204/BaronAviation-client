@@ -277,32 +277,32 @@ export const destinationsSix = [
   {
     id: 1,
     title: "Cruises",
-    imgSrc: "/img/features/1/1.png",
+    imgSrc: "/img/helicopter/heli-1.jpeg",
   },
   {
     id: 2,
     title: "Beach Tours",
-    imgSrc: "/img/features/1/2.png",
+    imgSrc: "/img/helicopter/heli-2.jpeg",
   },
   {
     id: 3,
     title: "City Tours",
-    imgSrc: "/img/features/1/3.png",
+    imgSrc: "/img/helicopter/heli-3.jpeg",
   },
   {
     id: 4,
     title: "Museum Tour",
-    imgSrc: "/img/features/1/4.png",
+    imgSrc: "/img/helicopter/heli-4.jpeg",
   },
   {
     id: 5,
     title: "Food",
-    imgSrc: "/img/features/1/5.png",
+    imgSrc: "/img/helicopter/heli-5.jpeg",
   },
   {
     id: 6,
     title: "Hiking",
-    imgSrc: "/img/features/1/6.png",
+    imgSrc: "/img/helicopter/heli-6.jpeg",
   },
 ];
 

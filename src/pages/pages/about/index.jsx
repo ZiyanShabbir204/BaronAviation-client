@@ -26,25 +26,16 @@ const metadata = {
 export default function AboutPage() {
   return (
     <>
-      
       <main>
-        <Header9 />
+        <Header9 isSticky />
         <Hero />
         <Information />
         <Banner />
         <FeaturesOne />
-        <BannerTwo/>
-        <TourTypeOne/>
-        <BrandsTwo/>
-        <FooterTwo/>
-        {/* <div className="mt-60">
-          <FeturesTwo />
-        </div>
-        <TestimonialOne />
-        <BannerOne />
-        <Team />
-        <BrandsOne />
-        <FooterOne /> */}
+        <BannerTwo />
+        <TourTypeOne />
+        <BrandsTwo />
+        <FooterTwo />
       </main>
     </>
   );

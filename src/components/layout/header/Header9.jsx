@@ -6,7 +6,7 @@ import Menu from "../components/Menu";
 
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Header9() {
+export default function Header9({ isSticky }) {
   const navigate = useNavigate();
 
   const pageNavigate = (pageName) => {
@@ -35,7 +35,9 @@ export default function Header9() {
   return (
     <>
       <header
-        className={`header -type-10 js-header  ${addClass ? "-is-sticky" : ""}`}
+        className={`header -type-10 js-header  ${
+          addClass || isSticky ? "-is-sticky" : ""
+        }`}
       >
         <div className="header__container">
           <div className="headerMobile__left">
@@ -49,14 +51,14 @@ export default function Header9() {
 
           <div className="header__left header_left-flex">
             <div className="header__logo">
-            <Link to="/" className="header__logo baron-logo">
-              <img src="/img/hero/3/logo.PNG" alt="logo icon" />
-            </Link>
-            <Link to="/" className="header__logo baron-text">
-              <img src="/img/hero/3/logo-text.PNG" alt="logo icon" />
-            </Link>
+              <Link to="/" className="header__logo baron-logo">
+                <img src="/img/hero/3/logo.PNG" alt="logo icon" />
+              </Link>
+              <Link to="/" className="header__logo baron-text">
+                <img src="/img/hero/3/logo-text.PNG" alt="logo icon" />
+              </Link>
 
-              <div className="text-white" style={{flex:1}}>
+              <div className="text-white" style={{ flex: 1 }}>
                 <Menu />
               </div>
             </div>
@@ -79,7 +81,10 @@ export default function Header9() {
           </div>
 
           <div className="header__right">
-            <Link to="/register"className="button -sm  button-gradient text-white" >
+            <Link
+              to="/register"
+              className="button -sm  button-gradient text-white"
+            >
               Sign up
             </Link>
 

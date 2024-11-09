@@ -45,18 +45,6 @@ export default function HomePage10() {
         <TrendingDestinations3 />
         <YoutubeVideo />
         <FooterTwo />
-
-        {/* <Tour2 />
-        <Features8 />
-        <Features9 />
-        <TrendingDestinations4 />
-        <Features10 />
-        <Features11 />
-        <Banner14 />
-        <TestimonialsSix />
-        <ArticlesOne />
-        <Banner15 />
-        <FooterFour /> */}
       </main>
     </>
   );

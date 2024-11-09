@@ -10,10 +10,8 @@ export default function Menu() {
     <>
       <div className="xl:d-none ml-30">
         <div className="desktopNav">
-        
-
           <div className="desktopNav__item">
-            <Link to="#">Home</Link>
+            <Link to="/">Home</Link>
           </div>
           <div className="desktopNav__item">
             <Link to="/our-vision">Our Vision</Link>
@@ -28,7 +26,6 @@ export default function Menu() {
           <div className="desktopNav__item">
             <a href="#">Corporate</a>
           </div>
-
         </div>
       </div>
     </>
