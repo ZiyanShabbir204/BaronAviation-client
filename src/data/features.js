@@ -3,7 +3,7 @@ export const features = [
     id: 1,
     iconSrc: "/img/icon/heli-white.png",
     title: "Uncompromised Safety Standards",
-    text: "Baron prioritizes your safety with rigorous maintenance and expert pilots, ensuring every journey is secure and worry-free. Enjoy the experience with confidence",
+    text: "The Baron Aviation prioritizes your safety with rigorous maintenance and expert pilots, ensuring every journey is secure and worry-free. Enjoy the experience with confidence",
   },
   {
     id: 2,

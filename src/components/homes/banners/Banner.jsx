@@ -37,7 +37,7 @@ export default function Banner() {
                 className="text-40 md:text-30  lh-13"
               >
                 Enjoy <span className="text-vivid-orange"> 10% off</span> your
-                first flight with Baron
+                first flight with The Baron Aviation
               </h2>
 
               <p data-aos="fade-up" data-aos-delay="" className="mt-10">

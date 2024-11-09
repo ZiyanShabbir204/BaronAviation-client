@@ -21,15 +21,15 @@ export default function OfferServices() {
               What We Offer
             </div>
             <h1 className="text-gradient-vivid-orange">
-              Baron's Exclusive Services
+              The Baron Aviation Exclusive Services
             </h1>
             <p>
-              Experience aviation like never before with Baron’s exclusive
-              services, designed for those who demand the best. From
+              Experience aviation like never before with The Baron Aviation
+              exclusive services, designed for those who demand the best. From
               personalized flight itineraries to unparalleled comfort, we ensure
-              every detail of your journey is perfected. Trust Baron to
-              transform your travel experience into one of luxury and
-              sophistication
+              every detail of your journey is perfected. Trust The Baron
+              Aviation to transform your travel experience into one of luxury
+              and sophistication
             </p>
             <Services showServices={showServices} />
             <button
@@ -41,29 +41,28 @@ export default function OfferServices() {
               View {showServices === 6 ? "Less" : "All"} Services
             </button>
           </div>
-         
-            <div
-              data-aos="fade-up"
-              data-aos-delay=""
-              className="col-lg-5 col-md-5"
-            >
-              <div className="js-testimonials-slider-1">
-                <div className="swiper-wrapper">
-                  <Swiper
-                    spaceBetween={30}
-                    className="w-100"
-                    style={{ maxWidth: "80%" }}
-                    modules={[EffectCards]}
-                    effect="cards"
-                    centeredSlides
-                    grabCursor={true}
-                    
-                  >
-                    {testimonialsFive.map((elm, i) => (
-                      <SwiperSlide key={i}>
-                        <div className="testimonials -type-2 shadow-1 bg-white rounded-24 ">
+
+          <div
+            data-aos="fade-up"
+            data-aos-delay=""
+            className="col-lg-5 col-md-5"
+          >
+            <div className="js-testimonials-slider-1">
+              <div className="swiper-wrapper">
+                <Swiper
+                  spaceBetween={30}
+                  className="w-100"
+                  style={{ maxWidth: "80%" }}
+                  modules={[EffectCards]}
+                  effect="cards"
+                  centeredSlides
+                  grabCursor={true}
+                >
+                  {testimonialsFive.map((elm, i) => (
+                    <SwiperSlide key={i}>
+                      <div className="testimonials -type-2 shadow-1 bg-white rounded-24 ">
                         <img src={elm.img} alt="image" />
-                          {/* <div className="d-flex items-center justify-between">
+                        {/* <div className="d-flex items-center justify-between">
                             <div className="text-18 fw-500 text-accent-1">
                               {elm.comment}
                             </div>
@@ -100,18 +99,17 @@ export default function OfferServices() {
                               <div className="lh-16">{elm.role}</div>
                             </div>
                           </div> */}
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
 
-                <div className="pagination -type-1 justify-center pt-60 md:pt-40 js-testimonials-pagination">
-                  <div className="pagination__button"></div>
-                </div>
+              <div className="pagination -type-1 justify-center pt-60 md:pt-40 js-testimonials-pagination">
+                <div className="pagination__button"></div>
               </div>
             </div>
-          
+          </div>
         </div>
       </div>
     </section>

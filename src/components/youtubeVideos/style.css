@@ -1,0 +1,59 @@
+.js-section-slider,
+.thumbnail {
+    overflow: hidden;
+}
+
+.slider-container {
+    position: relative;
+
+}
+
+.navRegular__button {
+    position: absolute;
+    border: 1px solid #f6bc16;
+    color: #f6bc16;
+    transition: all ease-in 100ms;
+    background-color: transparent !important;
+}
+
+@media (max-width: 575px) {
+    .navRegular__button {
+        width: 25px;
+        height: 25px;
+    }
+
+}
+
+.navRegular__button:hover {
+    background: linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828);
+    color: white;
+}
+
+.js-slider1-prev {
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.js-slider1-next {
+    top: 50%;
+    right: 0%;
+    transform: translate(50%, -50%);
+}
+
+.thumbnail .swiper-slide-active {
+    /* border: 2px solid linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828); */
+    background-image: linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828);
+    padding: 3px;
+    /* Thickness of the border */
+    border-radius: 14px !important;
+    /* Optional: for rounded borders */
+    display: inline-block;
+}
+
+
+.thumbnail .swiper-slide,
+.thumbnail .swiper-slide img {
+    border-radius: 10px;
+    box-sizing: border-box;
+}

@@ -24,6 +24,7 @@ import Banner from "@/components/homes/banners/Banner";
 import TrendingDestinations3 from "@/components/homes/destinations/TrendingDestinations3";
 import FooterTwo from "@/components/layout/footers/FooterTwo";
 import YoutubeVideo from "@/components/youtubeVideo/YoutubeVideo";
+import YoutubeVideos from "@/components/youtubeVideos/YoutubeVideos";
 
 const metadata = {
   title: "Home-1 || ViaTour - Travel & Tour Reactjs Template",
@@ -43,7 +44,7 @@ export default function HomePage10() {
         <Banner />
         <OfferServices />
         <TrendingDestinations3 />
-        <YoutubeVideo />
+        <YoutubeVideos />
         <FooterTwo />
       </main>
     </>
