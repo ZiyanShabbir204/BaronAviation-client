@@ -109,7 +109,7 @@ function App() {
             <Route path="/blog-single/:id" element={<BlogSinglePage />} />
 
             <Route path="/destinations" element={<DestinationsPage />} />
-            <Route path="/about" element={<AboutPage />} />
+            <Route path="/our-vision" element={<AboutPage />} />
             <Route path="/help-center" element={<HelpCenterPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/login" element={<LoginPage />} />

@@ -3,9 +3,9 @@ import React from "react";
 
 export default function BannerTwo() {
   return (
-    <section className="layout-pt-xl">
+    <section className="">
       <div className="container">
-        <div className="bg-accent-1 py-50 px-50 rounded-12">
+        <div className="bg-gradient-vivid-orange py-50 px-50 rounded-12">
           <div className="row y-gap-20 justify-between items-center">
             <div className="col-auto">
               <h2
@@ -13,7 +13,7 @@ export default function BannerTwo() {
                 data-aos-delay=""
                 className="text-20 fw-500 text-white"
               >
-                Early Booking Discounts Up To 50%!
+                Experience Luxury in Flight
               </h2>
             </div>
 

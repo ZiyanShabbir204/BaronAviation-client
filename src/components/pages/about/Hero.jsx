@@ -12,11 +12,13 @@ export default function Hero() {
         <div className="row justify-center">
           <div className="col-12">
             <div className="pageHeader__content">
-              <h1 className="pageHeader__title">About Us</h1>
+              <h1 className="pageHeader__title">Our Vision</h1>
 
               <p className="pageHeader__text">
-                A tropical paradise made for animal lovers replete with monkey
-                caves, dog foundations, and dolphins in the wild.
+
+                <span className="text-gradient-vivid-orange">The Baron Aviation </span> aims to be the premier provider of luxury
+                helicopter experiences, delivering unmatched service for
+                discerning travelers.
               </p>
             </div>
           </div>
