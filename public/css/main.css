@@ -6498,6 +6498,9 @@ h6 {
   background-clip: text;
   color: transparent;
 }
+.bg-gradient-vivid-orange{
+  background: linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828);
+}
 
 @keyframes gradientAnimation {
   0% {

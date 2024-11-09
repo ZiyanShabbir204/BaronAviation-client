@@ -7,8 +7,8 @@ export default function Banner() {
   return (
     <>
       <section className=" layout-pt-xl">
-        <div className="video relative container">
-          <div className="video__bg">
+        <div className="video relative container" >
+          <div className="video__bg" id="learnMore">
             <img src="/img/misc/1.png" alt="image" className="rounded-12" />
           </div>
 

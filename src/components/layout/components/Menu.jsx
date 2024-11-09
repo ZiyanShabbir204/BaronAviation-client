@@ -16,7 +16,7 @@ export default function Menu() {
             <Link to="#">Home</Link>
           </div>
           <div className="desktopNav__item">
-            <Link to="#">Our Vision</Link>
+            <Link to="/our-vision">Our Vision</Link>
           </div>
 
           <div className="desktopNav__item">

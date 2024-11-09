@@ -14,13 +14,13 @@ export default function TourTypeOne() {
               data-aos-delay=""
               className="text-30 md:text-24"
             >
-              Popular things to do6{" "}
+              LUXURY FROM EVERY ANGLE{" "}
             </h2>
           </div>
 
           <div className="col-auto">
             <Link
-              to={"/tour-list-1"}
+              to={"#"}
               data-aos="fade-right"
               data-aos-delay=""
               className="buttonArrow d-flex items-center "
