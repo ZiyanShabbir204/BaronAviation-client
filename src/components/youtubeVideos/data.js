@@ -1,54 +1,47 @@
 export const videoData = [
   {
     id: 1,
-    thumbnail: "https://picsum.photos/id/1/1200/600",
-    videoId: "-EwLqTInwcI?si=_0eBdbpbrRSJGKfH",
+    thumbnail: "/img/video-thumbnails/1.png",
+    videoId: "TDSls2hCTPM?si=NesWtlGaX6zsSuyF",
   },
   {
     id: 2,
-    thumbnail: "https://picsum.photos/id/2/1200/600",
-    videoId: "-EwLqTInwcI?si=_0eBdbpbrRSJGKfH",
+    thumbnail: "/img/video-thumbnails/2.png",
+    videoId: "K2zXWJ8oUWw?si=bsysCnF9jBo-wDE6",
   },
   {
     id: 3,
-    thumbnail: "https://picsum.photos/id/3/1200/600",
-
-    videoId: "-EwLqTInwcI?si=_0eBdbpbrRSJGKfH",
+    thumbnail: "/img/video-thumbnails/3.png",
+    videoId: "eM2NqMKva-8?si=ezfwvAoZOxmoXt0N",
   },
   {
     id: 4,
-    thumbnail: "https://picsum.photos/id/4/1200/600",
-
-    videoId: "-EwLqTInwcI?si=_0eBdbpbrRSJGKfH",
+    thumbnail: "/img/video-thumbnails/4.png",
+    videoId: "8156cwZYhFM?si=twpM7DKt2o8-7B_b",
   },
   {
     id: 5,
-    thumbnail: "https://picsum.photos/id/5/1200/600",
-
-    videoId: "-EwLqTInwcI?si=_0eBdbpbrRSJGKfH",
+    thumbnail: "/img/video-thumbnails/5.png",
+    videoId: "62RqNLE_Vxk?si=4KmrGBx7BNzLvwxz",
   },
   {
     id: 6,
-    thumbnail: "https://picsum.photos/id/6/1200/600",
-
-    videoId: "-EwLqTInwcI?si=_0eBdbpbrRSJGKfH",
+    thumbnail: "/img/video-thumbnails/6.png",
+    videoId: "t5fHrskWZlY?si=BEuzPfDXuR0cZujC",
   },
   {
     id: 7,
-    thumbnail: "https://picsum.photos/id/7/1200/600",
-
-    videoId: "-EwLqTInwcI?si=_0eBdbpbrRSJGKfH",
+    thumbnail: "/img/video-thumbnails/7.png",
+    videoId: "UFHwcs2yDPs?si=4QmBtD9ajKb2kz9t",
   },
   {
     id: 8,
-    thumbnail: "https://picsum.photos/id/8/1200/600",
-
-    videoId: "-EwLqTInwcI?si=_0eBdbpbrRSJGKfH",
+    thumbnail: "/img/video-thumbnails/8.png",
+    videoId: "Nr3jZdZrLTg?si=l8vfmRzrsAGIzAXC",
   },
   {
     id: 9,
-    thumbnail: "https://picsum.photos/id/9/1200/600",
-
-    videoId: "-EwLqTInwcI?si=_0eBdbpbrRSJGKfH",
+    thumbnail: "/img/video-thumbnails/9.png",
+    videoId: "58Tm8lOtnm4?si=mugdOg0riVQg-XPw",
   },
 ];

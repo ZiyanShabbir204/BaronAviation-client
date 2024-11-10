@@ -2,7 +2,7 @@ import ModalVideoComponent from "@/components/common/ModalVideo";
 
 import { useEffect, useState } from "react";
 
-export default function YoutubeVideo({ videoId, thumbnail, onToggle }) {
+export default function YoutubeVideo({ videoId }) {
   const [isOpen, setIsOpen] = useState(false);
   const [key, setKey] = useState(0);
 
@@ -14,7 +14,7 @@ export default function YoutubeVideo({ videoId, thumbnail, onToggle }) {
       window.resizeTimeout = setTimeout(() => {
         // Update the key to force iframe re-render
         setKey((prevKey) => prevKey + 1);
-      }, 300); // 300ms delay after user stops resizing
+      }, 500); // 300ms delay after user stops resizing
     };
 
     window.addEventListener("resize", handleResize);
@@ -29,7 +29,7 @@ export default function YoutubeVideo({ videoId, thumbnail, onToggle }) {
       key={key} // Force re-render on resize
       width="100%"
       height="500"
-      src="https://www.youtube.com/embed/-EwLqTInwcI?si=SN_Z5GYSmeSwhGE6"
+      src={`https://www.youtube.com/embed/${videoId}`}
       title="YouTube video player"
       frameBorder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

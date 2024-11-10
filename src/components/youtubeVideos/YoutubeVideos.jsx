@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { tourData } from "@/data/tours";
 
 import YoutubeVideo from "./YoutubeVideo";
 import "./style.css";
 import { videoData } from "./data";
 
 export default function YoutubeVideos() {
-  const [autoplay, setAutoPlay] = useState(true);
+  const swiper1Ref = useRef(null); // Reference to the first Swiper
+  const swiper2Ref = useRef(null); // Reference to the second Swiper
+
+  const handleSlideChange = (swiper) => {};
   return (
     <>
       <section className="layout-pt-xl layout-pb-xl">
@@ -30,25 +32,16 @@ export default function YoutubeVideos() {
               <div className="js-section-slider">
                 <div data-aos="fade-up" data-aos-delay="" className="">
                   <Swiper
+                    ref={swiper1Ref}
                     spaceBetween={30}
                     className="w-100 overflow-visible"
-                    navigation={{
-                      prevEl: ".js-slider1-prev",
-                      nextEl: ".js-slider1-next",
-                    }}
                     modules={[Navigation, Pagination, Autoplay]}
                     loop
                     autoplay={false}
                   >
                     {videoData.map((elm, i) => (
                       <SwiperSlide key={i}>
-                        <YoutubeVideo
-                          videoId={elm.videoId}
-                          thumbnail={elm.thumbnail}
-                          onToggle={(open) => {
-                            setAutoPlay(!open);
-                          }}
-                        />
+                        <YoutubeVideo videoId={elm.videoId} />
                       </SwiperSlide>
                     ))}
                   </Swiper>
@@ -65,6 +58,7 @@ export default function YoutubeVideos() {
           </div>
           <div className="thumbnail">
             <Swiper
+              ref={swiper2Ref}
               spaceBetween={30}
               className="w-100 overflow-visible mt-30"
               navigation={{
@@ -76,6 +70,44 @@ export default function YoutubeVideos() {
               loop
               autoplay={false}
               centeredSlides
+              onSlidePrevTransitionStart={(swiper) => {
+                const currentSlide = swiper.slides.find((slide) =>
+                  slide.classList.contains("swiper-slide-active")
+                );
+
+                const imgSrc = currentSlide.children[0].src;
+
+                const match = imgSrc.match(/\/(\d+)\.png$/);
+                const imageId = match ? match[1] : null;
+                if (swiper1Ref.current.swiper) {
+                  swiper1Ref.current.swiper?.slideTo(imageId - 1);
+                }
+              }}
+              onSlideNextTransitionStart={(swiper) => {
+                const currentSlide = swiper.slides.find((slide) =>
+                  slide.classList.contains("swiper-slide-active")
+                );
+
+                const imgSrc = currentSlide.children[0].src;
+
+                const match = imgSrc.match(/\/(\d+)\.png$/);
+                const imageId = match ? match[1] : null;
+                if (swiper1Ref.current.swiper) {
+                  swiper1Ref.current.swiper?.slideTo(imageId - 1);
+                }
+              }}
+              //   onSlideChangeTransitionStart={(swiper) =>
+              //     console.log("swiper --------", swiper)
+              //   }
+              //   onSlideResetTransitionEnd={(swiper) => {
+              //     console.log("swiper >>>>>>>>>>>>>-", swiper);
+              //   }}
+              //   onSlideChange={(swip) => {
+              //     console.log("swiper ==++++++++", swip);
+              //   }}
+              //   onSlideNextTransitionStart={}
+              //   onSlideChangeTransitionEnd={handleSlideChange}
+              //   onSlideChange={handleSlideChange}
               breakpoints={{
                 300: {
                   slidesPerView: 2,
