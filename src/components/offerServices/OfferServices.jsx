@@ -56,6 +56,7 @@ export default function OfferServices() {
                   modules={[EffectCards]}
                   effect="cards"
                   grabCursor={true}
+                  initialSlide={2}
                 >
                   {testimonialsFive.map((elm, i) => (
                     <SwiperSlide key={i}>
