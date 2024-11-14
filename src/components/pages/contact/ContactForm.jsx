@@ -4,7 +4,7 @@ export default function ContactForm() {
       <div className="container">
         <div className="row justify-center">
           <div className="col-lg-8">
-            <h2 className="text-30 fw-700 text-center mb-30">
+            <h2 className=" hero-heading fw-700 text-center mb-30">
               Leave us your info
             </h2>
 
@@ -14,21 +14,41 @@ export default function ContactForm() {
                 className="row y-gap-30"
               >
                 <div className="col-md-6">
-                  <input type="text" placeholder="Name" required />
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    required
+                    className="contact-form-field"
+                  />
                 </div>
                 <div className="col-md-6">
-                  <input type="text" placeholder="Phone" required />
+                  <input
+                    type="text"
+                    placeholder="Phone"
+                    required
+                    className="contact-form-field"
+                  />
                 </div>
                 <div className="col-12">
-                  <input type="text" placeholder="Email" required />
+                  <input
+                    type="text"
+                    placeholder="Email"
+                    required
+                    className="contact-form-field"
+                  />
                 </div>
                 <div className="col-12">
-                  <textarea placeholder="Message" rows="6" required></textarea>
+                  <textarea
+                    placeholder="Message"
+                    rows="6"
+                    required
+                    className="contact-form-field"
+                  ></textarea>
                 </div>
                 <div className="col-12">
                   <button
                     type="submit"
-                    className="button -md -dark-1 bg-accent-1 text-white col-12"
+                    className="button -md button-gradient text-white col-12"
                   >
                     Send Message
                   </button>

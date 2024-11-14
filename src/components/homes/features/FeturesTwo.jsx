@@ -6,7 +6,7 @@ import "./feturesTwo.css";
 
 export default function FeturesTwo() {
   return (
-    <section className="relative layout-pt-xl layout-pb-xl ">
+    <section className="relative layout-pt-xl layout-pb-xl feature-section">
       <div className="relative xl:unset container">
         <div className="rounded-12">
           {/* <div className="sectionBg">
@@ -16,7 +16,7 @@ export default function FeturesTwo() {
               className="img-ratio rounded-12 md:rounded-0"
             />
           </div> */}
-          <div className="row y-gap-30 justify-center items-center feature-section">
+          <div className="row y-gap-30 justify-center items-center ">
             <div className="col-lg-6 col-md-6 p-30">
               <h2
                 data-aos="fade-up"

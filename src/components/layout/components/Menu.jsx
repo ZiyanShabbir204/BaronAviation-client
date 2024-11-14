@@ -18,13 +18,15 @@ export default function Menu() {
           </div>
 
           <div className="desktopNav__item">
-            <a href="/tailored-packages">Tailored Packages</a>
+            <Link to="/tailored-packages">Tailored Packages</Link>
           </div>
+
           <div className="desktopNav__item">
-            <a href="#">Contact Us</a>
+            <Link to="/contact">Contact Us</Link>
           </div>
+
           <div className="desktopNav__item">
-            <a href="#">Corporate</a>
+            <Link to="#">Corporate</Link>
           </div>
         </div>
       </div>
