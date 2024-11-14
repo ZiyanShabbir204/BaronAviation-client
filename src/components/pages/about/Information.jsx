@@ -55,7 +55,7 @@ export default function Information() {
             )}
 
             <button
-              className="button button-gradient text-white -md mt-30"
+              className="button button-gradient text-white -md mt-30 m-auto"
               onClick={() => setMore(true)}
             >
               Learn More
