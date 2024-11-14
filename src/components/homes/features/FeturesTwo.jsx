@@ -2,47 +2,63 @@ import { featuresTwo } from "@/data/features";
 
 import { Link } from "react-router-dom";
 import React from "react";
+import "./feturesTwo.css";
 
 export default function FeturesTwo() {
   return (
-    <section className="relative">
+    <section className="relative layout-pt-xl layout-pb-xl ">
       <div className="relative xl:unset container">
-        <div className="layout-pt-xl layout-pb-xl rounded-12">
-          <div className="sectionBg">
+        <div className="rounded-12">
+          {/* <div className="sectionBg">
             <img
-              src="/img/about/1/1.png"
+              src="/img/feature-bg.png"
               alt="image"
               className="img-ratio rounded-12 md:rounded-0"
             />
-          </div>
-
-          <div className="row y-gap-30 justify-center items-center">
-            <div className="col-lg-4 col-md-6">
+          </div> */}
+          <div className="row y-gap-30 justify-center items-center feature-section">
+            <div className="col-lg-6 col-md-6 p-30">
               <h2
                 data-aos="fade-up"
                 data-aos-delay=""
-                className="text-40 lh-13"
+                className=" hero-heading"
               >
-                We Make
-                <br className="md:d-none" />
-                World Travel Easy
+                <span className="text-gradient-vivid-orange text-rajdhani">
+                  TOP CHOICE
+                </span>{" "}
+                IN EXCLUSIVE CORPORATE AIR TRAVEL, POWERED BY The Baron Aviation
               </h2>
 
               <p data-aos="fade-up" data-aos-delay="" className="mt-10">
-                Traveling under your own power and at your own pace, you'll
-                connect more meaningfully with your destination and have more
-                fun!
+                At The Baron Aviation, we provide exquisite helicopter travel
+                that combines unparalleled luxury, time efficiency, and
+                unwavering safety. Our service ensures punctuality, allowing you
+                to arrive on time for important business meetings. With The The
+                Baron Aviation Aviation, enjoy seamless, comfortable journeys
+                where your time, comfort, and security are our top priorities.
               </p>
-              <button
+
+              <div class="item about-extra-text mt-20">
+                <ul className="bullet-points">
+                  <li>Book by appointment only</li>
+                  <li>Pay with Convenience</li>
+                  <li>Smooth Rides in Top-of-the-line helicopter </li>
+                  <li>Free Consultation </li>
+                  <li>Customize Travel Plan @ xxxx- xxx - x</li>
+                </ul>
+              </div>
+
+              <Link
+                to={"/tour-list-1"}
                 data-aos="fade-right"
                 data-aos-delay=""
-                className="button -md -dark-1 bg-accent-1 text-white mt-60 md:mt-30"
+                className="button -md button-gradient text-white mt-30 fit-content"
+                style={{
+                  width: "fit-content",
+                }}
               >
-                <Link to={"/tour-list-1"}>
-                  Explore Our Tours
-                  <i className="icon-arrow-top-right ml-10"></i>
-                </Link>
-              </button>
+                01 LUXURY TRAVEL PARTNER
+              </Link>
             </div>
 
             <div className="col-md-6">
@@ -51,18 +67,9 @@ export default function FeturesTwo() {
                 data-aos-delay=""
                 className="featuresGrid"
               >
-                {featuresTwo.map((elm, i) => (
-                  <div
-                    key={i}
-                    className="featuresGrid__item px-40 py-40 text-center bg-white rounded-12"
-                  >
-                    <img src={elm.iconSrc} alt="icon" />
-                    <div className="text-40 fw-700 text-accent-1 mt-20 lh-14">
-                      {elm.value}
-                    </div>
-                    <div>{elm.label}</div>
-                  </div>
-                ))}
+                <div className="featuresGrid__item px-40 py-40 text-center bg-feature bg-feature-1 rounded-12"></div>
+                <div className="featuresGrid__item px-40 py-40 text-center bg-feature bg-feature-2 rounded-12"></div>
+                <div className="featuresGrid__item px-40 py-40 text-center bg-feature bg-feature-3 rounded-12"></div>
               </div>
             </div>
           </div>

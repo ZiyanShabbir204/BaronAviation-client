@@ -29,80 +29,13 @@ export default function TourList1() {
     };
   }, []);
   return (
-    <section className="layout-pb-xl">
+    <section className="layout-pb-xl layout-pt-xl">
       <div className="container">
         <div className="row">
-          <div className="col-xl-3 col-lg-4">
-            <div className="lg:d-none">
-              <Sidebar />
-            </div>
-
-            <div className="accordion d-none mb-30 lg:d-flex js-accordion">
-              <div
-                className={`accordion__item col-12 ${
-                  sidebarActive ? "is-active" : ""
-                } `}
-              >
-                <button
-                  className="accordion__button button -dark-1 bg-light-1 px-25 py-10 border-1 rounded-12"
-                  onClick={() => setSidebarActive((pre) => !pre)}
-                >
-                  <i className="icon-sort-down mr-10 text-16"></i>
-                  Filter
-                </button>
-
-                <div
-                  className="accordion__content"
-                  style={sidebarActive ? { maxHeight: "2000px" } : {}}
-                >
-                  <div className="pt-20">
-                    <Sidebar />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-xl-9 col-lg-8">
+          <div className="col-xl-auto">
             <div className="row y-gap-5 justify-between">
               <div className="col-auto">
                 <div>1362 results</div>
-              </div>
-
-              <div ref={dropDownContainer} className="col-auto">
-                <div
-                  className={`dropdown -type-2 js-dropdown js-form-dd ${
-                    ddActives ? "is-active" : ""
-                  } `}
-                  data-main-value=""
-                >
-                  <div
-                    className="dropdown__button js-button"
-                    onClick={() => setDdActives((pre) => !pre)}
-                  >
-                    <span>Sort by: </span>
-                    <span className="js-title">
-                      {sortOption ? sortOption : "Featured"}
-                    </span>
-                    <i className="icon-chevron-down"></i>
-                  </div>
-
-                  <div className="dropdown__menu js-menu-items">
-                    {speedFeatures.map((elm, i) => (
-                      <div
-                        onClick={() => {
-                          setSortOption((pre) => (pre == elm ? "" : elm));
-                          setDdActives(false);
-                        }}
-                        key={i}
-                        className="dropdown__item"
-                        data-value="fast"
-                      >
-                        {elm}
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -115,7 +48,7 @@ export default function TourList1() {
 
                       {elm.badgeText && (
                         <div className="tourCard__badge">
-                          <div className="bg-accent-1 rounded-12 text-white lh-11 text-13 px-15 py-10">
+                          <div className="button-gradient rounded-12 text-white lh-11 text-13 px-15 py-10">
                             {elm.badgeText}
                           </div>
                         </div>
@@ -128,12 +61,6 @@ export default function TourList1() {
                           </div>
                         </div>
                       )}
-
-                      <div className="tourCard__favorite">
-                        <button className="button -accent-1 size-35 bg-white rounded-full flex-center">
-                          <i className="icon-heart text-15"></i>
-                        </button>
-                      </div>
                     </div>
 
                     <div className="tourCard__content">
@@ -190,12 +117,13 @@ export default function TourList1() {
                         </div>
                       </div>
 
-                      <button className="button -outline-accent-1 text-accent-1">
-                        <Link to={`/tour-single-1/${elm.id}`}>
-                          View Details
-                          <i className="icon-arrow-top-right ml-10"></i>
-                        </Link>
-                      </button>
+                      <Link
+                        to={`/tour-single-1/${elm.id}`}
+                        className="button -sm button-gradient text-white ml-30"
+                      >
+                        Book Now
+                        <i className="icon-arrow-top-right ml-10"></i>
+                      </Link>
                     </div>
                   </div>
                 </div>

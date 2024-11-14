@@ -25,6 +25,8 @@ import TrendingDestinations3 from "@/components/homes/destinations/TrendingDesti
 import FooterTwo from "@/components/layout/footers/FooterTwo";
 import YoutubeVideo from "@/components/youtubeVideo/YoutubeVideo";
 import YoutubeVideos from "@/components/youtubeVideos/YoutubeVideos";
+import Features5 from "@/components/homes/features/Features5";
+import FeturesTwo from "@/components/homes/features/FeturesTwo";
 
 const metadata = {
   title: "Home-1 || ViaTour - Travel & Tour Reactjs Template",
@@ -39,7 +41,7 @@ export default function HomePage10() {
         <Hero10 />
         <FlightRequestMenu />
         <BrandsTwo />
-        <About />
+        <FeturesTwo />
         <FeaturesOne />
         <Banner />
         <OfferServices />

@@ -16,16 +16,14 @@ import React from "react";
 import MetaComponent from "@/components/common/MetaComponent";
 
 const metadata = {
-  title: "Baron Aviation - Luxury Flying",
-  description: "Baron Aviation - Luxury Flying",
+  title: "The Baron Aviation - Luxury Flying",
+  description: "The Baron Aviation - Luxury Flying",
 };
 
 export default function HomePage3() {
   return (
     <>
-      
       <main>
-        {/* <Header3 /> */}
         <Hero3 />
         <BrandsTwo />
         <DestinationsThree />

@@ -18,7 +18,7 @@ export default function Menu() {
           </div>
 
           <div className="desktopNav__item">
-            <a href="#">Fleet</a>
+            <a href="/tours">Tours</a>
           </div>
           <div className="desktopNav__item">
             <a href="#">Contact Us</a>

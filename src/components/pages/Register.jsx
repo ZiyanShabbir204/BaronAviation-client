@@ -96,13 +96,13 @@ export default function Register() {
           <div className="row justify-center">
             <div className="col-xl-6 col-lg-7 col-md-9">
               <div className="text-center mb-60 md:mb-30">
-                <h1 className="text-30 text-vivid-orange">Register</h1>
+                <h2 className="text-gradient-vivid-orange">Register</h2>
                 <div className="text-18 fw-500 mt-20 md:mt-15">
                   Let's create your account!
                 </div>
                 <div className="mt-5">
                   Already have an account?{" "}
-                  <Link to="/login" className="text-vivid-orange">
+                  <Link to="/login" className="text-gradient-vivid-orange">
                     Log In!
                   </Link>
                 </div>
@@ -110,7 +110,7 @@ export default function Register() {
 
               <form
                 onSubmit={handleSubmit}
-                className="border-1 rounded-12 px-60 py-60 md:px-25 md:py-30 bg-gray"
+                className="border-1 rounded-12 px-60 py-60 md:px-25 md:py-30 bg-dark-grey"
               >
                 <TextField
                   label="Username"
@@ -184,7 +184,7 @@ export default function Register() {
                   variant="contained"
                   color="primary"
                   fullWidth
-                  className="mt-30 bg-vivid-orange"
+                  className="mt-10 button-gradient text-white"
                 >
                   Register
                 </Button>

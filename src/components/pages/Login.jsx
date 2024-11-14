@@ -63,13 +63,13 @@ export default function Login() {
           <div className="row justify-center">
             <div className="col-xl-6 col-lg-7 col-md-9">
               <div className="text-center mb-60 md:mb-30">
-                <h1 className="text-30 text-vivid-orange">Log In</h1>
+                <h2 className="text-gradient-vivid-orange">Log In</h2>
                 <div className="text-18 fw-500 mt-20 md:mt-15">
                   We're glad to see you again!
                 </div>
                 <div className="mt-5">
                   Don't have an account?{" "}
-                  <Link to="/register" className="text-vivid-orange">
+                  <Link to="/register" className="text-gradient-vivid-orange">
                     Sign Up!
                   </Link>
                 </div>
@@ -77,7 +77,7 @@ export default function Login() {
 
               <form
                 onSubmit={handleSubmit}
-                className="border-1 rounded-12 px-60 py-60 md:px-25 md:py-30 bg-gray"
+                className="border-1 rounded-12 px-60 py-60 md:px-25 md:py-30 bg-dark-grey"
               >
                 <TextField
                   id="username"
@@ -126,7 +126,7 @@ export default function Login() {
                   variant="contained"
                   color="primary"
                   fullWidth
-                  className=" bg-vivid-orange button -sm -outline-black mt-30 "
+                  className="mt-20 button-gradient text-white"
                 >
                   Log In
                 </Button>

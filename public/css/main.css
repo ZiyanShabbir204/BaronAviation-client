@@ -2787,6 +2787,16 @@ h6 {
 }
 
 
+
+.bg-grey-gradient {
+  background: linear-gradient(135deg, #191919, #1e1e1e, #222222, #2a2a2a, #191919);
+}
+
+.bg-dark-grey {
+  background: var(--color-dark-gray);
+}
+
+
 @media (max-width: 767px) {
   .header.-type-10 .header__logo .baron-logo {
     width: 70px;
@@ -6171,9 +6181,10 @@ h6 {
   gap: 30px;
   height: 100%;
   border-radius: 12px;
-  border: 1px solid var(--border, #E7E6E6);
+  /* border: 1px solid var(--border, var(--color-vivid-orange)); */
   padding: 20px;
   transition: 0.2s;
+  background-color: var(--color-dark-gray);
 }
 
 @media (max-width: 1199px) {
@@ -6277,6 +6288,7 @@ h6 {
   width: 100%;
   padding: 15px 0;
   margin-top: 20px;
+  margin-left: 0 !important;
 }
 
 .tourCard.-type-2 .tourCard__price>*:nth-child(1) {

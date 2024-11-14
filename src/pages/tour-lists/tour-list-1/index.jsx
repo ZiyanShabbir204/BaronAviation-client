@@ -5,6 +5,8 @@ import TourList1 from "@/components/tours/TourList1";
 import React from "react";
 
 import MetaComponent from "@/components/common/MetaComponent";
+import FooterTwo from "@/components/layout/footers/FooterTwo";
+import Header9 from "@/components/layout/header/Header9";
 
 const metadata = {
   title: "Tour-list-1 || ViaTour - Travel & Tour Reactjs Template",
@@ -14,12 +16,10 @@ const metadata = {
 export default function TourListPage1() {
   return (
     <>
-      
       <main>
-        <Header1 />
-        <PageHeader />
+        <Header9 />
         <TourList1 />
-        <FooterOne />
+        <FooterTwo />
       </main>
     </>
   );

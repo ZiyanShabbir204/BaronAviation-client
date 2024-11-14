@@ -1,0 +1,24 @@
+.bg-feature-1 {
+    background-image: url(img/helicopter/heli-3.jpeg);
+}
+
+.bg-feature-2 {
+    background-image: url(img/helicopter/heli-4.jpeg);
+}
+
+.bg-feature-3 {
+    background-image: url(img/helicopter/heli-5.jpeg);
+}
+
+.bg-feature {
+    background-position: center;
+    background-size: cover;
+
+}
+
+.feature-section {
+    padding: 30px;
+    background-image: url(/img/feature-bg.png);
+    background-position: center;
+    background-size: cover;
+}

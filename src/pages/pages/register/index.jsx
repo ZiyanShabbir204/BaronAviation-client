@@ -5,6 +5,8 @@ import React from "react";
 
 import MetaComponent from "@/components/common/MetaComponent";
 import Header3 from "@/components/layout/header/Header3";
+import Header9 from "@/components/layout/header/Header9";
+import FooterTwo from "@/components/layout/footers/FooterTwo";
 
 const metadata = {
   title: "Register || ViaTour - Travel & Tour Reactjs Template",
@@ -14,11 +16,10 @@ const metadata = {
 export default function RegisterPage() {
   return (
     <>
-      
       <main>
-        <Header3 />
+        <Header9 />
         <Register />
-        <FooterOne />
+        <FooterTwo />
       </main>
     </>
   );
