@@ -47,6 +47,7 @@ export default function HomePage10() {
         <OfferServices />
         <TrendingDestinations3 />
         <YoutubeVideos />
+        <TestimonialsSix />
         <FooterTwo />
       </main>
     </>
