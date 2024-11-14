@@ -22,11 +22,11 @@ export const servicesData = [
   {
     question: "Sightseeing Tours",
     answer:
-      "Phang Nga Bay Sea Cave Canoeing & James Bond Island w/ Buffet Lunch by Big Boat cancellation policy: For a full refund, cancel at least 24 hours in advance of the start date of the experience. Discover and book Phang Nga Bay Sea Cave Canoeing & James Bond Island w/ Buffet Lunch by Big Boat",
+      "See the world like never before with The Baron Aviation Sightseeing Tours. Take in breathtaking views as you glide above iconic landscapes, all from the comfort of a luxury helicopter. Each tour is thoughtfully planned to let you soak up the beauty around you without a worry in the world. Join us for an unforgettable adventure where every moment feels like a new discovery.",
   },
   {
     question: "Weddings",
     answer:
-      "Phang Nga Bay Sea Cave Canoeing & James Bond Island w/ Buffet Lunch by Big Boat cancellation policy: For a full refund, cancel at least 24 hours in advance of the start date of the experience. Discover and book Phang Nga Bay Sea Cave Canoeing & James Bond Island w/ Buffet Lunch by Big Boat",
+      "Make your wedding day truly one-of-a-kind with The Baron Aviation Wedding Helicopter Service. Imagine the romance of a grand entrance from the sky or capturing stunning aerial shots of your special day. We’re here to add that touch of magic and elegance, making sure every detail reflects the beauty of your love story. Let us help you create memories that will last a lifetime.",
   },
 ];
