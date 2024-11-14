@@ -6,7 +6,7 @@ export const blogs = [
     author: "Ali Tufan",
     title: "Baron Signs Exclusive Corporate Partnership with Elite Resorts",
     desc: `From creepy coach rides with comedic theatrics to somber strolls through tragic neighborhoods.`,
-    badge: "Trips",
+    badge: "News",
     continent: "Africa",
   },
   {
@@ -17,7 +17,7 @@ export const blogs = [
     title: "Safety First: Baron Upgrades Fleet with Advanced Safety Features",
     desc: `From creepy coach rides with comedic theatrics to somber strolls through tragic neighborhoods.`,
 
-    badge: "Trips",
+    badge: "News",
     continent: "North America",
   },
   {
@@ -28,7 +28,7 @@ export const blogs = [
     title: "Baron Launches New Eco-Friendly Initiative in Aviation",
     desc: `From creepy coach rides with comedic theatrics to somber strolls through tragic neighborhoods.`,
 
-    badge: "Trips",
+    badge: "News",
     continent: "North America",
   },
   {
@@ -39,7 +39,7 @@ export const blogs = [
     title: "Safari Photography: Capturing the Essence of Wildlife",
     desc: `From creepy coach rides with comedic theatrics to somber strolls through tragic neighborhoods.`,
 
-    badge: "Trips",
+    badge: "News",
     continent: "Africa",
   },
   {
@@ -50,7 +50,7 @@ export const blogs = [
     title: "Surviving the Safari: A Comprehensive Guide",
     desc: `From creepy coach rides with comedic theatrics to somber strolls through tragic neighborhoods.`,
 
-    badge: "Trips",
+    badge: "News",
     continent: "South America Guide",
   },
   {
@@ -61,7 +61,7 @@ export const blogs = [
     title: "Luxury Safari Experience: Where Comfort Meets Wilderness",
     desc: `From creepy coach rides with comedic theatrics to somber strolls through tragic neighborhoods.`,
 
-    badge: "Trips",
+    badge: "News",
     continent: "Europe",
   },
   {
@@ -72,7 +72,7 @@ export const blogs = [
     title: "African Safari: A Journey Through Nature’s Wonders",
     desc: `From creepy coach rides with comedic theatrics to somber strolls through tragic neighborhoods.`,
 
-    badge: "Trips",
+    badge: "News",
     continent: "Asia",
   },
   {
@@ -83,7 +83,7 @@ export const blogs = [
     title: "Safari Camping Tips: Making the Most of the Wild Outdoors",
     desc: `From creepy coach rides with comedic theatrics to somber strolls through tragic neighborhoods.`,
 
-    badge: "Trips",
+    badge: "News",
   },
   {
     id: 9,
@@ -93,7 +93,7 @@ export const blogs = [
     title: "The Beauty of Wildlife: A Safari Perspective",
     desc: `From creepy coach rides with comedic theatrics to somber strolls through tragic neighborhoods.`,
 
-    badge: "Trips",
+    badge: "News",
     continent: "Asia",
   },
 ];
