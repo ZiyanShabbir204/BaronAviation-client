@@ -5953,14 +5953,14 @@ h6 {
 
 .pageHeader.-type-2.-secondary {
   position: relative;
-  padding-top: 110px;
-  padding-bottom: 30px;
+  padding-top: 130px;
+  padding-bottom: 130px;
   z-index: 50;
 }
 
 @media (max-width: 767px) {
   .pageHeader.-type-2.-secondary {
-    padding-bottom: 60px;
+    padding-bottom: 130px;
   }
 }
 
@@ -6818,12 +6818,12 @@ h6 {
 
 .pagination__count>*.is-active {
   color: white !important;
-  background-color: var(--color-accent-1) !important;
+  background-color: var(--color-vivid-orange) !important;
 }
 
 .pagination__count>*:hover {
   background-color: #F5F5F5;
-  color: var(--color-white);
+  color: var(--color-black);
 }
 
 .pagination__count>*+* {

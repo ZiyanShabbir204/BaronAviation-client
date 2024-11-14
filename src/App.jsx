@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./styles/style.css";
 import Aos from "aos";
 import HomePage1 from "./pages/homes/home-1";
@@ -76,7 +76,11 @@ function App() {
             <Route path="/home-9" element={<HomePage9 />} />
             <Route path="/home-10" element={<HomePage10 />} />
 
-            <Route path="/tours" element={<TourListPage1 />} />
+            <Route
+              path="/tailored-packages"
+              element={<Navigate to="/tailored-packages/1" replace />}
+            />
+            <Route path="/tailored-packages/:id" element={<TourListPage1 />} />
             <Route path="/tour-list-2" element={<TourListPage2 />} />
             <Route path="/tour-list-3" element={<TourListPage3 />} />
             <Route path="/tour-list-4" element={<TourListPage4 />} />

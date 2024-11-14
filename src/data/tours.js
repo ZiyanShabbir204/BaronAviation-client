@@ -102,19 +102,17 @@ export const tourData = [
 export const tourDataTwo = [
   {
     id: 9,
-    imageSrc: "/img/tourCards/3/1.png",
-    badgeText: "20 % OFF",
-    location: "Paris, France",
-    title:
-      "Phi Phi Islands Adventure Day Trip with Seaview Lunch by V. Marine Tour",
+    imageSrc: "/img/tours/islamabad.jpg",
+    // badgeText: "20 % OFF",
+    location: "Islamabad to Karachi",
+    title: "The Corporate Sky Express",
     rating: 4.8,
     ratingCount: 269,
     duration: `2 Days 1 Nights`,
     description:
-      "The Phi Phi archipelago is a must-visit while in Phuket, and this speedboat trip.",
+      "For business leaders and executives on tight schedules, The Corporate Sky Express offers efficient, luxurious travel between two of Pakistan's busiest cities. Enjoy a smooth, private flight with tailored in-flight amenities, Wi-Fi access, and flexible scheduling designed for the demands of corporate life. Perfect for quick turnarounds or day trips, this package ensures you arrive focused and ready.",
     price: 114.0,
     fromPrice: 1200.0,
-    badgeClass: "bg-accent-1",
     features: [
       {
         icon: `icon-price-tag`,
@@ -128,16 +126,15 @@ export const tourDataTwo = [
   },
   {
     id: 10,
-    imageSrc: "/img/tourCards/3/2.png",
+    imageSrc: "/img/tours/lahore.jpg",
     badgeText: "",
-    location: "Paris, France",
-    title:
-      "Phi Phi Islands Adventure Day Trip with Seaview Lunch by V. Marine Tour",
+    location: "Lahore City – Event Venue or Private Landing Site",
+    title: "The Elite Event Arrival",
     rating: 4.8,
     ratingCount: 269,
-    duration: `2 Days 1 Nights`,
+    duration: `1 hour`,
     description:
-      "The Phi Phi archipelago is a must-visit while in Phuket, and this speedboat trip.",
+      "Make a grand entrance with The Elite Event Arrival, a luxurious flight to and from your special event. This package is ideal for VIPs attending galas, weddings, or exclusive events. It includes private transport from your location to the helicopter, a scenic aerial route over Lahore’s landmarks, and a direct arrival to your event venue, ensuring a memorable experience from start to finish.",
     price: 114.0,
     fromPrice: 1200.0,
     badgeClass: "",
@@ -154,16 +151,15 @@ export const tourDataTwo = [
   },
   {
     id: 11,
-    imageSrc: "/img/tourCards/3/3.png",
+    imageSrc: "/img/tours/north.jpg",
     featured: true,
-    location: "Paris, France",
-    title:
-      "Phi Phi Islands Adventure Day Trip with Seaview Lunch by V. Marine Tour",
+    location: "Northern Pakistan (Skardu, Hunza Valley, Fairy Meadows)",
+    title: "The Scenic Sky Odyssey",
     rating: 4.8,
     ratingCount: 269,
-    duration: `2 Days 1 Nights`,
+    duration: `3 hours (flight and sightseeing stops)`,
     description:
-      "The Phi Phi archipelago is a must-visit while in Phuket, and this speedboat trip.",
+      "Discover the natural beauty of Northern Pakistan with The Scenic Sky Odyssey, a tailored sightseeing adventure. This package offers a breathtaking tour over Skardu, Hunza Valley, and Fairy Meadows, with a stopover for photography. A premium sightseeing experience, ideal for couples, families, and explorers eager to capture the majesty of Pakistan from above.",
     price: 114.0,
     fromPrice: 1200.0,
     badgeClass: "bg-accent-2",
@@ -180,16 +176,15 @@ export const tourDataTwo = [
   },
   {
     id: 12,
-    imageSrc: "/img/tourCards/3/4.png",
+    imageSrc: "/img/tours/wedding.jpg",
     badgeText: "",
-    location: "Paris, France",
-    title:
-      "Phi Phi Islands Adventure Day Trip with Seaview Lunch by V. Marine Tour",
+    location: "Karachi – Coastal Wedding Venue",
+    title: "The Signature Wedding Arrival",
     rating: 4.8,
     ratingCount: 269,
-    duration: `2 Days 1 Nights`,
+    duration: `1.5 hours`,
     description:
-      "The Phi Phi archipelago is a must-visit while in Phuket, and this speedboat trip.",
+      "Elevate your wedding day with The Signature Wedding Arrival package. Designed for couples who want an unforgettable entrance, this package includes a luxurious helicopter ride from a private location to your coastal wedding venue. Capture stunning aerial photos along Karachi’s coastline as you arrive in style, creating a unique, romantic memory to cherish forever.",
     price: 114.0,
     fromPrice: 1200.0,
     badgeClass: "",
@@ -205,17 +200,40 @@ export const tourDataTwo = [
     ],
   },
   {
-    id: 13,
-    imageSrc: "/img/tourCards/3/5.png",
-    badgeText: "",
-    location: "Paris, France",
-    title:
-      "Phi Phi Islands Adventure Day Trip with Seaview Lunch by V. Marine Tour",
+    id: 91,
+    imageSrc: "/img/tours/islamabad.jpg",
+    // badgeText: "20 % OFF",
+    location: "Islamabad to Karachi",
+    title: "The Corporate Sky Express",
     rating: 4.8,
     ratingCount: 269,
     duration: `2 Days 1 Nights`,
     description:
-      "The Phi Phi archipelago is a must-visit while in Phuket, and this speedboat trip.",
+      "For business leaders and executives on tight schedules, The Corporate Sky Express offers efficient, luxurious travel between two of Pakistan's busiest cities. Enjoy a smooth, private flight with tailored in-flight amenities, Wi-Fi access, and flexible scheduling designed for the demands of corporate life. Perfect for quick turnarounds or day trips, this package ensures you arrive focused and ready.",
+    price: 114.0,
+    fromPrice: 1200.0,
+    features: [
+      {
+        icon: `icon-price-tag`,
+        name: `Best Price Guarantee`,
+      },
+      {
+        icon: `icon-check`,
+        name: `Free Cancellation`,
+      },
+    ],
+  },
+  {
+    id: 101,
+    imageSrc: "/img/tours/lahore.jpg",
+    badgeText: "",
+    location: "Lahore City – Event Venue or Private Landing Site",
+    title: "The Elite Event Arrival",
+    rating: 4.8,
+    ratingCount: 269,
+    duration: `1 hour`,
+    description:
+      "Make a grand entrance with The Elite Event Arrival, a luxurious flight to and from your special event. This package is ideal for VIPs attending galas, weddings, or exclusive events. It includes private transport from your location to the helicopter, a scenic aerial route over Lahore’s landmarks, and a direct arrival to your event venue, ensuring a memorable experience from start to finish.",
     price: 114.0,
     fromPrice: 1200.0,
     badgeClass: "",
@@ -231,17 +249,41 @@ export const tourDataTwo = [
     ],
   },
   {
-    id: 14,
-    imageSrc: "/img/tourCards/3/6.png",
-    badgeText: "",
-    location: "Paris, France",
-    title:
-      "Phi Phi Islands Adventure Day Trip with Seaview Lunch by V. Marine Tour",
+    id: 111,
+    imageSrc: "/img/tours/north.jpg",
+    featured: true,
+    location: "Northern Pakistan (Skardu, Hunza Valley, Fairy Meadows)",
+    title: "The Scenic Sky Odyssey",
     rating: 4.8,
     ratingCount: 269,
-    duration: `2 Days 1 Nights`,
+    duration: `3 hours (flight and sightseeing stops)`,
     description:
-      "The Phi Phi archipelago is a must-visit while in Phuket, and this speedboat trip.",
+      "Discover the natural beauty of Northern Pakistan with The Scenic Sky Odyssey, a tailored sightseeing adventure. This package offers a breathtaking tour over Skardu, Hunza Valley, and Fairy Meadows, with a stopover for photography. A premium sightseeing experience, ideal for couples, families, and explorers eager to capture the majesty of Pakistan from above.",
+    price: 114.0,
+    fromPrice: 1200.0,
+    badgeClass: "bg-accent-2",
+    features: [
+      {
+        icon: `icon-price-tag`,
+        name: `Best Price Guarantee`,
+      },
+      {
+        icon: `icon-check`,
+        name: `Free Cancellation`,
+      },
+    ],
+  },
+  {
+    id: 121,
+    imageSrc: "/img/tours/karachi.jpg",
+    badgeText: "",
+    location: "Karachi – Coastal Wedding Venue",
+    title: "The Signature Wedding Arrival",
+    rating: 4.8,
+    ratingCount: 269,
+    duration: `1.5 hours`,
+    description:
+      "Elevate your wedding day with The Signature Wedding Arrival package. Designed for couples who want an unforgettable entrance, this package includes a luxurious helicopter ride from a private location to your coastal wedding venue. Capture stunning aerial photos along Karachi’s coastline as you arrive in style, creating a unique, romantic memory to cherish forever.",
     price: 114.0,
     fromPrice: 1200.0,
     badgeClass: "",
