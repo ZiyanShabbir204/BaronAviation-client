@@ -870,8 +870,7 @@ button:focus {
 }
 
 .button.-dark-1:hover {
-  border-color: var(--color-white);
-  background-color: var(--color-dark-1) !important;
+  background-color: var(--color-dark-gray) !important;
   color: white !important;
 }
 
@@ -6409,8 +6408,9 @@ h6 {
   font-size: 14px;
   font-weight: 500;
   padding: 5px 15px;
-  background-color: white;
+  background: linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828);
   border-radius: 200px;
+  color: white !important;
 }
 
 .blogCard.-type-1 .blogCard__info {

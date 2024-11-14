@@ -1,20 +1,20 @@
 export const blogs = [
   {
     id: 1,
-    image: "/img/blogCards/1/1.png",
+    image: "/img/helicopter/heli-3.jpeg",
     date: "April 06 2023",
     author: "Ali Tufan",
-    title: "Kenya vs Tanzania Safari: The Better African Safari Experience",
+    title: "Baron Signs Exclusive Corporate Partnership with Elite Resorts",
     desc: `From creepy coach rides with comedic theatrics to somber strolls through tragic neighborhoods.`,
     badge: "Trips",
     continent: "Africa",
   },
   {
     id: 2,
-    image: "/img/blogCards/1/2.png",
+    image: "/img/helicopter/heli-4.jpeg",
     date: "April 07 2023",
     author: "Emily Johnson",
-    title: "Exploring the Serengeti: A Wildlife Adventure",
+    title: "Safety First: Baron Upgrades Fleet with Advanced Safety Features",
     desc: `From creepy coach rides with comedic theatrics to somber strolls through tragic neighborhoods.`,
 
     badge: "Trips",
@@ -22,10 +22,10 @@ export const blogs = [
   },
   {
     id: 3,
-    image: "/img/blogCards/1/3.png",
+    image: "/img/helicopter/heli-6.jpeg",
     date: "April 08 2023",
     author: "Maxwell Rhodes",
-    title: "Into the Wild: An Unforgettable Safari Journey",
+    title: "Baron Launches New Eco-Friendly Initiative in Aviation",
     desc: `From creepy coach rides with comedic theatrics to somber strolls through tragic neighborhoods.`,
 
     badge: "Trips",

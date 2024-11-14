@@ -117,7 +117,7 @@ export default function TourList1() {
                           // to={`/tour-single-1/${elm.id}`}
                           className="button -sm button-gradient text-white ml-30"
                         >
-                          Book Now
+                          Inquire
                           <i className="icon-arrow-top-right ml-10"></i>
                         </Link>
                       </div>

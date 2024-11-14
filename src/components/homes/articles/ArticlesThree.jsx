@@ -13,15 +13,14 @@ export default function ArticlesThree() {
             <h2
               data-aos="fade-up"
               data-aos-delay=""
-              className="text-30 md:text-24 "
+              className="text-gradient-vivid-orange "
             >
-              Travel Articles
+              LATEST IN BARON AVIATION
             </h2>
           </div>
 
           <div className="col-auto">
             <Link
-              to={"/blog-list-1"}
               data-aos="fade-right"
               data-aos-delay=""
               className="buttonArrow d-flex items-center  "
@@ -39,7 +38,7 @@ export default function ArticlesThree() {
         >
           {blogs.slice(0, 3).map((elm, i) => (
             <div key={i} className="col-lg-4 col-md-6">
-              <Link to={`/blog-single/${elm.id}`} className="blogCard -type-1">
+              <Link to="#" className="blogCard -type-1">
                 <div className="blogCard__image ratio ratio-41:30">
                   <img
                     src={elm.image}
