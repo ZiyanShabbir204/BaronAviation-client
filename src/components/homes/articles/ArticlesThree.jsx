@@ -15,7 +15,7 @@ export default function ArticlesThree() {
               data-aos-delay=""
               className="text-gradient-vivid-orange "
             >
-              LATEST IN BARON AVIATION
+              LATEST AT THE BARON AVIATION
             </h2>
           </div>
 
