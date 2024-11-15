@@ -15,13 +15,6 @@ export default function TestimonialsSix() {
               justifyContent: "center",
             }}
           >
-            {/* <h2
-              data-aos="fade-up"
-              data-aos-delay=""
-              className="text-gradient-vivid-orange"
-            >
-              What our Travelers are saying
-            </h2> */}
             <img
               src="/img/testimonials/yellow-five-stars.webp"
               style={{
