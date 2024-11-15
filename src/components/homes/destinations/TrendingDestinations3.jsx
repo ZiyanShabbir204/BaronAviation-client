@@ -44,7 +44,7 @@ export default function TrendingDestinations3() {
 
                 <div className="featureCard__content">
                   <h3 className="text-16 fw-500 text-white">{elm.title}</h3>
-                  <p className="text-white lh-16">{elm.tourCount}+ Tours</p>
+                  <p className="text-white lh-16">{elm.tourCount}+ Trips</p>
                 </div>
               </Link>
             </div>
