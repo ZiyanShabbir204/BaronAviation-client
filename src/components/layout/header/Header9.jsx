@@ -55,7 +55,7 @@ export default function Header9({ isSticky }) {
                 <img src="/img/hero/3/logo.PNG" alt="logo icon" />
               </Link>
               <Link to="/" className="header__logo baron-text">
-                <img src="/img/hero/3/logo-text.PNG" alt="logo icon" />
+                <img src="/img/hero/3/logo-text.png" alt="logo icon" />
               </Link>
 
               <div className="text-white" style={{ flex: 1 }}>
