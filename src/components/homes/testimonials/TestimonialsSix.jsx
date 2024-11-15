@@ -5,17 +5,29 @@ import React from "react";
 
 export default function TestimonialsSix() {
   return (
-    <section className="layout-pt-xl layout-pb-xl">
+    <section className="layout-pt-md   layout-pb-xl">
       <div className="container">
         <div className="row">
-          <div className="col-auto">
-            <h2
+          <div
+            className="col-12"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            {/* <h2
               data-aos="fade-up"
               data-aos-delay=""
               className="text-gradient-vivid-orange"
             >
               What our Travelers are saying
-            </h2>
+            </h2> */}
+            <img
+              src="/img/testimonials/yellow-five-stars.webp"
+              style={{
+                width: "300px",
+              }}
+            />
           </div>
         </div>
 
