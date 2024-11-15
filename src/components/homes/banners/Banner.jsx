@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import { scroller } from "react-scroll";
 
 export default function Banner() {
+  const scrollToBookNow = () => {
+    scroller.scrollTo("bookNow", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+      offset: -window.innerHeight / 3, // Adjusts the offset to center
+    });
+  };
+
   return (
     <section className="cta -type-2">
       <div className="cta__bg">
@@ -52,14 +62,13 @@ export default function Banner() {
 
               <div className="mt-30 md:mt-20">
                 <button
+                  onClick={scrollToBookNow}
                   data-aos="fade-right"
                   data-aos-delay=""
                   className="button -md -dark-1 button-gradient text-white"
                 >
-                  <Link to="/tour-list-1">
-                    Book Now
-                    <i className="icon-arrow-top-right ml-10 text-16"></i>
-                  </Link>
+                  Book Now
+                  <i className="icon-arrow-top-right ml-10 text-16"></i>
                 </button>
               </div>
             </div>
