@@ -117,7 +117,7 @@ export const testimonialsFive = [
     role: `Web Designer`,
     comment: `Great Work`,
     desc: `I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance`,
-    img: `/img/testimonials/offered-services/1.jpeg`,
+    img: `/img/testimonials/offered-services/1.png`,
   },
   {
     id: 2,
@@ -125,7 +125,7 @@ export const testimonialsFive = [
     role: `Web Designer`,
     comment: `Great Work`,
     desc: `I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance`,
-    img: `/img/testimonials/offered-services/2.jpeg`,
+    img: `/img/testimonials/offered-services/2.png`,
   },
   {
     id: 3,
@@ -133,7 +133,7 @@ export const testimonialsFive = [
     role: `Web Designer`,
     comment: `Great Work`,
     desc: `I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance`,
-    img: `/img/testimonials/offered-services/3.jpeg`,
+    img: `/img/testimonials/offered-services/3.png`,
   },
   {
     id: 4,
@@ -141,7 +141,7 @@ export const testimonialsFive = [
     role: `Web Designer`,
     comment: `Great Work`,
     desc: `I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance`,
-    img: `/img/testimonials/offered-services/4.jpeg`,
+    img: `/img/testimonials/offered-services/4.png`,
   },
   {
     id: 5,
@@ -149,7 +149,7 @@ export const testimonialsFive = [
     role: `Web Designer`,
     comment: `Great Work`,
     desc: `I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance`,
-    img: `/img/testimonials/offered-services/5.jpeg`,
+    img: `/img/testimonials/offered-services/5.png`,
   },
 ];
 export const testimonialsSix = [

@@ -8,6 +8,47 @@
     }
 }
 
+
+
+@media (min-width: 1400px) {
+    .offer-service-text {
+        padding-right: 100px !important;
+    }
+}
+
+
 .service-image {
-    width: 85%;
+    height: 100%;
+}
+
+.js-testimonials-slider-1 {
+    height: 100%;
+
+}
+
+
+@media (max-width: 1440px) {
+    .service-image {
+        max-height: 700px;
+
+    }
+
+    .js-testimonials-slider-1 {
+        max-height: 700px;
+
+    }
+}
+
+
+
+@media (max-width: 1200px) {
+    .service-image {
+        max-height: 550px;
+
+    }
+
+    .js-testimonials-slider-1 {
+        max-height: 550px;
+
+    }
 }
