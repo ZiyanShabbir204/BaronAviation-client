@@ -6410,6 +6410,11 @@ h6 {
   display: block;
 }
 
+.blogCard.-type-1 {
+  color: white !important;
+}
+
+
 .blogCard.-type-1 .blogCard__image {
   position: relative;
 }
