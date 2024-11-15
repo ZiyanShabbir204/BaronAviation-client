@@ -19,6 +19,7 @@ import BrandsTwo from "@/components/homes/brands/BrandsTwo";
 import FooterTwo from "@/components/layout/footers/FooterTwo";
 import Banner13 from "@/components/homes/banners/Banner13";
 import ArticlesThree from "@/components/homes/articles/ArticlesThree";
+import CorporateSlider from "@/components/corporateSlider/CorporateSlider";
 
 const metadata = {
   title: "About || ViaTour - Travel & Tour Reactjs Template",
@@ -33,7 +34,10 @@ export default function Corporate() {
         <Hero />
         <Information />
         <BrandsTwo />
+        <CorporateSlider />
+
         <Banner13 />
+
         <ArticlesThree />
         <FooterTwo />
       </main>

@@ -13,8 +13,7 @@ export default function Information() {
             }}
           >
             <h1 className="text-gradient-vivid-orange">
-              EXPERIENCE TAILORED TRAVEL SOLUTIONS, PRIORITY ACCESS, AND PREMIUM
-              PERKS EXCLUSIVELY FOR OUR CORPORATE MEMBERS.
+              Tailored Travel, Priority Access & Premium Perks
             </h1>
           </div>
 
@@ -24,11 +23,15 @@ export default function Information() {
                 textAlign: "center",
               }}
             >
-              Enhance your business travel with The Baron Aviation’s Corporate
-              Membership. Enjoy elite benefits, effortless scheduling, and
-              custom solutions that put your business first. Join us today to
-              unlock seamless, efficient, and luxurious travel—crafted just for
-              you.
+              Enhance your business travel experience with The Baron Aviation’s
+              Corporate Membership. Our exclusive program offers a range of
+              elite benefits designed to make your travel more efficient,
+              seamless, and luxurious. Enjoy priority access, effortless
+              scheduling, and personalized solutions that cater specifically to
+              your business needs. With our bespoke services, you can focus on
+              what matters most while we take care of the rest. Join today and
+              experience corporate travel at its finest—designed for those who
+              demand excellence
             </p>
           </div>
         </div>
