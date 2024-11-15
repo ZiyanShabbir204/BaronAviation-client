@@ -206,7 +206,7 @@ const FlightRequestMenu = () => {
                     variant="outlined"
                     fullWidth
                     value={fromLocation}
-                    onChange={(e) => setToLocation(e.target.value)}
+                    onChange={(e) => setFromLocation(e.target.value)}
                     color="primary"
                     helperText={errors.fromLocation && "From is Required"}
                     InputProps={{
