@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="row justify-center">
           <div className="col-12">
             <div className="pageHeader__content">
-              <h1 className="pageHeader__title hero-heading">Our Vision</h1>
+              <h1 className="pageHeader__title hero-heading ">Our Vision</h1>
 
               <p className="pageHeader__text text-rajdhani ">
                 <span className="text-gradient-vivid-orange">

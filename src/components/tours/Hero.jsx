@@ -42,7 +42,7 @@ export default function Hero() {
           <div className="row justify-center">
             <div className="col-12">
               <div className="pageHeader__content">
-                <h1 className="pageHeader__title">
+                <h1 className="pageHeader__title hero-heading">
                   CURATED LUXURY AIR TRAVEL EXPERIENCES
                 </h1>
               </div>
