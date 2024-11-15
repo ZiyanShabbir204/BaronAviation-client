@@ -1383,6 +1383,7 @@ button:focus {
   border-radius: 12px;
   padding: 15px;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: white;
 }
 
 .contactForm select:focus,
@@ -1631,16 +1632,18 @@ input.text-white::placeholder {
   font-size: 15px;
   line-height: 1.4;
   height: 55px;
-  border: 1px solid #E7E6E6;
+  border: 1px solid var(--color-vivid-orange);
   border-radius: 12px;
   padding: 15px;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: white;
+  cursor: pointer;
 }
 
-.select__button:focus {
-  outline: 1px solid #05073C;
-  border: 1px solid #05073C;
-}
+/* .select__button:focus {
+  outline: 1px solid var(--color-vivid-orange);
+  border: 1px solid #v;
+} */
 
 .select__icon {
   width: 20px;
@@ -1656,9 +1659,8 @@ input.text-white::placeholder {
   flex-direction: column;
   width: 100%;
   max-height: 340px;
-  background-color: white;
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
+  background-color: var(--color-dark-gray);
+  border-radius: 10px;
   z-index: 30;
   transition: all 0.2s ease;
   pointer-events: none;
@@ -1700,7 +1702,7 @@ input.text-white::placeholder {
 
 .select__options__button:hover {
   cursor: pointer;
-  color: var(--color-accent-1) !important;
+  color: var(--color-vivid-orange) !important;
 }
 
 .select__options__button:focus {
@@ -1709,7 +1711,7 @@ input.text-white::placeholder {
 
 .select__search {
   height: 50px !important;
-  background-color: var(--color-light-1) !important;
+  background-color: var(--color-dark-gray) !important;
   width: auto !important;
   color: black;
   padding: 0 20px !important;

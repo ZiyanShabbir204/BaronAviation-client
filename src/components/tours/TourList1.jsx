@@ -114,7 +114,7 @@ export default function TourList1() {
                         </div>
 
                         <Link
-                          // to={`/tour-single-1/${elm.id}`}
+                          to={`/inquire?tour=${encodeURIComponent(elm.title)}`}
                           className="button -sm button-gradient text-white ml-30"
                         >
                           Inquire

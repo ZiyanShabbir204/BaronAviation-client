@@ -52,6 +52,7 @@ import UIElementsPage from "./pages/pages/ui-elements";
 import NotFoundPage from "./pages/pages/404";
 import ContactPage from "./pages/pages/contact";
 import Corporate from "./pages/pages/corporate";
+import Inquire from "./pages/pages/inquire";
 function App() {
   useEffect(() => {
     Aos.init({
@@ -123,6 +124,7 @@ function App() {
             <Route path="/invoice" element={<InvoicePage />} />
             <Route path="/ui-elements" element={<UIElementsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/inquire" element={<Inquire />} />
 
             <Route path="/404" element={<NotFoundPage />} />
             <Route path="/*" element={<NotFoundPage />} />

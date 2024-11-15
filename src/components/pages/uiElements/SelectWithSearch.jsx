@@ -1,14 +1,13 @@
-import { ddoptions } from "@/data/uiElements";
 import { useState } from "react";
 
-export default function SelectWithSearch() {
+export default function SelectWithSearch({ ddoptions, defaultValue }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedItem, setSelectedItem] = useState("");
+  const [selectedItem, setSelectedItem] = useState(defaultValue);
   const [ddActive, setDdActive] = useState(false);
 
   return (
     <div className="select js-select js-liveSearch" data-select-value="">
-      <button
+      <div
         className="select__button js-button"
         onClick={() => setDdActive((pre) => !pre)}
       >
@@ -16,7 +15,7 @@ export default function SelectWithSearch() {
           {selectedItem ? selectedItem : `Default`}
         </span>
         <i className="select__icon" data-feather="chevron-down"></i>
-      </button>
+      </div>
 
       <div
         className={`select__dropdown js-dropdown js-form-dd ${
@@ -33,7 +32,7 @@ export default function SelectWithSearch() {
         <div className="select__options js-options">
           {ddoptions
             .filter((elm) =>
-              elm.label?.toLowerCase().includes(searchQuery?.toLowerCase()),
+              elm.label?.toLowerCase().includes(searchQuery?.toLowerCase())
             )
             .map((elm, i) => (
               <div
