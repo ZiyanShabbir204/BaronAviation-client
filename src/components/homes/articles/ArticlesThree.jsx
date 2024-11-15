@@ -56,7 +56,7 @@ export default function ArticlesThree() {
                     <div className="lh-13">By {elm.author}</div>
                   </div>
 
-                  <h3 className="blogCard__title text-18 fw-500 mt-10">
+                  <h3 className="blogCard__title text-18 fw-500 mt-10 text-gradient-vivid-orange">
                     {elm.title}
                   </h3>
                 </div>
