@@ -46,7 +46,7 @@ function ResponsiveVideo() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <section className="layout-pt-lg layout-pb-lg">
+    <section className=" layout-pb-lg">
       <div className="container">
         <h2
           className=" mb-20 text-gradient-vivid-orange"

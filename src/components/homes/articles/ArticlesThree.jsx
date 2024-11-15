@@ -6,7 +6,7 @@ import React from "react";
 
 export default function ArticlesThree() {
   return (
-    <section className="layout-pt-xl">
+    <section className="layout-pt-xl layout-pb-xl">
       <div className="container">
         <div className="row justify-between items-end y-gap-10">
           <div className="col-auto">

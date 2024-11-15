@@ -26,7 +26,7 @@ export default function Menu() {
           </div>
 
           <div className="desktopNav__item">
-            <Link to="#">Corporate</Link>
+            <Link to="/corporate">Corporate</Link>
           </div>
         </div>
       </div>

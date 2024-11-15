@@ -18,7 +18,7 @@ export default function ContactPage() {
   return (
     <>
       <main>
-        <Header9 />
+        <Header9 isSticky />
         <Map />
         <Locations />
         <ContactForm />

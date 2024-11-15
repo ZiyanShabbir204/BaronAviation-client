@@ -18,7 +18,7 @@ export default function TourListPage1() {
   return (
     <>
       <main>
-        <Header9 />
+        <Header9 isSticky />
         <Hero />
         <TourList1 />
         <FooterTwo />

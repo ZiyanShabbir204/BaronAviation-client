@@ -51,6 +51,7 @@ import InvoicePage from "./pages/pages/invoice";
 import UIElementsPage from "./pages/pages/ui-elements";
 import NotFoundPage from "./pages/pages/404";
 import ContactPage from "./pages/pages/contact";
+import Corporate from "./pages/pages/corporate";
 function App() {
   useEffect(() => {
     Aos.init({
@@ -114,6 +115,7 @@ function App() {
 
             <Route path="/destinations" element={<DestinationsPage />} />
             <Route path="/our-vision" element={<AboutPage />} />
+            <Route path="/corporate" element={<Corporate />} />
             <Route path="/help-center" element={<HelpCenterPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/login" element={<LoginPage />} />

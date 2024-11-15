@@ -34,7 +34,8 @@ export default function Hero() {
     <>
       <section className="pageHeader -type-2 -secondary">
         <div className="pageHeader__bg">
-          <img src="/img/pageHeader/2.jpg" alt="image" />
+          <img src="/img/tailored-packages-hero.jpg" alt="image" />
+          <div className="overlay"></div>
         </div>
 
         <div className="container">

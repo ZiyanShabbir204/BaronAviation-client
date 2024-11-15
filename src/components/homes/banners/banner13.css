@@ -1,0 +1,14 @@
+.banner-13-cta-image {
+    background-image: url(/img/helicopter/heli-4.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.banner-13 {
+    padding: 0 !important;
+
+}
+
+.banner-13-text {
+    padding: 60px;
+}

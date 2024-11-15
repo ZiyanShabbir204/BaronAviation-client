@@ -13,7 +13,7 @@ export default function YoutubeVideos() {
   const handleSlideChange = (swiper) => {};
   return (
     <>
-      <section className="layout-pt-xl layout-pb-xl">
+      <section className=" layout-pb-xl">
         <div className="container">
           <div className="row y-gap-10 justify-between items-center y-gap-10">
             <h2
