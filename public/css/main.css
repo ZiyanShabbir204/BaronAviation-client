@@ -773,6 +773,24 @@ button:focus {
   text-decoration: underline;
 }
 
+.dashboard-sidebar-logo-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: baseline;
+  padding: 10px;
+}
+
+
+.dashboard-sidebar-logo-wrapper .baron-logo {
+  width: 70px;
+}
+
+.dashboard-sidebar-logo-wrapper .baron-text {
+  flex: 1;
+}
+
 .button.-white:hover {
   border-color: var(--color-white);
   background-color: var(--color-white) !important;
@@ -1436,6 +1454,8 @@ button:focus {
   background-color: var(--color-dark-gray);
   z-index: -1;
 }
+
+
 
 .contactForm .form-input textarea:focus+label,
 .contactForm .form-input input:focus+label {
