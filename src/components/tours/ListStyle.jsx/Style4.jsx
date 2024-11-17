@@ -19,7 +19,7 @@ export default function Style4() {
             <div key={i} className="col-lg-3 col-sm-6">
               <Link
                 to={`/tour-single-1/${elm.id}`}
-                className="tourCard -type-1 -rounded bg-white hover-shadow-1 overflow-hidden rounded-20 bg-white -hover-shadow"
+                className="tourCard -type-1 -rounded bg-dark-grey hover-shadow-1 overflow-hidden rounded-20 bg-dark-grey -hover-shadow"
               >
                 <div className="tourCard__header">
                   <div className="tourCard__image ratio ratio-28:20">

@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { TextField, Button, ThemeProvider, createTheme } from "@mui/material";
+import { useAuth } from "@/contexts/auth.context";
 
 const theme = createTheme({
   palette: {
@@ -40,6 +41,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ username: "", password: "" });
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +55,13 @@ export default function Login() {
     }
 
     setErrors({ username: "", password: "" });
-    // Handle login and navigation
+
+    try {
+      await login(username, password);
+      navigate("/");
+    } catch (err) {
+      console.log("err", err);
+    }
   };
 
   return (

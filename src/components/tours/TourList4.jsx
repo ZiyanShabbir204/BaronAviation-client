@@ -131,7 +131,7 @@ export default function TourList4() {
                       )}
 
                       <div className="tourCard__favorite">
-                        <button className="button -accent-1 size-35 bg-white rounded-full flex-center">
+                        <button className="button -accent-1 size-35 bg-dark-grey rounded-full flex-center">
                           <i className="icon-heart text-15"></i>
                         </button>
                       </div>

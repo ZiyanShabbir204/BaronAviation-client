@@ -48,11 +48,11 @@ export default function Gallery4({ tour }) {
           </div>
 
           <div className="navTourSingle">
-            <button className="navTourSingle__button bg-white js-slider1-prev js-slider1-prev9">
+            <button className="navTourSingle__button bg-dark-grey js-slider1-prev js-slider1-prev9">
               <i className="icon-arrow-left text-14"></i>
             </button>
 
-            <button className="navTourSingle__button bg-white js-slider1-next js-slider1-next9">
+            <button className="navTourSingle__button bg-dark-grey js-slider1-next js-slider1-next9">
               <i className="icon-arrow-right text-14"></i>
             </button>
           </div>
@@ -111,7 +111,7 @@ export default function Gallery4({ tour }) {
           <div className="col-lg-8">
             <div className="row x-gap-10 y-gap-10 items-center">
               <div className="col-auto">
-                <button className="button -accent-1 text-14 py-5 px-15 bg-white text-accent-1 rounded-200">
+                <button className="button -accent-1 text-14 py-5 px-15 bg-dark-grey text-accent-1 rounded-200">
                   Bestseller
                 </button>
               </div>

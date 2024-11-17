@@ -38,7 +38,7 @@ export default function Statistics() {
   );
   return (
     <div className="col-xl-8 col-lg-12 col-md-6">
-      <div className="rounded-12 bg-white shadow-2 h-full">
+      <div className="rounded-12 bg-dark-grey shadow-2 h-full">
         <div className="pt-20 px-30">
           <div className="tabs -underline-2 js-tabs">
             <div className="d-flex items-center justify-between">

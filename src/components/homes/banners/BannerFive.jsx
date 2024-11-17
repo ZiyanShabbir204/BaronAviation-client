@@ -32,7 +32,7 @@ export default function BannerFive() {
                 <button
                   data-aos="fade-right"
                   data-aos-delay=""
-                  className="button -md -accent-1 bg-white"
+                  className="button -md -accent-1 bg-dark-grey"
                 >
                   <Link to={"/tour-list-1"}>
                     See activities
@@ -70,7 +70,7 @@ export default function BannerFive() {
                 <button
                   data-aos="fade-left"
                   data-aos-delay=""
-                  className="button -md -accent-1 bg-white"
+                  className="button -md -accent-1 bg-dark-grey"
                 >
                   <Link to={"/tour-list-1"}>
                     See activities

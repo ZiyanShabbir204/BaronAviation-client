@@ -109,7 +109,7 @@ export default function HeaderSerch({ white }) {
                     className="headerSearchRecent__item js-search-option"
                     data-x-click="headerSearch"
                   >
-                    <div className="size-50 bg-white rounded-12 border-1 flex-center">
+                    <div className="size-50 bg-dark-grey rounded-12 border-1 flex-center">
                       {elm.iconClass && <i className={elm.iconClass}></i>}
                       {elm.img && (
                         <img src={elm.img} alt="image" className="rounded-12" />

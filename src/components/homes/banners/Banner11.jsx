@@ -45,7 +45,7 @@ export default function Banner11() {
                     <input type="email" placeholder="Email" className="" />
                   </div>
                   <div className="col-md-auto col-12">
-                    <button className="button -md -accent-1 bg-white col-12 text-accent-2">
+                    <button className="button -md -accent-1 bg-dark-grey col-12 text-accent-2">
                       Send
                     </button>
                   </div>

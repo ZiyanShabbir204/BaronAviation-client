@@ -93,7 +93,7 @@ export default function TourList7() {
                     <div
                       onClick={() => {
                         setCurentDD((pre) =>
-                          pre == "priceFilter1" ? "" : "priceFilter1",
+                          pre == "priceFilter1" ? "" : "priceFilter1"
                         );
                       }}
                       className="dropdown__button h-50 min-w-auto js-button"
@@ -178,7 +178,7 @@ export default function TourList7() {
                         </div>
                       )}
                       <div className="tourCard__favorite">
-                        <button className="button -accent-1 size-35 bg-white rounded-full flex-center">
+                        <button className="button -accent-1 size-35 bg-dark-grey rounded-full flex-center">
                           <i className="icon-heart text-15"></i>
                         </button>
                       </div>

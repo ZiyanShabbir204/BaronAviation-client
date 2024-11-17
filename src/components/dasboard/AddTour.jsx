@@ -43,7 +43,7 @@ export default function AddTour() {
             <h1 className="text-30">Add Tour</h1>
             <p className="">Lorem ipsum dolor sit amet, consectetur.</p>
 
-            <div className="rounded-12 bg-white shadow-2 px-40 pt-40 pb-30 mt-60">
+            <div className="rounded-12 bg-dark-grey shadow-2 px-40 pt-40 pb-30 mt-60">
               <div className="tabs -underline-2 js-tabs">
                 <div className="tabs__controls row x-gap-40 y-gap-10 lg:x-gap-20 js-tabs-controls">
                   {tabs.map((elm, i) => (

@@ -48,7 +48,7 @@ export default function BannerOne() {
                     <button
                       data-aos="fade-right"
                       data-aos-delay=""
-                      className="button -md -accent-1 bg-white col-12 text-accent-2"
+                      className="button -md -accent-1 bg-dark-grey col-12 text-accent-2"
                     >
                       Send
                     </button>

@@ -48,11 +48,11 @@ export default function YoutubeVideos() {
                 </div>
               </div>
             </div>
-            <button className="navRegular__button bg-white js-slider1-prev">
+            <button className="navRegular__button bg-dark-grey js-slider1-prev">
               <i className="icon-arrow-left text-20 sm:text-10"></i>
             </button>
 
-            <button className="navRegular__button bg-white js-slider1-next">
+            <button className="navRegular__button bg-dark-grey js-slider1-next">
               <i className="icon-arrow-right text-20 sm:text-10"></i>
             </button>
           </div>

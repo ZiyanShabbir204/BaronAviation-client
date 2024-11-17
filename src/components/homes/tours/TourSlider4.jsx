@@ -85,7 +85,7 @@ export default function TourSlider4() {
                       <SwiperSlide key={i}>
                         <Link
                           to={`/tour-single-1/${elm.id}`}
-                          className="tourCard -type-1 -rounded bg-white hover-shadow-1 overflow-hidden rounded-20 bg-white -hover-shadow"
+                          className="tourCard -type-1 -rounded bg-dark-grey hover-shadow-1 overflow-hidden rounded-20 bg-dark-grey -hover-shadow"
                         >
                           <div className="tourCard__header">
                             <div className="tourCard__image ratio ratio-28:20">
@@ -147,11 +147,11 @@ export default function TourSlider4() {
               </div>
 
               <div className="d-flex mt-40">
-                <button className="button -dark-1 rounded-full size-72 flex-center bg-white js-slider1-prev2">
+                <button className="button -dark-1 rounded-full size-72 flex-center bg-dark-grey js-slider1-prev2">
                   <i className="icon-arrow-left text-20"></i>
                 </button>
 
-                <button className="button -dark-1 rounded-full size-72 flex-center bg-white ml-10 js-slider1-next2">
+                <button className="button -dark-1 rounded-full size-72 flex-center bg-dark-grey ml-10 js-slider1-next2">
                   <i className="icon-arrow-right text-20"></i>
                 </button>
               </div>

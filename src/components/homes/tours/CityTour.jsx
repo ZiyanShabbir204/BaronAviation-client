@@ -68,7 +68,7 @@ export default function CityTour() {
                   <SwiperSlide key={i}>
                     <Link
                       to={`/tour-single-1/${elm.id}`}
-                      className="tourCard -type-1 d-block bg-white"
+                      className="tourCard -type-1 d-block bg-dark-grey"
                     >
                       <div className="tourCard__header">
                         <div className="tourCard__image ratio ratio-28:20">
@@ -126,11 +126,11 @@ export default function CityTour() {
           </div>
 
           <div className="navAbsolute">
-            <button className="navAbsolute__button bg-white js-slider1-prev pbp2">
+            <button className="navAbsolute__button bg-dark-grey js-slider1-prev pbp2">
               <i className="icon-arrow-left text-14"></i>
             </button>
 
-            <button className="navAbsolute__button bg-white js-slider1-next pbn2">
+            <button className="navAbsolute__button bg-dark-grey js-slider1-next pbn2">
               <i className="icon-arrow-right text-14"></i>
             </button>
           </div>

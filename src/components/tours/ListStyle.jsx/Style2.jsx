@@ -19,7 +19,7 @@ export default function Style2() {
             <div key={i} className="col-lg-3 col-sm-6">
               <Link
                 to={`/tour-single-1/${elm.id}`}
-                className="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow"
+                className="tourCard -type-1 d-block border-1 bg-dark-grey hover-shadow-1 overflow-hidden rounded-12 bg-dark-grey -hover-shadow"
               >
                 <div className="tourCard__header">
                   <div className="tourCard__image ratio ratio-28:20">

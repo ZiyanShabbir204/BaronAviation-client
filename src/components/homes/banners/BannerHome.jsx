@@ -28,7 +28,7 @@ export default function BannerHome() {
                 onClick={scrollToBookNow}
                 data-aos="fade-right"
                 data-aos-delay=""
-                className="button -md -dark-1 bg-white text-accent-1"
+                className="button -md -dark-1 bg-dark-grey text-accent-1"
               >
                 Book Now
                 <i className="icon-arrow-top-right ml-10 "></i>

@@ -52,7 +52,7 @@ export default function TestimonialsFive() {
                 >
                   {testimonialsFive.map((elm, i) => (
                     <SwiperSlide key={i}>
-                      <div className="testimonials -type-2 shadow-1 bg-white rounded-24 pt-50 px-40 pb-30">
+                      <div className="testimonials -type-2 shadow-1 bg-dark-grey rounded-24 pt-50 px-40 pb-30">
                         <div className="d-flex items-center justify-between">
                           <div className="text-18 fw-500 text-accent-1">
                             {elm.comment}
@@ -146,9 +146,9 @@ export default function TestimonialsFive() {
                       height: "30px",
                       width: "100px",
                       objectFit: "contain",
-                      path : {
-                        fill: "#FFFFFF"
-                      }
+                      path: {
+                        fill: "#FFFFFF",
+                      },
                     }}
                     src={elm}
                     alt="image"

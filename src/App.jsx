@@ -53,6 +53,7 @@ import NotFoundPage from "./pages/pages/404";
 import ContactPage from "./pages/pages/contact";
 import Corporate from "./pages/pages/corporate";
 import Inquire from "./pages/pages/inquire";
+import { AuthProvider } from "./contexts/auth.context";
 function App() {
   useEffect(() => {
     Aos.init({
@@ -63,75 +64,77 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/">
-            <Route index element={<HomePage10 />} />
-            <Route path="/home-1" element={<HomePage1 />} />
-            <Route path="/home-2" element={<HomePage2 />} />
-            <Route path="/home-3" element={<HomePage3 />} />
-            <Route path="/home-4" element={<HomePage4 />} />
-            <Route path="/home-5" element={<HomePage5 />} />
-            <Route path="/home-6" element={<HomePage6 />} />
-            <Route path="/home-7" element={<HomePage7 />} />
-            <Route path="/home-8" element={<HomePage8 />} />
-            <Route path="/home-9" element={<HomePage9 />} />
-            <Route path="/home-10" element={<HomePage10 />} />
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/">
+              <Route index element={<HomePage10 />} />
+              <Route path="/home-1" element={<HomePage1 />} />
+              <Route path="/home-2" element={<HomePage2 />} />
+              <Route path="/home-3" element={<HomePage3 />} />
+              <Route path="/home-4" element={<HomePage4 />} />
+              <Route path="/home-5" element={<HomePage5 />} />
+              <Route path="/home-6" element={<HomePage6 />} />
+              <Route path="/home-7" element={<HomePage7 />} />
+              <Route path="/home-8" element={<HomePage8 />} />
+              <Route path="/home-9" element={<HomePage9 />} />
+              <Route path="/home-10" element={<HomePage10 />} />
 
-            <Route
-              path="/tailored-packages"
-              element={<Navigate to="/tailored-packages/1" replace />}
-            />
-            <Route path="/tailored-packages/:id" element={<TourListPage1 />} />
-            <Route path="/tour-list-2" element={<TourListPage2 />} />
-            <Route path="/tour-list-3" element={<TourListPage3 />} />
-            <Route path="/tour-list-4" element={<TourListPage4 />} />
-            <Route path="/tour-list-5" element={<TourListPage5 />} />
-            <Route path="/tour-list-6" element={<TourListPage6 />} />
-            <Route path="/tour-list-7" element={<TourListPage7 />} />
-            <Route path="/tour-list-8" element={<TourListPage8 />} />
-            <Route path="/tour-list-9" element={<TourListPage9 />} />
-            <Route path="/tour-list-10" element={<TourListPage10 />} />
+              <Route
+                path="/tailored-packages"
+                element={<Navigate to="/tailored-packages/1" replace />}
+              />
+              <Route
+                path="/tailored-packages/:id"
+                element={<TourListPage1 />}
+              />
+              <Route path="/tour-list-2" element={<TourListPage2 />} />
+              <Route path="/tour-list-3" element={<TourListPage3 />} />
+              <Route path="/tour-list-4" element={<TourListPage4 />} />
+              <Route path="/tour-list-5" element={<TourListPage5 />} />
+              <Route path="/tour-list-6" element={<TourListPage6 />} />
+              <Route path="/tour-list-7" element={<TourListPage7 />} />
+              <Route path="/tour-list-8" element={<TourListPage8 />} />
+              <Route path="/tour-list-9" element={<TourListPage9 />} />
+              <Route path="/tour-list-10" element={<TourListPage10 />} />
 
-            <Route path="/tour-single-1/:id" element={<TourSinglePage1 />} />
-            <Route path="/tour-single-2/:id" element={<TourSinglePage2 />} />
-            <Route path="/tour-single-3/:id" element={<TourSinglePage3 />} />
-            <Route path="/tour-single-4/:id" element={<TourSinglePage4 />} />
-            <Route path="/tour-single-5/:id" element={<TourSinglePage5 />} />
+              <Route path="/tour-single-1/:id" element={<TourSinglePage1 />} />
+              <Route path="/tour-single-2/:id" element={<TourSinglePage2 />} />
+              <Route path="/tour-single-3/:id" element={<TourSinglePage3 />} />
+              <Route path="/tour-single-4/:id" element={<TourSinglePage4 />} />
+              <Route path="/tour-single-5/:id" element={<TourSinglePage5 />} />
 
-            <Route path="/booking-pages" element={<BookingPage />} />
+              <Route path="/booking-pages" element={<BookingPage />} />
 
-            <Route path="/db-main" element={<DBMainPage />} />
-            <Route path="/db-booking" element={<DBBookingPage />} />
-            <Route path="/db-listing" element={<DBListingPage />} />
-            <Route path="/db-add-tour" element={<DBAddTourPage />} />
-            <Route path="/db-favorites" element={<DBFavoritesPage />} />
-            <Route path="/db-messages" element={<DBMessagesPage />} />
-            <Route path="/db-profile" element={<DBProfilePage />} />
+              <Route path="/dashboard" element={<DBMainPage />} />
+              <Route path="/my-booking" element={<DBBookingPage />} />
+              <Route path="/my-profile" element={<DBProfilePage />} />
 
-            <Route path="/blog-list-1" element={<BlogListPage1 />} />
-            <Route path="/blog-list-2" element={<BlogListPage2 />} />
-            <Route path="/blog-list-3" element={<BlogListPage3 />} />
-            <Route path="/blog-single/:id" element={<BlogSinglePage />} />
+              <Route path="/blog-list-1" element={<BlogListPage1 />} />
+              <Route path="/blog-list-2" element={<BlogListPage2 />} />
+              <Route path="/blog-list-3" element={<BlogListPage3 />} />
+              <Route path="/blog-single/:id" element={<BlogSinglePage />} />
 
-            <Route path="/destinations" element={<DestinationsPage />} />
-            <Route path="/our-vision" element={<AboutPage />} />
-            <Route path="/corporate" element={<Corporate />} />
-            <Route path="/help-center" element={<HelpCenterPage />} />
-            <Route path="/terms" element={<TermsPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/invoice" element={<InvoicePage />} />
-            <Route path="/ui-elements" element={<UIElementsPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/inquire" element={<Inquire />} />
+              <Route path="/destinations" element={<DestinationsPage />} />
+              <Route path="/our-vision" element={<AboutPage />} />
+              <Route path="/corporate" element={<Corporate />} />
+              <Route path="/help-center" element={<HelpCenterPage />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/invoice" element={<InvoicePage />} />
+              <Route path="/ui-elements" element={<UIElementsPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/inquire" element={<Inquire />} />
 
-            <Route path="/404" element={<NotFoundPage />} />
-            <Route path="/*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
-        <ScrollTopBehaviour />
-      </BrowserRouter>
+              <Route path="/404" element={<NotFoundPage />} />
+              <Route path="/*" element={<NotFoundPage />} />
+            </Route>
+          </Routes>
+          <ScrollTopBehaviour />
+        </BrowserRouter>
+      </AuthProvider>
+
       <ScrollToTop />
     </>
   );

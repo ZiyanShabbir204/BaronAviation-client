@@ -22,7 +22,7 @@ export default function Features8() {
                     <br /> {elm.title.split(" ").slice(2).join(" ")}
                   </h4>
 
-                  <button className="button -md -accent-1 bg-white">
+                  <button className="button -md -accent-1 bg-dark-grey">
                     <Link to={"/tour-list-1"}>
                       See activities
                       <i className="icon-arrow-top-right ml-10"></i>

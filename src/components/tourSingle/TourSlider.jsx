@@ -55,7 +55,7 @@ export default function TourSlider() {
                   <SwiperSlide key={i}>
                     <Link
                       to={`/tour-single-1/${elm.id}`}
-                      className="tourCard -type-1 py-10 px-10 border-1 rounded-12 bg-white -hover-shadow"
+                      className="tourCard -type-1 py-10 px-10 border-1 rounded-12 bg-dark-grey -hover-shadow"
                     >
                       <div className="tourCard__header">
                         <div className="tourCard__image ratio ratio-28:20">
@@ -111,11 +111,11 @@ export default function TourSlider() {
           </div>
 
           <div className="navAbsolute">
-            <button className="navAbsolute__button bg-white js-slider10-prev">
+            <button className="navAbsolute__button bg-dark-grey js-slider10-prev">
               <i className="icon-arrow-left text-14"></i>
             </button>
 
-            <button className="navAbsolute__button bg-white js-slider10-next">
+            <button className="navAbsolute__button bg-dark-grey js-slider10-next">
               <i className="icon-arrow-right text-14"></i>
             </button>
           </div>

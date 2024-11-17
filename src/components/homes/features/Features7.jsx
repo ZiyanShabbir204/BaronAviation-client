@@ -27,7 +27,7 @@ export default function Features7() {
         >
           {featuresThree.map((elm, i) => (
             <div key={i} className="col-lg-3 col-6">
-              <div className="text-center py-50 md:py-20 rounded-24 -hover-bg-white">
+              <div className="text-center py-50 md:py-20 rounded-24 -hover-bg-dark-grey">
                 <img src={elm.icon} alt="icon" />
 
                 <h3 className="text-40 md:text-30 lh-14 fw-700 mt-30 md:mt-15">

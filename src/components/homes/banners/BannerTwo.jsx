@@ -21,7 +21,7 @@ export default function BannerTwo() {
               <button
                 data-aos="fade-right"
                 data-aos-delay=""
-                className="button -md -dark-1 bg-white text-accent-1"
+                className="button -md -dark-1 bg-dark-grey text-accent-1"
               >
                 <Link to="/tour-list-1">
                   Book Now

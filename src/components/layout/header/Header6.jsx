@@ -89,7 +89,7 @@ export default function Header6() {
 
             <Link
               to="/login"
-              className="button -sm -dark-1 bg-white rounded-200 ml-30"
+              className="button -sm -dark-1 bg-dark-grey rounded-200 ml-30"
             >
               Log in
             </Link>

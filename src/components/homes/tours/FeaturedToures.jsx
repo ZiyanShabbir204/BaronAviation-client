@@ -41,7 +41,7 @@ export default function FeaturedToures() {
             <div key={i} className="col-lg-3 col-md-6">
               <Link
                 to={`/tour-single-1/${elm.id}`}
-                className="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12  -hover-shadow"
+                className="tourCard -type-1 d-block border-1 bg-dark-grey hover-shadow-1 overflow-hidden rounded-12  -hover-shadow"
               >
                 <div className="tourCard__header">
                   <div className="tourCard__image ratio ratio-28:20">

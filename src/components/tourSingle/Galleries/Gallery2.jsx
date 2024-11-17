@@ -45,11 +45,11 @@ export default function Gallery2() {
               </div>
 
               <div className="navAbsolute -type-2">
-                <button className="navAbsolute__button bg-white js-sliderMain-prev js-slider1-prev7">
+                <button className="navAbsolute__button bg-dark-grey js-sliderMain-prev js-slider1-prev7">
                   <i className="icon-arrow-left text-14"></i>
                 </button>
 
-                <button className="navAbsolute__button bg-white js-sliderMain-next js-slider1-next7">
+                <button className="navAbsolute__button bg-dark-grey js-sliderMain-next js-slider1-next7">
                   <i className="icon-arrow-right text-14"></i>
                 </button>
               </div>

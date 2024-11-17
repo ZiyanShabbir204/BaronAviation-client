@@ -43,7 +43,7 @@ export default function Information() {
               </div>
 
               <div className="mapTourSingle2__button">
-                <button className="button -md -dark-1 bg-white fw-500 col-12">
+                <button className="button -md -dark-1 bg-dark-grey fw-500 col-12">
                   <i className="icon-pin text-20 mr-10"></i>
                   See popular activities on the map
                 </button>

@@ -74,16 +74,14 @@ export default function Tour2() {
         >
           {tourData
             .filter((elm) =>
-              elm.location
-                .toLowerCase()
-                .includes(currentLocation.toLowerCase()),
+              elm.location.toLowerCase().includes(currentLocation.toLowerCase())
             )
             .slice(0, 4)
             .map((elm, i) => (
               <div key={i} className="col-lg-3 col-md-6">
                 <a
                   href="#"
-                  className="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow"
+                  className="tourCard -type-1 d-block border-1 bg-dark-grey hover-shadow-1 overflow-hidden rounded-12 bg-dark-grey -hover-shadow"
                 >
                   <div className="tourCard__header">
                     <div className="tourCard__image ratio ratio-28:20">

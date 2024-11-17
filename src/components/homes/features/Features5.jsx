@@ -35,7 +35,7 @@ export default function Features5() {
             <button
               data-aos="fade-right"
               data-aos-delay=""
-              className="button -md -dark-1 bg-white text-accent-1 mt-60 md:mt-30"
+              className="button -md -dark-1 bg-dark-grey text-accent-1 mt-60 md:mt-30"
             >
               <Link to={"/tour-list-1"}>
                 Explore Our Tours
@@ -49,7 +49,7 @@ export default function Features5() {
               {featuresTwo.map((elm, i) => (
                 <div
                   key={i}
-                  className="featuresGrid__item px-40 py-40 text-center bg-white rounded-12"
+                  className="featuresGrid__item px-40 py-40 text-center bg-dark-grey rounded-12"
                 >
                   <img src={elm.iconSrc} alt="icon" />
                   <div className="text-40 fw-700 text-accent-1 mt-20 lh-14">

@@ -38,7 +38,7 @@ export default function Features6() {
               >
                 {featuresFour.map((elm, i) => (
                   <div key={i} className="col-xl-4 col-lg-6 col-sm-6">
-                    <div className="featureIcon -type-1 px-40 py-40 rounded-24 bg-white shadow-1">
+                    <div className="featureIcon -type-1 px-40 py-40 rounded-24 bg-dark-grey shadow-1">
                       <div className="featureIcon__icon">
                         <img src={elm.iconSrc} alt="icon" />
                       </div>

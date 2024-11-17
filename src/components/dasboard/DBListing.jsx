@@ -23,7 +23,7 @@ export default function DBListing() {
             <h1 className="text-30">My Listings</h1>
             <p className="">Lorem ipsum dolor sit amet, consectetur.</p>
 
-            <div className="rounded-12 bg-white shadow-2 px-40 pt-40 pb-30 md:px-20 md:pt-20 md:pb-20 mt-60 md:mt-30">
+            <div className="rounded-12 bg-dark-grey shadow-2 px-40 pt-40 pb-30 md:px-20 md:pt-20 md:pb-20 mt-60 md:mt-30">
               <div className="row y-gap-30">
                 {tourData.slice(0, 6).map((elm, i) => (
                   <div key={i} className="col-lg-6">

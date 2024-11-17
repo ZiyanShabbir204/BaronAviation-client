@@ -45,7 +45,7 @@ export default function BannerSeven() {
                     <input type="email" placeholder="Email" className="" />
                   </div>
                   <div className="col-md-auto col-12">
-                    <button className="button -md -dark-1 bg-white col-12 text-accent-2">
+                    <button className="button -md -dark-1 bg-dark-grey col-12 text-accent-2">
                       Send
                       <i className="icon-arrow-top-right ml-10 text-16"></i>
                     </button>

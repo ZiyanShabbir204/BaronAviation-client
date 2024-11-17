@@ -5,6 +5,27 @@ import React from "react";
 
 export default function Sidebar({ setSideBarOpen }) {
   const { pathname } = useLocation();
+  const sidebarItems = [
+    {
+      id: 1,
+      href: "/dashboard",
+      iconClass: "icon-dashboard text-26",
+      label: "Dashboard",
+    },
+    {
+      id: 2,
+      href: "/my-booking",
+      iconClass: "icon-calendar text-26",
+      label: "My Booking",
+    },
+    {
+      id: 7,
+      href: "/my-profile",
+      iconClass: "icon-account text-26",
+      label: "My Profile",
+    },
+    { id: 8, href: "/", iconClass: "icon-logout text-26", label: "Logout" },
+  ];
   return (
     <div className="dashboard__sidebar js-dashboard-sidebar">
       <div className="dashboard__sidebar_header">
@@ -75,8 +96,10 @@ export default function Sidebar({ setSideBarOpen }) {
             } `}
           >
             <Link to={elm.href}>
-              <i className={elm.iconClass}></i>
-              <span className="ml-10">{elm.label}</span>
+              <i className={elm.iconClass + " text-gradient-vivid-orange"}></i>
+              <span className="ml-10 text-gradient-vivid-orange ">
+                {elm.label}
+              </span>
             </Link>
           </div>
         ))}

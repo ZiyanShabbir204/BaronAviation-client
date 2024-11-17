@@ -25,7 +25,7 @@ export default function Messages() {
             <p className="">Lorem ipsum dolor sit amet, consectetur.</p>
             <div className="row y-gap-30 pt-60">
               <div className="col-lg-4">
-                <div className="rounded-12 bg-white shadow-2 px-40 pt-40 pb-30">
+                <div className="rounded-12 bg-dark-grey shadow-2 px-40 pt-40 pb-30">
                   <div className="dbSearch">
                     <i className="icon-search text-16"></i>
                     <input type="search" placeholder="Search" />
@@ -75,7 +75,7 @@ export default function Messages() {
               </div>
 
               <div className="col-lg-8">
-                <div className="rounded-12 bg-white shadow-2 px-40 pt-20 pb-30">
+                <div className="rounded-12 bg-dark-grey shadow-2 px-40 pt-20 pb-30">
                   <div className="row x-gap-10 y-gap-10 justify-between items-center pb-20 border-1-bottom">
                     <div className="col-auto">
                       <div className="d-flex items-center">

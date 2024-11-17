@@ -30,7 +30,7 @@ export default function Banner10() {
               <input
                 type="text"
                 placeholder="Your email"
-                className="bg-white"
+                className="bg-dark-grey"
               />
               <button className="button -md -dark-1 bg-accent-1 text-white">
                 Subscribe

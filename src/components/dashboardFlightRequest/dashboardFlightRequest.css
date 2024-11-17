@@ -1,0 +1,35 @@
+.dashboard-flight-request {}
+
+.request-menu-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px !important;
+
+}
+
+.info-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.location-menu {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 767px) {
+
+    .info-menu,
+    .location-menu {
+        flex-direction: column;
+    }
+
+    .request-menu-left {
+        display: none;
+    }
+}
+
+.datePicker {
+    display: flex;
+    flex-direction: row-reverse;
+}

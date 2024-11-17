@@ -100,7 +100,7 @@ export default function Hero2() {
                   className="searchFormItem__button"
                   onClick={() =>
                     setCurrentActiveDD((pre) =>
-                      pre == "location" ? "" : "location",
+                      pre == "location" ? "" : "location"
                     )
                   }
                 >
@@ -126,7 +126,7 @@ export default function Hero2() {
                   className="searchFormItem__button"
                   onClick={() =>
                     setCurrentActiveDD((pre) =>
-                      pre == "calender" ? "" : "calender",
+                      pre == "calender" ? "" : "calender"
                     )
                   }
                 >
@@ -151,7 +151,7 @@ export default function Hero2() {
                   className="searchFormItem__button"
                   onClick={() =>
                     setCurrentActiveDD((pre) =>
-                      pre == "tourType" ? "" : "tourType",
+                      pre == "tourType" ? "" : "tourType"
                     )
                   }
                 >
@@ -248,7 +248,7 @@ export default function Hero2() {
                         <button
                           data-aos="fade-right"
                           data-aos-delay="200"
-                          className="button -md -dark-1 bg-white text-accent-1 mt-30"
+                          className="button -md -dark-1 bg-dark-grey text-accent-1 mt-30"
                         >
                           <Link to="/tour-list-1">
                             <span>Book Now</span>
@@ -276,11 +276,11 @@ export default function Hero2() {
           </div>
 
           <div className="navAbsolute">
-            <button className="navAbsolute__button bg-white js-sliderMain-prev hero2prev">
+            <button className="navAbsolute__button bg-dark-grey js-sliderMain-prev hero2prev">
               <i className="icon-arrow-left text-14"></i>
             </button>
 
-            <button className="navAbsolute__button bg-white js-sliderMain-next hero2next">
+            <button className="navAbsolute__button bg-dark-grey js-sliderMain-next hero2next">
               <i className="icon-arrow-right text-14"></i>
             </button>
           </div>

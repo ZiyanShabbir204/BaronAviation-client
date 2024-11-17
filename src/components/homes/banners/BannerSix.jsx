@@ -31,7 +31,7 @@ export default function BannerSix() {
               <button
                 data-aos="fade-right"
                 data-aos-delay=""
-                className="button -md -dark-1 bg-white"
+                className="button -md -dark-1 bg-dark-grey"
               >
                 Subscribe
               </button>

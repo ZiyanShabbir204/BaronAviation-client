@@ -5,17 +5,17 @@ import MobileMenu from "../components/MobileMenu";
 import Menu from "../components/Menu";
 
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "@/contexts/auth.context";
 
 export default function Header9({ isSticky }) {
   const navigate = useNavigate();
+  const { user, logout } = useAuth();
 
   const pageNavigate = (pageName) => {
     navigate(pageName);
   };
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [addClass, setAddClass] = useState(false);
-
-  // Add a class to the element when scrolled 50px
   const handleScroll = () => {
     if (window.scrollY >= 50) {
       setAddClass(true);
@@ -26,8 +26,6 @@ export default function Header9({ isSticky }) {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
-    // Cleanup the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -39,6 +37,10 @@ export default function Header9({ isSticky }) {
           addClass || isSticky ? "-is-sticky" : ""
         }`}
       >
+        <div className="corporate-header">
+          Welcome! Access your corporate dashboard by{" "}
+          <Link to="/dashboard">clicking here</Link>.
+        </div>
         <div className="header__container">
           <div className="headerMobile__left">
             <button
@@ -81,19 +83,34 @@ export default function Header9({ isSticky }) {
           </div>
 
           <div className="header__right">
-            <Link
-              to="/register"
-              className="button -sm  button-gradient text-white"
-            >
-              Sign up
-            </Link>
+            {!user && (
+              <>
+                <Link
+                  to="/register"
+                  className="button -sm  button-gradient text-white"
+                >
+                  Sign up
+                </Link>
 
-            <Link
-              to="/login"
-              className="button -sm button-gradient text-white ml-30"
-            >
-              Log in
-            </Link>
+                <Link
+                  to="/login"
+                  className="button -sm button-gradient text-white ml-30"
+                >
+                  Log in
+                </Link>
+              </>
+            )}
+
+            {user && (
+              <>
+                <button
+                  onClick={logout}
+                  className="button -sm  button-gradient text-white"
+                >
+                  Logout
+                </button>
+              </>
+            )}
           </div>
         </div>
       </header>

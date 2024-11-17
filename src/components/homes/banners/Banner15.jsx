@@ -32,7 +32,9 @@ export default function Banner15() {
               className="singleInput type-1 mt-30"
             >
               <input type="text" placeholder="Your email" />
-              <button className="button -md -dark-1 bg-white">Subscribe</button>
+              <button className="button -md -dark-1 bg-dark-grey">
+                Subscribe
+              </button>
             </div>
           </div>
         </div>

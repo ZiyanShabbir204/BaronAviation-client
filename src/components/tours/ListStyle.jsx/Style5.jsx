@@ -19,7 +19,7 @@ export default function Style5() {
             <div key={i} className="col-lg-3 col-md-6">
               <Link
                 to={`/tour-single-1/${elm.id}`}
-                className="tourCard -type-1 d-block bg-white"
+                className="tourCard -type-1 d-block bg-dark-grey"
               >
                 <div className="tourCard__header">
                   <div className="tourCard__image ratio ratio-28:20">

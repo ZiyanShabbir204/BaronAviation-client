@@ -39,11 +39,11 @@ export default function Gallery3() {
           </div>
 
           <div className="navAbsolute -type-2">
-            <button className="navAbsolute__button bg-white js-sliderMain-prev js-slider1-prev8">
+            <button className="navAbsolute__button bg-dark-grey js-sliderMain-prev js-slider1-prev8">
               <i className="icon-arrow-left text-14"></i>
             </button>
 
-            <button className="navAbsolute__button bg-white js-sliderMain-next js-slider1-next8">
+            <button className="navAbsolute__button bg-dark-grey js-sliderMain-next js-slider1-next8">
               <i className="icon-arrow-right text-14"></i>
             </button>
           </div>
