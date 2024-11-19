@@ -54,6 +54,9 @@ import ContactPage from "./pages/pages/contact";
 import Corporate from "./pages/pages/corporate";
 import Inquire from "./pages/pages/inquire";
 import { AuthProvider } from "./contexts/auth.context";
+import { SnackbarProvider } from "notistack";
+import BookFlight from "./components/dasboard/BookFlight";
+
 function App() {
   useEffect(() => {
     Aos.init({
@@ -64,6 +67,7 @@ function App() {
 
   return (
     <>
+    <SnackbarProvider>
       <AuthProvider>
         <BrowserRouter>
           <Routes>
@@ -107,6 +111,7 @@ function App() {
               <Route path="/booking-pages" element={<BookingPage />} />
 
               <Route path="/dashboard" element={<DBMainPage />} />
+              <Route path="/book-flight" element={<BookFlight />} />
               <Route path="/my-booking" element={<DBBookingPage />} />
               <Route path="/my-profile" element={<DBProfilePage />} />
 
@@ -134,6 +139,7 @@ function App() {
           <ScrollTopBehaviour />
         </BrowserRouter>
       </AuthProvider>
+      </SnackbarProvider>
 
       <ScrollToTop />
     </>

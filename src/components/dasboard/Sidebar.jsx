@@ -14,6 +14,13 @@ export default function Sidebar({ setSideBarOpen }) {
     },
     {
       id: 2,
+      href: "/book-flight",
+      iconClass: "icon-calendar text-26",
+      label: "Book Flight",
+    },
+
+    {
+      id: 3,
       href: "/my-booking",
       iconClass: "icon-calendar text-26",
       label: "My Booking",

@@ -6487,7 +6487,66 @@ h6 {
   max-width: 100%;
   width: 1530px;
 }
+.MuiDataGrid-root, .css-1mypm2r-MuiDataGrid-root, .MuiDataGrid-withBorderColor{
+  color: white !important;
+  
+}
+.css-yseucu-MuiDataGrid-columnHeaderRow{
+  background: var(--color-dark-gray) !important;
+}
+.css-ok32b7-MuiDataGrid-overlay{
+  background: var(--color-dark-gray) !important;
 
+}
+.css-1hr2sou-MuiTablePagination-root, .css-cdtzx3-MuiButtonBase-root-MuiIconButton-root.Mui-disabled ,.MuiSelect-icon{
+  color: var(--color-vivid-orange) !important;
+}
+
+
+.css-ad8qk9 {
+  position: absolute;
+  display: inline-block;
+  z-index: 6;
+  --size: calc(max(var(--DataGrid-scrollbarSize), 10px));
+  width: 100%;
+  height: var(--size);
+  overflow-y: hidden;
+  overflow-x: auto;
+  outline: 0;
+  bottom: 0px;
+
+  /* Scrollbar styling */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: var(--color-vivid-orange) var(--color-light-gray); /* Thumb and track colors */
+}
+
+/* Chrome, Edge, and Safari */
+.css-ad8qk9::-webkit-scrollbar {
+  height: 10px; /* Scrollbar height */
+}
+
+.css-ad8qk9::-webkit-scrollbar-thumb {
+  background-color: #f6bc16; /* Thumb color */
+  border-radius: 5px; /* Rounded thumb edges */
+  border: 2px solid #222222; /* Padding around the thumb */
+}
+
+.css-ad8qk9::-webkit-scrollbar-track {
+  background: #222222; /* Track color */
+  border-radius: 5px; /* Optional: Rounded track edges */
+}
+.css-5lvf42-MuiSelect-select-MuiInputBase-input-MuiInput-input.MuiSelect-select, .css-1yrc8ca-MuiInputBase-input-MuiInput-input,.css-1q55ijt-MuiInputBase-input-MuiOutlinedInput-input{
+  color: white !important;
+}
+.css-1nowbqt-MuiInputAdornment-root{
+  color: var(--color-vivid-orange) !important;
+}
+.css-1t8oi02-MuiButtonBase-root-MuiButton-root{
+  display: none;
+}
+.css-1kd80d6-MuiDataGrid-panelWrapper, .css-1toxriw-MuiList-root-MuiMenu-list,.css-oykygv-MuiPickersLayout-contentWrapper{
+  background: var(--color-dark-gray) !important;
+}
 .cta.-type-1 .cta__bg img {
   /* width: 100%; */
   height: 100%;
@@ -6495,6 +6554,12 @@ h6 {
   object-fit: cover;
   border-radius: 12px;
 }
+.MuiDataGrid-columnHeader, .css-r363y4-MuiButtonBase-root-MuiIconButton-root, .MuiTablePagination-selectLabel , .css-11cfq65-MuiTablePagination-displayedRows{
+  color: var(--color-vivid-orange) !important;
+}
+/* .css-1mypm2r-MuiDataGrid-root{
+  --DataGrid-rowBorderColor : var(--color-vivid-orange) !important
+} */
 
 @media (max-width: 991px) {
   .cta.-type-1 .cta__bg img {

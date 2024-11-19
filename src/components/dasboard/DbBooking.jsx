@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
-import Pagination from "../common/Pagination";
-import { bookingData } from "@/data/dashboard";
+// import Pagination from "../common/Pagination";
+// import { bookingData } from "@/data/dashboard";
+import Datagrid from "./my-booking/Datagrid";
 
-const tabs = ["Approved", "Pending", "Cancelled"];
+const tabs = ["Approve", "Pending", "Declined"];
 export default function DbBooking() {
   const [sideBarOpen, setSideBarOpen] = useState(true);
-  const [currentTab, setcurrentTab] = useState("Approved");
+  const [currentTab, setcurrentTab] = useState("Approve");
   return (
     <div
       className={`dashboard ${
@@ -41,84 +42,9 @@ export default function DbBooking() {
                   </div>
                 ))}
               </div>
+              <Datagrid status={currentTab.toLowerCase()}/>
 
-              <div className="tabs__content js-tabs-content">
-                <div className="tabs__pane -tab-item-1 is-tab-el-active">
-                  <div className="overflowAuto">
-                    <table className="tableTest mb-30">
-                      <thead className="bg-light-1 rounded-12">
-                        <tr>
-                          <th>ID</th>
-                          <th>Title</th>
-                          <th>Start date</th>
-                          <th>End date</th>
-                          <th>Details</th>
-                          <th>Price</th>
-                          <th>Status</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-
-                      <tbody>
-                        {bookingData
-                          .filter((elm) => elm.status == currentTab)
-                          .map((elm, i) => (
-                            <tr key={i}>
-                              <td>{elm.orderNumber}</td>
-
-                              <td className="min-w-300">
-                                <div className="d-flex items-center">
-                                  <img src={elm.imageUrl} alt="image" />
-                                  <div className="ml-20">{elm.title}</div>
-                                </div>
-                              </td>
-
-                              <td>{elm.startDate}</td>
-
-                              <td>{elm.endDate}</td>
-
-                              <td>{elm.numberOfPeople}</td>
-
-                              <td>{elm.cost}</td>
-
-                              <td>
-                                <div
-                                  className={`circle ${
-                                    elm.status == "Approved"
-                                      ? "text-purple-1"
-                                      : elm.status == "Pending"
-                                      ? "text-yellow-1"
-                                      : "text-red-2"
-                                  } `}
-                                >
-                                  {elm.status}
-                                </div>
-                              </td>
-
-                              <td>
-                                <div className="d-flex items-center">
-                                  <button className="button -dark-1 size-35 bg-light-1 rounded-full flex-center">
-                                    <i className="icon-pencil text-14"></i>
-                                  </button>
-
-                                  <button className="button -dark-1 size-35 bg-light-1 rounded-full flex-center ml-10">
-                                    <i className="icon-delete text-14"></i>
-                                  </button>
-                                </div>
-                              </td>
-                            </tr>
-                          ))}
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <Pagination />
-
-                  <div className="text-14 text-center mt-20">
-                    Showing results 1-30 of 1,415
-                  </div>
-                </div>
-              </div>
+             
             </div>
           </div>
 

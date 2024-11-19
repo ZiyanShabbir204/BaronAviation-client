@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { TextField, Button, ThemeProvider, createTheme } from "@mui/material";
 import axios from "axios";
+import ApiService from "@/api.service";
 
 const theme = createTheme({
   palette: {
@@ -73,20 +74,20 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (validateForm()) {
-    //   try {
-    //     const user = {
-    //       username: formData.username,
-    //       email: formData.email,
-    //       phone: formData.phoneNumber,
-    //       password: formData.password,
-    //       roleName: "customer",
-    //     };
-    //     await axios.post("http://localhost:5000/auth/register", user);
-    //   } catch (err) {
-    //     console.log("Error during registration", err);
-    //   }
-    // }
+    if (validateForm()) {
+      try {
+        const user = {
+          username: formData.username,
+          email: formData.email,
+          phone: formData.phoneNumber,
+          password: formData.password,
+          roleName: "customer",
+        };
+        await ApiService.post("/auth/register",user)
+      } catch (err) {
+        console.log("Error during registration", err);
+      }
+    }
   };
 
   return (

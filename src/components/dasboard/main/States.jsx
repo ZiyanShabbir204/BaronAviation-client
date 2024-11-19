@@ -1,23 +1,38 @@
+import ApiService from "@/api.service";
+import { useAuth } from "@/contexts/auth.context";
 import { states } from "@/data/dashboard";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
+
 export default function States() {
+  const { user } = useAuth();
+  const [data, setData] = useState({});
+
+  const fetchData = useCallback(async () => {
+    const hours = await ApiService.get(`/me/hours`);
+    setData(hours);
+  });
+  useEffect(() => {
+    if (user) {
+      fetchData();
+    }
+  }, [user?._id]);
   const states = [
     {
       id: 1,
       title: "Total Hours",
-      hours: 100,
+      hours: data.total_hours,
       iconClass: "fa-solid fa-wallet text-accent-1",
     },
     {
       id: 2,
       title: "Available Hours",
-      hours: 30,
+      hours: data.available_hours,
       iconClass: "icon-payment text-accent-1",
     },
     {
       id: 3,
       title: "Used Hours",
-      hours: 70,
+      hours: data.used_hours,
       iconClass: "icon-booking text-accent-1",
     },
   ];

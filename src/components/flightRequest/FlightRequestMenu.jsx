@@ -24,6 +24,8 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { Link as ScrollLink, scroller } from "react-scroll";
 
 import { useSnackbar } from "notistack";
+import ApiService from "@/api.service";
+import { useAuth } from "@/contexts/auth.context";
 
 const FlightRequestMenu = () => {
   const [currentActiveDD, setCurrentActiveDD] = useState("");
@@ -32,6 +34,7 @@ const FlightRequestMenu = () => {
   const [toLocation, setToLocation] = useState("");
   const [flyingPerson, setFlyingPerson] = useState("");
   const [selectedDate, setSelectedDate] = useState(dayjs());
+  const {user} = useAuth()
   const [errors, setErrors] = useState({
     fromLocation: "",
     toLocation: "",
@@ -85,14 +88,14 @@ const FlightRequestMenu = () => {
       from: fromLocation,
       to: toLocation,
       start_time: selectedDate,
-      // username: user.username,
+      username: user.username,
       flying_person: flyingPerson,
     };
 
     try {
       // const res =  await axios.post("http://localhost:5000/flight-booking",bookingData)
-      // const res = await ApiService.post("/flight-booking", bookingData);
-      // console.log("res booking", res);
+      const res = await ApiService.post("/flight-booking", bookingData);
+      console.log("res booking", res);
       setFromLocation("");
       setToLocation("");
       setSelectedDate(dayjs());
