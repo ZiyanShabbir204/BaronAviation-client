@@ -1,25 +1,14 @@
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import { useState } from "react";
+import ChangePassword from "./ChangePassword";
 
 export default function Profile() {
   const [sideBarOpen, setSideBarOpen] = useState(true);
-  const [image1, setImage1] = useState("");
-  const [image2, setImage2] = useState("/img/dashboard/addtour/1.jpg");
+  const [oldPassword,setOldPassword] = useState()
+  const [newPassword,newOldPassword] = useState()
+  const [confirmPassword,confirmOldPassword] = useState()
 
-  const handleImageChange = (event, func) => {
-    const file = event.target.files[0];
-
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onloadend = () => {
-        func(reader.result);
-      };
-
-      reader.readAsDataURL(file);
-    }
-  };
   return (
     <>
       <div
@@ -80,51 +69,9 @@ export default function Profile() {
             </div>
 
             <div className="rounded-12 bg-dark-grey shadow-2 px-40 pt-40 pb-30 mt-30">
-              <h5 className="text-20 fw-500 mb-30">Change Password</h5>
+              <ChangePassword/>
 
-              <div className="contactForm y-gap-30">
-                <div className="row y-gap-30">
-                  <div className="col-md-6">
-                    <div className="form-input ">
-                      <input type="text" required />
-                      <label className="lh-1 text-16 text-light-1">
-                        Old password
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="form-input ">
-                      <input type="text" required />
-                      <label className="lh-1 text-16 text-light-1">
-                        New password
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="form-input ">
-                      <input type="text" required />
-                      <label className="lh-1 text-16 text-light-1">
-                        Confirm new password
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="row">
-                  <div className="col-12">
-                    <button className="button -md button-gradient text-white">
-                      Change Password
-                      <i className="icon-arrow-top-right text-16 ml-10"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
+          
             </div>
           </div>
         </div>

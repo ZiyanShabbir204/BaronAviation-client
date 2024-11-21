@@ -56,6 +56,8 @@ import Inquire from "./pages/pages/inquire";
 import { AuthProvider } from "./contexts/auth.context";
 import { SnackbarProvider } from "notistack";
 import BookFlight from "./components/dasboard/BookFlight";
+import ForgotPasswordPage from "./pages/pages/forgotPassword";
+import ResetPage from "./pages/pages/resetPassword";
 
 function App() {
   useEffect(() => {
@@ -127,6 +129,9 @@ function App() {
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
+              <Route path="/forgot-password" element={<ForgotPasswordPage/>}/>
+              <Route path="/reset-password" element={<ResetPage/>}/>
+
               <Route path="/invoice" element={<InvoicePage />} />
               <Route path="/ui-elements" element={<UIElementsPage />} />
               <Route path="/contact" element={<ContactPage />} />

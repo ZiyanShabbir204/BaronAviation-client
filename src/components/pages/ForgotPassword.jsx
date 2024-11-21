@@ -40,7 +40,7 @@ const theme = createTheme({
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({ username: "", password: "" });
+  const [errors, setErrors] = useState({ username: "" });
   const navigate = useNavigate();
   const { login } = useAuth();
 
@@ -49,22 +49,21 @@ export default function Login() {
     let formErrors = {};
 
     if (!username.trim()) formErrors.username = "Username is required";
-    if (!password.trim()) formErrors.password = "Password is required";
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
       return;
     }
 
-    setErrors({ username: "", password: "" });
+    setErrors({ username: ""});
 
     try {
-      await login(username, password);
-      navigate("/");
+        const res = await ApiService.post(`/auth/reset-email`,{username})
+        console.log("email res -> ",res)
     } catch (err) {
-      console.log("err", err);
+        console.log("error in email res -> ",err)
     }
   };
-  
+ 
 
   return (
     <ThemeProvider theme={theme}>
@@ -73,16 +72,8 @@ export default function Login() {
           <div className="row justify-center">
             <div className="col-xl-6 col-lg-7 col-md-9">
               <div className="text-center mb-60 md:mb-30">
-                <h2 className="text-gradient-vivid-orange">Log In</h2>
-                <div className="text-18 fw-500 mt-20 md:mt-15">
-                  We're glad to see you again!
-                </div>
-                <div className="mt-5">
-                  Don't have an account?{" "}
-                  <Link to="/register" className="text-gradient-vivid-orange">
-                    Sign Up!
-                  </Link>
-                </div>
+                <h2 className="text-gradient-vivid-orange">Forgot Password</h2>
+              
               </div>
 
               <form
@@ -109,35 +100,6 @@ export default function Login() {
                   }}
                 />
 
-                <TextField
-                  id="password"
-                  label="Password"
-                  type="password"
-                  variant="outlined"
-                  fullWidth
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  error={Boolean(errors.password)}
-                  helperText={errors.password}
-                  InputProps={{
-                    style: { color: "white" },
-                    classes: {
-                      notchedOutline: "border-color",
-                    },
-                  }}
-                  InputLabelProps={{
-                    style: { color: "#f6bc16" },
-                  }}
-                  className="mt-20"
-                />
-                <div className="text-right mt-10">
-                  <Link
-                    to="/forgot-password"
-                    className="forget-password"
-                  >
-                    Forgot Password?
-                  </Link>
-                </div>
 
                 <Button
                   type="submit"
@@ -146,7 +108,7 @@ export default function Login() {
                   fullWidth
                   className="mt-20 button-gradient text-white"
                 >
-                  Log In
+                  Send Email
                 </Button>
               </form>
             </div>

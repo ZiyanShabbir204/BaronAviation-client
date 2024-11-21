@@ -1,8 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { TextField, Button, ThemeProvider, createTheme } from "@mui/material";
+import { useSearchParams } from 'react-router-dom';
 import { useAuth } from "@/contexts/auth.context";
 import ApiService from "@/api.service";
+import { enqueueSnackbar } from "notistack";
 
 const theme = createTheme({
   palette: {
@@ -38,28 +40,34 @@ const theme = createTheme({
 });
 
 export default function Login() {
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({ username: "", password: "" });
+  const [confirm_password, setConfirmPassword] = useState("");
+  const [errors, setErrors] = useState({ password: "", confirm_password: "" });
+  const [searchParams] = useSearchParams();
+  const token = searchParams.get('token')
   const navigate = useNavigate();
-  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     let formErrors = {};
 
-    if (!username.trim()) formErrors.username = "Username is required";
     if (!password.trim()) formErrors.password = "Password is required";
+    if (!confirm_password.trim()) formErrors.confirm_password = "ConfirmPassword is required";
+    if(confirm_password !==password ) formErrors.confirm_password = "Password should match";
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
       return;
     }
 
-    setErrors({ username: "", password: "" });
+    setErrors({ password: "", confirm_password: "" });
 
     try {
-      await login(username, password);
-      navigate("/");
+      const res = await ApiService.post(`/auth/reset-password?token=${token}`,{password})
+      console.log("res in reset email",res)
+      enqueueSnackbar("Your password has been reset successfully",{
+        variant: "success"
+      })
+      navigate("/login");
     } catch (err) {
       console.log("err", err);
     }
@@ -73,42 +81,14 @@ export default function Login() {
           <div className="row justify-center">
             <div className="col-xl-6 col-lg-7 col-md-9">
               <div className="text-center mb-60 md:mb-30">
-                <h2 className="text-gradient-vivid-orange">Log In</h2>
-                <div className="text-18 fw-500 mt-20 md:mt-15">
-                  We're glad to see you again!
-                </div>
-                <div className="mt-5">
-                  Don't have an account?{" "}
-                  <Link to="/register" className="text-gradient-vivid-orange">
-                    Sign Up!
-                  </Link>
-                </div>
+                <h2 className="text-gradient-vivid-orange">Reset Password</h2>
+              
               </div>
 
               <form
                 onSubmit={handleSubmit}
                 className="border-1 rounded-12 px-60 py-60 md:px-25 md:py-30 bg-dark-grey"
               >
-                <TextField
-                  id="username"
-                  label="Username"
-                  variant="outlined"
-                  fullWidth
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  error={Boolean(errors.username)}
-                  helperText={errors.username}
-                  InputProps={{
-                    style: { color: "white" },
-                    classes: {
-                      notchedOutline: "border-color",
-                    },
-                  }}
-                  InputLabelProps={{
-                    style: { color: "#f6bc16" },
-                  }}
-                />
-
                 <TextField
                   id="password"
                   label="Password"
@@ -128,16 +108,30 @@ export default function Login() {
                   InputLabelProps={{
                     style: { color: "#f6bc16" },
                   }}
+                />
+
+                <TextField
+                  id="confirm_password"
+                  label="ConfirmPassword"
+                  type="password"
+                  variant="outlined"
+                  fullWidth
+                  value={confirm_password}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  error={Boolean(errors.confirm_password)}
+                  helperText={errors.confirm_password}
+                  InputProps={{
+                    style: { color: "white" },
+                    classes: {
+                      notchedOutline: "border-color",
+                    },
+                  }}
+                  InputLabelProps={{
+                    style: { color: "#f6bc16" },
+                  }}
                   className="mt-20"
                 />
-                <div className="text-right mt-10">
-                  <Link
-                    to="/forgot-password"
-                    className="forget-password"
-                  >
-                    Forgot Password?
-                  </Link>
-                </div>
+               
 
                 <Button
                   type="submit"
@@ -146,7 +140,7 @@ export default function Login() {
                   fullWidth
                   className="mt-20 button-gradient text-white"
                 >
-                  Log In
+                  Reset
                 </Button>
               </form>
             </div>
