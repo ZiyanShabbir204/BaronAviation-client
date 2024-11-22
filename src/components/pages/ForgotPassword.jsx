@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { TextField, Button, ThemeProvider, createTheme } from "@mui/material";
 import { useAuth } from "@/contexts/auth.context";
 import ApiService from "@/api.service";
+import { enqueueSnackbar } from "notistack";
 
 const theme = createTheme({
   palette: {
@@ -58,6 +59,8 @@ export default function Login() {
 
     try {
         const res = await ApiService.post(`/auth/reset-email`,{username})
+        enqueueSnackbar("Email has been sent",{variant:"success"})
+
         console.log("email res -> ",res)
     } catch (err) {
         console.log("error in email res -> ",err)

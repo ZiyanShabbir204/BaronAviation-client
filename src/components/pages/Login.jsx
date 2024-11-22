@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { TextField, Button, ThemeProvider, createTheme } from "@mui/material";
 import { useAuth } from "@/contexts/auth.context";
 import ApiService from "@/api.service";
+import { enqueueSnackbar } from "notistack";
 
 const theme = createTheme({
   palette: {
@@ -58,9 +59,18 @@ export default function Login() {
     setErrors({ username: "", password: "" });
 
     try {
-      await login(username, password);
+      const res  = await login(username, password);
+
+      // console.log("res",res)
+      if(res.role == "cooperate_customer"){
+        navigate("/dashboard")
+        // enqueueSnackbar("Login successfully",{variant:"success"})
+        return
+      }
       navigate("/");
+      // enqueueSnackbar("Login successfully",{variant:"success"})
     } catch (err) {
+      enqueueSnackbar(err.response.data.message,{variant:"error"})
       console.log("err", err);
     }
   };

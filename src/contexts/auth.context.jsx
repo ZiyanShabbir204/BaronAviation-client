@@ -19,6 +19,19 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
+  const fetchUser = async()=>{
+    try {
+      const data = await ApiService.get("/me/fetch-user")
+      setUser(data)
+      localStorage.setItem("user", JSON.stringify(data));
+      
+    } catch (error) {
+      throw error
+      
+    }
+
+  }
+
   const login = async (username, password) => {
     try {
       setLoading(true);
@@ -31,6 +44,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(false);
       localStorage.setItem("user", JSON.stringify(data));
       localStorage.setItem("token", data.token);
+      return data
     } catch (err) {
       setLoading(false);
       throw err;
@@ -53,6 +67,7 @@ export const AuthProvider = ({ children }) => {
     login,
     logout,
     updateUser,
+    fetchUser
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

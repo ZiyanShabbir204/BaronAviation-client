@@ -58,6 +58,7 @@ import { SnackbarProvider } from "notistack";
 import BookFlight from "./components/dasboard/BookFlight";
 import ForgotPasswordPage from "./pages/pages/forgotPassword";
 import ResetPage from "./pages/pages/resetPassword";
+import LogoutPage from "./components/pages/LogoutPage";
 
 function App() {
   useEffect(() => {
@@ -131,6 +132,7 @@ function App() {
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/forgot-password" element={<ForgotPasswordPage/>}/>
               <Route path="/reset-password" element={<ResetPage/>}/>
+              <Route path="/logout" element={<LogoutPage/>}/>
 
               <Route path="/invoice" element={<InvoicePage />} />
               <Route path="/ui-elements" element={<UIElementsPage />} />

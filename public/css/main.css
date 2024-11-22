@@ -11,6 +11,11 @@ html {
   scroll-behavior: smooth;
 }
 
+body{
+  padding: 0 !important;
+  overflow-y: auto !important;
+}
+
 * {
   font-family: "Poppins", sans-serif !important;
   font-size: 300 !important;
@@ -278,7 +283,26 @@ a:hover {
 [data-anim-wrap].animated {
   pointer-events: auto;
 }
-
+.menu-item-1{
+  padding-left: 28px !important;
+  gap: 8px !important;
+}
+.menu-item-1,.menu-item-text:hover{
+  color: var(--color-vivid-orange) !important;
+}
+.css-1dfcyzw-MuiPaper-root-MuiPopover-paper{
+  /* left: 1098px !important; */
+  right: 5px !important;
+  padding: 10px 0px !important;
+  margin-right: 2px;
+  background-color: var(--color-light-gray) !important;
+}
+.css-18k2bs-MuiAvatar-root{
+  background: var(--color-vivid-orange) !important;
+}
+.css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled{
+  -webkit-text-fill-color: gray !important
+}
 @keyframes reveal {
   100% {
     opacity: 1;
@@ -6567,10 +6591,16 @@ h6 {
   color: white !important;
 }
 
-.css-1n04w30-MuiInputBase-root-MuiOutlinedInput-root{
+.css-1n04w30-MuiInputBase-root-MuiOutlinedInput-root {
   border-radius: 10px !important;
   width: 50% !important;
   min-width: 300px !important;
+}
+.css-1blp12k-MuiInputBase-root-MuiOutlinedInput-root{
+  border-radius: 10px !important;
+  width: 50% !important;
+  min-width: 300px !important;
+
 }
 .css-1nowbqt-MuiInputAdornment-root {
   color: var(--color-vivid-orange) !important;
@@ -6590,6 +6620,12 @@ h6 {
 }
 .forget-password:hover{
   color: white !important;
+}
+.setting-icon{
+  color: var(--color-vivid-orange) !important;
+}
+.setting-icon:hover{
+  color:white !important;
 }
 .css-1t8oi02-MuiButtonBase-root-MuiButton-root {
   display: none;
