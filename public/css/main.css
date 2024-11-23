@@ -962,6 +962,23 @@ button:focus {
   color: white !important;
 }
 
+.MuiDataGrid-overlay,
+.MuiDataGrid-columnHeader,
+.MuiDataGrid-columnHeaders .MuiDataGrid-filler {
+  background-color: var(--color-dark-gray) !important;
+}
+
+.MuiTablePagination-select,
+.MuiTablePagination-displayedRows,
+.MuiTablePagination-actions .MuiIconButton-sizeMedium {
+  color: var(--color-vivid-orange) !important;
+}
+
+.MuiInputBase-input.Mui-disabled {
+  -webkit-text-fill-color: rgb(255 255 255 / 38%) !important;
+
+}
+
 .button.-outline-red-2 {
   border-color: var(--color-red-2);
 }

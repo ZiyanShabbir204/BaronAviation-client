@@ -17,6 +17,7 @@ export default function Datagrid({ status }) {
 
   const fetchRows = useCallback(async () => {
     try {
+      setRowsLoading(true);
       const data = await ApiService.get(
         `/flight-booking/my-flights?status=${
           status === "approved" ? "approve" : status
@@ -62,7 +63,7 @@ export default function Datagrid({ status }) {
         type: "date",
         filterOperators: dateFilterOperators,
         valueGetter: (value) => new Date(value),
-        width: 200,
+        flex: 1,
         editable: false,
         renderCell: (param) => {
           return dateFormat(param.row.start_time);
@@ -74,7 +75,7 @@ export default function Datagrid({ status }) {
         type: "date",
         filterOperators: dateFilterOperators,
         valueGetter: (value) => new Date(value),
-        width: 200,
+        flex: 1,
         editable: false,
         renderCell: (param) => {
           return param.row.end_time ? dateFormat(param.row.end_time) : "N/A";
