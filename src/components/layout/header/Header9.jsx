@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
-import Currency from "../components/Currency";
 import MobileMenu from "../components/MobileMenu";
 import Menu from "../components/Menu";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/auth.context";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCog,faPlane,faSignOut,faUser } from "@fortawesome/free-solid-svg-icons";
-import LogoutIcon from '@mui/icons-material/Logout';
 import {
   Popover,
   Avatar,
@@ -16,6 +12,9 @@ import {
   IconButton,
 } from "@mui/material";
 import "./setting.css";
+import PersonIcon from "@mui/icons-material/Person";
+import FlightIcon from "@mui/icons-material/Flight";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 export default function Header9({ isSticky }) {
   const navigate = useNavigate();
@@ -154,7 +153,7 @@ export default function Header9({ isSticky }) {
                 >
                   <div style={{ width: "230px" }}>
                     {/* Profile Circle with Username */}
-                    <MenuItem>
+                    <MenuItem className="menu-item-1">
                       <Avatar>{firstLetter}</Avatar>{" "}
                       {/* Same circle with the first letter */}
                       <Typography style={{ marginLeft: 8 }}>
@@ -165,29 +164,30 @@ export default function Header9({ isSticky }) {
                     <Divider />
 
                     {/* Settings Option */}
-                    <MenuItem onClick={() => navigate("/my-profile")} className="menu-item-1">
-                      <FontAwesomeIcon
-                        icon={faUser} 
-                        style={{ marginRight: 8 }}
-                      />
-                      <Typography className="menu-item-text">My Profile</Typography>
+                    <MenuItem
+                      onClick={() => navigate("/my-profile")}
+                      className="menu-item-1"
+                    >
+                      <PersonIcon className="text-gradient-vivid-orange" />
+                      <Typography className="menu-item-text">
+                        My Profile
+                      </Typography>
                     </MenuItem>
-                    <MenuItem onClick={() => navigate("/my-booking")} className="menu-item-1">
-                      <FontAwesomeIcon
-                        icon={faPlane}
-                        style={{ marginRight: 8 }}
-                      />
-                      <Typography className="menu-item-text">My Booking</Typography>
+                    <MenuItem
+                      onClick={() => navigate("/my-booking")}
+                      className="menu-item-1"
+                    >
+                      <FlightIcon />
+                      <Typography className="menu-item-text">
+                        My Booking
+                      </Typography>
                     </MenuItem>
 
                     <Divider />
 
                     {/* Logout Option */}
                     <MenuItem onClick={logout} className="menu-item-1">
-                    <FontAwesomeIcon
-                        icon={faSignOut}
-                        style={{ marginRight: 8 }}
-                      />
+                      <LogoutIcon />
                       <Typography className="menu-item-text">Logout</Typography>
                     </MenuItem>
                   </div>

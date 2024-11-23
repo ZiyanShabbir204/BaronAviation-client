@@ -6,7 +6,7 @@ import { useAuth } from "@/contexts/auth.context";
 
 export default function Sidebar({ setSideBarOpen }) {
   const { pathname } = useLocation();
-  const { user,logout } = useAuth();
+  const { user, logout } = useAuth();
 
   const sidebarItems = useMemo(() => {
     const defaultItems = [
@@ -22,23 +22,30 @@ export default function Sidebar({ setSideBarOpen }) {
         iconClass: "icon-account text-26",
         label: "My Profile",
       },
-      { id: 8, href: "/logout", clickEvent: logout, iconClass: "icon-logout text-26", label: "Logout" },
-
+      {
+        id: 8,
+        href: "/logout",
+        clickEvent: logout,
+        iconClass: "icon-logout text-26",
+        label: "Logout",
+      },
     ];
 
-
     if (user?.role === "cooperate_customer") {
-      defaultItems.unshift({
-        id: 1,
-        href: "/dashboard",
-        iconClass: "icon-dashboard text-26",
-        label: "Dashboard",
-      },{
-        id: 2,
-        href: "/book-flight",
-        iconClass: "icon-calendar text-26",
-        label: "Book Flight",
-      });
+      defaultItems.unshift(
+        {
+          id: 1,
+          href: "/dashboard",
+          iconClass: "icon-dashboard text-26",
+          label: "Dashboard",
+        },
+        {
+          id: 2,
+          href: "/book-flight",
+          iconClass: "icon-pin text-26",
+          label: "Book Flight",
+        }
+      );
     }
 
     return defaultItems;
@@ -65,14 +72,12 @@ export default function Sidebar({ setSideBarOpen }) {
 
       <div className="sidebar -dashboard">
         {sidebarItems.map((elm, i) => (
-          
           <div
             key={i}
             className={`sidebar__item ${
               pathname == elm.href ? "-is-active" : ""
             } `}
           >
-            {console.log("elm", elm)}
             <Link to={elm.href}>
               <i className={elm.iconClass + " text-gradient-vivid-orange"}></i>
               <span className="ml-10 text-gradient-vivid-orange ">

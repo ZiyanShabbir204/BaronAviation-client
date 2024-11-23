@@ -5,10 +5,10 @@ import Header from "./Header";
 // import { bookingData } from "@/data/dashboard";
 import Datagrid from "./my-booking/Datagrid";
 
-const tabs = ["Approve", "Pending", "Declined"];
+const tabs = ["Approved", "Pending", "Declined"];
 export default function DbBooking() {
   const [sideBarOpen, setSideBarOpen] = useState(true);
-  const [currentTab, setcurrentTab] = useState("Approve");
+  const [currentTab, setcurrentTab] = useState("Approved");
   return (
     <div
       className={`dashboard ${
@@ -42,9 +42,7 @@ export default function DbBooking() {
                   </div>
                 ))}
               </div>
-              <Datagrid status={currentTab.toLowerCase()}/>
-
-             
+              <Datagrid status={currentTab.toLowerCase()} />
             </div>
           </div>
 

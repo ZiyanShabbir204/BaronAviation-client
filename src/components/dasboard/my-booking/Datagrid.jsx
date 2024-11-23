@@ -18,7 +18,9 @@ export default function Datagrid({ status }) {
   const fetchRows = useCallback(async () => {
     try {
       const data = await ApiService.get(
-        `/flight-booking/my-flights?status=${status}`
+        `/flight-booking/my-flights?status=${
+          status === "approved" ? "approve" : status
+        }`
       );
       setRows(
         data.map((d) => ({
@@ -92,13 +94,8 @@ export default function Datagrid({ status }) {
       },
     ];
 
-    
-
     return defaultColumns;
   }, [user?.role]);
-
-
-
 
   const theme = createTheme({
     palette: {
