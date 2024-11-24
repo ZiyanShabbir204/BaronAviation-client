@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { TextField, Button, ThemeProvider, createTheme } from "@mui/material";
 import axios from "axios";
 import ApiService from "@/api.service";
+import { enqueueSnackbar } from "notistack";
 
 const theme = createTheme({
   palette: {
@@ -46,6 +47,7 @@ export default function Register() {
     confirmPassword: "",
   });
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate()
 
   const handleInputChange = (e) => {
     setFormData({
@@ -83,8 +85,16 @@ export default function Register() {
           password: formData.password,
           roleName: "customer",
         };
-        await ApiService.post("/auth/register",user)
+        const res = await ApiService.post("/auth/register",user)
+        enqueueSnackbar("You signed up successfully",{variant:"success"})
+        navigate("/login")
+        
+        console.log("response in signup",res)
+        
       } catch (err) {
+        enqueueSnackbar(err.response.data.message,{variant:"error"})
+
+
         console.log("Error during registration", err);
       }
     }
