@@ -3,7 +3,7 @@ export const features = [
     id: 1,
     iconSrc: "/img/icon/heli-white.png",
     title: "Uncompromised Safety Standards",
-    text: "The Baron Aviation prioritizes your safety with rigorous maintenance and expert pilots, ensuring every journey is secure and worry-free. Enjoy the experience with confidence",
+    text: "The Baron Aviation prioritizes your safety with rigorous maintenance and expert pilots, ensuring every journey is secure and worry-free. Enjoy the experience with confidence.",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const features = [
     id: 4,
     iconSrc: "/img/icon/heli-white.png",
     title: "Memorable Experiences",
-    text: "we turn travel into unforgettable memories. With personalized service and meticulous attention to detail, every journey is crafted to leave a lasting impression.",
+    text: "We turn travel into unforgettable memories. With personalized service and meticulous attention to detail, every journey is crafted to leave a lasting impression.",
   },
 ];
 export const featuresFour = [

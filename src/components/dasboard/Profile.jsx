@@ -75,8 +75,6 @@ export default function Profile() {
 
             <div className="rounded-12 bg-dark-grey shadow-2 px-40 pt-40 pb-30 mt-30">
               <ChangePassword/>
-
-          
             </div>
           </div>
         </div>

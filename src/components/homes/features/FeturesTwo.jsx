@@ -33,8 +33,8 @@ export default function FeturesTwo() {
                 At The Baron Aviation, we provide exquisite helicopter travel
                 that combines unparalleled luxury, time efficiency, and
                 unwavering safety. Our service ensures punctuality, allowing you
-                to arrive on time for important business meetings. With The The
-                Baron Aviation Aviation, enjoy seamless, comfortable journeys
+                to arrive on time for important business meetings. With The
+                Baron Aviation, enjoy seamless, comfortable journeys
                 where your time, comfort, and security are our top priorities.
               </p>
 

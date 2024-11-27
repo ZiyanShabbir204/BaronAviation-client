@@ -241,6 +241,22 @@ a:hover {
 .border-color {
   border-color: var(--color-vivid-orange) !important;
 }
+.attendant-form{
+  background : var(--color-dark-gray);
+  padding: 10px;
+}
+.attendat-input > div{
+  width: 100% !important;
+
+}
+.attendant-select > div{
+  border-radius: 10px !important;
+}
+
+.attendant-select .MuiInputLabel-root.Mui-focused{
+  background: #222222;
+  padding: 0 5px 0 5px;
+}
 
 .bg-vivid-orange {
   background: var(--color-vivid-orange);
