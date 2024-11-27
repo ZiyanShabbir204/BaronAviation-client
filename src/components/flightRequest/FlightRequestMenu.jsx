@@ -18,10 +18,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import axios from "axios";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { Link as ScrollLink, scroller } from "react-scroll";
 
 import { useSnackbar } from "notistack";
 import ApiService from "@/api.service";
@@ -34,7 +32,7 @@ const FlightRequestMenu = () => {
   const [toLocation, setToLocation] = useState("");
   const [flyingPerson, setFlyingPerson] = useState("");
   const [selectedDate, setSelectedDate] = useState(dayjs());
-  const {user} = useAuth()
+  const { user } = useAuth();
   const [errors, setErrors] = useState({
     fromLocation: "",
     toLocation: "",
@@ -79,6 +77,10 @@ const FlightRequestMenu = () => {
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
       return;
+    }
+
+    if (!user) {
+      navigate("/login");
     }
 
     // Clear any previous errors
@@ -411,22 +413,8 @@ const FlightRequestMenu = () => {
               >
                 Request
               </Button>
-              {/* <div className="searchForm__button">
-            
-            </div> */}
             </div>
           </div>
-
-          {/* <div className="searchForm__button">
-            <Button
-              onClick={requestHandler}
-              variant="contained"
-              fullWidth
-              className=" button -sm text-white  button-gradient "
-            >
-              Request
-            </Button>
-          </div> */}
         </div>
       </div>
     </ThemeProvider>

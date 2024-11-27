@@ -166,7 +166,7 @@ export const testimonialsSix = [
     name: `David K.`,
     role: `Corporate Executive`,
     comment: `Great Work`,
-    desc: `Flying with The Baron Aviation was an absolute pleasure. Their attention to safety and comfort was evident throughout the journey. Truly the gold standard in private aviation.`,
+    desc: `Flying with The Baron Aviation was an absolute pleasure, with safety and comfort at the forefront. Truly the gold standard in private aviation.`,
     img: `/img/avatars/1/1.jpg`,
   },
   {

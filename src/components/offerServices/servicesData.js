@@ -22,11 +22,11 @@ export const servicesData = [
   {
     question: "Sightseeing Tours",
     answer:
-      "See the world like never before with The Baron Aviation Sightseeing Tours. Take in breathtaking views as you glide above iconic landscapes, all from the comfort of a luxury helicopter. Each tour is thoughtfully planned to let you soak up the beauty around you without a worry in the world. Join us for an unforgettable adventure where every moment feels like a new discovery.",
+      "See the world like never before with The Baron Aviation Sightseeing Tours. Take in breathtaking views as you glide above iconic landscapes, all from the comfort of a luxury helicopter. Each tour is designed to let you enjoy breathtaking beauty worry-free. Join us for an unforgettable adventure where every moment feels like a new discovery.",
   },
   {
     question: "Weddings",
     answer:
-      "Make your wedding day truly one-of-a-kind with The Baron Aviation Wedding Helicopter Service. Imagine the romance of a grand entrance from the sky or capturing stunning aerial shots of your special day. We’re here to add that touch of magic and elegance, making sure every detail reflects the beauty of your love story. Let us help you create memories that will last a lifetime.",
+      "Make your wedding day truly one-of-a-kind with The Baron Aviation Wedding Helicopter Service. Imagine the romance of a grand entrance from the sky or capturing stunning aerial shots of your special day. We’re here to add a touch of magic and elegance, ensuring every detail reflects your love story. Let us help you create memories that will last a lifetime.",
   },
 ];

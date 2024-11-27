@@ -9,7 +9,7 @@ export const features = [
     id: 2,
     iconSrc: "/img/icon/heli-white.png",
     title: "Tailored Travel Plans",
-    text: "We believe in making every journey unique. From itinerary customization to special accommodations, our team will craft a travel plan that suits your preferences, style, and pace.",
+    text: "We believe in making every journey unique. Our team customizes travel plans to suit your preferences, style, and schedule.",
   },
   {
     id: 3,
