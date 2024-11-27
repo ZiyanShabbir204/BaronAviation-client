@@ -95,7 +95,11 @@ const FlightRequestMenu = () => {
     try {
       // const res =  await axios.post("http://localhost:5000/flight-booking",bookingData)
       const res = await ApiService.post("/flight-booking", bookingData);
-      console.log("res booking", res);
+      // const url = `adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${selectedDate}`
+      // const encodedUrl = encodeURIComponent(url)
+      // navigate(`/attendants?${encodedUrl}`)
+      // console.log("res booking flyingPerson", flyingPerson);
+      // console.log("res booking", res);
       setFromLocation("");
       setToLocation("");
       setSelectedDate(dayjs());
@@ -320,6 +324,7 @@ const FlightRequestMenu = () => {
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DateTimePicker
                       fullWidth
+                      format="DD/MM/YYYY h:m A"
                       label="Select Date & Time"
                       value={selectedDate}
                       onChange={(newValue) => setSelectedDate(newValue)}

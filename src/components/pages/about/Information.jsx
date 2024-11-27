@@ -30,12 +30,12 @@ export default function Information() {
               solutions that span from vibrant urban hubs to the farthest
               corners of our beautiful country. Backed by international aviation
               expertise, we deliver a level of service and safety that’s second
-              to none, ensuring each flight is as seamless as it is secure. We
+              to none, ensuring each flight is as seamless, secure and enjoyable as possible. We
               are here for those who value swift, exclusive travel, from
               corporate clients needing efficient solutions to VIPs seeking
               privacy and elegance in the skies. Our commitment to sustainable
               practices means that our impact is as thoughtful as our service,
-              with environmentally conscious choices woven into every aspect of
+              with environmentally conscious choices integrated into every aspect of
               our operation.
             </p>
 

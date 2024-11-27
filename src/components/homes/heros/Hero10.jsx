@@ -100,7 +100,7 @@ export default function Hero10() {
                 data-aos-delay="250"
                 className="hero__text text-white text-rajdhani"
               >
-                Travel in Executive Luxury with The Baron Aviation
+                Travel in Executive-Class Luxury with The Baron Aviation
               </div>
 
               <button

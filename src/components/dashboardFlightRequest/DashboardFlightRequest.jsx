@@ -319,6 +319,7 @@ const DashboardFlightRequest = () => {
                     <DateTimePicker
                       fullWidth
                       label="Select Date & Time"
+                      format="DD/MM/YYYY h:m A"
                       value={selectedDate}
                       onChange={(newValue) => setSelectedDate(newValue)}
                       shouldDisableTime={(timeValue, clockType) => {

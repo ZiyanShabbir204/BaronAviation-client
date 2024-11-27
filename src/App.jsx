@@ -58,6 +58,7 @@ import { SnackbarProvider } from "notistack";
 import BookFlight from "./components/dasboard/BookFlight";
 import ForgotPasswordPage from "./pages/pages/forgotPassword";
 import ResetPage from "./pages/pages/resetPassword";
+import AttendantPage from "./pages/pages/attendants"
 import LogoutPage from "./components/pages/LogoutPage";
 
 function App() {
@@ -133,6 +134,8 @@ function App() {
               <Route path="/forgot-password" element={<ForgotPasswordPage/>}/>
               <Route path="/reset-password" element={<ResetPage/>}/>
               <Route path="/logout" element={<LogoutPage/>}/>
+              <Route path="/attendants" element={<AttendantPage/>}/>
+
 
               <Route path="/invoice" element={<InvoicePage />} />
               <Route path="/ui-elements" element={<UIElementsPage />} />
