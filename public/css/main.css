@@ -250,6 +250,9 @@ a:hover {
   width: 100% !important;
 
 }
+.flight-popper > .css-1dfcyzw-MuiPaper-root-MuiPopover-paper {
+  width: 300px !important;
+}
 .attendant-heading{
   color: var(--color-vivid-orange)  !important;
 }

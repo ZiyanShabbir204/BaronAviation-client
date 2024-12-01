@@ -70,7 +70,7 @@ export default function AttendantForm() {
       gender: "",
       age: "",
       email: "",
-      weight: 2,
+      weight: "",
       label: ele.label,
       type: ele.type,
     })),

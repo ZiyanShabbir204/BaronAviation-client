@@ -269,8 +269,9 @@ const FlightRequestMenu = () => {
                     vertical: "bottom",
                     horizontal: "left",
                   }}
+                  className="flight-popper"
                 >
-                  <div style={{ padding: "20px", width: "300px !important"  }}>
+                  <div style={{ padding: "20px", width: "300px !important"  }}  >
                     <Stack
                       direction="row"
                       alignItems="center"
