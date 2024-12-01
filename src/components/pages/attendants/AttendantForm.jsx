@@ -1,70 +1,70 @@
 import ApiService from "@/api.service";
 import { enqueueSnackbar } from "notistack";
-import Form from "./Form"
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
+import { useParams, useSearchParams } from "react-router-dom";
+import * as Yup from "yup";
+import { TextField, Button, MenuItem, Box, Typography } from "@mui/material";
+import { Formik, Field, Form, FieldArray } from "formik";
+import Grid from "@mui/material/Grid2";
 
 export default function AttendantForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    message: "",
+  const [searchParam] = useSearchParams();
+  const adult = searchParam.get("adults");
+  const children = searchParam.get("children");
+  const start_time = searchParam.get("start_time")
+  const to =  searchParam.get("to")
+  const from = searchParam.get("from")
+  // console.log("adults", searchParam.get("adults"));
+  // console.log("children", searchParam.get("children"));
+  // console.log("Start time", searchParam.get("start_time"));
+  // console.log("To", searchParam.get("to"));
+  // console.log("from", searchParam.get("from"));
+
+  const form = useMemo(() => {
+    const adultForms = Array.from({ length: adult }).map((_, idx) => {
+      return {
+        label: `Information for Adult ${idx + 1}`,
+        type: "Adult",
+      };
+    });
+    const childrenForms = Array.from({ length: children }).map((_, idx) => {
+      return {
+        label: `Information for children ${idx + 1}`,
+        type: "children",
+      };
+    });
+
+    return [...adultForms, ...childrenForms];
+  }, [children, adult]);
+
+  const validationSchema = Yup.object().shape({
+    attendants: Yup.array().of(
+      Yup.object().shape({
+        first_name: Yup.string().required("First name is required"),
+        last_name: Yup.string().required("Last name is required"),
+        identity_number: Yup.string().required("Identity number is required"),
+        gender: Yup.string().required("Gender is required"),
+        age: Yup.number()
+          .required("Age is required")
+          .min(0, "Age must be greater than 0"),
+        email: Yup.string().email("Invalid email"),
+        weight: Yup.number().min(0, "Age must be greater than 0"),
+      })
+    ),
   });
 
-  const [errors, setErrors] = useState({});
-
-  const validate = () => {
-    const newErrors = {};
-    const phoneRegex = /^\+92\d{10}$/; // +92 followed by 10 digits
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email format
-
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required.";
-    }
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required.";
-    } else if (!phoneRegex.test(formData.phone)) {
-      newErrors.phone = "Phone number must start with +92 and have 12 digits.";
-    }
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required.";
-    } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Invalid email format. Example: abc@gmail.com";
-    }
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required.";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0; // No errors = form is valid
-  };
-
-  const handleSubmit = async(e) => {
-    e.preventDefault();
-    if (validate()) {
-      try {
-        const res = await ApiService.post("/contact",formData)
-        enqueueSnackbar("Your response has been submitted",{variant:"success"})
-        setFormData({ name: "", phone: "", email: "", message: "" }); // Reset form
-        
-      } catch (error) {
-        enqueueSnackbar(error.response.data.message,{variant:"success"})
-
-      
-      }
-     
-      // alert("Form submitted successfully!");
-      // console.log("Form Data:", formData);
-      
-
-    }
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  const initialValues = {
+    attendants: form.map((ele) => ({
+      first_name: "",
+      last_name: "",
+      identity_number: "",
+      gender: "",
+      age: "",
+      email: "",
+      weight: 2,
+      label: ele.label,
+      type:ele.type
+    })),
   };
 
   return (
@@ -75,92 +75,197 @@ export default function AttendantForm() {
             <h2 className="hero-heading fw-700 text-center mb-30">
               Attendants Information
             </h2>
-            <Form/>
 
-            {/* <div className="contactForm">
-                <h2>Attendant 1</h2>
-              <form onSubmit={handleSubmit} className="row y-gap-30">
-                <div className="col-md-6">
-                  <input
-                    type="text"
-                    name="First Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="First Name"
-                    className={`contact-form-field ${
-                      errors.name ? "error-field" : ""
-                    }`}
-                  />
-                  {errors.name && <small className="error-text">{errors.name}</small>}
-                </div>
-                <div className="col-md-6">
-                  <input
-                    type="text"
-                    name="Last Name"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="Last Name"
-                    className={`contact-form-field ${
-                      errors.phone ? "error-field" : ""
-                    }`}
-                  />
-                  {errors.phone && <small className="error-text">{errors.phone}</small>}
-                </div>
-                <div className="col-12">
-                  <input
-                    type="text"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Email"
-                    className={`contact-form-field ${
-                      errors.email ? "error-field" : ""
-                    }`}
-                  />
-                  {errors.email && <small className="error-text">{errors.email}</small>}
-                </div>
-                <div className="col-12">
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Message"
-                    rows="6"
-                    className={`contact-form-field ${
-                      errors.message ? "error-field" : ""
-                    }`}
-                  ></textarea>
-                  {errors.message && (
-                    <small className="error-text">{errors.message}</small>
-                  )}
-                </div>
-                <div className="col-12">
-                  <button
-                    type="submit"
-                    className="button -md button-gradient text-white col-12"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
-            </div> */}
-            
+            <Formik
+              initialValues={initialValues}
+              validationSchema={validationSchema}
+              onSubmit={async (values) => {
+                const booking_data = {
+                  to,
+                  from,
+                  start_time,
+                  attendants: values.attendants
+                }
+                try {
+                  await ApiService.post("/flight-booking",booking_data)
+                  enqueueSnackbar("Flight request has been done",{
+                    variant:"success"
+                  })
+                } catch (error) {
+                  console.log("error in flight booking",error)
+                  
+                }
+
+                
+
+                console.log("Submitted values", values);
+              }}
+            >
+              {({ values, errors, touched, handleChange, handleBlur }) => (
+                <Form className="attendant-form">
+                  <FieldArray name="attendants">
+                    <div>
+                      {values.attendants.map((attendant, index) => (
+                        <Box sx={{ flexGrow: 1, mb: 2 }}>
+                          <Typography
+                            marginBottom={2}
+                            variant="h6"
+                            className="attendant-heading"
+                          >
+                            {attendant.label}
+                          </Typography>
+                          <Grid container spacing={2}>
+                            <Grid size={6}>
+                              <Field
+                                as={TextField}
+                                name={`attendants[${index}].first_name`}
+                                label="First Name"
+                                fullWidth
+                                error={
+                                  touched.attendants?.[index]?.first_name &&
+                                  Boolean(errors.attendants?.[index]?.first_name)
+                                }
+                                helperText={
+                                  touched.attendants?.[index]?.first_name &&
+                                  errors.attendants?.[index]?.first_name
+                                }
+                                className="attendant-form-field"
+                              />
+                            </Grid>
+                            <Grid size={6}>
+                              <Field
+                                as={TextField}
+                                name={`attendants[${index}].last_name`}
+                                label="Last Name"
+                                fullWidth
+                                error={
+                                  touched.attendants?.[index]?.last_name &&
+                                  Boolean(errors.attendants?.[index]?.last_name)
+                                }
+                                helperText={
+                                  touched.attendants?.[index]?.last_name &&
+                                  errors.attendants?.[index]?.last_name
+                                }
+                                className="attendant-form-field"
+                              />
+                            </Grid>
+
+                            <Grid size={6}>
+                              <Field
+                                as={TextField}
+                                select
+                                name={`attendants[${index}].gender`}
+                                label="Gender"
+                                fullWidth
+                                error={
+                                  touched.attendants?.[index]?.gender &&
+                                  Boolean(errors.attendants?.[index]?.gender)
+                                }
+                                helperText={
+                                  touched.attendants?.[index]?.gender &&
+                                  errors.attendants?.[index]?.gender
+                                }
+                                className="attendant-form-field"
+                              >
+                                <MenuItem value="Male">Male</MenuItem>
+                                <MenuItem value="Female">Female</MenuItem>
+                              </Field>
+                            </Grid>
+
+                            <Grid size={6}>
+                              <Field
+                                as={TextField}
+                                name={`attendants[${index}].age`}
+                                label="Age"
+                                type="number"
+                                fullWidth
+                                error={
+                                  touched.attendants?.[index]?.age &&
+                                  Boolean(errors.attendants?.[index]?.age)
+                                }
+                                helperText={
+                                  touched.attendants?.[index]?.age &&
+                                  errors.attendants?.[index]?.age
+                                }
+                                className="attendant-form-field"
+                              />
+                            </Grid>
+
+                            <Grid size={6}>
+                              <Field
+                                as={TextField}
+                                name={`attendants[${index}].weight`}
+                                label="Weight (Kg)"
+                                type="number"
+                                fullWidth
+                                error={
+                                  touched.attendants?.[index]?.weight &&
+                                  Boolean(errors.attendants?.[index]?.weight)
+                                }
+                                helperText={
+                                  touched.attendants?.[index]?.weight &&
+                                  errors.attendants?.[index]?.weight
+                                }
+                                className="attendant-form-field"
+                              />
+                            </Grid>
+
+                            <Grid size={6}>
+                              <Field
+                                as={TextField}
+                                name={`attendants[${index}].email`}
+                                label="Email"
+                                fullWidth
+                                error={
+                                  touched.attendants?.[index]?.email &&
+                                  Boolean(errors.attendants?.[index]?.email)
+                                }
+                                helperText={
+                                  touched.attendants?.[index]?.email &&
+                                  errors.attendants?.[index]?.email
+                                }
+                                className="attendant-form-field"
+                              />
+                            </Grid>
+
+                            <Grid size={12}>
+                              <Field
+                                as={TextField}
+                                name={`attendants[${index}].identity_number`}
+                                label="Identity Number"
+                                fullWidth
+                                error={
+                                  touched.attendants?.[index]?.identity_number &&
+                                  Boolean(
+                                    errors.attendants?.[index]?.identity_number
+                                  )
+                                }
+                                helperText={
+                                  touched.attendants?.[index]?.identity_number &&
+                                  errors.attendants?.[index]?.identity_number
+                                }
+                                className="attendant-form-field"
+                              />
+                            </Grid>
+                          </Grid>
+                        </Box>
+                      ))}
+                    </div>
+                  </FieldArray>
+                  <div className="col-12">
+                    <button
+                      type="submit"
+                      className="button -md button-gradient text-white col-12"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </Form>
+              )}
+            </Formik>
           </div>
         </div>
       </div>
-      <style>
-        {`
-          .error-field {
-            border-color: red;
-          }
-          .error-text {
-            color: red;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: block;
-          }
-        `}
-      </style>
     </section>
   );
 }
