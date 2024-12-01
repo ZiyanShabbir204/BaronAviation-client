@@ -1,19 +1,22 @@
 import ApiService from "@/api.service";
 import { enqueueSnackbar } from "notistack";
 import React, { useMemo, useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import * as Yup from "yup";
 import { TextField, Button, MenuItem, Box, Typography } from "@mui/material";
 import { Formik, Field, Form, FieldArray } from "formik";
 import Grid from "@mui/material/Grid2";
+import { useAuth } from "@/contexts/auth.context";
 
 export default function AttendantForm() {
   const [searchParam] = useSearchParams();
+  const navigate = useNavigate()
+  const {user} = useAuth()
   const adult = searchParam.get("adults");
   const children = searchParam.get("children");
-  const start_time = searchParam.get("start_time")
-  const to =  searchParam.get("to")
-  const from = searchParam.get("from")
+  const start_time = searchParam.get("start_time");
+  const to = searchParam.get("to");
+  const from = searchParam.get("from");
   // console.log("adults", searchParam.get("adults"));
   // console.log("children", searchParam.get("children"));
   // console.log("Start time", searchParam.get("start_time"));
@@ -37,12 +40,18 @@ export default function AttendantForm() {
     return [...adultForms, ...childrenForms];
   }, [children, adult]);
 
+  const CNIC_REGEX = /^[0-9]{5}-[0-9]{7}-[0-9]{1}$/;
   const validationSchema = Yup.object().shape({
     attendants: Yup.array().of(
       Yup.object().shape({
         first_name: Yup.string().required("First name is required"),
         last_name: Yup.string().required("Last name is required"),
-        identity_number: Yup.string().required("Identity number is required"),
+        identity_number: Yup.string()
+          .matches(
+            CNIC_REGEX,
+            "Identity number must be in the format 12345-1234567-1"
+          )
+          .required("Identity number is required"),
         gender: Yup.string().required("Gender is required"),
         age: Yup.number()
           .required("Age is required")
@@ -63,7 +72,7 @@ export default function AttendantForm() {
       email: "",
       weight: 2,
       label: ele.label,
-      type:ele.type
+      type: ele.type,
     })),
   };
 
@@ -84,19 +93,26 @@ export default function AttendantForm() {
                   to,
                   from,
                   start_time,
-                  attendants: values.attendants
-                }
+                  attendants: values.attendants,
+                  username: user.username
+                };
                 try {
-                  await ApiService.post("/flight-booking",booking_data)
-                  enqueueSnackbar("Flight request has been done",{
-                    variant:"success"
-                  })
-                } catch (error) {
-                  console.log("error in flight booking",error)
-                  
-                }
+                  await ApiService.post("/flight-booking", booking_data);
+                  enqueueSnackbar("Flight request has been done", {
+                    variant: "success",
+                  });
+                  if(user.role === "cooperate_customer"){
+                    navigate("/dashboard")
 
-                
+                  }
+                  else{
+                    navigate("/")
+                  }
+                  
+
+                } catch (error) {
+                  console.log("error in flight booking", error);
+                }
 
                 console.log("Submitted values", values);
               }}
@@ -123,7 +139,9 @@ export default function AttendantForm() {
                                 fullWidth
                                 error={
                                   touched.attendants?.[index]?.first_name &&
-                                  Boolean(errors.attendants?.[index]?.first_name)
+                                  Boolean(
+                                    errors.attendants?.[index]?.first_name
+                                  )
                                 }
                                 helperText={
                                   touched.attendants?.[index]?.first_name &&
@@ -235,13 +253,15 @@ export default function AttendantForm() {
                                 label="Identity Number"
                                 fullWidth
                                 error={
-                                  touched.attendants?.[index]?.identity_number &&
+                                  touched.attendants?.[index]
+                                    ?.identity_number &&
                                   Boolean(
                                     errors.attendants?.[index]?.identity_number
                                   )
                                 }
                                 helperText={
-                                  touched.attendants?.[index]?.identity_number &&
+                                  touched.attendants?.[index]
+                                    ?.identity_number &&
                                   errors.attendants?.[index]?.identity_number
                                 }
                                 className="attendant-form-field"

@@ -45,9 +45,11 @@ export default function Register() {
     email: "",
     password: "",
     confirmPassword: "",
+    last_name: "",
+    first_name: "",
   });
   const [errors, setErrors] = useState({});
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setFormData({
@@ -61,6 +63,10 @@ export default function Register() {
 
     // Field validations
     if (!formData.username.trim()) newErrors.username = "Username is required";
+    if (!formData.first_name.trim())
+      newErrors.username = "First Name is required";
+    if (!formData.last_name.trim())
+      newErrors.username = "Last Name is required";
     if (!formData.email.trim()) newErrors.email = "Email is required";
     if (!formData.phoneNumber.trim())
       newErrors.phoneNumber = "Phone number is required";
@@ -83,17 +89,17 @@ export default function Register() {
           email: formData.email,
           phone: formData.phoneNumber,
           password: formData.password,
+          first_name: formData.first_name,
+          last_name: formData.last_name,
           roleName: "customer",
         };
-        const res = await ApiService.post("/auth/register",user)
-        enqueueSnackbar("You signed up successfully",{variant:"success"})
-        navigate("/login")
-        
-        console.log("response in signup",res)
-        
-      } catch (err) {
-        enqueueSnackbar(err.response.data.message,{variant:"error"})
+        const res = await ApiService.post("/auth/register", user);
+        enqueueSnackbar("You signed up successfully", { variant: "success" });
+        navigate("/login");
 
+        console.log("response in signup", res);
+      } catch (err) {
+        enqueueSnackbar(err.response.data.message, { variant: "error" });
 
         console.log("Error during registration", err);
       }
@@ -123,6 +129,30 @@ export default function Register() {
                 onSubmit={handleSubmit}
                 className="border-1 rounded-12 px-60 py-60 md:px-25 md:py-30 bg-dark-grey"
               >
+                <TextField
+                  label="First Name"
+                  name="first_name"
+                  variant="outlined"
+                  fullWidth
+                  value={formData.first_name}
+                  onChange={handleInputChange}
+                  error={Boolean(errors.first_name)}
+                  helperText={errors.first_name}
+                  InputLabelProps={{ style: { color: "#f6bc16" } }}
+                  className="mb-3"
+                />
+                <TextField
+                  label="Last Name"
+                  name="last_name"
+                  variant="outlined"
+                  fullWidth
+                  value={formData.last_name}
+                  onChange={handleInputChange}
+                  error={Boolean(errors.last_name)}
+                  helperText={errors.last_name}
+                  InputLabelProps={{ style: { color: "#f6bc16" } }}
+                  className="mb-3"
+                />
                 <TextField
                   label="Username"
                   name="username"

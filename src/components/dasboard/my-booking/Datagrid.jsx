@@ -27,7 +27,10 @@ export default function Datagrid({ status }) {
         data.map((d) => ({
           ...d,
           id: d._id,
+          adult: d.attendants.filter((a)=> a.type==="Adult").length,
+          children : d.attendants.filter((a)=> a.type==="children").length
         }))
+
       );
     } catch (err) {
       console.log("err in useFetchRow -> fetchRows", err);
@@ -38,10 +41,19 @@ export default function Datagrid({ status }) {
 
   useEffect(() => {
     fetchRows();
+    console.log("data",rows)
   }, [status]);
 
   const columns = useMemo(() => {
     const defaultColumns = [
+      {
+        field: "_id",
+        filterOperators: stringFilterOperators,
+        headerName: "Flight ID",
+        editable: false,
+        width: 160,
+      },
+
       {
         field: "from",
         filterOperators: stringFilterOperators,
@@ -63,7 +75,7 @@ export default function Datagrid({ status }) {
         type: "date",
         filterOperators: dateFilterOperators,
         valueGetter: (value) => new Date(value),
-        flex: 1,
+        width: 200,
         editable: false,
         renderCell: (param) => {
           return dateFormat(param.row.start_time);
@@ -75,7 +87,7 @@ export default function Datagrid({ status }) {
         type: "date",
         filterOperators: dateFilterOperators,
         valueGetter: (value) => new Date(value),
-        flex: 1,
+        width: 200,
         editable: false,
         renderCell: (param) => {
           return param.row.end_time ? dateFormat(param.row.end_time) : "N/A";
@@ -92,6 +104,20 @@ export default function Datagrid({ status }) {
         renderCell: (param) => {
           return dateFormat(param.row.createdAt);
         },
+      },
+      {
+        field: "adult",
+        filterOperators: stringFilterOperators,
+        headerName: "Adult",
+        editable: false,
+        width: 160,
+      },
+      {
+        field: "children",
+        filterOperators: stringFilterOperators,
+        headerName: "children",
+        editable: false,
+        width: 160,
       },
     ];
 

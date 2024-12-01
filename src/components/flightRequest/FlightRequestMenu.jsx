@@ -180,6 +180,33 @@ const FlightRequestMenu = () => {
             <div className="request-menu-right" style={{ gap: "10px" }}>
               <h1 className=" hero-heading">What's Your Destination?</h1>
               <div className="location-menu">
+                
+                <div className="searchFormItem">
+                  <TextField
+                    error={errors.fromLocation && Boolean(errors.fromLocation)}
+                    label="From"
+                    variant="outlined"
+                    fullWidth
+                    value={fromLocation}
+                    onChange={(e) => setFromLocation(e.target.value)}
+                    color="primary"
+                    helperText={errors.fromLocation && "From is Required"}
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <LocationOnIcon style={{ color: "#f6bc16" }} />
+                        </InputAdornment>
+                      ),
+                      style: { color: "white" },
+                      classes: {
+                        notchedOutline: "border-color",
+                      },
+                    }}
+                    InputLabelProps={{
+                      style: { color: "#f6bc16" },
+                    }}
+                  />
+                </div>
                 <div className="searchFormItem">
                   <TextField
                     error={errors.toLocation && Boolean(errors.toLocation)}
@@ -196,32 +223,6 @@ const FlightRequestMenu = () => {
                           <LocationOnIcon
                             style={{ color: "#f6bc16", marginBottom: "5px" }}
                           />
-                        </InputAdornment>
-                      ),
-                      style: { color: "white" },
-                      classes: {
-                        notchedOutline: "border-color",
-                      },
-                    }}
-                    InputLabelProps={{
-                      style: { color: "#f6bc16" },
-                    }}
-                  />
-                </div>
-                <div className="searchFormItem">
-                  <TextField
-                    error={errors.fromLocation && Boolean(errors.fromLocation)}
-                    label="From"
-                    variant="outlined"
-                    fullWidth
-                    value={fromLocation}
-                    onChange={(e) => setFromLocation(e.target.value)}
-                    color="primary"
-                    helperText={errors.fromLocation && "From is Required"}
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <LocationOnIcon style={{ color: "#f6bc16" }} />
                         </InputAdornment>
                       ),
                       style: { color: "white" },
@@ -269,11 +270,12 @@ const FlightRequestMenu = () => {
                     horizontal: "left",
                   }}
                 >
-                  <div style={{ padding: "20px", width: "300px" }}>
+                  <div style={{ padding: "20px", width: "300px !important"  }}>
                     <Stack
                       direction="row"
                       alignItems="center"
                       justifyContent="space-between"
+                      
                     >
                       <Typography variant="subtitle1">Adults</Typography>
                       <div className="d-flex align-items-center">
