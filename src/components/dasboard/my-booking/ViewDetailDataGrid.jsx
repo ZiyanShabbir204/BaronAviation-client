@@ -1,3 +1,4 @@
+
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { useEffect, useState, useCallback, useMemo } from "react";
 import ApiService from "@/api.service";
@@ -47,91 +48,40 @@ export default function Datagrid({ status }) {
 
   const columns = useMemo(() => {
     const defaultColumns = [
-      {
-        field: "_id",
-        filterOperators: stringFilterOperators,
-        headerName: "Flight ID",
-        editable: false,
-        width: 160,
-      },
-
-      {
-        field: "from",
-        filterOperators: stringFilterOperators,
-        headerName: "From",
-        editable: false,
-        width: 160,
-      },
-      {
-        field: "to",
-        filterOperators: stringFilterOperators,
-        headerName: "To",
-        editable: false,
-        width: 160,
-      },
-
-      {
-        field: "start_time",
-        headerName: "Flight Start Time",
-        type: "date",
-        filterOperators: dateFilterOperators,
-        valueGetter: (value) => new Date(value),
-        width: 200,
-        editable: false,
-        renderCell: (param) => {
-          return dateFormat(param.row.start_time);
-        },
-      },
-      {
-        field: "end_time",
-        headerName: "Flight End Time",
-        type: "date",
-        filterOperators: dateFilterOperators,
-        valueGetter: (value) => new Date(value),
-        width: 200,
-        editable: false,
-        renderCell: (param) => {
-          return param.row.end_time ? dateFormat(param.row.end_time) : "N/A";
-        },
-      },
-      {
-        field: "createdAt",
-        headerName: "Flight Booked At",
-        type: "date",
-        filterOperators: dateFilterOperators,
-        valueGetter: (value) => new Date(value),
-        width: 200,
-        editable: false,
-        renderCell: (param) => {
-          return dateFormat(param.row.createdAt);
-        },
-      },
-      {
-        field: "adult",
-        filterOperators: stringFilterOperators,
-        headerName: "Adult",
-        editable: false,
-        width: 160,
-      },
-      {
-        field: "children",
-        filterOperators: stringFilterOperators,
-        headerName: "Children",
-        editable: false,
-        width: 160,
-      },
-      {
-        field: "actions",
-        type: "actions",
-        headerName: "Actions",
-        renderCell: (param) => {
-          return <FlightDetailGridMenu data={param.row} />;
-        },
-      },
+        {
+            field: "first_name",
+            headerName: "First Name",
+            filterOperators: stringFilterOperators,
+            width: 220,
+          },
+          {
+            field: "last_name",
+            headerName: "Last Name",
+            filterOperators: stringFilterOperators,
+            width: 220,
+          },
+          {
+            field: "identity_number",
+            headerName: "Identity Number",
+            filterOperators: stringFilterOperators,
+            width: 220,
+          },
+          {
+            field: "gender",
+            headerName: "Gender",
+            filterOperators: stringFilterOperators,
+            width: 220,
+          },
+          {
+            field: "type",
+            headerName: "Type",
+            filterOperators: stringFilterOperators,
+            width: 220,
+          },
     ];
 
     return defaultColumns;
-  }, [user?.role]);
+  }, []);
 
   const theme = createTheme({
     palette: {
@@ -162,3 +112,5 @@ export default function Datagrid({ status }) {
     </div>
   );
 }
+
+
