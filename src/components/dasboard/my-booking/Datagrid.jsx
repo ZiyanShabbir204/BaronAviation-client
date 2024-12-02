@@ -47,11 +47,14 @@ export default function Datagrid({ status }) {
   const columns = useMemo(() => {
     const defaultColumns = [
       {
-        field: "_id",
+        field: "booking_id",
         filterOperators: stringFilterOperators,
         headerName: "Flight ID",
         editable: false,
         width: 160,
+        renderCell: (param) => {
+          return param.row.booking_id? param.row.booking_id : "N/A" ;
+        },
       },
 
       {
