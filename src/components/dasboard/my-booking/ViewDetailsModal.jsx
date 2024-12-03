@@ -12,7 +12,6 @@ const style = {
   transform: "translate(-50%, -50%)",
   minWidth: 400,
   width: "70%",
-  bgcolor: "background.paper",
   boxShadow: 24,
   p: 4,
   borderRadius: "5px",
@@ -29,8 +28,9 @@ export default function ViewDetailsModal({
   const handleClose = () => setOpen(false);
 
   return (
-    <Modal open={open} onClose={handleClose}>
-      <Box sx={style}>
+    
+    <Modal open={open} onClose={handleClose} cla >
+      <Box sx={style} className="view-attendat-modal">
         {/* Close Icon in top-right corner */}
         <IconButton 
           onClick={handleClose} 
@@ -44,7 +44,7 @@ export default function ViewDetailsModal({
         >
           <CloseIcon />
         </IconButton>
-        <ViewDetailsDataGrid value={data.date} />
+        <ViewDetailsDataGrid value={data._id} />
       </Box>
     </Modal>
   );

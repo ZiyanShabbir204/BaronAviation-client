@@ -12,25 +12,23 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import FlightDetailGridMenu from "./FlightDetailGridMenu"
 import { useAuth } from "@/contexts/auth.context";
 
-export default function Datagrid({ status }) {
+export default function Datagrid({ value }) {
   const [rows, setRows] = useState(null);
   const [rowsLoading, setRowsLoading] = useState(false);
   const { user } = useAuth();
+  console.log("value",value)
 
   const fetchRows = useCallback(async () => {
     try {
       setRowsLoading(true);
       const data = await ApiService.get(
-        `/flight-booking/my-flights?status=${
-          status === "approved" ? "approve" : status
-        }`
+        `/me/attendant/${value}`
       );
       setRows(
         data.map((d) => ({
           ...d,
           id: d._id,
-          adult: d.attendants.filter((a)=> a.type==="Adult").length,
-          children : d.attendants.filter((a)=> a.type==="children").length
+    
         }))
 
       );
@@ -39,12 +37,12 @@ export default function Datagrid({ status }) {
     } finally {
       setRowsLoading(false);
     }
-  }, [status]);
+  }, [value]);
 
   useEffect(() => {
     fetchRows();
     console.log("data",rows)
-  }, [status]);
+  }, [value]);
 
   const columns = useMemo(() => {
     const defaultColumns = [
