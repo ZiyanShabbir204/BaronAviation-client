@@ -8,6 +8,7 @@ import {
   stringFilterOperators,
 } from "@/utilis/gridFilterFormat";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import FlightDetailGridMenu from "./FlightDetailGridMenu"
 import { useAuth } from "@/contexts/auth.context";
 
 export default function Datagrid({ status }) {
@@ -118,9 +119,17 @@ export default function Datagrid({ status }) {
       {
         field: "children",
         filterOperators: stringFilterOperators,
-        headerName: "children",
+        headerName: "Children",
         editable: false,
         width: 160,
+      },
+      {
+        field: "actions",
+        type: "actions",
+        headerName: "Actions",
+        renderCell: (param) => {
+          return <FlightDetailGridMenu data={param.row} />;
+        },
       },
     ];
 
