@@ -241,32 +241,40 @@ a:hover {
 .border-color {
   border-color: var(--color-vivid-orange) !important;
 }
-.attendant-form{
-  background : var(--color-dark-gray);
+
+.attendant-form {
+  background: var(--color-dark-gray);
   padding: 20px;
   margin-top: 10px;
 }
-.attendat-input > div{
+
+.attendat-input>div {
   width: 100% !important;
 
 }
-.flight-popper > .css-1dfcyzw-MuiPaper-root-MuiPopover-paper {
+
+.flight-popper>.css-1dfcyzw-MuiPaper-root-MuiPopover-paper {
   width: 300px !important;
 }
-.attendant-heading{
-  color: var(--color-vivid-orange)  !important;
+
+.attendant-heading {
+  color: var(--color-vivid-orange) !important;
 }
-.view-attendat-modal{
+
+.view-attendat-modal {
   background-color: var(--color-dark-gray) !important;
- 
+
 }
-.attendant-select > div{
+
+.attendant-select>div {
   border-radius: 10px !important;
 }
-.attendant-form-field> div{
+
+.attendant-form-field>div {
   width: 100% !important;
 }
-.attendant-select .MuiInputLabel-root.Mui-focused{
+
+.attendant-select .MuiInputLabel-root.Mui-focused {
   background: #222222;
   padding: 0 5px 0 5px;
 }
@@ -2904,6 +2912,10 @@ h6 {
 
 .bg-dark-grey {
   background: var(--color-dark-gray);
+}
+
+.MuiDataGrid-cell.MuiDataGrid-cell--textCenter button svg {
+  color: white !important;
 }
 
 @media (max-width: 767px) {
