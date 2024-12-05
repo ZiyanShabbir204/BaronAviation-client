@@ -17,11 +17,15 @@ export default function UpdateProfile() {
         email: user.email,
         username: user.username,
         phone: user.phone,
+        first_name: user.first_name,
+        last_name: user.last_name
       });
     }
   }, [user]);
 
   const validationSchema = Yup.object({
+    first_name: Yup.string().required("First Name is required"),
+    last_name: Yup.string().required("Last Name is required"),
     username: Yup.string().required("Username is required"),
     phone: Yup.string("Enter phone number").matches(
       /^((\+92)?(0092)?(92)?(0)?)(3)([0-9]{9})$/,
@@ -36,6 +40,8 @@ export default function UpdateProfile() {
       username: user?.username || "",
       phone: user?.phone || "",
       email: user?.email || "",
+      first_name: user?.first_name || "",
+      last_name: user?.last_name || ""
     },
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
@@ -43,6 +49,8 @@ export default function UpdateProfile() {
       try {
         const res = await ApiService.put("/me/change-profile", {
           phone: values.phone,
+          first_name: values.first_name,
+          last_name :values.last_name
         });
         enqueueSnackbar("Password Changed Successfully", {
           variant: "success",
@@ -72,8 +80,39 @@ export default function UpdateProfile() {
 
       <form onSubmit={formik.handleSubmit}>
         <Grid container spacing={3}>
+        <Grid item md={6}>
+            <TextField
+              fullWidth
+              id="first_name"
+              name="first_name"
+              label="First Name"
+              value={formik.values.first_name}
+              onChange={formik.handleChange}
+              error={formik.touched.first_name && Boolean(formik.errors.first_name)}
+              helperText={formik.touched.first_name && formik.errors.first_name}
+              variant="outlined"
+              className="change-profile-field"
+            />
+          </Grid>
+
+          {/* Email */}
+          <Grid item md={6}>
+            <TextField
+              fullWidth
+              id="last_name"
+              name="last_name"
+              label="Last Name"
+              value={formik.values.last_name}
+              onChange={formik.handleChange}
+              error={formik.touched.last_name && Boolean(formik.errors.last_name)}
+              helperText={formik.touched.last_name && formik.errors.last_name}
+              variant="outlined"
+              className="change-profile-field"
+            />
+          </Grid>
           {/* Username */}
-          <Grid item md={12}>
+
+          <Grid item md={6}>
             <TextField
               fullWidth
               id="username"
@@ -85,11 +124,12 @@ export default function UpdateProfile() {
               error={formik.touched.username && Boolean(formik.errors.username)}
               helperText={formik.touched.username && formik.errors.username}
               variant="outlined"
+              className="change-profile-field"
             />
           </Grid>
 
           {/* Email */}
-          <Grid item md={12}>
+          <Grid item md={6}>
             <TextField
               fullWidth
               id="email"
@@ -101,6 +141,7 @@ export default function UpdateProfile() {
               error={formik.touched.email && Boolean(formik.errors.email)}
               helperText={formik.touched.email && formik.errors.email}
               variant="outlined"
+              className="change-profile-field"
             />
           </Grid>
           {/* Phone */}
@@ -115,6 +156,7 @@ export default function UpdateProfile() {
               error={formik.touched.phone && Boolean(formik.errors.phone)}
               helperText={formik.touched.phone && formik.errors.phone}
               variant="outlined"
+              className="change-profile-field"
             />
           </Grid>
         </Grid>

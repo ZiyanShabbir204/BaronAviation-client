@@ -1,6 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import { TextField, Button, ThemeProvider, createTheme } from "@mui/material";
+import { TextField, Button, ThemeProvider, createTheme,  InputAdornment,  IconButton,
+
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+
 import { useAuth } from "@/contexts/auth.context";
 import ApiService from "@/api.service";
 import { enqueueSnackbar } from "notistack";
@@ -41,9 +45,13 @@ const theme = createTheme({
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
   const [errors, setErrors] = useState({ username: "", password: "" });
   const navigate = useNavigate();
   const { login } = useAuth();
+  const handleShowPassword = () => setShowPassword((prev) => !prev);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -122,7 +130,7 @@ export default function Login() {
                 <TextField
                   id="password"
                   label="Password"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   variant="outlined"
                   fullWidth
                   value={password}
@@ -134,6 +142,14 @@ export default function Login() {
                     classes: {
                       notchedOutline: "border-color",
                     },
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton onClick={handleShowPassword} edge="end">
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+
                   }}
                   InputLabelProps={{
                     style: { color: "#f6bc16" },

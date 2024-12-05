@@ -1,6 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import { TextField, Button, ThemeProvider, createTheme } from "@mui/material";
+import { TextField, Button, ThemeProvider, createTheme,  InputAdornment,  IconButton,
+
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+
 import axios from "axios";
 import ApiService from "@/api.service";
 import { enqueueSnackbar } from "notistack";
@@ -48,6 +52,9 @@ export default function Register() {
     last_name: "",
     first_name: "",
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
@@ -57,6 +64,9 @@ export default function Register() {
       [e.target.name]: e.target.value,
     });
   };
+  const handleShowPassword = () => setShowPassword((prev) => !prev);
+  const handleShowConfirmPassword = () => setShowConfirmPassword((prev) => !prev);
+
 
   const validateForm = () => {
     let newErrors = {};
@@ -195,13 +205,22 @@ export default function Register() {
                 <TextField
                   label="Password"
                   name="password"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   variant="outlined"
                   fullWidth
                   value={formData.password}
                   onChange={handleInputChange}
                   error={Boolean(errors.password)}
                   helperText={errors.password}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton onClick={handleShowPassword} edge="end">
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                   InputLabelProps={{ style: { color: "#f6bc16" } }}
                   className="mb-3"
                 />
@@ -209,13 +228,22 @@ export default function Register() {
                 <TextField
                   label="Confirm Password"
                   name="confirmPassword"
-                  type="password"
+                  type={showConfirmPassword ? "text" : "password"}
                   variant="outlined"
                   fullWidth
                   value={formData.confirmPassword}
                   onChange={handleInputChange}
                   error={Boolean(errors.confirmPassword)}
                   helperText={errors.confirmPassword}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton onClick={handleShowConfirmPassword} edge="end">
+                          {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                   InputLabelProps={{ style: { color: "#f6bc16" } }}
                   className="mb-3"
                 />

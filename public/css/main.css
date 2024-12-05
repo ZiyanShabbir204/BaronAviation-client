@@ -273,6 +273,9 @@ a:hover {
 .attendant-form-field>div {
   width: 100% !important;
 }
+.change-profile-field > div{
+  width: 100% !important;
+}
 
 .attendant-select .MuiInputLabel-root.Mui-focused {
   background: #222222;
