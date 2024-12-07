@@ -1,7 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import { TextField, Button, ThemeProvider, createTheme,  InputAdornment,  IconButton,
-
+import {
+  TextField,
+  Button,
+  ThemeProvider,
+  createTheme,
+  InputAdornment,
+  IconButton,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
@@ -52,7 +57,6 @@ export default function Login() {
   const { login } = useAuth();
   const handleShowPassword = () => setShowPassword((prev) => !prev);
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     let formErrors = {};
@@ -67,22 +71,21 @@ export default function Login() {
     setErrors({ username: "", password: "" });
 
     try {
-      const res  = await login(username, password);
+      const res = await login(username, password);
 
       // console.log("res",res)
-      if(res.role == "cooperate_customer"){
-        navigate("/dashboard")
+      if (res.role == "cooperate_customer") {
+        navigate("/dashboard");
         // enqueueSnackbar("Login successfully",{variant:"success"})
-        return
+        return;
       }
       navigate("/");
       // enqueueSnackbar("Login successfully",{variant:"success"})
     } catch (err) {
-      enqueueSnackbar(err.response.data.message,{variant:"error"})
+      enqueueSnackbar(err.response.data.message, { variant: "error" });
       console.log("err", err);
     }
   };
-  
 
   return (
     <ThemeProvider theme={theme}>
@@ -144,12 +147,15 @@ export default function Login() {
                     },
                     endAdornment: (
                       <InputAdornment position="end">
-                        <IconButton onClick={handleShowPassword} edge="end">
+                        <IconButton
+                          onClick={handleShowPassword}
+                          edge="end"
+                          className="password-visibility-button"
+                        >
                           {showPassword ? <VisibilityOff /> : <Visibility />}
                         </IconButton>
                       </InputAdornment>
                     ),
-
                   }}
                   InputLabelProps={{
                     style: { color: "#f6bc16" },
@@ -157,10 +163,7 @@ export default function Login() {
                   className="mt-20"
                 />
                 <div className="text-right mt-10">
-                  <Link
-                    to="/forgot-password"
-                    className="forget-password"
-                  >
+                  <Link to="/forgot-password" className="forget-password">
                     Forgot Password?
                   </Link>
                 </div>

@@ -1,7 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import { TextField, Button, ThemeProvider, createTheme,  InputAdornment,  IconButton,
-
+import {
+  TextField,
+  Button,
+  ThemeProvider,
+  createTheme,
+  InputAdornment,
+  IconButton,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
@@ -65,8 +70,8 @@ export default function Register() {
     });
   };
   const handleShowPassword = () => setShowPassword((prev) => !prev);
-  const handleShowConfirmPassword = () => setShowConfirmPassword((prev) => !prev);
-
+  const handleShowConfirmPassword = () =>
+    setShowConfirmPassword((prev) => !prev);
 
   const validateForm = () => {
     let newErrors = {};
@@ -215,7 +220,11 @@ export default function Register() {
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        <IconButton onClick={handleShowPassword} edge="end">
+                        <IconButton
+                          onClick={handleShowPassword}
+                          edge="end"
+                          className="password-visibility-button"
+                        >
                           {showPassword ? <VisibilityOff /> : <Visibility />}
                         </IconButton>
                       </InputAdornment>
@@ -238,8 +247,16 @@ export default function Register() {
                   InputProps={{
                     endAdornment: (
                       <InputAdornment position="end">
-                        <IconButton onClick={handleShowConfirmPassword} edge="end">
-                          {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+                        <IconButton
+                          onClick={handleShowConfirmPassword}
+                          edge="end"
+                          className="password-visibility-button"
+                        >
+                          {showConfirmPassword ? (
+                            <VisibilityOff />
+                          ) : (
+                            <Visibility />
+                          )}
                         </IconButton>
                       </InputAdornment>
                     ),

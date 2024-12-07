@@ -273,7 +273,8 @@ a:hover {
 .attendant-form-field>div {
   width: 100% !important;
 }
-.change-profile-field > div{
+
+.change-profile-field>div {
   width: 100% !important;
 }
 
@@ -3162,6 +3163,10 @@ h6 {
 .MuiDataGrid-filterForm input {
   color: var(--color-white) !important;
 
+}
+
+.password-visibility-button svg {
+  color: var(--color-white) !important;
 }
 
 .MuiDataGrid-columnHeader .MuiDataGrid-menuIcon button {
