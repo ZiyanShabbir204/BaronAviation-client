@@ -8,7 +8,7 @@ import {
   stringFilterOperators,
 } from "@/utilis/gridFilterFormat";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import FlightDetailGridMenu from "./FlightDetailGridMenu"
+import FlightDetailGridMenu from "./FlightDetailGridMenu";
 import { useAuth } from "@/contexts/auth.context";
 
 export default function Datagrid({ status }) {
@@ -28,10 +28,9 @@ export default function Datagrid({ status }) {
         data.map((d) => ({
           ...d,
           id: d._id,
-          adult: d.attendants.filter((a)=> a.type==="Adult").length,
-          children : d.attendants.filter((a)=> a.type==="children").length
+          adult: d.attendants.filter((a) => a.type === "Adult").length,
+          children: d.attendants.filter((a) => a.type === "children").length,
         }))
-
       );
     } catch (err) {
       console.log("err in useFetchRow -> fetchRows", err);
@@ -42,7 +41,7 @@ export default function Datagrid({ status }) {
 
   useEffect(() => {
     fetchRows();
-    console.log("data",rows)
+    console.log("data", rows);
   }, [status]);
 
   const columns = useMemo(() => {
@@ -54,7 +53,7 @@ export default function Datagrid({ status }) {
         editable: false,
         width: 160,
         renderCell: (param) => {
-          return param.row.booking_id? param.row.booking_id : "N/A" ;
+          return param.row.booking_id ? param.row.booking_id : "N/A";
         },
       },
 

@@ -3145,6 +3145,33 @@ h6 {
   align-items: center;
 }
 
+.MuiDataGrid-filterForm {
+  background-color: #191919 !important
+}
+
+.MuiDataGrid-filterForm .MuiIconButton-sizeSmall {
+  color: var(--color-vivid-orange) !important;
+}
+
+
+.MuiDataGrid-filterForm .MuiSelect-select.MuiSelect-standard.MuiInputBase-input.MuiInput-input {
+  color: var(--color-white) !important;
+
+}
+
+.MuiDataGrid-filterForm input {
+  color: var(--color-white) !important;
+
+}
+
+.MuiDataGrid-columnHeader .MuiDataGrid-menuIcon button {
+  color: var(--color-vivid-orange) !important;
+}
+
+.MuiDataGrid-columnHeader .MuiDataGrid-columnHeaderTitleContainer .MuiDataGrid-iconButtonContainer button {
+  color: var(--color-vivid-orange) !important;
+}
+
 .header.-type-4 .header__search i {
   font-size: 18px;
   margin-right: 10px;
