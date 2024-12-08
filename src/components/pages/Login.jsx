@@ -112,7 +112,7 @@ export default function Login() {
               >
                 <TextField
                   id="username"
-                  label="Username"
+                  label="Username or Email"
                   variant="outlined"
                   fullWidth
                   value={username}

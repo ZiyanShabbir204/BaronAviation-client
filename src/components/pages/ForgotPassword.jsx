@@ -55,18 +55,17 @@ export default function Login() {
       return;
     }
 
-    setErrors({ username: ""});
+    setErrors({ username: "" });
 
     try {
-        const res = await ApiService.post(`/auth/reset-email`,{username})
-        enqueueSnackbar("Email has been sent",{variant:"success"})
+      const res = await ApiService.post(`/auth/reset-email`, { username });
+      enqueueSnackbar("Email has been sent", { variant: "success" });
 
-        console.log("email res -> ",res)
+      console.log("email res -> ", res);
     } catch (err) {
-        console.log("error in email res -> ",err)
+      console.log("error in email res -> ", err);
     }
   };
- 
 
   return (
     <ThemeProvider theme={theme}>
@@ -76,7 +75,6 @@ export default function Login() {
             <div className="col-xl-6 col-lg-7 col-md-9">
               <div className="text-center mb-60 md:mb-30">
                 <h2 className="text-gradient-vivid-orange">Forgot Password</h2>
-              
               </div>
 
               <form
@@ -85,7 +83,7 @@ export default function Login() {
               >
                 <TextField
                   id="username"
-                  label="Username"
+                  label="Username or Email"
                   variant="outlined"
                   fullWidth
                   value={username}
@@ -102,7 +100,6 @@ export default function Login() {
                     style: { color: "#f6bc16" },
                   }}
                 />
-
 
                 <Button
                   type="submit"
