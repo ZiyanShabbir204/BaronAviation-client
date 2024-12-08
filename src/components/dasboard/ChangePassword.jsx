@@ -100,7 +100,11 @@ const ChangePassword = () => {
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
-                      <IconButton onClick={handleShowOldPassword} edge="end">
+                      <IconButton
+                        onClick={handleShowOldPassword}
+                        edge="end"
+                        className="password-visibility-button"
+                      >
                         {showOldPassword ? <VisibilityOff /> : <Visibility />}
                       </IconButton>
                     </InputAdornment>
@@ -122,7 +126,11 @@ const ChangePassword = () => {
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
-                      <IconButton onClick={handleShowNewPassword} edge="end">
+                      <IconButton
+                        onClick={handleShowNewPassword}
+                        edge="end"
+                        className="password-visibility-button"
+                      >
                         {showNewPassword ? <VisibilityOff /> : <Visibility />}
                       </IconButton>
                     </InputAdornment>
@@ -149,6 +157,7 @@ const ChangePassword = () => {
                       <IconButton
                         onClick={handleShowConfirmPassword}
                         edge="end"
+                        className="password-visibility-button"
                       >
                         {showConfirmPassword ? (
                           <VisibilityOff />
