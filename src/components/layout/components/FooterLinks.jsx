@@ -3,8 +3,8 @@ const sections = [
     title: "Company",
     links: [
       { id: 1, text: "About Us", href: "/our-vision" },
-      { id: 5, text: "Data Policy", href: "#" },
-      { id: 7, text: "Legal", href: "#" },
+      { id: 5, text: "Term & Condition", href: "/term-condition" },
+      { id: 7, text: "FAQs", href: "/faqs" },
       { id: 8, text: "Sitemap", href: "#" },
     ],
   },

@@ -60,6 +60,9 @@ import ForgotPasswordPage from "./pages/pages/forgotPassword";
 import ResetPage from "./pages/pages/resetPassword";
 import AttendantPage from "./pages/pages/attendants"
 import LogoutPage from "./components/pages/LogoutPage";
+import Faq from "./components/pages/helpCenter/Faq";
+import FAQPage from "./components/pages/helpCenter/FAQPage";
+import TermConditionPage from "./pages/pages/terms/TermConditionPage";
 
 function App() {
   useEffect(() => {
@@ -118,6 +121,8 @@ function App() {
               <Route path="/book-flight" element={<BookFlight />} />
               <Route path="/my-booking" element={<DBBookingPage />} />
               <Route path="/my-profile" element={<DBProfilePage />} />
+              <Route path="/faqs" element={<FAQPage />} />
+              <Route path="/term-condition" element={<TermConditionPage />} />
 
               <Route path="/blog-list-1" element={<BlogListPage1 />} />
               <Route path="/blog-list-2" element={<BlogListPage2 />} />
