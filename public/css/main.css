@@ -3513,15 +3513,18 @@ h6 {
 
 .button-gradient {
   background: linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828);
-
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.4s ease;
-  /* Smooth transition */
 }
+
+.button-gradient.Mui-disabled {
+  background: rgba(246, 188, 22, 0.46) !important;
+}
+
 
 .button-gradient:hover {
   background: linear-gradient(90deg, #f0b828, #e2a612, #d1970e, #c18e11);
