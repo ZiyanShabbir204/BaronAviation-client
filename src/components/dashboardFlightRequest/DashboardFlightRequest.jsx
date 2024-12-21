@@ -34,7 +34,7 @@ const DashboardFlightRequest = () => {
   const [toLocation, setToLocation] = useState("");
   const [flyingPerson, setFlyingPerson] = useState("");
   const [selectedDate, setSelectedDate] = useState(dayjs());
-  const {user} = useAuth()
+  const { user } = useAuth();
   const [errors, setErrors] = useState({
     fromLocation: "",
     toLocation: "",
@@ -96,9 +96,9 @@ const DashboardFlightRequest = () => {
       // const res =  await axios.post("http://localhost:5000/flight-booking",bookingData)
       // const res = await ApiService.post("/flight-booking", bookingData);
       // console.log("res booking", res);
-      const url = `adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${selectedDate}`
-      const encodedUrl = encodeURIComponent(url)
-      navigate(`/attendants?${url}`)
+      const url = `adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${selectedDate}`;
+      const encodedUrl = encodeURIComponent(url);
+      navigate(`/attendants?${url}`);
       setFromLocation("");
       setToLocation("");
       setSelectedDate(dayjs());
@@ -113,23 +113,30 @@ const DashboardFlightRequest = () => {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#f6bc16", // Set the main color to #eb662b
+        main: "#f6bc16", // Adjust as per requirement
       },
     },
     components: {
-      MuiTextField: {
+      MuiOutlinedInput: {
         styleOverrides: {
           root: {
-            "& .MuiInputBase-root": {
-              color: "#fff", // Set text color
+            color: "white", // Set text color to white
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "white", // Set default border color to white
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#f6bc16", // Set hover border color
+            },
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#f6bc16", // Set focused border color
             },
           },
         },
       },
-      MuiSvgIcon: {
+      MuiInputLabel: {
         styleOverrides: {
           root: {
-            color: "#f6bc16", // Set icon color
+            color: "white", // Set label text color to white
           },
         },
       },
@@ -179,7 +186,7 @@ const DashboardFlightRequest = () => {
                   <TextField
                     error={errors.toLocation && Boolean(errors.toLocation)}
                     label="To"
-                    variant="outlined"
+                    variant="standard"
                     fullWidth
                     value={toLocation}
                     onChange={(e) => setToLocation(e.target.value)}
@@ -207,7 +214,7 @@ const DashboardFlightRequest = () => {
                   <TextField
                     error={errors.fromLocation && Boolean(errors.fromLocation)}
                     label="From"
-                    variant="outlined"
+                    variant="standard"
                     fullWidth
                     value={fromLocation}
                     onChange={(e) => setFromLocation(e.target.value)}
@@ -237,7 +244,7 @@ const DashboardFlightRequest = () => {
                     value={`${adults} Adults, ${children} Children`}
                     onClick={handleTravelerClick}
                     fullWidth
-                    variant="outlined"
+                    variant="standard"
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">

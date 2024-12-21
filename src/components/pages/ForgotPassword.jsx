@@ -84,7 +84,7 @@ export default function Login() {
                 <TextField
                   id="username"
                   label="Username or Email"
-                  variant="outlined"
+                  variant="standard"
                   fullWidth
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}

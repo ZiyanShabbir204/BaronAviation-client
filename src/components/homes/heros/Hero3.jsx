@@ -250,7 +250,7 @@ export default function Hero3() {
                 <TextField
                   error={errors.fromLocation && Boolean(errors.fromLocation)}
                   label="From"
-                  variant="outlined"
+                  variant="standard"
                   fullWidth
                   value={fromLocation}
                   onChange={(e) => setFromLocation(e.target.value)}
@@ -272,7 +272,7 @@ export default function Hero3() {
                 <TextField
                   error={errors.toLocation && Boolean(errors.toLocation)}
                   label="To"
-                  variant="outlined"
+                  variant="standard"
                   fullWidth
                   value={toLocation}
                   onChange={(e) => setToLocation(e.target.value)}
@@ -296,7 +296,7 @@ export default function Hero3() {
                   value={`${adults} Adults, ${children} Children`}
                   onClick={handleTravelerClick}
                   fullWidth
-                  variant="outlined"
+                  variant="standard"
                   InputProps={{
                     readOnly: true,
                   }}

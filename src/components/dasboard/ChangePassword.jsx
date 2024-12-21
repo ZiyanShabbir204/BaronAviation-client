@@ -93,7 +93,7 @@ const ChangePassword = () => {
                 name="old_password"
                 label="Old Password"
                 fullWidth
-                variant="outlined"
+                variant="standard"
                 type={showOldPassword ? "text" : "password"}
                 error={touched.old_password && Boolean(errors.old_password)}
                 helperText={touched.old_password && errors.old_password}
@@ -119,7 +119,7 @@ const ChangePassword = () => {
                 name="new_password"
                 label="New Password"
                 fullWidth
-                variant="outlined"
+                variant="standard"
                 type={showNewPassword ? "text" : "password"}
                 error={touched.new_password && Boolean(errors.new_password)}
                 helperText={touched.new_password && errors.new_password}
@@ -145,7 +145,7 @@ const ChangePassword = () => {
                 name="confirm_password"
                 label="Confirm New Password"
                 fullWidth
-                variant="outlined"
+                variant="standard"
                 type={showConfirmPassword ? "text" : "password"}
                 error={
                   touched.confirm_password && Boolean(errors.confirm_password)

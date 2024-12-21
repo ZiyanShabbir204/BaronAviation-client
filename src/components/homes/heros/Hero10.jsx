@@ -110,7 +110,7 @@ export default function Hero10() {
                 to="bookNow"
                 onClick={scrollToBookNow}
               >
-                LET'S FLY
+                LET'S TAKE OFF
               </button>
             </div>
           </div>

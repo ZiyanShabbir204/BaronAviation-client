@@ -18,8 +18,8 @@ export default function FooterFour() {
 
                   <div className="col-auto">
                     <div className="text-20 fw-500 text-white text-white">
-                      Speak to our expert at
-                      <span className="text-white">0-000-000-0000</span>
+                      Speak to our flight team 24/7
+                      <span className="text-white">+92-326-0000227</span>
                     </div>
                   </div>
                 </div>
@@ -28,7 +28,7 @@ export default function FooterFour() {
               <div className="col-auto">
                 <div className="footerSocials">
                   <div className="footerSocials__title text-white">
-                    Follow Us
+                    Follow Uss
                   </div>
 
                   <div className="footerSocials__icons text-white">
@@ -101,7 +101,9 @@ export default function FooterFour() {
           <div className="footer__bottom">
             <div className="row y-gap-5 justify-between items-center">
               <div className="col-auto text-white">
-                <div>© COPYRIGHT THE BARON AVIATION {new Date().getFullYear()}</div>
+                <div>
+                  © COPYRIGHT THE BARON AVIATION {new Date().getFullYear()}
+                </div>
               </div>
 
               <div className="col-auto">

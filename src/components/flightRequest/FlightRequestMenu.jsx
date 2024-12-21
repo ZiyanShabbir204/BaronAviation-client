@@ -122,29 +122,35 @@ const FlightRequestMenu = () => {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#f6bc16", // Set the main color to #eb662b
+        main: "#f6bc16", // Adjust as per requirement
       },
     },
     components: {
-      MuiTextField: {
+      MuiOutlinedInput: {
         styleOverrides: {
           root: {
-            "& .MuiInputBase-root": {
-              color: "#fff", // Set text color
+            color: "white", // Set text color to white
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "white", // Set default border color to white
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#f6bc16", // Set hover border color
+            },
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#f6bc16", // Set focused border color
             },
           },
         },
       },
-      MuiSvgIcon: {
+      MuiInputLabel: {
         styleOverrides: {
           root: {
-            color: "#f6bc16", // Set icon color
+            color: "white", // Set label text color to white
           },
         },
       },
     },
   });
-
   const handleTravelerClick = (event) => {
     setTravelerAnchorEl(event.currentTarget);
   };
@@ -252,7 +258,7 @@ const FlightRequestMenu = () => {
                   <TextField
                     error={errors.fromLocation && Boolean(errors.fromLocation)}
                     label="From"
-                    variant="outlined"
+                    variant="standard"
                     fullWidth
                     value={fromLocation}
                     onChange={(e) => setFromLocation(e.target.value)}
@@ -278,7 +284,7 @@ const FlightRequestMenu = () => {
                   <TextField
                     error={errors.toLocation && Boolean(errors.toLocation)}
                     label="To"
-                    variant="outlined"
+                    variant="standard"
                     fullWidth
                     value={toLocation}
                     onChange={(e) => setToLocation(e.target.value)}
@@ -310,7 +316,7 @@ const FlightRequestMenu = () => {
                     value={`${adults} Adults, ${children} Children`}
                     onClick={handleTravelerClick}
                     fullWidth
-                    variant="outlined"
+                    variant="standard"
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">

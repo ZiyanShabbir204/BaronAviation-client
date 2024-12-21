@@ -9,13 +9,11 @@ export default function FooterThree() {
         <div className="container">
           <div className="footer__info">
             <div className="row y-gap-20 justify-between">
-              <div className="col-auto">
-               
-              </div>
+              <div className="col-auto"></div>
 
               <div className="col-auto">
                 <div className="footerSocials">
-                  <div className="footerSocials__title">Follow Us</div>
+                  <div className="footerSocials__title">Follow Usl</div>
 
                   <div className="footerSocials__icons">
                     <Socials />
@@ -34,9 +32,7 @@ export default function FooterThree() {
                   <p className="d-block">
                     Plot 10, Interactive Plaza, E-11/13, Islamabad, Pakistan
                   </p>
-                  <p className="d-block" >
-                    sales@baronaviation.com
-                  </p>
+                  <p className="d-block">sales@baronaviation.com</p>
                 </div>
               </div>
 
@@ -75,7 +71,9 @@ export default function FooterThree() {
         <div className="footer__bottom">
           <div className="row y-gap-5 justify-between items-center">
             <div className="col-auto">
-              <div>© COPYRIGHT THE BARON AVIATION {new Date().getFullYear()}</div>
+              <div>
+                © COPYRIGHT THE BARON AVIATION {new Date().getFullYear()}
+              </div>
             </div>
 
             <div className="col-auto">

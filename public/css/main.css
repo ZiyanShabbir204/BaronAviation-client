@@ -227,7 +227,8 @@ a:hover {
 }
 
 .MuiInputLabel-formControl {
-  color: white !important;
+  color: var(--color-vivid-orange) !important;
+  font-weight: 500 !important;
 }
 
 .MuiPickersDay-dayWithMargin.MuiPickersDay-today {
@@ -3509,6 +3510,15 @@ h6 {
 
 .background-dark-gray {
   background: var(--color-dark-gray);
+}
+
+.tiktok-icon {
+  width: 24px;
+  height: 24px;
+  background: url('/svgs/tiktok.svg') no-repeat center / contain;
+  color: red;
+  /* Changes the SVG color because of `currentColor` */
+
 }
 
 .button-gradient {
@@ -6816,6 +6826,18 @@ h6 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+}
+
+
+.MuiInputBase-formControl:before {
+  border-bottom: 1px solid white !important;
+
+}
+
+
+.Mui-focused.MuiInputBase-formControl:after {
+  border-bottom: 1px solid var(--color-vivid-orange) !important;
+
 }
 
 .hero__title {

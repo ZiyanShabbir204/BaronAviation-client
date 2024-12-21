@@ -20,9 +20,9 @@ export default function FooterTwo() {
 
                   <div className="col-auto">
                     <div className="text-20 fw-500  hero-heading">
-                      Speak to our expert at{" "}
+                      Speak to our flight team 24/7{" "}
                       <span className="text-gradient-vivid-orange">
-                        0-000-000-0000
+                        +92-326-0000227
                       </span>
                     </div>
                   </div>
@@ -32,7 +32,7 @@ export default function FooterTwo() {
               <div className="col-auto">
                 <div className="footerSocials">
                   <div className="footerSocials__title  hero-heading">
-                    Follow Us
+                    Follow Us3
                   </div>
 
                   <div className="footerSocials__icons">

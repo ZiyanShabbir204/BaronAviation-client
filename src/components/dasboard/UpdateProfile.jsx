@@ -8,7 +8,7 @@ import { enqueueSnackbar } from "notistack";
 
 export default function UpdateProfile() {
   // Formik validation schema
-  const { user ,fetchUser} = useAuth();
+  const { user, fetchUser } = useAuth();
 
   useEffect(() => {
     if (user) {
@@ -18,7 +18,7 @@ export default function UpdateProfile() {
         username: user.username,
         phone: user.phone,
         first_name: user.first_name,
-        last_name: user.last_name
+        last_name: user.last_name,
       });
     }
   }, [user]);
@@ -41,7 +41,7 @@ export default function UpdateProfile() {
       phone: user?.phone || "",
       email: user?.email || "",
       first_name: user?.first_name || "",
-      last_name: user?.last_name || ""
+      last_name: user?.last_name || "",
     },
     validationSchema,
     onSubmit: async (values, { resetForm }) => {
@@ -50,12 +50,12 @@ export default function UpdateProfile() {
         const res = await ApiService.put("/me/change-profile", {
           phone: values.phone,
           first_name: values.first_name,
-          last_name :values.last_name
+          last_name: values.last_name,
         });
         enqueueSnackbar("Password Changed Successfully", {
           variant: "success",
         });
-        fetchUser()
+        fetchUser();
         resetForm();
       } catch (error) {
         console.log("error in change profile", error);
@@ -80,7 +80,7 @@ export default function UpdateProfile() {
 
       <form onSubmit={formik.handleSubmit}>
         <Grid container spacing={3}>
-        <Grid item md={6}>
+          <Grid item md={6}>
             <TextField
               fullWidth
               id="first_name"
@@ -88,9 +88,11 @@ export default function UpdateProfile() {
               label="First Name"
               value={formik.values.first_name}
               onChange={formik.handleChange}
-              error={formik.touched.first_name && Boolean(formik.errors.first_name)}
+              error={
+                formik.touched.first_name && Boolean(formik.errors.first_name)
+              }
               helperText={formik.touched.first_name && formik.errors.first_name}
-              variant="outlined"
+              variant="standard"
               className="change-profile-field"
             />
           </Grid>
@@ -104,9 +106,11 @@ export default function UpdateProfile() {
               label="Last Name"
               value={formik.values.last_name}
               onChange={formik.handleChange}
-              error={formik.touched.last_name && Boolean(formik.errors.last_name)}
+              error={
+                formik.touched.last_name && Boolean(formik.errors.last_name)
+              }
               helperText={formik.touched.last_name && formik.errors.last_name}
-              variant="outlined"
+              variant="standard"
               className="change-profile-field"
             />
           </Grid>
@@ -123,7 +127,7 @@ export default function UpdateProfile() {
               onChange={formik.handleChange}
               error={formik.touched.username && Boolean(formik.errors.username)}
               helperText={formik.touched.username && formik.errors.username}
-              variant="outlined"
+              variant="standard"
               className="change-profile-field"
             />
           </Grid>
@@ -140,7 +144,7 @@ export default function UpdateProfile() {
               onChange={formik.handleChange}
               error={formik.touched.email && Boolean(formik.errors.email)}
               helperText={formik.touched.email && formik.errors.email}
-              variant="outlined"
+              variant="standard"
               className="change-profile-field"
             />
           </Grid>
@@ -155,7 +159,7 @@ export default function UpdateProfile() {
               onChange={formik.handleChange}
               error={formik.touched.phone && Boolean(formik.errors.phone)}
               helperText={formik.touched.phone && formik.errors.phone}
-              variant="outlined"
+              variant="standard"
               className="change-profile-field"
             />
           </Grid>

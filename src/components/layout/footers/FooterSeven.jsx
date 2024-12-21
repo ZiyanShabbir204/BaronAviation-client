@@ -20,8 +20,8 @@ export default function FooterSeven() {
 
                   <div className="col-auto">
                     <div className="text-20 fw-500">
-                      Speak to our expert at
-                      <span className="text-accent-1">0-000-000-0000</span>
+                      Speak to our flight team 24/7
+                      <span className="text-accent-1">+92-326-0000227</span>
                     </div>
                   </div>
                 </div>
@@ -29,7 +29,7 @@ export default function FooterSeven() {
 
               <div className="col-auto">
                 <div className="footerSocials">
-                  <div className="footerSocials__title">Follow Us</div>
+                  <div className="footerSocials__title">Follow Usb</div>
 
                   <div className="footerSocials__icons">
                     <Socials />
@@ -90,7 +90,9 @@ export default function FooterSeven() {
         <div className="footer__bottom">
           <div className="row y-gap-5 justify-between items-center">
             <div className="col-auto">
-              <div>© COPYRIGHT THE BARON AVIATION {new Date().getFullYear()}</div>
+              <div>
+                © COPYRIGHT THE BARON AVIATION {new Date().getFullYear()}
+              </div>
             </div>
 
             <div className="col-auto">

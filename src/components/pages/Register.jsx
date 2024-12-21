@@ -147,7 +147,7 @@ export default function Register() {
                 <TextField
                   label="First Name"
                   name="first_name"
-                  variant="outlined"
+                  variant="standard"
                   fullWidth
                   value={formData.first_name}
                   onChange={handleInputChange}
@@ -159,7 +159,7 @@ export default function Register() {
                 <TextField
                   label="Last Name"
                   name="last_name"
-                  variant="outlined"
+                  variant="standard"
                   fullWidth
                   value={formData.last_name}
                   onChange={handleInputChange}
@@ -171,7 +171,7 @@ export default function Register() {
                 <TextField
                   label="Username"
                   name="username"
-                  variant="outlined"
+                  variant="standard"
                   fullWidth
                   value={formData.username}
                   onChange={handleInputChange}
@@ -184,7 +184,7 @@ export default function Register() {
                 <TextField
                   label="Phone Number"
                   name="phoneNumber"
-                  variant="outlined"
+                  variant="standard"
                   fullWidth
                   value={formData.phoneNumber}
                   onChange={handleInputChange}
@@ -197,7 +197,7 @@ export default function Register() {
                 <TextField
                   label="Email"
                   name="email"
-                  variant="outlined"
+                  variant="standard"
                   fullWidth
                   value={formData.email}
                   onChange={handleInputChange}
@@ -211,7 +211,7 @@ export default function Register() {
                   label="Password"
                   name="password"
                   type={showPassword ? "text" : "password"}
-                  variant="outlined"
+                  variant="standard"
                   fullWidth
                   value={formData.password}
                   onChange={handleInputChange}
@@ -238,7 +238,7 @@ export default function Register() {
                   label="Confirm Password"
                   name="confirmPassword"
                   type={showConfirmPassword ? "text" : "password"}
-                  variant="outlined"
+                  variant="standard"
                   fullWidth
                   value={formData.confirmPassword}
                   onChange={handleInputChange}
