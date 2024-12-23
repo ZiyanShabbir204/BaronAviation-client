@@ -13,6 +13,7 @@ import {
   Typography,
   Stack,
   InputAdornment,
+  Checkbox
 } from "@mui/material";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers";
@@ -424,9 +425,11 @@ const FlightRequestMenu = () => {
                     />
                   </LocalizationProvider>
                 </div>
+
               </div>
 
               <Stack>
+
                 <Button
                   onClick={requestHandler}
                   variant="contained"

@@ -63,6 +63,7 @@ import LogoutPage from "./components/pages/LogoutPage";
 import Faq from "./components/pages/helpCenter/Faq";
 import FAQPage from "./components/pages/helpCenter/FAQPage";
 import TermConditionPage from "./pages/pages/terms/TermConditionPage";
+import VerifyAccountPage from "./pages/pages/verifyAccount/VerifyAccountPage";
 
 function App() {
   useEffect(() => {
@@ -138,6 +139,9 @@ function App() {
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/forgot-password" element={<ForgotPasswordPage/>}/>
               <Route path="/reset-password" element={<ResetPage/>}/>
+              <Route path="/verify-account" element={<VerifyAccountPage/>}/>
+
+              
               <Route path="/logout" element={<LogoutPage/>}/>
               <Route path="/attendants" element={<AttendantPage/>}/>
 
