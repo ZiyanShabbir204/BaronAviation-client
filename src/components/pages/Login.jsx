@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   TextField,
   Button,
@@ -7,6 +7,7 @@ import {
   createTheme,
   InputAdornment,
   IconButton,
+  Typography,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
@@ -51,11 +52,24 @@ export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const stashUsername = useRef();
 
   const [errors, setErrors] = useState({ username: "", password: "" });
+  const [loginError, setLoginError] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
   const handleShowPassword = () => setShowPassword((prev) => !prev);
+  const resendHandler = async ()=>{
+    try {
+      await ApiService.post("/auth/send-account-verification",{username:stashUsername.current})
+       enqueueSnackbar("Verification email has been sent successfully",{variant:"success"})
+      
+    } catch (error) {
+      console.log("error",error)
+      
+    }
+
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -71,6 +85,7 @@ export default function Login() {
     setErrors({ username: "", password: "" });
 
     try {
+      stashUsername.current = username;
       const res = await login(username, password);
 
       // console.log("res",res)
@@ -82,8 +97,11 @@ export default function Login() {
       navigate("/");
       // enqueueSnackbar("Login successfully",{variant:"success"})
     } catch (err) {
-      enqueueSnackbar(err.response.data.message, { variant: "error" });
-      console.log("err", err);
+      if (err.response) {
+        enqueueSnackbar(err.response.data.message, { variant: "error" });
+      } else if (err.message) {
+        setLoginError(true);
+      }
     }
   };
 
@@ -104,7 +122,24 @@ export default function Login() {
                     Sign Up!
                   </Link>
                 </div>
+                {/* <div className="mt-5">
+                  Please
+                  <Link to="/register" className="text-gradient-vivid-orange">
+                    Sign Up!
+                  </Link>
+                </div> */}
               </div>
+              {loginError && (
+                <div className="text-center mb-10 text-red-1 " onClick={resendHandler}>
+                  
+                    Please Verify your account First. <span style={{
+                      cursor: 'pointer',
+                      display: 'inline',
+                      textDecoration: 'underline'
+                    }}>Click here</span> to resend an
+                    email
+                </div>
+              )}
 
               <form
                 onSubmit={handleSubmit}

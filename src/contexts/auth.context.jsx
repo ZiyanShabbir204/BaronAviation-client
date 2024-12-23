@@ -19,18 +19,15 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const fetchUser = async()=>{
+  const fetchUser = async () => {
     try {
-      const data = await ApiService.get("/me/fetch-user")
-      setUser(data)
+      const data = await ApiService.get("/me/fetch-user");
+      setUser(data);
       localStorage.setItem("user", JSON.stringify(data));
-      
     } catch (error) {
-      throw error
-      
+      throw error;
     }
-
-  }
+  };
 
   const login = async (username, password) => {
     try {
@@ -39,16 +36,25 @@ export const AuthProvider = ({ children }) => {
         username,
         password,
       });
+      console.log("is verified", data.isVerified);
+      if (data.isVerified && data.isVerified===false) {
+        throw { message: "verify email" };
+      }
 
       setUser(data);
       setLoading(false);
       localStorage.setItem("user", JSON.stringify(data));
       localStorage.setItem("token", data.token);
-      return data
+      return data;
     } catch (err) {
       setLoading(false);
       throw err;
     }
+  };
+  const saveUser = (user) => {
+    setUser(user);
+    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("token", user.token);
   };
 
   const updateUser = (user) => {
@@ -67,7 +73,8 @@ export const AuthProvider = ({ children }) => {
     login,
     logout,
     updateUser,
-    fetchUser
+    fetchUser,
+    saveUser,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -109,7 +109,7 @@ export default function Register() {
           roleName: "customer",
         };
         const res = await ApiService.post("/auth/register", user);
-        enqueueSnackbar("You signed up successfully", { variant: "success" });
+        enqueueSnackbar("Verification Email has been sent to your email", { variant: "success" });
         navigate("/login");
 
         console.log("response in signup", res);
