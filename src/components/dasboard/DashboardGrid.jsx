@@ -6,20 +6,18 @@ import DatagridToolbar from "./my-booking/DatagridToolbar";
 import {
   dateFilterOperators,
   stringFilterOperators,
-  numericFilterOperators
+  numericFilterOperators,
 } from "@/utilis/gridFilterFormat";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useAuth } from "@/contexts/auth.context";
 
 export default function DashboardGrid({}) {
   const [data, setData] = useState([]);
-  const {user} = useAuth()
+  const { user } = useAuth();
   const [loading, setLoading] = useState(false);
   const fetchData = useCallback(async (id) => {
     setLoading(true);
-    const res = await ApiService.get(
-      `/me/hours-history`
-    );
+    const res = await ApiService.get(`/me/hours-history`);
     setLoading(false);
 
     const resWithId = res.map((r) => ({
@@ -32,11 +30,9 @@ export default function DashboardGrid({}) {
     setData(resWithId);
   }, []);
   useEffect(() => {
-    if(user){
-        fetchData(user._id);
-
+    if (user) {
+      fetchData(user._id);
     }
-    
   }, [user?._id]);
 
   const columns = useMemo(
@@ -104,7 +100,32 @@ export default function DashboardGrid({}) {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#f6bc16", // Set the main color to #eb662b
+        main: "#f6bc16", // Adjust as per requirement
+      },
+    },
+    components: {
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: {
+            color: "white", // Set text color to white
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "white", // Set default border color to white
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#f6bc16", // Set hover border color
+            },
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#f6bc16", // Set focused border color
+            },
+          },
+        },
+      },
+      MuiInputLabel: {
+        styleOverrides: {
+          root: {
+            color: "white", // Set label text color to white
+          },
+        },
       },
     },
   });
@@ -120,6 +141,18 @@ export default function DashboardGrid({}) {
           initialState={{
             pagination: {
               paginationModel: { pageSize: 5, page: 0 },
+            },
+          }}
+          sx={{
+            ".MuiDataGrid-iconButtonContainer": {
+              visibility: "visible",
+            },
+            ".MuiDataGrid-sortIcon": {
+              opacity: "inherit !important",
+            },
+            ".MuiDataGrid-menuIcon": {
+              width: "auto",
+              visibility: "visible",
             },
           }}
           slots={{ toolbar: DatagridToolbar }}

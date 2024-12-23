@@ -138,7 +138,32 @@ export default function Datagrid({ status }) {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#f6bc16", // Set the main color to #eb662b
+        main: "#f6bc16", // Adjust as per requirement
+      },
+    },
+    components: {
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: {
+            color: "white", // Set text color to white
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "white", // Set default border color to white
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#f6bc16", // Set hover border color
+            },
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#f6bc16", // Set focused border color
+            },
+          },
+        },
+      },
+      MuiInputLabel: {
+        styleOverrides: {
+          root: {
+            color: "white", // Set label text color to white
+          },
+        },
       },
     },
   });
@@ -152,6 +177,18 @@ export default function Datagrid({ status }) {
           columns={columns}
           loading={rowsLoading}
           pageSizeOptions={[5, 10, 20]}
+          sx={{
+            ".MuiDataGrid-iconButtonContainer": {
+              visibility: "visible",
+            },
+            ".MuiDataGrid-sortIcon": {
+              opacity: "inherit !important",
+            },
+            ".MuiDataGrid-menuIcon": {
+              width: "auto",
+              visibility: "visible",
+            },
+          }}
           initialState={{
             pagination: {
               paginationModel: { pageSize: 5, page: 0 },

@@ -6831,11 +6831,24 @@ h6 {
 
 .MuiInputBase-formControl:before {
   border-bottom: 1px solid white !important;
-
 }
 
+.MuiPickersLayout-actionBar {
+  background-color: var(--color-dark-gray);
+}
+
+.MuiPickersCalendarHeader-switchViewButton,
+.MuiPickersArrowSwitcher-leftArrowIcon,
+.MuiPickersArrowSwitcher-rightArrowIcon,
+.MuiListItemIcon-root {
+  color: white !important;
+}
 
 .Mui-focused.MuiInputBase-formControl:after {
+  border-bottom: 1px solid var(--color-vivid-orange) !important;
+}
+
+.MuiInputBase-colorPrimary::after {
   border-bottom: 1px solid var(--color-vivid-orange) !important;
 
 }

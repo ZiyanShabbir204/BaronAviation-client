@@ -186,7 +186,7 @@ const DashboardFlightRequest = () => {
                   <TextField
                     error={errors.toLocation && Boolean(errors.toLocation)}
                     label="To"
-                    variant="standard"
+                    variant="outlined"
                     fullWidth
                     value={toLocation}
                     onChange={(e) => setToLocation(e.target.value)}
@@ -214,7 +214,7 @@ const DashboardFlightRequest = () => {
                   <TextField
                     error={errors.fromLocation && Boolean(errors.fromLocation)}
                     label="From"
-                    variant="standard"
+                    variant="outlined"
                     fullWidth
                     value={fromLocation}
                     onChange={(e) => setFromLocation(e.target.value)}
@@ -244,7 +244,7 @@ const DashboardFlightRequest = () => {
                     value={`${adults} Adults, ${children} Children`}
                     onClick={handleTravelerClick}
                     fullWidth
-                    variant="standard"
+                    variant="outlined"
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
@@ -385,6 +385,7 @@ const DashboardFlightRequest = () => {
                         <TextField
                           {...params}
                           fullWidth
+                          variant="outlined"
                           sx={{
                             flexDirection: "row-reverse",
                             "& .MuiOutlinedInput-root": {

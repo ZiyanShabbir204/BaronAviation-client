@@ -17,7 +17,7 @@ import { enqueueSnackbar } from "notistack";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#f6bc16", // Customize as needed
+      main: "#f6bc16", // Adjust as per requirement
     },
   },
   components: {
@@ -26,13 +26,13 @@ const theme = createTheme({
         root: {
           color: "white", // Set text color to white
           "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: "white", // Default border color
+            borderColor: "white", // Set default border color to white
           },
           "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#f6bc16", // Hover border color
+            borderColor: "#f6bc16", // Set hover border color
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#f6bc16", // Focused border color
+            borderColor: "#f6bc16", // Set focused border color
           },
         },
       },
@@ -40,7 +40,7 @@ const theme = createTheme({
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          color: "white", // Set label color
+          color: "white", // Set label text color to white
         },
       },
     },

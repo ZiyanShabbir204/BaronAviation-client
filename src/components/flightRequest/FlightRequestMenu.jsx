@@ -258,7 +258,7 @@ const FlightRequestMenu = () => {
                   <TextField
                     error={errors.fromLocation && Boolean(errors.fromLocation)}
                     label="From"
-                    variant="standard"
+                    variant="outlined"
                     fullWidth
                     value={fromLocation}
                     onChange={(e) => setFromLocation(e.target.value)}
@@ -284,7 +284,7 @@ const FlightRequestMenu = () => {
                   <TextField
                     error={errors.toLocation && Boolean(errors.toLocation)}
                     label="To"
-                    variant="standard"
+                    variant="outlined"
                     fullWidth
                     value={toLocation}
                     onChange={(e) => setToLocation(e.target.value)}
@@ -316,7 +316,7 @@ const FlightRequestMenu = () => {
                     value={`${adults} Adults, ${children} Children`}
                     onClick={handleTravelerClick}
                     fullWidth
-                    variant="standard"
+                    variant="outlined"
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
@@ -409,7 +409,6 @@ const FlightRequestMenu = () => {
                       onChange={startDateChangeHandler}
                       className="datePicker"
                       helperText="ssssss"
-                      // helperText={errors.startDate && errors.startDate}
                       slotProps={{
                         textField: {
                           InputLabelProps: {

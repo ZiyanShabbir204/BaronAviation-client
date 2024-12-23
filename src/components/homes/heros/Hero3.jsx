@@ -126,23 +126,30 @@ export default function Hero3() {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#f6bc16", // Set the main color to #eb662b
+        main: "#f6bc16", // Adjust as per requirement
       },
     },
     components: {
-      MuiTextField: {
+      MuiOutlinedInput: {
         styleOverrides: {
           root: {
-            "& .MuiInputBase-root": {
-              color: "#fff", // Set text color
+            color: "white", // Set text color to white
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "white", // Set default border color to white
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#f6bc16", // Set hover border color
+            },
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#f6bc16", // Set focused border color
             },
           },
         },
       },
-      MuiSvgIcon: {
+      MuiInputLabel: {
         styleOverrides: {
           root: {
-            color: "#f6bc16", // Set icon color
+            color: "white", // Set label text color to white
           },
         },
       },

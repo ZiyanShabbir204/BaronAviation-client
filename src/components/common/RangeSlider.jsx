@@ -3,14 +3,35 @@ import Slider from "@mui/material/Slider";
 import { ThemeProvider } from "@mui/material/styles";
 
 import { createTheme } from "@mui/material/styles";
-
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#EB662B", // Change this color to your desired primary color
+      main: "#f6bc16", // Adjust as per requirement
     },
-    secondary: {
-      main: "#f50057", // Change this color to your desired secondary color
+  },
+  components: {
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          color: "white", // Set text color to white
+          "& .MuiOutlinedInput-notchedOutline": {
+            borderColor: "white", // Set default border color to white
+          },
+          "&:hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#f6bc16", // Set hover border color
+          },
+          "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#f6bc16", // Set focused border color
+          },
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: "white", // Set label text color to white
+        },
+      },
     },
   },
 });
