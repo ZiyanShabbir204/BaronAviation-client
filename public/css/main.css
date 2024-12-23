@@ -6849,6 +6849,18 @@ h6 {
   color: #d32f2f !important;
 }
 
+.datePicker .MuiSvgIcon-root {
+  color: white !important;
+}
+
+.flight-popper .MuiIconButton-sizeMedium .MuiSvgIcon-root {
+  color: white !important;
+}
+
+.MuiInputBase-formControl input {
+  color: white !important;
+}
+
 
 .Mui-focused.MuiInputBase-formControl:after {
   border-bottom: 1px solid var(--color-vivid-orange) !important;

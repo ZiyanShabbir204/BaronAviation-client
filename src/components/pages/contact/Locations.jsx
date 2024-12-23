@@ -1,21 +1,9 @@
 const locations = [
   {
     id: 1,
-    title: "Karachi",
-    address: "Plot 10, Interactive Plaza, E-11/13, Islamabad, Pakistan",
-    contact: "0000-0000000",
-  },
-  {
-    id: 2,
-    title: "Lahore",
-    address: "Plot 10, Interactive Plaza, E-11/13, Islamabad, Pakistan",
-    contact: "0000-0000000",
-  },
-  {
-    id: 3,
     title: "Islamabad",
-    address: "Plot 10, Interactive Plaza, E-11/13, Islamabad, Pakistan",
-    contact: "0000-0000000",
+    address: "3rd Floor, Interactive Plaza, Sector E-11/3 Markaz",
+    contact: "+92-51-6110971",
   },
 ];
 
@@ -26,11 +14,13 @@ export default function Locations() {
         className="container"
         style={{
           maxWidth: "1000px",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
         <div className="row y-gap-30">
           {locations.map((elm, i) => (
-            <div key={i} className="col-lg-4 col-sm-4">
+            <div key={i}>
               <div className="px-30 text-center">
                 <h3 className="text-30 md:text-24 fw-700 text-gradient-vivid-orange">
                   {elm.title}

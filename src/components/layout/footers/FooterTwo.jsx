@@ -32,7 +32,7 @@ export default function FooterTwo() {
               <div className="col-auto">
                 <div className="footerSocials">
                   <div className="footerSocials__title  hero-heading">
-                    Follow Us3
+                    Follow Us
                   </div>
 
                   <div className="footerSocials__icons">
