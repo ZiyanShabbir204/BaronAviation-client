@@ -10,8 +10,8 @@ import { useAuth } from "@/contexts/auth.context";
 
 export default function AttendantForm() {
   const [searchParam] = useSearchParams();
-  const navigate = useNavigate()
-  const {user} = useAuth()
+  const navigate = useNavigate();
+  const { user } = useAuth();
   const adult = searchParam.get("adults");
   const children = searchParam.get("children");
   const start_time = searchParam.get("start_time");
@@ -94,22 +94,18 @@ export default function AttendantForm() {
                   from,
                   start_time,
                   attendants: values.attendants,
-                  username: user.username
+                  username: user.username,
                 };
                 try {
                   await ApiService.post("/flight-booking", booking_data);
                   enqueueSnackbar("Flight request has been done", {
                     variant: "success",
                   });
-                  if(user.role === "cooperate_customer"){
-                    navigate("/dashboard")
-
+                  if (user.role === "cooperate_customer") {
+                    navigate("/dashboard");
+                  } else {
+                    navigate("/");
                   }
-                  else{
-                    navigate("/")
-                  }
-                  
-
                 } catch (error) {
                   console.log("error in flight booking", error);
                 }
@@ -133,7 +129,9 @@ export default function AttendantForm() {
                           <Grid container spacing={2}>
                             <Grid size={6}>
                               <Field
-                                as={TextField}
+                                as={(props) => (
+                                  <TextField {...props} variant="standard" />
+                                )}
                                 name={`attendants[${index}].first_name`}
                                 label="First Name"
                                 fullWidth
@@ -152,7 +150,9 @@ export default function AttendantForm() {
                             </Grid>
                             <Grid size={6}>
                               <Field
-                                as={TextField}
+                                as={(props) => (
+                                  <TextField {...props} variant="standard" />
+                                )}
                                 name={`attendants[${index}].last_name`}
                                 label="Last Name"
                                 fullWidth
@@ -170,7 +170,9 @@ export default function AttendantForm() {
 
                             <Grid size={6}>
                               <Field
-                                as={TextField}
+                                as={(props) => (
+                                  <TextField {...props} variant="standard" />
+                                )}
                                 select
                                 name={`attendants[${index}].gender`}
                                 label="Gender"
@@ -192,7 +194,9 @@ export default function AttendantForm() {
 
                             <Grid size={6}>
                               <Field
-                                as={TextField}
+                                as={(props) => (
+                                  <TextField {...props} variant="standard" />
+                                )}
                                 name={`attendants[${index}].age`}
                                 label="Age"
                                 type="number"
@@ -211,7 +215,9 @@ export default function AttendantForm() {
 
                             <Grid size={6}>
                               <Field
-                                as={TextField}
+                                as={(props) => (
+                                  <TextField {...props} variant="standard" />
+                                )}
                                 name={`attendants[${index}].weight`}
                                 label="Weight (Kg)"
                                 type="number"
@@ -230,7 +236,9 @@ export default function AttendantForm() {
 
                             <Grid size={6}>
                               <Field
-                                as={TextField}
+                                as={(props) => (
+                                  <TextField {...props} variant="standard" />
+                                )}
                                 name={`attendants[${index}].email`}
                                 label="Email"
                                 fullWidth
@@ -248,7 +256,9 @@ export default function AttendantForm() {
 
                             <Grid size={12}>
                               <Field
-                                as={TextField}
+                                as={(props) => (
+                                  <TextField {...props} variant="standard" />
+                                )}
                                 name={`attendants[${index}].identity_number`}
                                 label="Identity Number"
                                 fullWidth
@@ -260,9 +270,11 @@ export default function AttendantForm() {
                                   )
                                 }
                                 helperText={
-                                  touched.attendants?.[index]
+                                  (touched.attendants?.[index]
                                     ?.identity_number &&
-                                  errors.attendants?.[index]?.identity_number
+                                    errors.attendants?.[index]
+                                      ?.identity_number) ||
+                                  "Identity number must be in the format 12345-1234567-1"
                                 }
                                 className="attendant-form-field"
                               />

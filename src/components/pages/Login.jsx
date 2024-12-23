@@ -59,17 +59,18 @@ export default function Login() {
   const navigate = useNavigate();
   const { login } = useAuth();
   const handleShowPassword = () => setShowPassword((prev) => !prev);
-  const resendHandler = async ()=>{
+  const resendHandler = async () => {
     try {
-      await ApiService.post("/auth/send-account-verification",{username:stashUsername.current})
-       enqueueSnackbar("Verification email has been sent successfully",{variant:"success"})
-      
+      await ApiService.post("/auth/send-account-verification", {
+        username: stashUsername.current,
+      });
+      enqueueSnackbar("Verification email has been sent successfully", {
+        variant: "success",
+      });
     } catch (error) {
-      console.log("error",error)
-      
+      console.log("error", error);
     }
-
-  }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -98,9 +99,11 @@ export default function Login() {
       // enqueueSnackbar("Login successfully",{variant:"success"})
     } catch (err) {
       if (err.response) {
-        enqueueSnackbar(err.response.data.message, { variant: "error" });
-      } else if (err.message) {
-        setLoginError(true);
+        if (err.response.data.message === "The user is not verified") {
+          setLoginError(true);
+        } else {
+          enqueueSnackbar(err.response.data.message, { variant: "error" });
+        }
       }
     }
   };
@@ -122,22 +125,21 @@ export default function Login() {
                     Sign Up!
                   </Link>
                 </div>
-                {/* <div className="mt-5">
-                  Please
-                  <Link to="/register" className="text-gradient-vivid-orange">
-                    Sign Up!
-                  </Link>
-                </div> */}
               </div>
               {loginError && (
-                <div className="text-center mb-10 text-red-1 " onClick={resendHandler}>
-                  
-                    Please Verify your account First. <span style={{
-                      cursor: 'pointer',
-                      display: 'inline',
-                      textDecoration: 'underline'
-                    }}>Click here</span> to resend an
-                    email
+                <div className="text-center mb-10 text-red-1 ">
+                  Please verify your account to continue.{" "}
+                  <span
+                    onClick={resendHandler}
+                    style={{
+                      cursor: "pointer",
+                      display: "inline",
+                      textDecoration: "underline",
+                    }}
+                  >
+                    Click here
+                  </span>{" "}
+                  to resend the verification email.
                 </div>
               )}
 

@@ -403,6 +403,11 @@ const DashboardFlightRequest = () => {
                         />
                       )}
                       className="datePicker"
+                      slotProps={{
+                        field: {
+                          readOnly: true,
+                        },
+                      }}
                     />
                   </LocalizationProvider>
                 </div>

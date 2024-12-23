@@ -13,7 +13,7 @@ import {
   Typography,
   Stack,
   InputAdornment,
-  Checkbox
+  Checkbox,
 } from "@mui/material";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers";
@@ -409,8 +409,10 @@ const FlightRequestMenu = () => {
                       format="DD/MM/YYYY h:m A"
                       onChange={startDateChangeHandler}
                       className="datePicker"
-                      helperText="ssssss"
                       slotProps={{
+                        // field: {
+                        //   readOnly: true,
+                        // },
                         textField: {
                           InputLabelProps: {
                             shrink: true,
@@ -430,11 +432,9 @@ const FlightRequestMenu = () => {
                     />
                   </LocalizationProvider>
                 </div>
-
               </div>
 
               <Stack>
-
                 <Button
                   onClick={requestHandler}
                   variant="contained"
