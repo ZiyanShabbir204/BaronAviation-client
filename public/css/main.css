@@ -6841,7 +6841,9 @@ h6 {
 .MuiPickersArrowSwitcher-leftArrowIcon,
 .MuiPickersArrowSwitcher-rightArrowIcon,
 .MuiListItemIcon-root,
-.MuiFormHelperText-sizeMedium {
+.MuiFormHelperText-sizeMedium,
+.request-return-flight .MuiSvgIcon-fontSizeMedium,
+.MuiInputBase-colorPrimary .MuiSelect-standard {
   color: white !important;
 }
 
