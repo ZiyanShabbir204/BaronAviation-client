@@ -12,6 +12,7 @@ import {
   Typography,
   Stack,
   InputAdornment,
+  Checkbox,
 } from "@mui/material";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers";
@@ -33,6 +34,7 @@ const DashboardFlightRequest = () => {
   const [fromLocation, setFromLocation] = useState("");
   const [toLocation, setToLocation] = useState("");
   const [flyingPerson, setFlyingPerson] = useState("");
+  const requestReturnCheckbox = useRef();
   const [selectedDate, setSelectedDate] = useState(dayjs());
   const { user } = useAuth();
   const [errors, setErrors] = useState({
@@ -96,7 +98,7 @@ const DashboardFlightRequest = () => {
       // const res =  await axios.post("http://localhost:5000/flight-booking",bookingData)
       // const res = await ApiService.post("/flight-booking", bookingData);
       // console.log("res booking", res);
-      const url = `adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${selectedDate}`;
+      const url = `adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${selectedDate}&request_return=${requestReturnCheckbox.current.checked}`;
       const encodedUrl = encodeURIComponent(url);
       navigate(`/attendants?${url}`);
       setFromLocation("");
@@ -412,7 +414,15 @@ const DashboardFlightRequest = () => {
                   </LocalizationProvider>
                 </div>
               </div>
-
+              <div className="request-return-flight">
+                <Checkbox
+                  inputRef={requestReturnCheckbox}
+                  id="request-return-flight"
+                />
+                <label htmlFor="request-return-flight">
+                  Request return flight
+                </label>
+              </div>
               <Button
                 onClick={requestHandler}
                 variant="contained"

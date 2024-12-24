@@ -35,9 +35,12 @@ const FlightRequestMenu = () => {
   const [fromLocation, setFromLocation] = useState("");
   const [toLocation, setToLocation] = useState("");
   const [flyingPerson, setFlyingPerson] = useState("");
+  const [requestReturn, setRequestReturn] = useState(false);
   const [selectedDate, setSelectedDate] = useState(dayjs());
   const [startTimeError, setStartTimeError] = useState("");
+
   const dateRef = useRef();
+  const requestReturnCheckbox = useRef();
 
   const { user } = useAuth();
   const [errors, setErrors] = useState({
@@ -109,7 +112,7 @@ const FlightRequestMenu = () => {
     };
 
     try {
-      const url = `adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${selectedDate}`;
+      const url = `adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${selectedDate}&request_return=${requestReturnCheckbox.current.checked}`;
       const encodedUrl = encodeURIComponent(url);
       navigate(`/attendants?${url}`);
       setFromLocation("");
@@ -410,9 +413,9 @@ const FlightRequestMenu = () => {
                       onChange={startDateChangeHandler}
                       className="datePicker"
                       slotProps={{
-                        // field: {
-                        //   readOnly: true,
-                        // },
+                        field: {
+                          readOnly: true,
+                        },
                         textField: {
                           InputLabelProps: {
                             shrink: true,
@@ -432,6 +435,16 @@ const FlightRequestMenu = () => {
                     />
                   </LocalizationProvider>
                 </div>
+              </div>
+
+              <div className="request-return-flight">
+                <Checkbox
+                  inputRef={requestReturnCheckbox}
+                  id="request-return-flight"
+                />
+                <label htmlFor="request-return-flight">
+                  Request return flight
+                </label>
               </div>
 
               <Stack>
