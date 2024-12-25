@@ -145,37 +145,41 @@ function App() {
                 <Route path="/blog-list-3" element={<BlogListPage3 />} />
                 <Route path="/blog-single/:id" element={<BlogSinglePage />} />
 
-              <Route path="/tour-single-5/:id" element={<TourSinglePage5 />} />
+                <Route
+                  path="/tour-single-5/:id"
+                  element={<TourSinglePage5 />}
+                />
 
-              <Route path="/booking-pages" element={<BookingPage />} />
+                <Route path="/booking-pages" element={<BookingPage />} />
 
-              <Route path="/dashboard" element={<DBMainPage />} />
-              <Route path="/book-flight" element={<BookFlight />} />
-              <Route path="/my-booking" element={<DBBookingPage />} />
-              <Route path="/my-profile" element={<DBProfilePage />} />
-              <Route path="/faqs" element={<FAQPage />} />
-              <Route path="/term-condition" element={<TermConditionPage />} />
+                <Route path="/dashboard" element={<DBMainPage />} />
+                <Route path="/book-flight" element={<BookFlight />} />
+                <Route path="/my-booking" element={<DBBookingPage />} />
+                <Route path="/my-profile" element={<DBProfilePage />} />
+                <Route path="/faqs" element={<FAQPage />} />
+                <Route path="/term-condition" element={<TermConditionPage />} />
 
-              <Route path="/blog-list-1" element={<BlogListPage1 />} />
-              <Route path="/blog-list-2" element={<BlogListPage2 />} />
-              <Route path="/blog-list-3" element={<BlogListPage3 />} />
-              <Route path="/blog-single/:id" element={<BlogSinglePage />} />
+                <Route path="/blog-list-1" element={<BlogListPage1 />} />
+                <Route path="/blog-list-2" element={<BlogListPage2 />} />
+                <Route path="/blog-list-3" element={<BlogListPage3 />} />
+                <Route path="/blog-single/:id" element={<BlogSinglePage />} />
 
-              <Route path="/destinations" element={<DestinationsPage />} />
-              <Route path="/our-vision" element={<AboutPage />} />
-              <Route path="/corporate" element={<Corporate />} />
-              <Route path="/help-center" element={<HelpCenterPage />} />
-              <Route path="/terms" element={<TermsPage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/register" element={<RegisterPage />} />
-              <Route path="/forgot-password" element={<ForgotPasswordPage/>}/>
-              <Route path="/reset-password" element={<ResetPage/>}/>
-              <Route path="/verify-account" element={<VerifyAccountPage/>}/>
+                <Route path="/destinations" element={<DestinationsPage />} />
+                <Route path="/our-vision" element={<AboutPage />} />
+                <Route path="/corporate" element={<Corporate />} />
+                <Route path="/help-center" element={<HelpCenterPage />} />
+                <Route path="/terms" element={<TermsPage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+                <Route
+                  path="/forgot-password"
+                  element={<ForgotPasswordPage />}
+                />
+                <Route path="/reset-password" element={<ResetPage />} />
+                <Route path="/verify-account" element={<VerifyAccountPage />} />
 
-              
-              <Route path="/logout" element={<LogoutPage/>}/>
-              <Route path="/attendants" element={<AttendantPage/>}/>
-
+                <Route path="/logout" element={<LogoutPage />} />
+                <Route path="/attendants" element={<AttendantPage />} />
 
                 <Route path="/invoice" element={<InvoicePage />} />
                 <Route path="/ui-elements" element={<UIElementsPage />} />
@@ -191,7 +195,7 @@ function App() {
         </AuthProvider>
       </SnackbarProvider>
 
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
     </>
   );
 }
