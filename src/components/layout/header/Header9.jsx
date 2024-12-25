@@ -96,19 +96,82 @@ export default function Header9({ isSticky }) {
           </div>
 
           <div className="headerMobile__right">
-            <button
-              onClick={() => pageNavigate("/tour-list-1")}
-              className="d-flex"
-            >
-              <i className="icon-search text-18 text-white"></i>
-            </button>
+            {user && (
+              <>
+                {/* Profile Icon with Popover */}
+                <IconButton onClick={handleProfileClick}>
+                  <Avatar
+                    sx={{
+                      background: "#f6bc16",
+                    }}
+                  >
+                    {firstLetter}
+                  </Avatar>{" "}
+                  {/* Display the first letter of username */}
+                </IconButton>
 
-            <button
-              onClick={() => pageNavigate("/login")}
-              className="d-flex ml-20"
-            >
-              <i className="icon-person text-18 text-white"></i>
-            </button>
+                <Popover
+                  open={openPopover}
+                  anchorEl={anchorEl}
+                  onClose={handlePopoverClose}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "end",
+                  }}
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "end",
+                  }}
+                >
+                  <div style={{ width: "230px" }}>
+                    {/* Profile Circle with Username */}
+                    <MenuItem className="menu-item-1">
+                      <Avatar
+                        sx={{
+                          background: "#f6bc16",
+                        }}
+                      >
+                        {firstLetter}
+                      </Avatar>{" "}
+                      {/* Same circle with the first letter */}
+                      <Typography style={{ marginLeft: 8 }}>
+                        {user?.username}
+                      </Typography>
+                    </MenuItem>
+
+                    <Divider />
+
+                    {/* Settings Option */}
+                    <MenuItem
+                      onClick={() => navigate("/my-profile")}
+                      className="menu-item-1"
+                    >
+                      <PersonIcon />
+                      <Typography className="menu-item-text">
+                        My Profile
+                      </Typography>
+                    </MenuItem>
+                    <MenuItem
+                      onClick={() => navigate("/my-booking")}
+                      className="menu-item-1"
+                    >
+                      <FlightIcon />
+                      <Typography className="menu-item-text">
+                        My Booking
+                      </Typography>
+                    </MenuItem>
+
+                    <Divider />
+
+                    {/* Logout Option */}
+                    <MenuItem onClick={logout} className="menu-item-1">
+                      <LogoutIcon />
+                      <Typography className="menu-item-text">Logout</Typography>
+                    </MenuItem>
+                  </div>
+                </Popover>
+              </>
+            )}
           </div>
 
           <div className="header__right">

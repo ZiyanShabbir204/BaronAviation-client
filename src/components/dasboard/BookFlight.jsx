@@ -2,10 +2,12 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import { useState } from "react";
 import DashboardFlightRequest from "../dashboardFlightRequest/DashboardFlightRequest";
+import useWindowSize from "@/hooks/useWindowSize";
 
 export default function BookFlight() {
-  const [sideBarOpen, setSideBarOpen] = useState(true);
-  
+  const { width } = useWindowSize();
+  const [sideBarOpen, setSideBarOpen] = useState(width > 1024);
+
   return (
     <>
       <div
@@ -19,7 +21,7 @@ export default function BookFlight() {
           <Header setSideBarOpen={setSideBarOpen} />
 
           <div className="dashboard__content_content">
-            <DashboardFlightRequest/>
+            <DashboardFlightRequest />
           </div>
         </div>
       </div>

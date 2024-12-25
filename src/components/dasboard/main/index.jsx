@@ -7,9 +7,11 @@ import Header from "../Header";
 import FlightRequestMenu from "@/components/flightRequest/FlightRequestMenu";
 import DashboardFlightRequest from "@/components/dashboardFlightRequest/DashboardFlightRequest";
 import DashboardGrid from "../DashboardGrid";
+import useWindowSize from "@/hooks/useWindowSize";
 
 export default function DBMain() {
-  const [sideBarOpen, setSideBarOpen] = useState(true);
+  const { width } = useWindowSize();
+  const [sideBarOpen, setSideBarOpen] = useState(width > 1024);
   return (
     <>
       <div
@@ -26,19 +28,10 @@ export default function DBMain() {
             <h1 className="text-30">Dashboard</h1>
             <States />
             <div className="rounded-12 bg-dark-grey shadow-2 px-40 pt-40 pb-30 md:px-20 md:pt-20 md:mb-20 mt-60">
-            <div className="tabs -underline-2 js-tabs">
-          
-            <DashboardGrid/>
-
-             
-            </div>
-          </div>
-
-            {/* <div className="row pt-30 y-gap-30">
-              <div>
-                <DashboardGrid/>
+              <div className="tabs -underline-2 js-tabs">
+                <DashboardGrid />
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

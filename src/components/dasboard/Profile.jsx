@@ -5,14 +5,15 @@ import ChangePassword from "./ChangePassword";
 import { useActionData } from "react-router-dom";
 import { useAuth } from "@/contexts/auth.context";
 import UpdateProfile from "./UpdateProfile";
+import useWindowSize from "@/hooks/useWindowSize";
 
 export default function Profile() {
   const { user } = useAuth();
-  const [sideBarOpen, setSideBarOpen] = useState(true);
   const [oldPassword, setOldPassword] = useState();
   const [newPassword, newOldPassword] = useState();
   const [confirmPassword, confirmOldPassword] = useState();
-
+  const { width } = useWindowSize();
+  const [sideBarOpen, setSideBarOpen] = useState(width > 1024);
   return (
     <>
       <div

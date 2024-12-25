@@ -2,6 +2,7 @@ import { menuData } from "@/data/mobileMenu";
 import { Link, useLocation } from "react-router-dom";
 
 import React, { useState } from "react";
+import { useAuth } from "@/contexts/auth.context";
 const socialMediaLinks = [
   { id: 1, class: "icon-facebook", href: "#" },
   { id: 2, class: "icon-twitter", href: "#" },
@@ -10,6 +11,8 @@ const socialMediaLinks = [
 ];
 export default function MobileMenu({ mobileMenuOpen, setMobileMenuOpen }) {
   const [activeSub, setActiveSub] = useState("");
+  const { user } = useAuth();
+
   const { pathname } = useLocation();
   return (
     <div
@@ -33,7 +36,7 @@ export default function MobileMenu({ mobileMenuOpen, setMobileMenuOpen }) {
 
           <button
             onClick={() => setMobileMenuOpen(false)}
-            className="js-menu-button"
+            className="js-menu-button button-gradient text-white"
           >
             <i className="icon-cross text-10"></i>
           </button>
@@ -46,80 +49,29 @@ export default function MobileMenu({ mobileMenuOpen, setMobileMenuOpen }) {
           >
             {menuData.map((elm, i) => (
               <li key={i} className="menuNav__item -has-submenu js-has-submenu">
-                <a
-                  onClick={() =>
-                    setActiveSub((pre) => (pre == elm.label ? "" : elm.label))
-                  }
-                >
-                  <span
-                    className={
-                      elm.submenu.some(
-                        (elm) =>
-                          elm.href.split("/")[1] == pathname?.split("/")[1]
-                      )
-                        ? "activeMenu"
-                        : ""
-                    }
-                  >
-                    {elm.label}
-                  </span>
-                  <i
-                    style={
-                      activeSub == elm.label
-                        ? { transform: "rotate(90deg)", transition: "0.3s" }
-                        : { transform: "rotate(0deg)", transition: "0.3s" }
-                    }
-                    className="icon-chevron-right"
-                  ></i>
-                </a>
-
-                <ul
-                  style={
-                    activeSub == elm.label
-                      ? { maxHeight: "1200px", transition: "0.6s" }
-                      : { maxHeight: "0px", transition: "0.6s" }
-                  }
-                >
-                  {elm.submenu.map((elm2, i2) => (
-                    <li key={i2} className="">
-                      <Link
-                        className={
-                          pathname.split("/")[1] == elm2.href?.split("/")[1]
-                            ? "activeMenu"
-                            : ""
-                        }
-                        style={{ paddingLeft: "15px", fontSize: "17px" }}
-                        to={elm2.href}
-                      >
-                        {elm2.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <Link to={elm.href}> {elm.label}</Link>
               </li>
             ))}
-
-            <li className="menuNav__item">
-              <Link to="/contact">Contact</Link>
-            </li>
           </ul>
         </div>
 
-        <div className="menu__footer">
-          <Link
-            to="/register"
-            className="button -sm -outline-black rounded-200 text-black ml-30 bg-vivid-orange"
-          >
-            Sign up
-          </Link>
+        {!user && (
+          <div className="menu__footer">
+            <Link
+              to="/register"
+              className="button -sm -outline-black rounded-200  ml-30 button-gradient text-white"
+            >
+              Sign up
+            </Link>
 
-          <Link
-            to="/login"
-            className="button -sm -outline-black rounded-200 text-black ml-30 bg-vivid-orange"
-          >
-            Log in
-          </Link>
-        </div>
+            <Link
+              to="/login"
+              className="button -sm -outline-black rounded-200  ml-30 button-gradient text-white"
+            >
+              Log in
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

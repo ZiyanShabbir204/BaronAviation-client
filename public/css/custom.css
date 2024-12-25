@@ -320,10 +320,11 @@
 
 .dashboard__sidebar_header {
   position: relative;
+  flex-direction: row-reverse;
+  padding: 0 10px;
 }
 
 .closeSidebar {
-  position: absolute;
   top: 0;
   right: 20px;
   font-size: 30px;

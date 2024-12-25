@@ -4,10 +4,12 @@ import Header from "./Header";
 // import Pagination from "../common/Pagination";
 // import { bookingData } from "@/data/dashboard";
 import Datagrid from "./my-booking/Datagrid";
+import useWindowSize from "@/hooks/useWindowSize";
 
 const tabs = ["Approved", "Pending", "Declined"];
 export default function DbBooking() {
-  const [sideBarOpen, setSideBarOpen] = useState(true);
+  const { width } = useWindowSize();
+  const [sideBarOpen, setSideBarOpen] = useState(width > 1024);
   const [currentTab, setcurrentTab] = useState("Approved");
   return (
     <div

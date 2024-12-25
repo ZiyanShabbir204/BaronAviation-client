@@ -2933,6 +2933,18 @@ h6 {
   }
 }
 
+
+@media (max-width: 450px) {
+  .header.-type-10 .header__logo .baron-logo {
+    width: 55px;
+  }
+
+  .header.-type-10 .header__logo .baron-text {
+    width: 130px;
+  }
+}
+
+
 .header.-type-3 .header__right {
   display: flex;
   align-items: center;
@@ -5893,7 +5905,7 @@ h6 {
 
 @media (max-width: 767px) {
   .pageHeader.-type-1 {
-    padding-bottom: 0;
+    padding-bottom: 88px;
   }
 }
 
@@ -5958,7 +5970,7 @@ h6 {
 
 @media (max-width: 991px) {
   .pageHeader.-type-1 .pageHeader__bg>*:nth-child(2) {
-    height: 35px;
+    /* height: 35px; */
   }
 }
 
@@ -6043,7 +6055,7 @@ h6 {
 
 @media (max-width: 991px) {
   .pageHeader.-type-2 .pageHeader__bg>*:nth-child(2) {
-    height: 35px;
+    /* height: 35px; */
   }
 }
 
@@ -7805,7 +7817,7 @@ h6 {
   flex-direction: column;
   height: 100%;
   padding: 40px;
-  background-color: black;
+  background-color: var(--color-dark-gray);
   z-index: 1;
 }
 
@@ -13879,7 +13891,7 @@ h6 {
 
 @media (max-width: 767px) {
   .mt-header {
-    margin-top: 57px;
+    margin-top: 91px;
   }
 }
 
