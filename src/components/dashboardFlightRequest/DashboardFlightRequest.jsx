@@ -186,20 +186,18 @@ const DashboardFlightRequest = () => {
               <div className="location-menu">
                 <div className="searchFormItem">
                   <TextField
-                    error={errors.toLocation && Boolean(errors.toLocation)}
-                    label="To"
+                    error={errors.fromLocation && Boolean(errors.fromLocation)}
+                    label="Flying From"
                     variant="outlined"
                     fullWidth
-                    value={toLocation}
-                    onChange={(e) => setToLocation(e.target.value)}
+                    value={fromLocation}
+                    onChange={(e) => setFromLocation(e.target.value)}
                     color="primary"
-                    helperText={errors.toLocation && "To is Required"}
+                    helperText={errors.fromLocation && "From is Required"}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
-                          <LocationOnIcon
-                            style={{ color: "#f6bc16", marginBottom: "5px" }}
-                          />
+                          <LocationOnIcon style={{ color: "#f6bc16" }} />
                         </InputAdornment>
                       ),
                       style: { color: "white" },
@@ -214,18 +212,20 @@ const DashboardFlightRequest = () => {
                 </div>
                 <div className="searchFormItem">
                   <TextField
-                    error={errors.fromLocation && Boolean(errors.fromLocation)}
-                    label="From"
+                    error={errors.toLocation && Boolean(errors.toLocation)}
+                    label="Flying To"
                     variant="outlined"
                     fullWidth
-                    value={fromLocation}
-                    onChange={(e) => setFromLocation(e.target.value)}
+                    value={toLocation}
+                    onChange={(e) => setToLocation(e.target.value)}
                     color="primary"
-                    helperText={errors.fromLocation && "From is Required"}
+                    helperText={errors.toLocation && "To is Required"}
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
-                          <LocationOnIcon style={{ color: "#f6bc16" }} />
+                          <LocationOnIcon
+                            style={{ color: "#f6bc16", marginBottom: "5px" }}
+                          />
                         </InputAdornment>
                       ),
                       style: { color: "white" },

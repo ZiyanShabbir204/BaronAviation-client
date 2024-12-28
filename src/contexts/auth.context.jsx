@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
         password,
       });
       console.log("is verified", data.isVerified);
-      if (data.isVerified && data.isVerified===false) {
+      if (data.isVerified && data.isVerified === false) {
         throw { message: "verify email" };
       }
 

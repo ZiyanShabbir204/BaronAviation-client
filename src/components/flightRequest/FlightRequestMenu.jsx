@@ -259,7 +259,7 @@ const FlightRequestMenu = () => {
                 <div className="searchFormItem">
                   <TextField
                     error={errors.fromLocation && Boolean(errors.fromLocation)}
-                    label="From"
+                    label="Flying From"
                     variant="outlined"
                     fullWidth
                     value={fromLocation}
@@ -285,7 +285,7 @@ const FlightRequestMenu = () => {
                 <div className="searchFormItem">
                   <TextField
                     error={errors.toLocation && Boolean(errors.toLocation)}
-                    label="To"
+                    label="Flying To"
                     variant="outlined"
                     fullWidth
                     value={toLocation}
