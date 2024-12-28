@@ -14,6 +14,7 @@ import {
   Stack,
   InputAdornment,
   Checkbox,
+  Radio,
 } from "@mui/material";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers";
@@ -37,6 +38,7 @@ const FlightRequestMenu = () => {
   const [flyingPerson, setFlyingPerson] = useState("");
   const [requestReturn, setRequestReturn] = useState(false);
   const [selectedDate, setSelectedDate] = useState(dayjs());
+  const [selectTrip, setSelectTrip] = useState("one-way");
   const [startTimeError, setStartTimeError] = useState("");
 
   const dateRef = useRef();
@@ -96,25 +98,21 @@ const FlightRequestMenu = () => {
       return;
     }
 
-    if (!user) {
-      navigate("/login");
-    }
-
     // Clear any previous errors
     setErrors({ fromLocation: "", toLocation: "", flyingPerson: "" });
 
-    const bookingData = {
-      from: fromLocation,
-      to: toLocation,
-      start_time: selectedDate,
-      username: user.username,
-      flying_person: flyingPerson,
-    };
+    const url = `/attendants?adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${selectedDate}&request_return=${
+      selectTrip === "round-trip"
+    }`;
+
+    if (!user) {
+      const navigateUrl = `/login?redirect=${encodeURIComponent(url)}`;
+      navigate(navigateUrl);
+      return;
+    }
 
     try {
-      const url = `adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${selectedDate}&request_return=${requestReturnCheckbox.current.checked}`;
-      const encodedUrl = encodeURIComponent(url);
-      navigate(`/attendants?${url}`);
+      navigate(url);
       setFromLocation("");
       setToLocation("");
       setSelectedDate(dayjs());
@@ -437,14 +435,32 @@ const FlightRequestMenu = () => {
                 </div>
               </div>
 
-              <div className="request-return-flight">
-                <Checkbox
-                  inputRef={requestReturnCheckbox}
-                  id="request-return-flight"
-                />
-                <label htmlFor="request-return-flight">
-                  Request return flight
-                </label>
+              <div className="flight-type-option">
+                <div>
+                  <Radio
+                    checked={selectTrip === "one-way"}
+                    onChange={(evt) => {
+                      setSelectTrip(evt.target.value);
+                    }}
+                    value="one-way"
+                    id="one-way"
+                    name="radio-buttons"
+                    inputProps={{ "aria-label": "A" }}
+                  />
+                  <label htmlFor="one-way">One Way</label>
+                </div>
+
+                <div>
+                  <Radio
+                    checked={selectTrip === "round-trip"}
+                    onChange={(evt) => setSelectTrip(evt.target.value)}
+                    value="round-trip"
+                    id="round-trip"
+                    name="radio-buttons"
+                    inputProps={{ "aria-label": "A" }}
+                  />
+                  <label htmlFor="round-trip">Round Trip </label>
+                </div>
               </div>
 
               <Stack>
@@ -454,22 +470,9 @@ const FlightRequestMenu = () => {
                   fullWidth
                   className="button button-gradient text-white -md"
                   style={{ width: "max-content", color: "white" }}
-                  disabled={!user}
                 >
                   Request
                 </Button>
-
-                {!user && (
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      color: "rgba(256,256,256,0.5)",
-                      width: "150px",
-                    }}
-                  >
-                    Please log in to request a flight.
-                  </Typography>
-                )}
               </Stack>
             </div>
           </div>

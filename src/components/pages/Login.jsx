@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import React, { useRef, useState } from "react";
 import {
   TextField,
@@ -53,11 +53,14 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const stashUsername = useRef();
-
+  const [searchParams] = useSearchParams();
   const [errors, setErrors] = useState({ username: "", password: "" });
   const [loginError, setLoginError] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
+
+  const redirect = searchParams.get("redirect");
+
   const handleShowPassword = () => setShowPassword((prev) => !prev);
   const resendHandler = async () => {
     try {
@@ -89,10 +92,13 @@ export default function Login() {
       stashUsername.current = username;
       const res = await login(username, password);
 
-      // console.log("res",res)
+      if (redirect) {
+        navigate(redirect);
+        return;
+      }
+
       if (res.role == "cooperate_customer") {
         navigate("/dashboard");
-        // enqueueSnackbar("Login successfully",{variant:"success"})
         return;
       }
       navigate("/");

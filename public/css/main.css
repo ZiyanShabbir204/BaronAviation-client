@@ -15455,3 +15455,16 @@ button.gm-ui-hover-effect::after {
 .h-500 {
   height: 500px;
 }
+
+.MuiRadio-colorPrimary>span>svg {
+  color: var(--color-white);
+}
+
+.MuiRadio-colorPrimary.Mui-checked>span>svg {
+  color: var(--color-vivid-orange);
+}
+
+.flight-type-option {
+  display: flex;
+  margin: -9px;
+}
