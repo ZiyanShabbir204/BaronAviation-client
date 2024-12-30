@@ -13,6 +13,7 @@ import {
   Stack,
   InputAdornment,
   Checkbox,
+  Radio,
 } from "@mui/material";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers";
@@ -41,7 +42,7 @@ const DashboardFlightRequest = () => {
     fromLocation: "",
     toLocation: "",
   });
-  const { enqueueSnackbar } = useSnackbar();
+  const [selectTrip, setSelectTrip] = useState("one-way");
 
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
@@ -98,7 +99,9 @@ const DashboardFlightRequest = () => {
       // const res =  await axios.post("http://localhost:5000/flight-booking",bookingData)
       // const res = await ApiService.post("/flight-booking", bookingData);
       // console.log("res booking", res);
-      const url = `adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${selectedDate}&request_return=${requestReturnCheckbox.current.checked}`;
+      const url = `adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${selectedDate}&request_return=${
+        selectTrip === "round-trip"
+      }`;
       const encodedUrl = encodeURIComponent(url);
       navigate(`/attendants?${url}`);
       setFromLocation("");
@@ -414,15 +417,33 @@ const DashboardFlightRequest = () => {
                   </LocalizationProvider>
                 </div>
               </div>
-              <div className="request-return-flight">
-                <Checkbox
-                  inputRef={requestReturnCheckbox}
-                  id="request-return-flight"
-                />
-                <label htmlFor="request-return-flight">
-                  Request return flight
-                </label>
+              <div className="flight-type-option">
+                <div>
+                  <Radio
+                    checked={selectTrip === "one-way"}
+                    onChange={(evt) => {
+                      setSelectTrip(evt.target.value);
+                    }}
+                    value="one-way"
+                    id="one-way"
+                    name="radio-buttons"
+                    inputProps={{ "aria-label": "A" }}
+                  />
+                  <label htmlFor="one-way">One Way</label>
+                </div>
+                <div>
+                  <Radio
+                    checked={selectTrip === "round-trip"}
+                    onChange={(evt) => setSelectTrip(evt.target.value)}
+                    value="round-trip"
+                    id="round-trip"
+                    name="radio-buttons"
+                    inputProps={{ "aria-label": "A" }}
+                  />
+                  <label htmlFor="round-trip">Round Trip </label>
+                </div>
               </div>
+
               <Button
                 onClick={requestHandler}
                 variant="contained"
