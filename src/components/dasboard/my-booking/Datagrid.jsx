@@ -125,7 +125,7 @@ export default function Datagrid({ status }) {
       {
         field: "actions",
         type: "actions",
-        headerName: "Actions",
+        headerName: "Others",
         renderCell: (param) => {
           return <FlightDetailGridMenu data={param.row} />;
         },

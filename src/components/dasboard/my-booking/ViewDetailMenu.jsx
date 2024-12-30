@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Fade from "@mui/material/Fade";
 
-const ViewDetailMenu = forwardRef(({ children,onViewDetail }, ref) => {
+const ViewDetailMenu = forwardRef(({ children, onViewDetail }, ref) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -50,7 +50,7 @@ const ViewDetailMenu = forwardRef(({ children,onViewDetail }, ref) => {
             handleClose();
           }}
         >
-          View Attendants
+          Accompanied Passenger
         </MenuItem>
 
         {children}
