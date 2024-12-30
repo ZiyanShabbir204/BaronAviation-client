@@ -334,7 +334,7 @@ const DashboardFlightRequest = () => {
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DateTimePicker
                       fullWidth
-                      label="Select Date & Time"
+                      label="Flight Start Time"
                       format="DD/MM/YYYY h:m A"
                       value={selectedDate}
                       onChange={(newValue) => setSelectedDate(newValue)}
@@ -409,6 +409,9 @@ const DashboardFlightRequest = () => {
                       )}
                       className="datePicker"
                       slotProps={{
+                        textField: {
+                          placeholder: "Flight Start Time",
+                        },
                         field: {
                           readOnly: true,
                         },

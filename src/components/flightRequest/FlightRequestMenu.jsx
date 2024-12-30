@@ -415,6 +415,7 @@ const FlightRequestMenu = () => {
                           readOnly: true,
                         },
                         textField: {
+                          placeholder: "Flight Start Time",
                           InputLabelProps: {
                             shrink: true,
                           },
