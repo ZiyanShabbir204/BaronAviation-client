@@ -162,6 +162,13 @@ export default function Login() {
                   onChange={(e) => setUsername(e.target.value)}
                   error={Boolean(errors.username)}
                   helperText={errors.username}
+                  slotProps={{
+                    textField: {
+                      InputLabelProps: {
+                        shrink: true,
+                      },
+                    },
+                  }}
                   InputProps={{
                     style: { color: "white" },
                     classes: {
