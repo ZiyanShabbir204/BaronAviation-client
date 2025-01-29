@@ -200,7 +200,7 @@ const FlightRequestMenu = () => {
     setStartDateLoading(true);
     try {
       const { flights, unavailability } = await ApiService.get(
-        `get-month-Unavailablities?month=${month}&year=${year}`
+        `get-month-Unavailablities?month=${month}&year=${year}&isPending=true`
       );
 
       const newIntervalSet = new Set();
