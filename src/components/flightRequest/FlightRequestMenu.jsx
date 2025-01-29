@@ -180,7 +180,7 @@ const FlightRequestMenu = () => {
     const start = new Date(startDate);
     const end = new Date(endDate);
     const intervals = [];
-    if (!end) {
+    if (!endDate) {
       return [start];
     }
 
