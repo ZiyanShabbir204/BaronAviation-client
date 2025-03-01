@@ -13,6 +13,7 @@ import {
   Stack,
   InputAdornment,
   Checkbox,
+  CircularProgress,
   Radio,
 } from "@mui/material";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
@@ -36,6 +37,8 @@ const DashboardFlightRequest = () => {
   const [toLocation, setToLocation] = useState("");
   const [flyingPerson, setFlyingPerson] = useState("");
   const requestReturnCheckbox = useRef();
+  const [startDateLoading, setStartDateLoading] = useState(false);
+  const [intervalSet, setIntervalSet] = useState(new Set());
   const [selectedDate, setSelectedDate] = useState(dayjs());
   const { user } = useAuth();
   const [errors, setErrors] = useState({
@@ -43,11 +46,13 @@ const DashboardFlightRequest = () => {
     toLocation: "",
   });
   const [selectTrip, setSelectTrip] = useState("one-way");
+  const [termsAccepted, setTermsAccepted] = useState(false);
 
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const [travelerAnchorEl, setTravelerAnchorEl] = useState(null);
   const [errorTravelerMessage, setTravelerMessage] = useState("");
+  const dateRef = useRef();
 
   const dropDownContainer = useRef();
   useEffect(() => {
@@ -69,6 +74,10 @@ const DashboardFlightRequest = () => {
 
   const requestHandler = async () => {
     let formErrors = {};
+    if (!dateRef.current.value) {
+      formErrors.startDate = "Start date is required";
+    }
+
     if (!fromLocation.trim()) {
       formErrors.fromLocation = "from is required";
     }
@@ -78,28 +87,55 @@ const DashboardFlightRequest = () => {
       formErrors.toLocation = "to is required";
     }
 
+    if (!termsAccepted) {
+      formErrors.term =
+        "Please accept the Terms and Conditions to proceed with your booking.";
+    }
+
     // Check if there are any errors
     if (Object.keys(formErrors).length > 0) {
-      setErrors(formErrors);
+      setErrors((prev) => ({
+        ...prev,
+        ...formErrors,
+      }));
+      return;
+    }
+
+    if (errors.startDate) {
+      setErrors((prevError) => ({
+        ...prevError,
+        ...{ fromLocation: "", toLocation: "", flyingPerson: "", term: "" },
+      }));
       return;
     }
 
     // Clear any previous errors
     setErrors({ fromLocation: "", toLocation: "", flyingPerson: "" });
 
-    const bookingData = {
-      from: fromLocation,
-      to: toLocation,
-      start_time: selectedDate,
-      username: user.username,
-      flying_person: flyingPerson,
-    };
+    const parts = dateRef.current.value.match(
+      /^(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}) (AM|PM)$/
+    );
+
+    const [, day, month, year, hoursRaw, minutes, meridian] = parts;
+
+    // Convert 12-hour format to 24-hour format
+    let hours = Number(hoursRaw);
+    if (meridian === "PM" && hours !== 12) hours += 12;
+    if (meridian === "AM" && hours === 12) hours = 0;
+
+    // Create JavaScript Date object (months in JS start from 0)
+    const jsDate = new Date(
+      Number(year),
+      Number(month) - 1,
+      Number(day),
+      hours,
+      Number(minutes)
+    );
+
+    const dayjsDate = dayjs(jsDate); // Convert to Day.js
 
     try {
-      // const res =  await axios.post("http://localhost:5000/flight-booking",bookingData)
-      // const res = await ApiService.post("/flight-booking", bookingData);
-      // console.log("res booking", res);
-      const url = `adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${selectedDate}&request_return=${
+      const url = `adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${dayjsDate}&request_return=${
         selectTrip === "round-trip"
       }`;
       const encodedUrl = encodeURIComponent(url);
@@ -108,9 +144,6 @@ const DashboardFlightRequest = () => {
       setToLocation("");
       setSelectedDate(dayjs());
       setFlyingPerson("");
-      // enqueueSnackbar("Flight has been created", {
-      //   variant: "success",
-      // });
     } catch (err) {
       console.log("Error in FlightRequest -> submitHandler", err);
     }
@@ -169,6 +202,80 @@ const DashboardFlightRequest = () => {
       setter(value - 1);
       setTravelerMessage("");
     }
+  };
+
+  function generateIntervals(startDate, endDate, min) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const intervals = [];
+    if (!endDate) {
+      return [start];
+    }
+
+    if (start >= end) {
+      throw new Error("Start date must be earlier than end date");
+    }
+
+    while (start <= end) {
+      intervals.push(new Date(start).toISOString());
+      start.setMinutes(start.getMinutes() + min);
+    }
+
+    return intervals;
+  }
+
+  async function getDisableInterval(month, year) {
+    setStartDateLoading(true);
+    try {
+      const { flights, unavailability } = await ApiService.get(
+        `get-month-Unavailablities?month=${month}&year=${year}&isPending=true`
+      );
+
+      const newIntervalSet = new Set();
+      unavailability.forEach((d) => {
+        const intervals = generateIntervals(d.start_time, d.end_time, 5);
+        intervals.forEach((i) => newIntervalSet.add(i));
+      });
+
+      flights.forEach((d) => {
+        const intervals = generateIntervals(d.start_time, d.end_time, 5);
+        intervals.forEach((i) => newIntervalSet.add(i));
+      });
+
+      setIntervalSet(newIntervalSet);
+      setStartDateLoading(false);
+    } catch (err) {
+      console.error("err -> getDisableInterval", err);
+    }
+  }
+
+  const dateChangeHandler = (date) => {
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    getDisableInterval(month, year);
+  };
+
+  const startDateChangeHandler = (date) => {
+    const isoString = date.toISOString();
+
+    const now = new Date();
+
+    if (date < now) {
+      setErrors((prevError) => ({
+        ...prevError,
+        startDate:
+          "Past dates cannot be selected. Please choose a present or future date.",
+      }));
+      return;
+    }
+
+    const isDateDisabled = intervalSet.has(isoString);
+    setErrors((prevError) => ({
+      ...prevError,
+      startDate: isDateDisabled
+        ? "Selected date and time is not available"
+        : "",
+    }));
   };
 
   return (
@@ -333,89 +440,36 @@ const DashboardFlightRequest = () => {
                 <div className="searchFormItem">
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DateTimePicker
+                      inputRef={dateRef}
                       fullWidth
+                      id="start_time"
+                      name="start_time"
                       label="Flight Start Time"
                       format="DD/MM/YYYY h:m A"
-                      value={selectedDate}
-                      onChange={(newValue) => setSelectedDate(newValue)}
-                      shouldDisableTime={(timeValue, clockType) => {
-                        const disabledDateTimes = [
-                          "2024-10-24T00:15:00.000Z", // Oct 24, 12:15 AM
-                          "2024-10-31T10:40:00.000Z", // Oct 31, 10:40 AM
-                          "2024-10-22T08:20:00.000Z", // Oct 22, 8:20 AM
-                          "2024-10-22T18:05:00.000Z", // Oct 22, 6:05 PM
-                        ];
-
-                        const selectedDateString = selectedDate
-                          ?.toISOString()
-                          .split("T")[0];
-                        const matchingDisabledTimes = disabledDateTimes.filter(
-                          (disabledDateTime) =>
-                            new Date(disabledDateTime)
-                              .toISOString()
-                              .split("T")[0] === selectedDateString
-                        );
-
-                        if (matchingDisabledTimes.length === 0) return false;
-
-                        if (clockType === "hours") {
-                          return matchingDisabledTimes.some(
-                            (disabledDateTime) => {
-                              const disabledHour = new Date(
-                                disabledDateTime
-                              ).getHours();
-                              return timeValue === disabledHour;
-                            }
-                          );
-                        }
-
-                        if (clockType === "minutes") {
-                          return matchingDisabledTimes.some(
-                            (disabledDateTime) => {
-                              const disabledTime = new Date(disabledDateTime);
-                              const disabledHour = disabledTime.getHours();
-                              const disabledMinute = disabledTime.getMinutes();
-                              return (
-                                disabledHour ===
-                                  new Date(selectedDate).getHours() &&
-                                timeValue === disabledMinute
-                              );
-                            }
-                          );
-                        }
-
-                        return false;
-                      }}
-                      renderInput={(params) => (
-                        <TextField
-                          {...params}
-                          fullWidth
-                          variant="outlined"
-                          sx={{
-                            flexDirection: "row-reverse",
-                            "& .MuiOutlinedInput-root": {
-                              "& fieldset": {
-                                borderColor: "red",
-                              },
-                              "&:hover fieldset": {
-                                borderColor: "green",
-                              },
-                              "&.Mui-focused fieldset": {
-                                borderColor: "purple",
-                              },
-                            },
-                          }}
-                        />
-                      )}
+                      onChange={startDateChangeHandler}
                       className="datePicker"
                       slotProps={{
-                        textField: {
-                          placeholder: "Flight Start Time",
-                        },
                         field: {
                           readOnly: true,
                         },
+                        textField: {
+                          placeholder: "Flight Start Time",
+                          InputLabelProps: {
+                            shrink: true,
+                          },
+                          helperText: errors.startDate && errors.startDate,
+                        },
                       }}
+                      shouldDisableTime={(value, view) => {
+                        const inIsoFormat = value.toISOString();
+                        return intervalSet.has(inIsoFormat);
+                      }}
+                      disablePast
+                      onMonthChange={(d) => dateChangeHandler(d.toDate())}
+                      onYearChange={(d) => dateChangeHandler(d.toDate())}
+                      onOpen={() => dateChangeHandler(new Date())}
+                      loading={startDateLoading}
+                      renderLoading={() => <CircularProgress />}
                     />
                   </LocalizationProvider>
                 </div>
@@ -446,6 +500,31 @@ const DashboardFlightRequest = () => {
                   <label htmlFor="round-trip">Round Trip </label>
                 </div>
               </div>
+
+              <Stack>
+                <Stack
+                  direction="row"
+                  justifyContent="flex-start"
+                  alignItems="center"
+                  gap={1}
+                >
+                  <Checkbox
+                    sx={{ padding: 0 }}
+                    id="term-condtion"
+                    checked={termsAccepted}
+                    onChange={(evt) => setTermsAccepted(evt.target.checked)}
+                    helperText="sss"
+                  />
+                  <label htmlFor="term-condtion">
+                    I have read and agree to the Terms and Conditions.
+                  </label>
+                </Stack>
+                {errors.term && (
+                  <Typography variant="caption" color="error">
+                    {errors.term}
+                  </Typography>
+                )}
+              </Stack>
 
               <Button
                 onClick={requestHandler}

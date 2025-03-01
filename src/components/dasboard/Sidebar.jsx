@@ -11,6 +11,12 @@ export default function Sidebar({ setSideBarOpen }) {
   const sidebarItems = useMemo(() => {
     const defaultItems = [
       {
+        id: 2,
+        href: "/book-flight",
+        iconClass: "icon-pin text-26",
+        label: "Book Flight",
+      },
+      {
         id: 3,
         href: "/my-booking",
         iconClass: "icon-calendar text-26",
@@ -32,20 +38,12 @@ export default function Sidebar({ setSideBarOpen }) {
     ];
 
     if (user?.role === "cooperate_customer") {
-      defaultItems.unshift(
-        {
-          id: 1,
-          href: "/dashboard",
-          iconClass: "icon-dashboard text-26",
-          label: "Dashboard",
-        },
-        {
-          id: 2,
-          href: "/book-flight",
-          iconClass: "icon-pin text-26",
-          label: "Book Flight",
-        }
-      );
+      defaultItems.unshift({
+        id: 1,
+        href: "/dashboard",
+        iconClass: "icon-dashboard text-26",
+        label: "Dashboard",
+      });
     }
 
     return defaultItems;

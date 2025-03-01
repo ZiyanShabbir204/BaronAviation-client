@@ -7473,10 +7473,35 @@ h6 {
   opacity: 1;
 }
 
+.accordion__item.faq {
+  background-color: var(--color-dark-gray);
+  ;
+}
+
 .accordion__content {
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.2s ease-out;
+  transition: max-height 0.4s ease-out;
+}
+
+.accordion__content a {
+  text-decoration: underline;
+}
+
+
+.accordion__content ul {
+  list-style: disc;
+  padding: 0;
+  margin: 0;
+  padding-left: 32px;
+}
+
+.accordion__content li {
+  list-style: disc;
+  padding: 0;
+  margin: 0;
+  padding-left: 4px;
+
 }
 
 .accordion__button {

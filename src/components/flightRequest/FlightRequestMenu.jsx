@@ -40,6 +40,7 @@ const FlightRequestMenu = () => {
   const [selectedDate, setSelectedDate] = useState(dayjs());
   const [selectTrip, setSelectTrip] = useState("one-way");
   const [startTimeError, setStartTimeError] = useState("");
+  const [termsAccepted, setTermsAccepted] = useState(false);
 
   const dateRef = useRef();
   const requestReturnCheckbox = useRef();
@@ -49,7 +50,6 @@ const FlightRequestMenu = () => {
     fromLocation: "",
     toLocation: "",
   });
-  const { enqueueSnackbar } = useSnackbar();
 
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
@@ -89,6 +89,11 @@ const FlightRequestMenu = () => {
       formErrors.startDate = "Start date is required";
     }
 
+    if (!termsAccepted) {
+      formErrors.term =
+        "Please accept the Terms and Conditions to proceed with your booking.";
+    }
+
     // Check if there are any errors
     if (Object.keys(formErrors).length > 0 || errors.startDate) {
       setErrors((err) => ({
@@ -99,9 +104,31 @@ const FlightRequestMenu = () => {
     }
 
     // Clear any previous errors
-    setErrors({ fromLocation: "", toLocation: "", flyingPerson: "" });
+    setErrors({ fromLocation: "", toLocation: "", flyingPerson: "", term: "" });
 
-    const url = `/attendants?adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${selectedDate}&request_return=${
+    const parts = dateRef.current.value.match(
+      /^(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}) (AM|PM)$/
+    );
+
+    const [, day, month, year, hoursRaw, minutes, meridian] = parts;
+
+    // Convert 12-hour format to 24-hour format
+    let hours = Number(hoursRaw);
+    if (meridian === "PM" && hours !== 12) hours += 12;
+    if (meridian === "AM" && hours === 12) hours = 0;
+
+    // Create JavaScript Date object (months in JS start from 0)
+    const jsDate = new Date(
+      Number(year),
+      Number(month) - 1,
+      Number(day),
+      hours,
+      Number(minutes)
+    );
+
+    const dayjsDate = dayjs(jsDate); // Convert to Day.js
+
+    const url = `/attendants?adults=${adults}&children=${children}&from=${fromLocation}&to=${toLocation}&start_time=${dayjsDate}&request_return=${
       selectTrip === "round-trip"
     }`;
 
@@ -229,6 +256,18 @@ const FlightRequestMenu = () => {
 
   const startDateChangeHandler = (date) => {
     const isoString = date.toISOString();
+
+    const now = new Date();
+
+    if (date < now) {
+      setErrors((prevError) => ({
+        ...prevError,
+        startDate:
+          "Past dates cannot be selected. Please choose a present or future date.",
+      }));
+      return;
+    }
+
     const isDateDisabled = intervalSet.has(isoString);
     setErrors((prevError) => ({
       ...prevError,
@@ -426,6 +465,7 @@ const FlightRequestMenu = () => {
                         const inIsoFormat = value.toISOString();
                         return intervalSet.has(inIsoFormat);
                       }}
+                      disablePast
                       onMonthChange={(d) => dateChangeHandler(d.toDate())}
                       onYearChange={(d) => dateChangeHandler(d.toDate())}
                       onOpen={() => dateChangeHandler(new Date())}
@@ -463,6 +503,31 @@ const FlightRequestMenu = () => {
                   <label htmlFor="round-trip">Round Trip </label>
                 </div>
               </div>
+
+              <Stack>
+                <Stack
+                  direction="row"
+                  justifyContent="flex-start"
+                  alignItems="center"
+                  gap={1}
+                >
+                  <Checkbox
+                    sx={{ padding: 0 }}
+                    id="term-condtion"
+                    checked={termsAccepted}
+                    onChange={(evt) => setTermsAccepted(evt.target.checked)}
+                    helperText="sss"
+                  />
+                  <label htmlFor="term-condtion">
+                    I have read and agree to the Terms and Conditions.
+                  </label>
+                </Stack>
+                {errors.term && (
+                  <Typography variant="caption" color="error">
+                    {errors.term}
+                  </Typography>
+                )}
+              </Stack>
 
               <Stack>
                 <Button

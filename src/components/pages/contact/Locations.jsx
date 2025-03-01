@@ -19,21 +19,29 @@ export default function Locations() {
         }}
       >
         <div className="row y-gap-30">
-          {locations.map((elm, i) => (
-            <div key={i}>
-              <div className="px-30 text-center">
-                <h3 className="text-30 md:text-24 fw-700 text-gradient-vivid-orange">
-                  {elm.title}
-                </h3>
+          <div>
+            <div className="px-30 text-center">
+              <h3 className="text-30 md:text-24 fw-700 text-gradient-vivid-orange">
+                The Baron Aviation Office:
+              </h3>
 
-                <div className="mt-20 md:mt-10">
-                  {elm.address}
-                  <br />
-                  {elm.contact}
+              <div className="mt-20 md:mt-10">
+                3rd Floor, Interactive Plaza, Sector E-11/3 Markaz, Islamabad
+                <br />
+                <div>
+                  {" "}
+                  <b>UAN NUMBER:</b> 111111331
+                </div>
+                <div>
+                  <b>WHATSAPP NUMBER:</b> +92 326 0000227{" "}
+                </div>
+                <div>
+                  <b> OFFICE TELEPHONE DIRECT LAND LINE NUMBER:</b> +92 51
+                  6110971
                 </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

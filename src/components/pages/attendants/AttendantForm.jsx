@@ -37,24 +37,20 @@ export default function AttendantForm() {
     return [...adultForms, ...childrenForms];
   }, [children, adult]);
 
-  const CNIC_REGEX = /^[0-9]{5}-[0-9]{7}-[0-9]{1}$/;
   const validationSchema = Yup.object().shape({
     attendants: Yup.array().of(
       Yup.object().shape({
         first_name: Yup.string().required("First name is required"),
         last_name: Yup.string().required("Last name is required"),
-        identity_number: Yup.string()
-          .matches(
-            CNIC_REGEX,
-            "Identity number must be in the format 12345-1234567-1"
-          )
-          .required("Identity number is required"),
+        identity_number: Yup.string().required("Identity number is required"),
         gender: Yup.string().required("Gender is required"),
         age: Yup.number()
           .required("Age is required")
           .min(0, "Age must be greater than 0"),
         email: Yup.string().email("Invalid email"),
-        weight: Yup.number().min(0, "Age must be greater than 0"),
+        weight: Yup.number()
+          .required("Passenger Weight is required")
+          .min(0, "Passenger Weight must be greater than 0"),
       })
     ),
   });
@@ -107,8 +103,6 @@ export default function AttendantForm() {
                 } catch (error) {
                   console.log("error in flight booking", error);
                 }
-
-                console.log("Submitted values", values);
               }}
             >
               {({ values, errors, touched, handleChange, handleBlur }) => (
@@ -207,7 +201,7 @@ export default function AttendantForm() {
                               <Field
                                 as={AttendantTextfield}
                                 name={`attendants[${index}].weight`}
-                                label="Weight (Kg)"
+                                label="Passenger Weight (Kg)"
                                 type="number"
                                 fullWidth
                                 error={
@@ -258,7 +252,7 @@ export default function AttendantForm() {
                                     ?.identity_number &&
                                     errors.attendants?.[index]
                                       ?.identity_number) ||
-                                  "Identity number must be in the format 12345-1234567-1"
+                                  ""
                                 }
                                 className="attendant-form-field"
                               />
