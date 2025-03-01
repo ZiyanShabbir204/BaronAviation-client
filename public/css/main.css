@@ -7488,6 +7488,10 @@ h6 {
   text-decoration: underline;
 }
 
+.term-condition-checkbox .MuiSvgIcon-fontSizeMedium path {
+  color: var(--color-vivid-orange);
+}
+
 
 .accordion__content ul {
   list-style: disc;

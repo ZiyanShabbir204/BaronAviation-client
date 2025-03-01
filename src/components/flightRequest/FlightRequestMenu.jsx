@@ -512,6 +512,7 @@ const FlightRequestMenu = () => {
                   gap={1}
                 >
                   <Checkbox
+                    className="term-condition-checkbox"
                     sx={{ padding: 0 }}
                     id="term-condtion"
                     checked={termsAccepted}

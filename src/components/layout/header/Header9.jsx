@@ -15,7 +15,7 @@ import "./setting.css";
 import PersonIcon from "@mui/icons-material/Person";
 import FlightIcon from "@mui/icons-material/Flight";
 import LogoutIcon from "@mui/icons-material/Logout";
-
+import PlaceIcon from "@mui/icons-material/Place";
 export default function Header9({ isSticky }) {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
@@ -143,6 +143,15 @@ export default function Header9({ isSticky }) {
 
                     {/* Settings Option */}
                     <MenuItem
+                      onClick={() => navigate("/book-flight")}
+                      className="menu-item-1"
+                    >
+                      <PlaceIcon />
+                      <Typography className="menu-item-text">
+                        Book Flight{" "}
+                      </Typography>
+                    </MenuItem>
+                    <MenuItem
                       onClick={() => navigate("/my-profile")}
                       className="menu-item-1"
                     >
@@ -238,6 +247,15 @@ export default function Header9({ isSticky }) {
 
                     <Divider />
 
+                    <MenuItem
+                      onClick={() => navigate("/book-flight")}
+                      className="menu-item-1"
+                    >
+                      <PlaceIcon />
+                      <Typography className="menu-item-text">
+                        Book Flight{" "}
+                      </Typography>
+                    </MenuItem>
                     {/* Settings Option */}
                     <MenuItem
                       onClick={() => navigate("/my-profile")}
