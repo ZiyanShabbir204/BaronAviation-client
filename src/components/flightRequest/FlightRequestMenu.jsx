@@ -446,7 +446,7 @@ const FlightRequestMenu = () => {
                       id="start_time"
                       name="start_time"
                       label="Flight Start Time"
-                      format="DD/MM/YYYY h:m A"
+                      format="DD/MM/YYYY HH:MM A"
                       onChange={startDateChangeHandler}
                       className="datePicker"
                       slotProps={{

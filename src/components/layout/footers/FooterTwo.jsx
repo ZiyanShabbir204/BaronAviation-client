@@ -2,7 +2,11 @@ import React from "react";
 import Paymentcards from "../components/Paymentcards";
 import FooterLinks from "../components/FooterLinks";
 import Socials from "../components/Socials";
-
+import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
+import RingVolumeIcon from "@mui/icons-material/RingVolume";
+import LocationCityIcon from "@mui/icons-material/LocationCity";
+import { Stack } from "@mui/material";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 export default function FooterTwo() {
   return (
     <footer className="footer -type-1 -dark background-dark-gray text-white">
@@ -50,31 +54,58 @@ export default function FooterTwo() {
                   Contact
                 </h4>
 
-                <div className="y-gap-10 mt-20">
+                <Stack gap={1} maxWidth="300px">
+                  <div className="d-block">
+                    <LocationCityIcon
+                      className="path-color-yellow"
+                      sx={{
+                        marginRight: 1,
+                      }}
+                    />
+                    3rd Floor, Interactive Plaza, Sector E-11/3 Markaz,
+                    Islamabad
+                  </div>
                   <a className="d-block" href="#">
-                    Plot 10, Interactive Plaza, E-11/13, Islamabad, Pakistan
+                    <AlternateEmailIcon
+                      className="path-color-yellow"
+                      sx={{
+                        marginRight: 1,
+                      }}
+                    />
+                    Support@TheBaronAviation.com
                   </a>
                   <a className="d-block" href="#">
-                    sales@baronaviation.com
+                    <AlternateEmailIcon
+                      className="path-color-yellow"
+                      sx={{
+                        marginRight: 1,
+                      }}
+                    />{" "}
+                    Inquire@baronaviation.com
                   </a>
-                </div>
+
+                  <div>
+                    <CallOutlinedIcon
+                      sx={{
+                        marginRight: 1,
+                      }}
+                      className="path-color-yellow"
+                    />
+                    111-111-331
+                  </div>
+                  <div>
+                    <RingVolumeIcon
+                      sx={{
+                        marginRight: 1,
+                      }}
+                      className="path-color-yellow"
+                    />
+                    +92 51 6110971
+                  </div>
+                </Stack>
               </div>
 
               <FooterLinks />
-
-              <div className="col-lg-3 col-md-6">
-                <h4 className="text-20 fw-500 text-gradient-vivid-orange">
-                  Newsletter
-                </h4>
-                <p className="mt-20">
-                  Subscribe to the free newsletter and stay up to date
-                </p>
-
-                <div className="footer__newsletter">
-                  <input type="Email" placeholder="Your email address" />
-                  <button>Send</button>
-                </div>
-              </div>
             </div>
           </div>
         </div>

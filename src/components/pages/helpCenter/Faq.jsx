@@ -1,5 +1,6 @@
 import { faqData } from "@/data/tourSingleContent";
 import React, { useState } from "react";
+import Hero from "./Hero";
 const faqs = [
   {
     question: "What services do you offer?",

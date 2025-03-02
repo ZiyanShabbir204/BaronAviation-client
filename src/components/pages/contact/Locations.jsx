@@ -1,12 +1,8 @@
-const locations = [
-  {
-    id: 1,
-    title: "Islamabad",
-    address: "3rd Floor, Interactive Plaza, Sector E-11/3 Markaz",
-    contact: "+92-51-6110971",
-  },
-];
-
+import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import LocationCityIcon from "@mui/icons-material/LocationCity";
+import RingVolumeIcon from "@mui/icons-material/RingVolume";
+import { Stack } from "@mui/material";
 export default function Locations() {
   return (
     <section className="layout-pt-lg">
@@ -18,27 +14,78 @@ export default function Locations() {
           justifyContent: "center",
         }}
       >
-        <div className="row y-gap-30">
+        <div
+          className="row y-gap-30"
+          style={{
+            width: "100%",
+          }}
+        >
           <div>
-            <div className="px-30 text-center">
+            <div className="text-center">
               <h3 className="text-30 md:text-24 fw-700 text-gradient-vivid-orange">
-                The Baron Aviation Office:
+                Cleared for Contact – Let’s Talk Aviation
               </h3>
 
               <div className="mt-20 md:mt-10">
-                3rd Floor, Interactive Plaza, Sector E-11/3 Markaz, Islamabad
-                <br />
-                <div>
-                  {" "}
-                  <b>UAN NUMBER:</b> 111111331
-                </div>
-                <div>
-                  <b>WHATSAPP NUMBER:</b> +92 326 0000227{" "}
-                </div>
-                <div>
-                  <b> OFFICE TELEPHONE DIRECT LAND LINE NUMBER:</b> +92 51
-                  6110971
-                </div>
+                <Stack
+                  gap={2}
+                  sx={{
+                    fontSize: "16px",
+                  }}
+                  alignItems="center"
+                >
+                  <div
+                    style={{
+                      width: "100%",
+                      fontSize: "20px",
+                      maxWidth: "585px",
+                    }}
+                  >
+                    <LocationCityIcon
+                      className="path-color-yellow"
+                      sx={{
+                        marginRight: 1,
+                      }}
+                    />{" "}
+                    3rd Floor, Interactive Plaza, Sector E-11/3 Markaz,
+                    Islamabad
+                  </div>
+                  <Stack
+                    direction="row"
+                    width="100%"
+                    maxWidth="585px"
+                    justifyContent="space-between"
+                    gap={1}
+                  >
+                    <div>
+                      <CallOutlinedIcon
+                        sx={{
+                          marginRight: 1,
+                        }}
+                        className="path-color-yellow"
+                      />
+                      111-111-331
+                    </div>
+                    <div>
+                      <WhatsAppIcon
+                        sx={{
+                          marginRight: 1,
+                        }}
+                        className="path-color-yellow"
+                      />
+                      +92 326 0000227
+                    </div>
+                    <div>
+                      <RingVolumeIcon
+                        sx={{
+                          marginRight: 1,
+                        }}
+                        className="path-color-yellow"
+                      />
+                      +92 51 6110971
+                    </div>
+                  </Stack>
+                </Stack>
               </div>
             </div>
           </div>

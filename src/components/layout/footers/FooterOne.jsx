@@ -51,7 +51,7 @@ export default function FooterOne() {
                     Plot 10, Interactive Plaza, E-11/13, Islamabad, Pakistan
                   </a>
                   <a className="d-block" href="#">
-                    sales@baronaviation.com
+                    sales@baronaviation.coms
                   </a>
                 </div>
               </div>

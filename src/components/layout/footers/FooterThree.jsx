@@ -32,7 +32,7 @@ export default function FooterThree() {
                   <p className="d-block">
                     Plot 10, Interactive Plaza, E-11/13, Islamabad, Pakistan
                   </p>
-                  <p className="d-block">sales@baronaviation.com</p>
+                  <p className="d-block">sales@baronaviation.coma</p>
                 </div>
               </div>
 

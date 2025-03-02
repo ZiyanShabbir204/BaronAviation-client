@@ -7492,6 +7492,10 @@ h6 {
   color: var(--color-vivid-orange);
 }
 
+.path-color-yellow path {
+  color: var(--color-vivid-orange);
+}
+
 
 .accordion__content ul {
   list-style: disc;

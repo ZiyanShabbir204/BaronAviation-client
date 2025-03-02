@@ -6,6 +6,7 @@ import Hero from "@/components/pages/helpCenter/Hero";
 import React from "react";
 
 import MetaComponent from "@/components/common/MetaComponent";
+import Header9 from "@/components/layout/header/Header9";
 
 const metadata = {
   title: "Help center || ViaTour - Travel & Tour Reactjs Template",
@@ -15,12 +16,12 @@ const metadata = {
 export default function HelpCenterPage() {
   return (
     <>
-      
       <main>
-        <Header1 />
+        <Header9 isSticky />
+
         <Hero />
         <Activity />
-        <Faq />
+        {/* <Faq /> */}
         <FooterOne />
       </main>
     </>

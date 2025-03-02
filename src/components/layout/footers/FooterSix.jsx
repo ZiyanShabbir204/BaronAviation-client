@@ -53,7 +53,7 @@ export default function FooterSix() {
                       Australia.
                     </a>
                     <a className="d-block" href="#">
-                      sales@baronaviation.com
+                      sales@baronaviation.comm
                     </a>
                   </div>
                 </div>

@@ -1,5 +1,9 @@
 const socialMediaLinks = [
-  { id: 1, class: "icon-facebook text-gradient-vivid-orange", href: "#" },
+  {
+    id: 1,
+    class: "icon-facebook text-gradient-vivid-orange",
+    href: "https://www.facebook.com/BaronAviation/",
+  },
   {
     id: 2,
     class: "icon-twitter text-gradient-vivid-orange",
