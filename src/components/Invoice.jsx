@@ -142,7 +142,9 @@ export default function Invoice() {
             <input
               type="text"
               name="CHECKOUT_URL"
-              value={`https://6d3e-103-196-160-88.ngrok-free.app/invoice/${tokenResponse?.invoiceData._id}/success`}
+              value={`${import.meta.env.VITE_PAY_FAST_WEBHOOK}/invoice/${
+                tokenResponse?.invoiceData._id
+              }/success`}
             />
           </form>
           <p>Redirecting you to the merchent</p>
