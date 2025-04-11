@@ -158,7 +158,7 @@ export const testimonialsSix = [
     name: `William M.`,
     role: `Financial Executive`,
     comment: `Great Work`,
-    desc: `Our experience with The Baron Aviation was simply outstanding. The team’s professionalism and the luxurious interiors made our trip truly unforgettable. Looking forward to flying again soon!`,
+    desc: `Our experience with Baron Aviation was simply outstanding. The team’s professionalism and the luxurious interiors made our trip truly unforgettable. Looking forward to flying again soon!`,
     img: `/img/avatars/1/1.jpg`,
   },
   {
@@ -166,7 +166,7 @@ export const testimonialsSix = [
     name: `David K.`,
     role: `Corporate Executive`,
     comment: `Great Work`,
-    desc: `Flying with The Baron Aviation was an absolute pleasure, with safety and comfort at the forefront. Truly the gold standard in private aviation.`,
+    desc: `Flying with Baron Aviation was an absolute pleasure, with safety and comfort at the forefront. Truly the gold standard in private aviation.`,
     img: `/img/avatars/1/1.jpg`,
   },
   {
@@ -174,7 +174,7 @@ export const testimonialsSix = [
     name: `Emma R.`,
     role: `Film Producer`,
     comment: `Great Work`,
-    desc: `The Baron Aviation's commitment to punctuality is unparalleled. Every flight has been on time, with the team anticipating our needs before we even ask. In a world where time is precious, Baron delivers beyond expectations.`,
+    desc: `Baron Aviation's commitment to punctuality is unparalleled. Every flight has been on time, with the team anticipating our needs before we even ask. In a world where time is precious, Baron delivers beyond expectations.`,
     img: `/img/avatars/1/1.jpg`,
   },
   {
@@ -182,7 +182,7 @@ export const testimonialsSix = [
     name: `Courtney Henry`,
     role: `Luxury Lifestyle Blogger`,
     comment: `Great Work`,
-    desc: `The interiors of The Baron Aviation's helicopters are pure luxury. From the plush seating to the tasteful design details, every element exudes elegance and comfort. It’s an experience that truly feels like first-class, even before takeoff.`,
+    desc: `The interiors of Baron Aviation's helicopters are pure luxury. From the plush seating to the tasteful design details, every element exudes elegance and comfort. It’s an experience that truly feels like first-class, even before takeoff.`,
     img: `/img/avatars/1/1.jpg`,
   },
 ];

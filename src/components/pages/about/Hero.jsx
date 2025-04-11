@@ -16,7 +16,7 @@ export default function Hero() {
 
               <p className="pageHeader__text text-rajdhani ">
                 <span className="text-gradient-vivid-orange">
-                  The Baron Aviation{" "}
+                  Baron Aviation{" "}
                 </span>{" "}
                 aims to be the premier provider of luxury helicopter
                 experiences, delivering unmatched service for discerning

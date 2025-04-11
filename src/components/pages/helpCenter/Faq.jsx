@@ -295,7 +295,7 @@ const faqs = [
                   href="https://www.linkedin.com/company/the-baron-aviation"
                   target="_blank"
                 >
-                  The Baron Aviation
+                  Baron Aviation
                 </a>
               </li>
               <li>
@@ -328,7 +328,7 @@ const faqs = [
                   href="https://www.youtube.com/@TheBaronAviation"
                   target="_blank"
                 >
-                  The Baron Aviation
+                  Baron Aviation
                 </a>
               </li>
             </ul>

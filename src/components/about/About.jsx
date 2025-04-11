@@ -33,18 +33,18 @@ export default function About() {
           <h1 className="about-text-heading">
             IN EXCLUSIVE CORPORATE AIR TRAVEL, POWERED BY{" "}
             <span className="text-vivid-orange text-rajdhani">
-              The Baron Aviation
+              Baron Aviation
             </span>
           </h1>
           <p className="about-text-para">
-            At The Baron Aviation, we provide{" "}
+            At Baron Aviation, we provide{" "}
             <span className="text-vivid-orange">
               {" "}
               exquisite helicopter travel{" "}
             </span>
             that combines unparalleled luxury, time efficiency, and unwavering
             safety. Our service ensures punctuality, allowing you to arrive on
-            time for important business meetings. With The Baron Aviation, enjoy
+            time for important business meetings. With Baron Aviation, enjoy
             seamless, comfortable journeys where your time, comfort, and
             security are our top priorities.
           </p>

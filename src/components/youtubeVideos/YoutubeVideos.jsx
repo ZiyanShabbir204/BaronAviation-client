@@ -24,7 +24,7 @@ export default function YoutubeVideos() {
                 textAlign: "center",
               }}
             >
-              The Baron Aviation Walkthrough
+              Baron Aviation Walkthrough
             </h2>
           </div>
           <div className="slider-container">

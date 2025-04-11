@@ -2,7 +2,7 @@ export const servicesData = [
   {
     question: "Private Helicopter Charter",
     answer:
-      "With The Baron Aviation Private Helicopter Charters, your journey becomes as flexible as it is luxurious. Whether it’s a custom flight to suit your schedule or a breathtaking scenic tour over iconic landscapes, we craft each experience to match your desires in the skies",
+      "With Baron Aviation Private Helicopter Charters, your journey becomes as flexible as it is luxurious. Whether it’s a custom flight to suit your schedule or a breathtaking scenic tour over iconic landscapes, we craft each experience to match your desires in the skies",
   },
   {
     question: "Corporate & Executive Travel ",
@@ -12,7 +12,7 @@ export const servicesData = [
   {
     question: "VIP Event Transportation",
     answer:
-      "Make special occasions truly unforgettable with The Baron Aviation VIP helicopter rides. Whether it’s a wedding, anniversary, or even the big game, we’ll ensure you arrive in luxury and style, turning every trip into part of the celebration.",
+      "Make special occasions truly unforgettable with Baron Aviation VIP helicopter rides. Whether it’s a wedding, anniversary, or even the big game, we’ll ensure you arrive in luxury and style, turning every trip into part of the celebration.",
   },
   {
     question: "Aerial Photography & Filming",
@@ -22,11 +22,11 @@ export const servicesData = [
   {
     question: "Sightseeing Tours",
     answer:
-      "See the world like never before with The Baron Aviation Sightseeing Tours. Take in breathtaking views as you glide above iconic landscapes, all from the comfort of a luxury helicopter. Each tour is designed to let you enjoy breathtaking beauty worry-free. Join us for an unforgettable adventure where every moment feels like a new discovery.",
+      "See the world like never before with Baron Aviation Sightseeing Tours. Take in breathtaking views as you glide above iconic landscapes, all from the comfort of a luxury helicopter. Each tour is designed to let you enjoy breathtaking beauty worry-free. Join us for an unforgettable adventure where every moment feels like a new discovery.",
   },
   {
     question: "Weddings",
     answer:
-      "Make your wedding day truly one-of-a-kind with The Baron Aviation Wedding Helicopter Service. Imagine the romance of a grand entrance from the sky or capturing stunning aerial shots of your special day. We’re here to add a touch of magic and elegance, ensuring every detail reflects your love story. Let us help you create memories that will last a lifetime.",
+      "Make your wedding day truly one-of-a-kind with Baron Aviation Wedding Helicopter Service. Imagine the romance of a grand entrance from the sky or capturing stunning aerial shots of your special day. We’re here to add a touch of magic and elegance, ensuring every detail reflects your love story. Let us help you create memories that will last a lifetime.",
   },
 ];

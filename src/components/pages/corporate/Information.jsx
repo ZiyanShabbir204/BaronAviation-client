@@ -23,7 +23,7 @@ export default function Information() {
                 textAlign: "center",
               }}
             >
-              Elevate your business travel with The Baron Aviation’s exclusive
+              Elevate your business travel with Baron Aviation’s exclusive
               Corporate Membership. Our exclusive program offers a range of
               elite benefits designed to make your travel more efficient,
               seamless, and luxurious. Enjoy priority access, effortless
