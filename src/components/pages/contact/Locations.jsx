@@ -54,7 +54,7 @@ export default function Locations() {
                     direction="row"
                     width="100%"
                     maxWidth="585px"
-                    justifyContent="space-between"
+                    justifyContent="space-around"
                     gap={1}
                   >
                     {/* <div>
