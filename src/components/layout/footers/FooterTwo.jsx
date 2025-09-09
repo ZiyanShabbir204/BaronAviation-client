@@ -80,8 +80,8 @@ export default function FooterTwo() {
                       sx={{
                         marginRight: 1,
                       }}
-                    />{" "}
-                    Inquire@baronaviation.com
+                    />
+                    inquire@baronaviation.com
                   </a>
 
                   <div>
@@ -91,7 +91,7 @@ export default function FooterTwo() {
                       }}
                       className="path-color-yellow"
                     />
-                    111-111-331
+                    +92 326 0000121
                   </div>
                   <div>
                     <RingVolumeIcon
