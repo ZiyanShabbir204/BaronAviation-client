@@ -57,7 +57,7 @@ export default function Locations() {
                     justifyContent="space-between"
                     gap={1}
                   >
-                    <div>
+                    {/* <div>
                       <CallOutlinedIcon
                         sx={{
                           marginRight: 1,
@@ -65,7 +65,7 @@ export default function Locations() {
                         className="path-color-yellow"
                       />
                       111-111-331
-                    </div>
+                    </div> */}
                     <div>
                       <WhatsAppIcon
                         sx={{
@@ -73,7 +73,7 @@ export default function Locations() {
                         }}
                         className="path-color-yellow"
                       />
-                      +92 326 0000227
+                      +92 326 0000121
                     </div>
                     <div>
                       <RingVolumeIcon

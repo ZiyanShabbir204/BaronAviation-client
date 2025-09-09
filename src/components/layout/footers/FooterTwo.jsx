@@ -72,7 +72,7 @@ export default function FooterTwo() {
                         marginRight: 1,
                       }}
                     />
-                    Support@TheBaronAviation.com
+                    support@thebaronaviation.com
                   </a>
                   <a className="d-block" href="#">
                     <AlternateEmailIcon
