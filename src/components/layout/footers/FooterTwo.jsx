@@ -26,7 +26,7 @@ export default function FooterTwo() {
                     <div className="text-20 fw-500  hero-heading">
                       Speak to our flight team 24/7{" "}
                       <span className="text-gradient-vivid-orange">
-                        +92-326-0000227
+                        +92-326-0000121
                       </span>
                     </div>
                   </div>

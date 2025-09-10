@@ -264,7 +264,7 @@ const faqs = [
             <ul>
               <li>
                 {" "}
-                <span className="text-vivid-orange">Cell:</span> +92-326-0000227
+                <span className="text-vivid-orange">Cell:</span> +92-326-0000121
               </li>
               <li>
                 {" "}

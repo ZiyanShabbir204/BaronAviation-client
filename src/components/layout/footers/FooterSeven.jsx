@@ -21,7 +21,7 @@ export default function FooterSeven() {
                   <div className="col-auto">
                     <div className="text-20 fw-500">
                       Speak to our flight team 24/7
-                      <span className="text-accent-1">+92-326-0000227</span>
+                      <span className="text-accent-1">+92-326-0000121</span>
                     </div>
                   </div>
                 </div>

@@ -44,7 +44,7 @@ export default function FeturesTwo() {
                   <li>Pay with Convenience</li>
                   <li>Smooth Rides in Top-of-the-line helicopter </li>
                   <li>Free Consultation </li>
-                  <li>Customize Travel Plan @ xxxx- xxx - x</li>
+                  <li>Customize Travel Plan @ +92 326 0000121</li>
                 </ul>
               </div>
 
@@ -57,7 +57,7 @@ export default function FeturesTwo() {
                   width: "fit-content",
                 }}
               >
-                01 LUXURY TRAVEL PARTNER
+                Book Now
               </Link>
             </div>
 
