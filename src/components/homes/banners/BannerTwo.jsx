@@ -13,7 +13,7 @@ export default function BannerTwo() {
                 data-aos-delay=""
                 className="text-20 fw-500 text-white"
               >
-                Experience Luxury in Flight
+                Experience the Luxury of Flight{" "}
               </h2>
             </div>
 

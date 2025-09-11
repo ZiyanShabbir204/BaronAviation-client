@@ -17,41 +17,38 @@ export default function Information() {
               THE BARON AVIATION GROUP
             </h1>
             <h2 className="hero-heading ">
-              SETTING NEW STANDARDS FOR AIR TRAVEL ACROSS PAKISTAN
+              Redefining Air Travel Across Pakistan
             </h2>
           </div>
 
           <div className="col-lg-12">
             <p>
-              At Baron Aviation, our vision is to set a new standard for luxury
-              and accessibility in air travel across Pakistan. We aim to be more
-              than just an air rental service—we are a bridge between people,
-              places, and possibilities, offering tailored aviation solutions
-              that span from vibrant urban hubs to the farthest corners of our
-              beautiful country. Backed by international aviation expertise, we
-              deliver a level of service and safety that’s second to none,
-              ensuring each flight is as seamless, secure and enjoyable as
-              possible. We are here for those who value swift, exclusive travel,
-              from corporate clients needing efficient solutions to VIPs seeking
-              privacy and elegance in the skies. Our commitment to sustainable
-              practices means that our impact is as thoughtful as our service,
-              with environmentally conscious choices integrated into every
-              aspect of our operation.
+              At Baron Aviation, our vision is to transform air travel in
+              Pakistan by combining luxury, accessibility, and world-class
+              expertise. We go beyond being an air charter service — we are a
+              bridge connecting people, places, and opportunities, with tailored
+              aviation solutions that reach from bustling cities to the most
+              remote landscapes of our country.
             </p>
 
             {more && (
-              <p>
-                For adventurers wishing to experience Pakistan from an entirely
-                new perspective, Baron Aviation offers a bird’s-eye view of the
-                country's vast landscapes and rich heritage. Whether it’s an
-                unforgettable sightseeing tour or a customized travel plan
-                designed to meet unique needs, we pride ourselves on meeting the
-                evolving demands of our clients with flexibility, luxury, and
-                care. We aspire to be Pakistan’s go-to platform for luxury air
-                travel, offering a comprehensive range of aviation services that
-                reflect our dedication to excellence and a profound respect for
-                the journeys that bring us all closer together.
-              </p>
+              <>
+                <p>
+                  With a foundation built on international aviation experience,
+                  we uphold the highest standards of service and safety,
+                  ensuring every journey is seamless, secure, and distinguished.
+                  From corporate clients who value efficiency to VIPs seeking
+                  privacy and refinement, Baron Aviation delivers travel
+                  designed around those who expect more.
+                </p>
+                <p>
+                  Our commitment extends beyond service — we integrate
+                  sustainable practices into our operations, making conscious
+                  choices that respect both our passengers and our planet. For
+                  us, every flight is not just about reaching a destination, but
+                  about shaping the future of air travel in Pakistan.
+                </p>
+              </>
             )}
 
             <button

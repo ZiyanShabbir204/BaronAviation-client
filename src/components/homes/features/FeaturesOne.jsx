@@ -12,7 +12,7 @@ export default function FeaturesOne() {
               data-aos="fade-up"
               className="text-30 md:text-24 text-gradient-vivid-orange"
             >
-              WHY CHOOSE THE BARON AVIATION
+              WHY CHOOSE BARON AVIATION
             </h2>
           </div>
         </div>

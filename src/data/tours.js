@@ -110,7 +110,7 @@ export const tourDataTwo = [
     ratingCount: 269,
     duration: `2 Days 1 Nights`,
     description:
-      "For business leaders and executives on tight schedules, The Corporate Sky Express offers efficient, luxurious travel between Pakistan's busiest cities. Enjoy tailored in-flight amenities, Wi-Fi access, and flexible scheduling, ensuring you arrive focused and ready",
+      "For business leaders and executives with demanding schedules, The Corporate Sky Express provides fast, comfortable, and private travel between Pakistan’s busiest cities. Enjoy a seamless flight experience with tailored in-flight amenities, reliable Wi-Fi connectivity, and flexible scheduling designed to meet the pace of corporate life. Ideal for quick turnarounds or same-day trips, this service ensures you arrive refreshed, focused, and ready to perform.",
     price: 114.0,
     fromPrice: 1200.0,
     features: [

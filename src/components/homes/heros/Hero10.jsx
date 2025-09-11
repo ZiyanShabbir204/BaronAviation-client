@@ -82,7 +82,7 @@ export default function Hero10() {
                 data-aos-delay="250"
                 className="hero__text text-white text-rajdhani"
               >
-                READY TO FLY LUXURY?
+                The Sky, Reserved for You
               </div>
               <h1
                 data-aos="fade-up"
@@ -92,7 +92,7 @@ export default function Hero10() {
                   fontSize: "60px",
                 }}
               >
-                WHERE PRESTIGE TAKES FLIGHT
+                Executive-class luxury reimagined
               </h1>
 
               <div
@@ -100,7 +100,7 @@ export default function Hero10() {
                 data-aos-delay="250"
                 className="hero__text text-white text-rajdhani"
               >
-                Travel in Executive-Class Luxury with Baron Aviation
+                where time, privacy, and elegance define the experience.
               </div>
 
               <button
@@ -110,7 +110,7 @@ export default function Hero10() {
                 to="bookNow"
                 onClick={scrollToBookNow}
               >
-                LET'S TAKE OFF
+                Fly the Baron way.
               </button>
             </div>
           </div>

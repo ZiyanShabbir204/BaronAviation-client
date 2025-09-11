@@ -19,7 +19,7 @@ export default function BannerHome() {
           <div className="row y-gap-20 justify-between items-center">
             <div className="col-auto">
               <h2 data-aos="fade-up" data-aos-delay="" className="text-white">
-                Trusted by Those Who Demand the Best
+                Trusted by those who expect the best
               </h2>
             </div>
 

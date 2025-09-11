@@ -43,7 +43,7 @@ export default function Hero() {
             <div className="col-12">
               <div className="pageHeader__content">
                 <h1 className="pageHeader__title hero-heading">
-                  CURATED LUXURY AIR TRAVEL EXPERIENCES
+                  Luxury in the Skies
                 </h1>
               </div>
             </div>

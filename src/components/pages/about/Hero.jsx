@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="pageHeader -type-1">
       <div className="pageHeader__bg">
-        <img src="/img/vision/vision-hero.jpg" alt="image" />
+        <img src="/img/helicopter/TPS00834-min.JPG" alt="image" />
         <div className="overlay"></div>
       </div>
 
@@ -18,9 +18,9 @@ export default function Hero() {
                 <span className="text-gradient-vivid-orange">
                   Baron Aviation{" "}
                 </span>{" "}
-                aims to be the premier provider of luxury helicopter
-                experiences, delivering unmatched service for discerning
-                travelers.
+                aims to be the foremost provider of luxury helicopter travel,
+                offering distinguished service, exceptional comfort, and
+                memorable experiences for discerning travelers.
               </p>
             </div>
           </div>

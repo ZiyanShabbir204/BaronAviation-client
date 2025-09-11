@@ -354,7 +354,9 @@ const FlightRequestMenu = () => {
                 <div className="searchFormItem">
                   <TextField
                     label="Travelers"
-                    value={`${adults} Adults, ${children} Children`}
+                    value={`${adults} ${
+                      adults > 1 ? "Adults" : "Adult"
+                    }, ${children} ${children > 1 ? "Children" : "Child"}`}
                     onClick={handleTravelerClick}
                     fullWidth
                     variant="outlined"
@@ -391,7 +393,9 @@ const FlightRequestMenu = () => {
                       alignItems="center"
                       justifyContent="space-between"
                     >
-                      <Typography variant="subtitle1">Adults</Typography>
+                      <Typography variant="subtitle1">
+                        {adults > 1 ? "Adults" : "Adult"}
+                      </Typography>
                       <div className="d-flex align-items-center">
                         <IconButton
                           onClick={() => handleDecrease(setAdults, adults)}

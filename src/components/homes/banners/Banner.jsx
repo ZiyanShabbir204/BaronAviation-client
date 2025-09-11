@@ -44,20 +44,33 @@ export default function Banner() {
               <h2
                 data-aos="fade-up"
                 data-aos-delay=""
-                className="text-40 md:text-30  lh-13"
+                className="text-40 md:text-30  text-vivid-orange lh-13"
               >
-                Enjoy <span className="text-vivid-orange"> 10% off</span> your
-                first flight with Baron Aviation
+                Take Off with 10% Off
               </h2>
+
+              <h3
+                data-aos="fade-up"
+                data-aos-delay=""
+                className="text-24 md:text-16 mt-10  lh-13"
+              >
+                Enjoy an exclusive{" "}
+                <span className="text-vivid-orange">
+                  {" "}
+                  10% discount on your first flight
+                </span>{" "}
+                with Baron Aviation.
+              </h3>
 
               <p data-aos="fade-up" data-aos-delay="" className="mt-10">
                 Use promo code{" "}
-                <span className="text-vivid-orange"> BaronAviator10 </span>to
-                unlock your elite experience.
+                <span className="text-vivid-orange"> BaronAviator10 </span> and
+                experience executive-class air travel at its finest.
               </p>
 
               <p data-aos="fade-up" data-aos-delay="" className="mt-10">
-                Limited time offer, don't miss the opportunity
+                This is a limited-time offer — secure your seat and elevate your
+                journey today.
               </p>
 
               <div className="mt-30 md:mt-20">

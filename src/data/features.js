@@ -2,26 +2,26 @@ export const features = [
   {
     id: 1,
     iconSrc: "/img/icon/heli-white.png",
-    title: "Uncompromised Safety Standards",
-    text: "Baron Aviation prioritizes your safety with rigorous maintenance and expert pilots, ensuring every journey is secure and worry-free. Enjoy the experience with confidence.",
+    title: "Uncompromising Safety",
+    text: "Your safety is our highest priority. With rigorous maintenance protocols, world-class equipment, and highly trained pilots, every journey with Baron Aviation is secure, reliable, and worry-free.",
   },
   {
     id: 2,
     iconSrc: "/img/icon/heli-white.png",
     title: "Tailored Travel Plans",
-    text: "We believe in making every journey unique. Our team customizes travel plans to suit your preferences, style, and schedule.",
+    text: "No two journeys are the same. Our team works with you to create customized itineraries that fit your schedule, preferences, and style — ensuring every flight feels uniquely yours.",
   },
   {
     id: 3,
     iconSrc: "/img/icon/heli-white.png",
-    title: "Unmatched Comfort and Luxury",
-    text: "Experience the thrill of smooth rides in top-of-the-line helicopters, meticulously maintained for your comfort and safety. Our fleet is tailored to meet the highest standards of luxury travel.",
+    title: "Luxury Without Compromise",
+    text: "Step aboard our top-of-the-line helicopters, designed for smooth, seamless travel. From plush interiors to meticulous upkeep, our fleet meets the highest standards of comfort and prestige in executive air travel.",
   },
   {
     id: 4,
     iconSrc: "/img/icon/heli-white.png",
-    title: "Memorable Experiences",
-    text: "We turn travel into unforgettable memories. With personalized service and meticulous attention to detail, every journey is crafted to leave a lasting impression.",
+    title: "Unforgettable Experiences",
+    text: "We go beyond transportation. With personalized service and attention to every detail, Baron Aviation transforms air travel into an extraordinary experience you’ll remember long after you land.",
   },
 ];
 export const featuresFour = [

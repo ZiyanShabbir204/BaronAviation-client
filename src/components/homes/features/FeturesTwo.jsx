@@ -24,29 +24,87 @@ export default function FeturesTwo() {
                 className=" hero-heading"
               >
                 <span className="text-gradient-vivid-orange text-rajdhani">
-                  TOP CHOICE
+                  Baron Aviation{" "}
                 </span>{" "}
-                IN EXCLUSIVE CORPORATE AIR TRAVEL, POWERED BY Baron Aviation
+                – Redefining Corporate Air Travel
               </h2>
 
               <p data-aos="fade-up" data-aos-delay="" className="mt-10">
-                At Baron Aviation, we provide exquisite helicopter travel that
-                combines unparalleled luxury, time efficiency, and unwavering
-                safety. Our service ensures punctuality, allowing you to arrive
-                on time for important business meetings. With The Baron
-                Aviation, enjoy seamless, comfortable journeys where your time,
-                comfort, and security are our top priorities.
+                At{" "}
+                <span className="text-gradient-vivid-orange ">
+                  Baron Aviation
+                </span>
+                , we specialize in exclusive helicopter travel tailored for
+                discerning corporate clients. Our service blends luxury,
+                efficiency, and uncompromising safety — ensuring you arrive on
+                time, every time.
               </p>
 
-              <div class="item about-extra-text mt-20">
+              <p data-aos="fade-up" data-aos-delay="" className="mt-5">
+                Whether it’s an important business meeting or a custom executive
+                journey, Baron Aviation delivers seamless travel experiences
+                designed around your schedule. With state-of-the-art helicopters
+                and a commitment to comfort and security, we make every flight
+                as remarkable as the destination.
+              </p>
+
+              <h3
+                data-aos="fade-up"
+                data-aos-delay=""
+                className="text-rajdhani hero-heading mt-20"
+              >
+                Why Choose Baron Aviation?
+              </h3>
+              <div class="item about-extra-text mt-10">
                 <ul className="bullet-points">
-                  <li>Book by appointment only</li>
-                  <li>Pay with Convenience</li>
-                  <li>Smooth Rides in Top-of-the-line helicopter </li>
-                  <li>Free Consultation </li>
-                  <li>Customize Travel Plan @ +92 326 0000121</li>
+                  <li>
+                    {" "}
+                    <span className="text-gradient-vivid-orange ">
+                      By Appointment Only{" "}
+                    </span>{" "}
+                    – personalized, discreet, and exclusive.
+                  </li>
+                  <li>
+                    {" "}
+                    <span className="text-gradient-vivid-orange ">
+                      Flexible Payment Options{" "}
+                    </span>{" "}
+                    – designed for your convenience.
+                  </li>
+                  <li>
+                    {" "}
+                    <span className="text-gradient-vivid-orange ">
+                      Premium Fleet{" "}
+                    </span>{" "}
+                    – top-of-the-line helicopters for smooth, reliable journeys.{" "}
+                  </li>
+                  <li>
+                    {" "}
+                    <span className="text-gradient-vivid-orange ">
+                      Complimentary Consultation{" "}
+                    </span>{" "}
+                    – plan your travel with our experts.{" "}
+                  </li>
+                  <li>
+                    {" "}
+                    <span className="text-gradient-vivid-orange ">
+                      Customized Travel Plans{" "}
+                    </span>{" "}
+                    – tailored to your business or personal needs.
+                  </li>
                 </ul>
               </div>
+
+              <p
+                data-aos="fade-up"
+                data-aos-delay=""
+                className="mt-5"
+                style={{
+                  fontWeight: "bold",
+                }}
+              >
+                Start your journey today: +92 326 0000121
+              </p>
 
               <Link
                 to={"/tour-list-1"}
