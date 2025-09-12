@@ -81,7 +81,7 @@ export default function FooterTwo() {
                         marginRight: 1,
                       }}
                     />
-                    inquire@baronaviation.com
+                    inquire@thebaronaviation.coms
                   </a>
 
                   <div>

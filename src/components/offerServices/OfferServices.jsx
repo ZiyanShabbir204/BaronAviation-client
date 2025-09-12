@@ -29,7 +29,7 @@ export default function OfferServices() {
               personalized flight itineraries to unparalleled comfort, we ensure
               every detail of your journey is perfected. Trust Baron Aviation to
               transform your travel experience into one of luxury and
-              sophistication
+              sophistication.
             </p>
             <Services showServices={showServices} />
             <button

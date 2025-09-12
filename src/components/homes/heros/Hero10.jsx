@@ -25,7 +25,6 @@ const tags = [
   },
 ];
 export default function Hero10() {
-  const navigate = useNavigate();
   const scrollToBookNow = () => {
     scroller.scrollTo("bookNow", {
       duration: 800,

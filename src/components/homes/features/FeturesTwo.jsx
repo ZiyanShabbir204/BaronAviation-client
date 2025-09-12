@@ -3,8 +3,18 @@ import { featuresTwo } from "@/data/features";
 import { Link } from "react-router-dom";
 import React from "react";
 import "./feturesTwo.css";
+import { scroller } from "react-scroll";
 
 export default function FeturesTwo() {
+  const scrollToBookNow = () => {
+    scroller.scrollTo("bookNow", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+      offset: -window.innerHeight / 3, // Adjusts the offset to center
+    });
+  };
+
   return (
     <section className="relative layout-pt-xl layout-pb-xl feature-section">
       <div className="relative xl:unset container">
@@ -107,7 +117,7 @@ export default function FeturesTwo() {
               </p>
 
               <Link
-                to={"/tour-list-1"}
+                onClick={scrollToBookNow}
                 data-aos="fade-right"
                 data-aos-delay=""
                 className="button -md button-gradient text-white mt-30 fit-content"
