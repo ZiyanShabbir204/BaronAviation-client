@@ -117,7 +117,7 @@ export const testimonialsFive = [
     role: `Web Designer`,
     comment: `Great Work`,
     desc: `I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance`,
-    img: `/img/testimonials/offered-services/1.png`,
+    img: `/img/helicopter/potrait/TPS00856.jpg`,
   },
   {
     id: 2,
@@ -125,7 +125,7 @@ export const testimonialsFive = [
     role: `Web Designer`,
     comment: `Great Work`,
     desc: `I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance`,
-    img: `/img/testimonials/offered-services/2.png`,
+    img: `/img/helicopter/potrait/TPS00854.jpg`,
   },
   {
     id: 3,
@@ -133,7 +133,7 @@ export const testimonialsFive = [
     role: `Web Designer`,
     comment: `Great Work`,
     desc: `I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance`,
-    img: `/img/testimonials/offered-services/3.png`,
+    img: `/img/helicopter/potrait/2.jpg`,
   },
   {
     id: 4,
@@ -141,7 +141,7 @@ export const testimonialsFive = [
     role: `Web Designer`,
     comment: `Great Work`,
     desc: `I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance`,
-    img: `/img/testimonials/offered-services/4.png`,
+    img: `/img/helicopter/potrait/TPS00870.jpg`,
   },
   {
     id: 5,
@@ -149,7 +149,7 @@ export const testimonialsFive = [
     role: `Web Designer`,
     comment: `Great Work`,
     desc: `I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance`,
-    img: `/img/testimonials/offered-services/5.png`,
+    img: `/img/helicopter/potrait/TPS00876.jpg`,
   },
 ];
 export const testimonialsSix = [

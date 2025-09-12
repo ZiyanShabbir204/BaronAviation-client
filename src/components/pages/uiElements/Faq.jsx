@@ -5,8 +5,6 @@ export default function Faq() {
   const [currentActiveFaq, setCurrentActiveFaq] = useState(0);
   return (
     <div className="col-lg-6">
-      <div className="text-22 fw-500">Accordions</div>
-
       <div className="accordion -simple row y-gap-20 pt-30 js-accordion">
         {faqData.map((elm, i) => (
           <div key={i} className="col-12">
