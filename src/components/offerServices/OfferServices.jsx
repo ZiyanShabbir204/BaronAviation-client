@@ -64,6 +64,9 @@ export default function OfferServices() {
                         src={elm.img}
                         alt="image"
                         className="service-image"
+                        style={{
+                          borderRadius: "20px",
+                        }}
                       />
                     </SwiperSlide>
                   ))}
