@@ -117,7 +117,7 @@ export const testimonialsFive = [
     role: `Web Designer`,
     comment: `Great Work`,
     desc: `I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance`,
-    img: `/img/helicopter/potrait/TPS00856.jpg`,
+    img: `/img/helicopter/potrait/TPS00841.jpg`,
   },
   {
     id: 2,
