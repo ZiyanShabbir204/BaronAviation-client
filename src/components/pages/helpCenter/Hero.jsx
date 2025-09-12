@@ -12,7 +12,9 @@ export default function Hero() {
         <div className="row justify-center">
           <div className="col-12">
             <div className="pageHeader__content">
-              <h1 className="pageHeader__title hero-heading">FAQ</h1>
+              <h1 className="pageHeader__title hero-heading">
+                frequently asked questions
+              </h1>
             </div>
           </div>
         </div>
