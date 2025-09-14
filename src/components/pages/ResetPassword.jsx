@@ -73,6 +73,9 @@ export default function Login() {
       });
       navigate("/login");
     } catch (err) {
+      enqueueSnackbar(err.message, {
+        variant: "error",
+      });
       console.log("err", err);
     }
   };

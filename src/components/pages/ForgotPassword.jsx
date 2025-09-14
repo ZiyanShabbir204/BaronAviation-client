@@ -59,9 +59,11 @@ export default function Login() {
     try {
       const res = await ApiService.post(`/auth/reset-email`, { username });
       enqueueSnackbar("Email has been sent", { variant: "success" });
-
       console.log("email res -> ", res);
     } catch (err) {
+      console.log(err)
+      enqueueSnackbar(err.response.data.message, { variant: "error" });
+
       console.log("error in email res -> ", err);
     }
   };
