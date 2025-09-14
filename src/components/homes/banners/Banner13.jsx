@@ -1,5 +1,6 @@
 import React from "react";
 import "./banner13.css";
+import { Link } from "react-router-dom";
 export default function Banner13() {
   return (
     <section className="cta -type-4 -style-2 layout-pt-lg ">
@@ -19,14 +20,18 @@ export default function Banner13() {
                 Avail exclusive benefits – travel in luxury!
               </p>
 
-              <button
+              <Link
                 data-aos="fade-right"
                 data-aos-delay=""
+                to='/contact'
                 className="button -md button-gradient text-white mt-10"
+                style={{
+                  maxWidth: '200px'
+                }}
               >
                 JOIN TODAY
                 <i className="icon-arrow-top-right ml-10"></i>
-              </button>
+              </Link>
             </div>
             <div className="col-lg-6 col-sm-12 banner-13-cta-image"></div>
           </div>
