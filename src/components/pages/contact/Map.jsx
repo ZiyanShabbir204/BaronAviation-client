@@ -207,21 +207,22 @@ function MyComponent() {
     setMap(null);
   }, []);
   return (
-    <div className="map relative mt-header">
-      {isLoaded ? (
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={12}
-          options={option}
-        >
-          {/* Child components, such as markers, info windows, etc. */}
+    <section className="layout-pt-sm layout-pb-lg">
+      <div className="container map relative">
+        {isLoaded ? (
+          <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={12}
+            options={option}
+          >
+            <></>
+          </GoogleMap>
+        ) : (
           <></>
-        </GoogleMap>
-      ) : (
-        <></>
-      )}
-    </div>
+        )}
+      </div>
+    </section>
   );
 }
 export default React.memo(MyComponent);

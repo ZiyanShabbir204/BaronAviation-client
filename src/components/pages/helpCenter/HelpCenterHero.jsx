@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Hero() {
+export default function HelpCenterHero() {
   return (
     <section className="pageHeader -type-1">
       <div className="pageHeader__bg">
@@ -13,7 +13,7 @@ export default function Hero() {
           <div className="col-12">
             <div className="pageHeader__content">
               <h1 className="pageHeader__title hero-heading">
-                Avail EXCLUSIVE BENEFITS AS A CORPORATE MEMBER
+                help center
               </h1>
             </div>
           </div>

@@ -9,30 +9,31 @@ import {
   IconButton,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
 
-import axios from "axios";
 import ApiService from "@/api.service";
 import { enqueueSnackbar } from "notistack";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#f6bc16", // Adjust as per requirement
+      main: "#f6bc16",
     },
   },
   components: {
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          color: "white", // Set text color to white
+          color: "white",
           "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: "white", // Set default border color to white
+            borderColor: "white",
           },
           "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#f6bc16", // Set hover border color
+            borderColor: "#f6bc16",
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#f6bc16", // Set focused border color
+            borderColor: "#f6bc16",
           },
         },
       },
@@ -40,84 +41,75 @@ const theme = createTheme({
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          color: "white", // Set label text color to white
+          color: "white",
         },
       },
     },
   },
 });
 
+// ✅ Yup Validation Schema
+const validationSchema = Yup.object({
+  first_name: Yup.string()
+    .matches(/^[A-Za-z]+$/, "Only alphabets are allowed")
+    .required("First Name is required"),
+  last_name: Yup.string()
+    .matches(/^[A-Za-z]+$/, "Only alphabets are allowed")
+    .required("Last Name is required"),
+  username: Yup.string().required("Username is required"),
+  phoneNumber: Yup.string()
+    .matches(
+      /^\+92[0-9]{10}$/,
+      "Enter valid phone number (+92XXXXXXXXXX)"
+    )
+    .required("Phone number is required"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  password: Yup.string()
+    .required("Password is required")
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+      "Password must be at least 8 characters, include 1 upper, 1 lower, 1 digit, and 1 special character"
+    ),
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref("password"), null], "Passwords must match")
+    .required("Confirm Password is required"),
+});
+
 export default function Register() {
-  const [formData, setFormData] = useState({
-    username: "",
-    phoneNumber: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    last_name: "",
-    first_name: "",
-  });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
-  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
   const handleShowPassword = () => setShowPassword((prev) => !prev);
   const handleShowConfirmPassword = () =>
     setShowConfirmPassword((prev) => !prev);
 
-  const validateForm = () => {
-    let newErrors = {};
-
-    // Field validations
-    if (!formData.username.trim()) newErrors.username = "Username is required";
-    if (!formData.first_name.trim())
-      newErrors.username = "First Name is required";
-    if (!formData.last_name.trim())
-      newErrors.username = "Last Name is required";
-    if (!formData.email.trim()) newErrors.email = "Email is required";
-    if (!formData.phoneNumber.trim())
-      newErrors.phoneNumber = "Phone number is required";
-    if (!formData.password.trim()) newErrors.password = "Password is required";
-    if (!formData.confirmPassword.trim())
-      newErrors.confirmPassword = "Please confirm your password";
-    else if (formData.password !== formData.confirmPassword)
-      newErrors.confirmPassword = "Passwords do not match";
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      try {
-        const user = {
-          username: formData.username,
-          email: formData.email,
-          phone: formData.phoneNumber,
-          password: formData.password,
-          first_name: formData.first_name,
-          last_name: formData.last_name,
-          roleName: "customer",
-        };
-        const res = await ApiService.post("/auth/register", user);
-        enqueueSnackbar("Verification Email has been sent to your email", { variant: "success" });
-        navigate("/login");
-
-        console.log("response in signup", res);
-      } catch (err) {
-        enqueueSnackbar(err.response.data.message, { variant: "error" });
-
-        console.log("Error during registration", err);
-      }
+  const handleSubmit = async (values, { setSubmitting }) => {
+    try {
+      const user = {
+        username: values.username,
+        email: values.email,
+        phone: values.phoneNumber,
+        password: values.password,
+        first_name: values.first_name,
+        last_name: values.last_name,
+        roleName: "customer",
+      };
+      const res = await ApiService.post("/auth/register", user);
+      enqueueSnackbar("Verification Email has been sent to your email", {
+        variant: "success",
+      });
+      navigate("/login");
+      console.log("response in signup", res);
+    } catch (err) {
+      enqueueSnackbar(err.response?.data?.message || "Registration failed", {
+        variant: "error",
+      });
+      console.log("Error during registration", err);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -140,141 +132,185 @@ export default function Register() {
                 </div>
               </div>
 
-              <form
+              {/* ✅ Formik Wrapper */}
+              <Formik
+                initialValues={{
+                  username: "",
+                  phoneNumber: "",
+                  email: "",
+                  password: "",
+                  confirmPassword: "",
+                  last_name: "",
+                  first_name: "",
+                }}
+                validationSchema={validationSchema}
                 onSubmit={handleSubmit}
-                className="border-1 rounded-12 px-60 py-60 md:px-25 md:py-30 bg-dark-grey"
               >
-                <TextField
-                  label="First Name"
-                  name="first_name"
-                  variant="standard"
-                  fullWidth
-                  value={formData.first_name}
-                  onChange={handleInputChange}
-                  error={Boolean(errors.first_name)}
-                  helperText={errors.first_name}
-                  InputLabelProps={{ style: { color: "#f6bc16" } }}
-                  className="mb-3"
-                />
-                <TextField
-                  label="Last Name"
-                  name="last_name"
-                  variant="standard"
-                  fullWidth
-                  value={formData.last_name}
-                  onChange={handleInputChange}
-                  error={Boolean(errors.last_name)}
-                  helperText={errors.last_name}
-                  InputLabelProps={{ style: { color: "#f6bc16" } }}
-                  className="mb-3"
-                />
-                <TextField
-                  label="Username"
-                  name="username"
-                  variant="standard"
-                  fullWidth
-                  value={formData.username}
-                  onChange={handleInputChange}
-                  error={Boolean(errors.username)}
-                  helperText={errors.username}
-                  InputLabelProps={{ style: { color: "#f6bc16" } }}
-                  className="mb-3"
-                />
+                {({
+                  values,
+                  handleChange,
+                  handleBlur,
+                  touched,
+                  errors,
+                  isSubmitting,
+                }) => (
+                  <Form className="border-1 rounded-12 px-60 py-60 md:px-25 md:py-30 bg-dark-grey">
+                    <TextField
+                      label="First Name"
+                      name="first_name"
+                      variant="standard"
+                      fullWidth
+                      required
+                      value={values.first_name}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={touched.first_name && Boolean(errors.first_name)}
+                      helperText={touched.first_name && errors.first_name}
+                      InputLabelProps={{ style: { color: "#f6bc16" } }}
+                      className="mb-3"
+                    />
+                    <TextField
+                      label="Last Name"
+                      name="last_name"
+                      variant="standard"
+                      fullWidth
+                      required
+                      value={values.last_name}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={touched.last_name && Boolean(errors.last_name)}
+                      helperText={touched.last_name && errors.last_name}
+                      InputLabelProps={{ style: { color: "#f6bc16" } }}
+                      className="mb-3"
+                    />
+                    <TextField
+                      label="Username"
+                      name="username"
+                      variant="standard"
+                      fullWidth
+                      required
+                      value={values.username}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={touched.username && Boolean(errors.username)}
+                      helperText={touched.username && errors.username}
+                      InputLabelProps={{ style: { color: "#f6bc16" } }}
+                      className="mb-3"
+                    />
 
-                <TextField
-                  label="Phone Number"
-                  name="phoneNumber"
-                  variant="standard"
-                  fullWidth
-                  value={formData.phoneNumber}
-                  onChange={handleInputChange}
-                  error={Boolean(errors.phoneNumber)}
-                  helperText={errors.phoneNumber}
-                  InputLabelProps={{ style: { color: "#f6bc16" } }}
-                  className="mb-3"
-                />
+                    <TextField
+                      label="Phone Number"
+                      name="phoneNumber"
+                      variant="standard"
+                      fullWidth
+                      required
+                      value={values.phoneNumber}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={touched.phoneNumber && Boolean(errors.phoneNumber)}
+                      helperText={
+                        errors.phoneNumber
+                          ? errors.phoneNumber
+                          : "Add phone number with +92 (e.g., +923001234567)"
+                      }
+                      InputLabelProps={{ style: { color: "#f6bc16" } }}
+                      className="mb-3"
+                    />
 
-                <TextField
-                  label="Email"
-                  name="email"
-                  variant="standard"
-                  fullWidth
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  error={Boolean(errors.email)}
-                  helperText={errors.email}
-                  InputLabelProps={{ style: { color: "#f6bc16" } }}
-                  className="mb-3"
-                />
+                    <TextField
+                      label="Email"
+                      name="email"
+                      variant="standard"
+                      fullWidth
+                      required
+                      value={values.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={touched.email && Boolean(errors.email)}
+                      helperText={touched.email && errors.email}
+                      InputLabelProps={{ style: { color: "#f6bc16" } }}
+                      className="mb-3"
+                    />
 
-                <TextField
-                  label="Password"
-                  name="password"
-                  type={showPassword ? "text" : "password"}
-                  variant="standard"
-                  fullWidth
-                  value={formData.password}
-                  onChange={handleInputChange}
-                  error={Boolean(errors.password)}
-                  helperText={errors.password}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton
-                          onClick={handleShowPassword}
-                          edge="end"
-                          className="password-visibility-button"
-                        >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
-                  InputLabelProps={{ style: { color: "#f6bc16" } }}
-                  className="mb-3"
-                />
+                    <TextField
+                      label="Password"
+                      name="password"
+                      type={showPassword ? "text" : "password"}
+                      variant="standard"
+                      fullWidth
+                      required
+                      value={values.password}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={touched.password && Boolean(errors.password)}
+                      helperText={touched.password && errors.password}
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <IconButton onClick={handleShowPassword} edge="end">
+                              {showPassword ? (
+                                <VisibilityOff />
+                              ) : (
+                                <Visibility />
+                              )}
+                            </IconButton>
+                          </InputAdornment>
+                        ),
+                      }}
+                      InputLabelProps={{ style: { color: "#f6bc16" } }}
+                      className="mb-3"
+                    />
 
-                <TextField
-                  label="Confirm Password"
-                  name="confirmPassword"
-                  type={showConfirmPassword ? "text" : "password"}
-                  variant="standard"
-                  fullWidth
-                  value={formData.confirmPassword}
-                  onChange={handleInputChange}
-                  error={Boolean(errors.confirmPassword)}
-                  helperText={errors.confirmPassword}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton
-                          onClick={handleShowConfirmPassword}
-                          edge="end"
-                          className="password-visibility-button"
-                        >
-                          {showConfirmPassword ? (
-                            <VisibilityOff />
-                          ) : (
-                            <Visibility />
-                          )}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
-                  InputLabelProps={{ style: { color: "#f6bc16" } }}
-                  className="mb-3"
-                />
+                    <TextField
+                      label="Confirm Password"
+                      name="confirmPassword"
+                      type={showConfirmPassword ? "text" : "password"}
+                      variant="standard"
+                      fullWidth
+                      required
+                      value={values.confirmPassword}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={
+                        touched.confirmPassword &&
+                        Boolean(errors.confirmPassword)
+                      }
+                      helperText={
+                        touched.confirmPassword && errors.confirmPassword
+                      }
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <IconButton
+                              onClick={handleShowConfirmPassword}
+                              edge="end"
+                            >
+                              {showConfirmPassword ? (
+                                <VisibilityOff />
+                              ) : (
+                                <Visibility />
+                              )}
+                            </IconButton>
+                          </InputAdornment>
+                        ),
+                      }}
+                      InputLabelProps={{ style: { color: "#f6bc16" } }}
+                      className="mb-3"
+                    />
 
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  fullWidth
-                  className="mt-10 button-gradient text-white"
-                >
-                  Register
-                </Button>
-              </form>
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      color="primary"
+                      fullWidth
+                      disabled={isSubmitting}
+                      className="mt-10 button-gradient text-white"
+                    >
+                      {isSubmitting ? "Registering..." : "Register"}
+                    </Button>
+                  </Form>
+                )}
+              </Formik>
             </div>
           </div>
         </div>

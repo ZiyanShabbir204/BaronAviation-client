@@ -184,109 +184,118 @@ export default function Header9({ isSticky }) {
           </div>
 
           <div className="header__right">
-            {!user && (
-              <>
-                <Link
-                  to="/register"
-                  className="button -sm  button-gradient text-white"
-                >
-                  Sign up
-                </Link>
+            <>
+               <Link
+                    to="/?bookNow=true"
+                    className="button -sm button-gradient text-white mr-30"
+                  >
+                   Book Now
+                  </Link>
+              {!user && (
+                <>
+                  <Link
+                    to="/register"
+                    className="button -sm  button-gradient text-white"
+                  >
+                    Sign up
+                  </Link>
 
-                <Link
-                  to="/login"
-                  className="button -sm button-gradient text-white ml-30"
-                >
-                  Log in
-                </Link>
-              </>
-            )}
+                  <Link
+                    to="/login"
+                    className="button -sm button-gradient text-white ml-30"
+                  >
+                    Log in
+                  </Link>
+                </>
+              )}
+              {user && (
+                <>
+                  {/* Profile Icon with Popover */}
+                  <IconButton onClick={handleProfileClick}>
+                    <Avatar
+                      sx={{
+                        background: "#f6bc16",
+                      }}
+                    >
+                      {firstLetter}
+                    </Avatar>{" "}
+                    {/* Display the first letter of username */}
+                  </IconButton>
 
-            {user && (
-              <>
-                {/* Profile Icon with Popover */}
-                <IconButton onClick={handleProfileClick}>
-                  <Avatar
-                    sx={{
-                      background: "#f6bc16",
+                  <Popover
+                    open={openPopover}
+                    anchorEl={anchorEl}
+                    onClose={handlePopoverClose}
+                    anchorOrigin={{
+                      vertical: "bottom",
+                      horizontal: "end",
+                    }}
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "end",
                     }}
                   >
-                    {firstLetter}
-                  </Avatar>{" "}
-                  {/* Display the first letter of username */}
-                </IconButton>
+                    <div style={{ width: "230px" }}>
+                      {/* Profile Circle with Username */}
+                      <MenuItem className="menu-item-1">
+                        <Avatar
+                          sx={{
+                            background: "#f6bc16",
+                          }}
+                        >
+                          {firstLetter}
+                        </Avatar>{" "}
+                        {/* Same circle with the first letter */}
+                        <Typography style={{ marginLeft: 8 }}>
+                          {user?.username}
+                        </Typography>
+                      </MenuItem>
 
-                <Popover
-                  open={openPopover}
-                  anchorEl={anchorEl}
-                  onClose={handlePopoverClose}
-                  anchorOrigin={{
-                    vertical: "bottom",
-                    horizontal: "end",
-                  }}
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "end",
-                  }}
-                >
-                  <div style={{ width: "230px" }}>
-                    {/* Profile Circle with Username */}
-                    <MenuItem className="menu-item-1">
-                      <Avatar
-                        sx={{
-                          background: "#f6bc16",
-                        }}
+                      <Divider />
+
+                      <MenuItem
+                        onClick={() => navigate("/book-flight")}
+                        className="menu-item-1"
                       >
-                        {firstLetter}
-                      </Avatar>{" "}
-                      {/* Same circle with the first letter */}
-                      <Typography style={{ marginLeft: 8 }}>
-                        {user?.username}
-                      </Typography>
-                    </MenuItem>
+                        <PlaceIcon />
+                        <Typography className="menu-item-text">
+                          Book Flight{" "}
+                        </Typography>
+                      </MenuItem>
+                      {/* Settings Option */}
+                      <MenuItem
+                        onClick={() => navigate("/my-profile")}
+                        className="menu-item-1"
+                      >
+                        <PersonIcon />
+                        <Typography className="menu-item-text">
+                          My Profile
+                        </Typography>
+                      </MenuItem>
+                      <MenuItem
+                        onClick={() => navigate("/my-booking")}
+                        className="menu-item-1"
+                      >
+                        <FlightIcon />
+                        <Typography className="menu-item-text">
+                          My Booking
+                        </Typography>
+                      </MenuItem>
 
-                    <Divider />
+                      <Divider />
 
-                    <MenuItem
-                      onClick={() => navigate("/book-flight")}
-                      className="menu-item-1"
-                    >
-                      <PlaceIcon />
-                      <Typography className="menu-item-text">
-                        Book Flight{" "}
-                      </Typography>
-                    </MenuItem>
-                    {/* Settings Option */}
-                    <MenuItem
-                      onClick={() => navigate("/my-profile")}
-                      className="menu-item-1"
-                    >
-                      <PersonIcon />
-                      <Typography className="menu-item-text">
-                        My Profile
-                      </Typography>
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => navigate("/my-booking")}
-                      className="menu-item-1"
-                    >
-                      <FlightIcon />
-                      <Typography className="menu-item-text">
-                        My Booking
-                      </Typography>
-                    </MenuItem>
-
-                    <Divider />
-
-                    {/* Logout Option */}
-                    <MenuItem onClick={logout} className="menu-item-1">
-                      <LogoutIcon />
-                      <Typography className="menu-item-text">Logout</Typography>
-                    </MenuItem>
-                  </div>
-                </Popover>
-              </>
-            )}
+                      {/* Logout Option */}
+                      <MenuItem onClick={logout} className="menu-item-1">
+                        <LogoutIcon />
+                        <Typography className="menu-item-text">
+                          Logout
+                        </Typography>
+                      </MenuItem>
+                    </div>
+                  </Popover>
+                </>
+              )}
+            </>
           </div>
         </div>
       </header>

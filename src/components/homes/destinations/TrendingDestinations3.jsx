@@ -19,7 +19,7 @@ export default function TrendingDestinations3() {
           </div>
           <div className="col-auto">
             <Link
-              to="#"
+               to={"/tailored-packages/1"}
               data-aos="fade-up"
               data-aos-delay=""
               className="buttonArrow d-flex items-center "

@@ -1,4 +1,5 @@
 import { useAuth } from "@/contexts/auth.context";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header({ setSideBarOpen }) {
   const { user } = useAuth();
@@ -15,7 +16,15 @@ export default function Header({ setSideBarOpen }) {
         </div>
       </div>
 
-      <h2 className="hero-heading">{user?.username}</h2>
+      <div>
+        <Link
+          to="/book-flight"
+          className="button -sm button-gradient text-white"
+        >
+          Book Now
+        </Link>
+        <h2 className="hero-heading">{user?.username}</h2>
+      </div>
     </div>
   );
 }

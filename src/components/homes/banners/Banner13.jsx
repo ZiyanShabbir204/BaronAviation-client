@@ -16,7 +16,7 @@ export default function Banner13() {
               </h2>
 
               <p data-aos="fade-up" data-aos-delay="" className="mt-10">
-                Unlock exclusive benefits – travel luxury !
+                Avail exclusive benefits – travel in luxury!
               </p>
 
               <button

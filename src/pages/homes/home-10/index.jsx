@@ -11,7 +11,7 @@ import TestimonialsSix from "@/components/homes/testimonials/TestimonialsSix";
 import Tour2 from "@/components/homes/tours/Tour2";
 import FooterFour from "@/components/layout/footers/FooterFour";
 import Header9 from "@/components/layout/header/Header9";
-import React from "react";
+import React, { useEffect } from "react";
 
 import MetaComponent from "@/components/common/MetaComponent";
 import BrandsTwo from "@/components/homes/brands/BrandsTwo";
@@ -30,6 +30,8 @@ import FeturesTwo from "@/components/homes/features/FeturesTwo";
 import BannerTwo from "@/components/homes/banners/BannerTwo";
 import BannerHome from "@/components/homes/banners/BannerHome";
 import ArticlesThree from "@/components/homes/articles/ArticlesThree";
+import { useLocation } from "react-router-dom";
+import { scroller } from "react-scroll";
 
 const metadata = {
   title: "Home-1 || ViaTour - Travel & Tour Reactjs Template",
@@ -37,13 +39,30 @@ const metadata = {
 };
 
 export default function HomePage10() {
+     const location = useLocation();
+
+  const scrollToBookNow = () => {
+    scroller.scrollTo("bookNow", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+      offset: -window.innerHeight / 3, // Adjusts the offset to center
+    });
+  };
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get("bookNow") === "true") {
+      scrollToBookNow();
+    }
+  }, [location.search]);
   return (
     <>
       <main>
         <Header9 />
         <Hero10 />
         <FlightRequestMenu />
-        <BrandsTwo />
+        {/* <BrandsTwo /> */}
         <FeturesTwo />
         <FeaturesOne />
         <Banner />

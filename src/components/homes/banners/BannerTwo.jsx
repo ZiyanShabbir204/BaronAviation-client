@@ -23,7 +23,7 @@ export default function BannerTwo() {
                 data-aos-delay=""
                 className="button -md -dark-1 bg-dark-grey text-accent-1"
               >
-                <Link to="/tour-list-1">
+                <Link to="/?bookNow=true">
                   Book Now
                   <i className="icon-arrow-top-right ml-10 "></i>
                 </Link>

@@ -33,7 +33,7 @@ export default function Corporate() {
         <Header9 isSticky />
         <Hero />
         <Information />
-        <BrandsTwo />
+        {/* <BrandsTwo /> */}
         <CorporateSlider />
 
         <Banner13 />

@@ -143,7 +143,7 @@ const faqs = [
         Absolutely! Our{" "}
         <span className="text-vivid-orange">luxury helicopters</span>. are
         perfect for making your{" "}
-        <span className="text-vivid-orange">special day unforgettable</span>, We
+        <span className="text-vivid-orange">special day unforgettable</span>. We
         offer <span className="text-vivid-orange">customized packages</span> for
         weddings, proposals, and other celebrations, including:
         <ul>

@@ -3,7 +3,7 @@ const sections = [
     title: "Company",
     links: [
       { id: 1, text: "About Us", href: "/our-vision" },
-      { id: 5, text: "Term & Condition", href: "/term-condition" },
+      { id: 5, text: "Terms & Conditions", href: "/terms-and-conditions" },
       { id: 7, text: "FAQs", href: "/faqs" },
       { id: 8, text: "Sitemap", href: "#" },
     ],
@@ -12,34 +12,37 @@ const sections = [
     title: "Support",
     links: [
       { id: 9, text: "Get in Touch", href: "/contact" },
-      { id: 10, text: "Help center", href: "#" },
-      { id: 11, text: "Live chat", href: "#" },
+      { id: 10, text: "Help center", href: "/help-center" },
     ],
   },
   {
-    title: "Serving Across Borders",
+    title: "Across Borders",
     links: [
       {
         id: 19,
-        text: "Najaf-al-ashraf",
-        href: "https://www.thebaronhotels.com/najaf-al-ashraf",
+        text: "DoubleTree by Hilton Nathiagali",
+        href: "https://www.hilton.com/en/hotels/isbnadi-doubletree-nathiagali/",
       },
       {
         id: 120,
-        text: "Karbala-e-muqaddasa",
-        href: "https://www.thebaronhotels.com/karbala-e-muqaddasa",
+        text: "The Baron Hotels",
+        href: "https://www.thebaronhotels.com/",
       },
       {
         id: 111,
-        text: "Samarra",
-        href: "https://www.thebaronhotels.com/samarra",
+        text: "Karbala – Iraq",
+        href: "https://www.thebaronhotels.com/",
       },
       {
         id: 11,
-        text: "Baghdad",
-        href: "https://www.thebaronhotels.com/baghdad",
+        text: "Afghanistan – Kabul",
+        href: "https://www.thebaronhotels.com/",
       },
-      { id: 11, text: "Kufa", href: "https://www.thebaronhotels.com/kufa" },
+      {
+        id: 11,
+        text: "Lodges By Baron",
+        href: "https://www.lodgesbybaron.com/",
+      },
     ],
   },
 ];

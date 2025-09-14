@@ -59,7 +59,6 @@ export default function TourList1() {
                           </div>
                         )}
                       </div>
-
                       <div className="tourCard__content">
                         <div className="tourCard__location">
                           <i className="icon-pin"></i> {elm.location}
@@ -93,10 +92,9 @@ export default function TourList1() {
                           ))}
                         </div>
                       </div>
-
                       <div className="tourCard__info">
                         <div>
-                          <div className="d-flex items-center text-14">
+                          {/* <div className="d-flex items-center text-14">
                             <i className="icon-clock mr-10"></i>
                             {elm.duration}
                           </div>
@@ -110,7 +108,7 @@ export default function TourList1() {
                                 ${elm.price}
                               </span>
                             </div>
-                          </div>
+                          </div> */}
                         </div>
 
                         <Link

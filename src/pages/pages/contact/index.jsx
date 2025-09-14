@@ -8,6 +8,7 @@ import React from "react";
 import MetaComponent from "@/components/common/MetaComponent";
 import FooterTwo from "@/components/layout/footers/FooterTwo";
 import Header9 from "@/components/layout/header/Header9";
+import ContactHero from "@/components/pages/contact/ContactHero";
 
 const metadata = {
   title: "Contact || ViaTour - Travel & Tour Reactjs Template",
@@ -19,9 +20,10 @@ export default function ContactPage() {
     <>
       <main>
         <Header9 isSticky />
-        <Map />
+        <ContactHero />
         <Locations />
         <ContactForm />
+        <Map />
         <FooterTwo />
       </main>
     </>

@@ -64,6 +64,7 @@ import Faq from "./components/pages/helpCenter/Faq";
 import FAQPage from "./components/pages/helpCenter/FAQPage";
 import TermConditionPage from "./pages/pages/terms/TermConditionPage";
 import VerifyAccountPage from "./pages/pages/verifyAccount/VerifyAccountPage";
+import HelpCenterPageNew from "./components/pages/helpCenter/HelpCenterPageNew";
 
 function App() {
   useEffect(() => {
@@ -138,7 +139,12 @@ function App() {
                 <Route path="/my-booking" element={<DBBookingPage />} />
                 <Route path="/my-profile" element={<DBProfilePage />} />
                 <Route path="/faqs" element={<FAQPage />} />
-                <Route path="/term-condition" element={<TermConditionPage />} />
+                <Route path="/help-center" element={<HelpCenterPageNew />} />
+
+                <Route
+                  path="/terms-and-conditions"
+                  element={<TermConditionPage />}
+                />
 
                 <Route path="/blog-list-1" element={<BlogListPage1 />} />
                 <Route path="/blog-list-2" element={<BlogListPage2 />} />
@@ -157,7 +163,10 @@ function App() {
                 <Route path="/my-booking" element={<DBBookingPage />} />
                 <Route path="/my-profile" element={<DBProfilePage />} />
                 <Route path="/faqs" element={<FAQPage />} />
-                <Route path="/term-condition" element={<TermConditionPage />} />
+                <Route
+                  path="/terms-and-conditions"
+                  element={<TermConditionPage />}
+                />
 
                 <Route path="/blog-list-1" element={<BlogListPage1 />} />
                 <Route path="/blog-list-2" element={<BlogListPage2 />} />

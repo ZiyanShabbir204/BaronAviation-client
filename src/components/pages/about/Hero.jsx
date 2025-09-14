@@ -19,7 +19,7 @@ export default function Hero() {
                   Baron Aviation{" "}
                 </span>{" "}
                 aims to be the foremost provider of luxury helicopter travel,
-                offering distinguished service, exceptional comfort, and
+                offering distinguished services, exceptional comfort, and
                 memorable experiences for discerning travelers.
               </p>
             </div>

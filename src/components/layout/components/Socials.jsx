@@ -2,7 +2,7 @@ const socialMediaLinks = [
   {
     id: 1,
     class: "icon-facebook text-gradient-vivid-orange",
-    href: "https://www.facebook.com/BaronAviation/",
+    href: "https://www.facebook.com/share/14KZUTx85Db/?mibextid=wwXIfr",
   },
   {
     id: 2,
@@ -12,12 +12,12 @@ const socialMediaLinks = [
   {
     id: 3,
     class: "icon-instagram text-gradient-vivid-orange",
-    href: "https://www.instagram.com/thebaronaviation?igsh=MTVid3Z6MGxvOHJpYQ%3D%3D",
+    href: "https://www.instagram.com/baronaviation?igsh=MTVid3Z6MGxvOHJpYQ==",
   },
   {
     id: 4,
     class: "icon-linkedin text-gradient-vivid-orange",
-    href: "https://www.linkedin.com/company/the-baron-aviation?trk=feed-detail_main-feed-card_feed-actor-image",
+    href: "https://www.linkedin.com/company/the-baron-aviation",
   },
 ];
 

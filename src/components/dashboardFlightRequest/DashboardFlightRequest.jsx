@@ -29,6 +29,7 @@ import { Link as ScrollLink, scroller } from "react-scroll";
 import { useSnackbar } from "notistack";
 import { useAuth } from "@/contexts/auth.context";
 import ApiService from "@/api.service";
+import { orange } from "@mui/material/colors";
 
 const DashboardFlightRequest = () => {
   const [currentActiveDD, setCurrentActiveDD] = useState("");
@@ -509,6 +510,7 @@ const DashboardFlightRequest = () => {
                   gap={1}
                 >
                   <Checkbox
+                    className="term-condition-checkbox"
                     sx={{ padding: 0 }}
                     id="term-condtion"
                     checked={termsAccepted}
@@ -516,7 +518,11 @@ const DashboardFlightRequest = () => {
                     helperText="sss"
                   />
                   <label htmlFor="term-condtion">
-                    I have read and agree to the Terms and Conditions.
+                    I have read and agree to the{" "}
+                    <Link to="/terms-and-conditions" >
+                      <span style={{ color: "var(--color-vivid-orange)" }}>Terms and Conditions</span>
+                    </Link>
+                    .
                   </label>
                 </Stack>
                 {errors.term && (

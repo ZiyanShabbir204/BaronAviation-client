@@ -8,7 +8,7 @@ import "./corporateSlider.css";
 
 export default function CorporateSlider() {
   return (
-    <section className="layout-pt-xl">
+    <section>
       <div className="container">
         <h2 className="text-vivid-orange text-gradient-vivid-orange">
           WHY PARTNER WITH THE BARON AVIATION

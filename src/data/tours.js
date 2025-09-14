@@ -158,8 +158,7 @@ export const tourDataTwo = [
     rating: 4.8,
     ratingCount: 269,
     duration: `3 hours (flight and sightseeing stops)`,
-    description:
-      "Explore the breathtaking beauty of Skardu, Hunza Valley, and Fairy Meadows with The Scenic Sky Odyssey. This premium sightseeing adventure offers stopovers for photography, ideal for couples, families, and explorers.",
+    description:"Discover the breathtaking beauty of Skardu, Hunza Valley, and Fairy Meadows with The Scenic Sky Odyssey. This premium sightseeing experience includes stopovers for photography, making it the perfect choice for couples, families, and adventurers alike.",
     price: 114.0,
     fromPrice: 1200.0,
     badgeClass: "bg-accent-2",

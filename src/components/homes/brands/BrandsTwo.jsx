@@ -9,7 +9,7 @@ export default function BrandsTwo() {
     <section className="logo-slider-section">
       <div className="container">
         <h2 className="trusted-corporate text-vivid-orange text-gradient-vivid-orange">
-          TRUSTED BY THE CORPORATES
+          TRUSTED BY CORPORATES
         </h2>
         <div data-aos="fade-up" data-aos-delay="" className="">
           <Swiper

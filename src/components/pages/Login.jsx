@@ -96,13 +96,8 @@ export default function Login() {
         navigate(redirect);
         return;
       }
-
-      if (res.role == "cooperate_customer") {
-        navigate("/dashboard");
-        return;
-      }
-      navigate("/");
-      // enqueueSnackbar("Login successfully",{variant:"success"})
+      navigate("/dashboard");
+      enqueueSnackbar("Login successfully", { variant: "success" });
     } catch (err) {
       if (err.response) {
         if (err.response.data.message === "The user is not verified") {

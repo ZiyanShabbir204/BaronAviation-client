@@ -524,7 +524,13 @@ const FlightRequestMenu = () => {
                     helperText="sss"
                   />
                   <label htmlFor="term-condtion">
-                    I have read and agree to the Terms and Conditions.
+                    I have read and agree to the{" "}
+                    <Link to="/terms-and-conditions">
+                      <span style={{ color: "var(--color-vivid-orange)" }}>
+                        Terms and Conditions
+                      </span>
+                    </Link>
+                    .
                   </label>
                 </Stack>
                 {errors.term && (
@@ -544,6 +550,17 @@ const FlightRequestMenu = () => {
                 >
                   Request
                 </Button>
+                <Typography
+                  variant="caption"
+                  style={{
+                    color: "#aeaeae",
+                    maxWidth: "300px",
+                    marginTop: "10px",
+                  }}
+                >
+                  You are not logged in. After requesting a flight, you'll be
+                  redirected to log in before completing your registration
+                </Typography>
               </Stack>
             </div>
           </div>

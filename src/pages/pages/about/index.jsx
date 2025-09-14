@@ -35,7 +35,7 @@ export default function AboutPage() {
         <FeaturesOne />
         <BannerTwo />
         <TourTypeOne />
-        <BrandsTwo />
+        {/* <BrandsTwo /> */}
         <br />
         <TestimonialsSix />
         <FooterTwo />
