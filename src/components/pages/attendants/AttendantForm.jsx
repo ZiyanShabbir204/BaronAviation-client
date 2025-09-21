@@ -96,7 +96,7 @@ export default function AttendantForm() {
                     variant: "success",
                   });
                   if (user.role === "cooperate_customer") {
-                    navigate("/dashboard");
+      navigate("/my-booking");
                   } else {
                     navigate("/");
                   }
