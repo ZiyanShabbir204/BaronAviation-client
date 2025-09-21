@@ -96,7 +96,7 @@ export default function Login() {
         navigate(redirect);
         return;
       }
-      navigate("/dashboard");
+      navigate("/my-booking");
       enqueueSnackbar("Login successfully", { variant: "success" });
     } catch (err) {
       if (err.response) {
