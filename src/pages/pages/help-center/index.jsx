@@ -9,7 +9,7 @@ import MetaComponent from "@/components/common/MetaComponent";
 import Header9 from "@/components/layout/header/Header9";
 
 const metadata = {
-  title: "Help center || ViaTour - Travel & Tour Reactjs Template",
+  title: "Help Center || ViaTour - Travel & Tour Reactjs Template",
   description: "ViaTour - Travel & Tour Reactjs Template",
 };
 

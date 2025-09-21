@@ -271,10 +271,6 @@ const faqs = [
                 <span className="text-vivid-orange">Landline:</span> +92 51
                 6110971
               </li>
-              <li>
-                {" "}
-                <span className="text-vivid-orange">UAN: </span>111111331
-              </li>
             </ul>
           </li>
           <li>

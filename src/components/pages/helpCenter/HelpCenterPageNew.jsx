@@ -5,13 +5,16 @@ import Faq from "./Faq";
 import Hero from "./Hero";
 import HelpCenterHero from "./HelpCenterHero";
 import HelpCenterContent from "./helpCenterContent";
+import Locations from "@/components/pages/contact/Locations";
 
 const HelpCenterPageNew = () => {
   return (
     <div>
       <Header9 isSticky />
-      <HelpCenterHero/>
-      <HelpCenterContent/>
+      <HelpCenterHero />
+      <Locations />
+      {/* <HelpCenterContent/> */}
+      <section className="layout-pb-xl"></section>
       <FooterTwo />
     </div>
   );

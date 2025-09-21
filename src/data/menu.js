@@ -72,7 +72,7 @@ export const pages = [
   },
   { id: 53, title: "Destinations", href: "/destinations" },
   { id: 54, title: "About", href: "/about" },
-  { id: 55, title: "Help center", href: "/help-center" },
+  { id: 55, title: "Help Center", href: "/help-center" },
   { id: 56, title: "Terms", href: "/terms" },
   { id: 57, title: "Login", href: "/login" },
   { id: 58, title: "Register", href: "/register" },

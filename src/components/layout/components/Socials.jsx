@@ -19,6 +19,11 @@ const socialMediaLinks = [
     class: "icon-linkedin text-gradient-vivid-orange",
     href: "https://www.linkedin.com/company/the-baron-aviation",
   },
+  // {
+  //   id: 5,
+  //   class: "youtube-icon text-gradient-vivid-orange",
+  //   href: "https://www.youtube.com/@BaronAviation",
+  // },
 ];
 
 export default function Socials() {

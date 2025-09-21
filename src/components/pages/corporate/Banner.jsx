@@ -61,7 +61,7 @@ export default function Banner() {
         </div>
       </section>
       <ModalVideoComponent
-        videoId={"-EwLqTInwcI?si=_0eBdbpbrRSJGKfH"}
+        videoId={"CVGQMTOdMNw?si=pssYIxbbyQii2Ni-"}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
       />

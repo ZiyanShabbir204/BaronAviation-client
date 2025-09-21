@@ -6,7 +6,7 @@ import Hero from "./Hero";
 
 const FAQPage = () => {
   return (
-    <div>
+    <div style={{overflowX:"hidden"}}>
       <Header9 isSticky />
       <Hero />
       <Faq />

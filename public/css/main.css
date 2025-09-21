@@ -975,7 +975,8 @@ button:focus {
 .button.-outline-blue-1 {
   border-color: var(--color-blue-1);
 }
-.css-8gz0an-MuiTypography-root{
+
+.css-8gz0an-MuiTypography-root {
   color: #bd6565 !important;
 }
 
@@ -3536,8 +3537,17 @@ h6 {
   background: url('/svgs/tiktok.svg') no-repeat center / contain;
   color: red;
   /* Changes the SVG color because of `currentColor` */
+}
+
+.youtube-icon {
+  width: 24px;
+  height: 24px;
+  background: url('/svgs/youtube.svg') no-repeat center / contain;
+  color: red;
+  /* Changes the SVG color because of `currentColor` */
 
 }
+
 
 .button-gradient {
   background: linear-gradient(90deg, #c18e11, #d1970e, #e2a612, #f0b828);

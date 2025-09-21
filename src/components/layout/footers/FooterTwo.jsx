@@ -9,7 +9,12 @@ import { Stack } from "@mui/material";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 export default function FooterTwo() {
   return (
-    <footer className="footer -type-1 -dark background-dark-gray text-white">
+    <footer
+      className="footer -type-1 -dark background-dark-gray text-white"
+      style={{
+        overflow: "hidden",
+      }}
+    >
       <div className="footer__main">
         <div className="footer__bg"></div>
 
@@ -65,26 +70,29 @@ export default function FooterTwo() {
                     3rd Floor, Interactive Plaza, Sector E-11/3 Markaz,
                     Islamabad
                   </div>
-                  <a className="d-block" href="#">
+                  <a
+                    className="d-block"
+                    href="mailto:support@thebaronaviation.com"
+                  >
                     <AlternateEmailIcon
                       className="path-color-yellow"
-                      sx={{
-                        marginRight: 1,
-                      }}
+                      sx={{ marginRight: 1 }}
                     />
                     support@thebaronaviation.com
                   </a>
-                  <a className="d-block" href="#">
+
+                  <a
+                    className="d-block"
+                    href="mailto:inquire@thebaronaviation.com"
+                  >
                     <AlternateEmailIcon
                       className="path-color-yellow"
-                      sx={{
-                        marginRight: 1,
-                      }}
+                      sx={{ marginRight: 1 }}
                     />
                     inquire@thebaronaviation.com
                   </a>
 
-                  <div>
+                  <a href="tel:+923260000121">
                     <CallOutlinedIcon
                       sx={{
                         marginRight: 1,
@@ -92,8 +100,8 @@ export default function FooterTwo() {
                       className="path-color-yellow"
                     />
                     +92 326 0000121
-                  </div>
-                  <div>
+                  </a>
+                  <a href="tel:+92516110971">
                     <RingVolumeIcon
                       sx={{
                         marginRight: 1,
@@ -101,7 +109,7 @@ export default function FooterTwo() {
                       className="path-color-yellow"
                     />
                     +92 51 6110971
-                  </div>
+                  </a>
                 </Stack>
               </div>
 

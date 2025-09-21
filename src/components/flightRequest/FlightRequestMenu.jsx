@@ -554,7 +554,6 @@ const FlightRequestMenu = () => {
                   variant="caption"
                   style={{
                     color: "#aeaeae",
-                    maxWidth: "300px",
                     marginTop: "10px",
                   }}
                 >

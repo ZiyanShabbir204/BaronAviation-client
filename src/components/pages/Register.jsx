@@ -60,7 +60,7 @@ const validationSchema = Yup.object({
   phoneNumber: Yup.string()
     .matches(
       /^\+92[0-9]{10}$/,
-      "Enter valid phone number (+92XXXXXXXXXX)"
+      "Enter phone number with country code (e.g., +923012345678)"
     )
     .required("Phone number is required"),
   email: Yup.string()
@@ -209,9 +209,7 @@ export default function Register() {
                       onBlur={handleBlur}
                       error={touched.phoneNumber && Boolean(errors.phoneNumber)}
                       helperText={
-                        errors.phoneNumber
-                          ? errors.phoneNumber
-                          : "Add phone number with +92 (e.g., +923001234567)"
+                        "Enter phone number with country code (e.g., +923012345678)"
                       }
                       InputLabelProps={{ style: { color: "#f6bc16" } }}
                       className="mb-3"
@@ -284,6 +282,7 @@ export default function Register() {
                             <IconButton
                               onClick={handleShowConfirmPassword}
                               edge="end"
+                              className="password-visibility-button"
                             >
                               {showConfirmPassword ? (
                                 <VisibilityOff />

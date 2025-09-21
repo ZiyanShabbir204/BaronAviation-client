@@ -16,7 +16,7 @@ const sections = [
     title: "Support",
     links: [
       { id: 9, text: "Get in Touch", href: "#" },
-      { id: 10, text: "Help center", href: "#" },
+      { id: 10, text: "Help Center", href: "#" },
       { id: 11, text: "Live chat", href: "#" },
       { id: 12, text: "How it works", href: "#" },
     ],

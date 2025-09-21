@@ -155,7 +155,7 @@ export const testimonialsFive = [
 export const testimonialsSix = [
   {
     id: 1,
-    name: `William M.`,
+    name: `Bilal Hussain`,
     role: `Financial Executive`,
     comment: `Great Work`,
     desc: `Our experience with Baron Aviation was simply outstanding. The team’s professionalism and the luxurious interiors made our trip truly unforgettable. Looking forward to flying again soon!`,
@@ -163,7 +163,7 @@ export const testimonialsSix = [
   },
   {
     id: 2,
-    name: `David K.`,
+    name: `Ahmed Raza`,
     role: `Corporate Executive`,
     comment: `Great Work`,
     desc: `Flying with Baron Aviation was an absolute pleasure, with safety and comfort at the forefront. Truly the gold standard in private aviation.`,
@@ -171,7 +171,7 @@ export const testimonialsSix = [
   },
   {
     id: 3,
-    name: `Emma R.`,
+    name: `Sadia Rehman`,
     role: `Film Producer`,
     comment: `Great Work`,
     desc: `Baron Aviation's commitment to punctuality is unparalleled. Every flight has been on time, with the team anticipating our needs before we even ask. In a world where time is precious, Baron delivers beyond expectations.`,
@@ -179,7 +179,7 @@ export const testimonialsSix = [
   },
   {
     id: 4,
-    name: `Courtney Henry`,
+    name: `Zeeshan Ahmed`,
     role: `Luxury Lifestyle Blogger`,
     comment: `Great Work`,
     desc: `The interiors of Baron Aviation's helicopters are pure luxury. From the plush seating to the tasteful design details, every element exudes elegance and comfort. It’s an experience that truly feels like first-class, even before takeoff.`,

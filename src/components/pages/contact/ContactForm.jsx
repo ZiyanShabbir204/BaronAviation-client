@@ -8,7 +8,7 @@ import * as Yup from "yup";
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required."),
   phone: Yup.string()
-    .matches(/^\+92\d{10}$/, "Enter valid phone number (+92XXXXXXXXXX)")
+    .matches(/^\+92\d{10}$/, "Enter phone number with country code (e.g., +923012345678)")
     .required("Phone number is required."),
   email: Yup.string()
     .email("Invalid email format. ")
@@ -74,7 +74,7 @@ export default function ContactForm() {
                       />
                       {!errors.phone && (
                         <small>
-                          Add phone number with +92 (e.g., +923001234567)
+                          Enter phone number with country code (e.g., +923012345678)
                         </small>
                       )}
                       {errors.phone && touched.phone && (
