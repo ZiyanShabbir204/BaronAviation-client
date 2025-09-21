@@ -245,7 +245,11 @@ export default function Register() {
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
-                            <IconButton onClick={handleShowPassword} edge="end">
+                            <IconButton
+                              onClick={handleShowPassword}
+                              edge="end"
+                              className="password-visibility-button"
+                            >
                               {showPassword ? (
                                 <VisibilityOff />
                               ) : (
