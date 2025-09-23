@@ -11,7 +11,7 @@ const validationSchema = Yup.object({
   name: Yup.string().required("Name is required."),
   phone: Yup.string()
     .matches(
-      /^\+92\d{10}$/,
+      /^\+\d{12}$/,
       "Enter phone number with country code (e.g., +923012345678)"
     )
     .required("Phone number is required."),
@@ -91,6 +91,15 @@ export default function ContactForm() {
                         type="text"
                         name="phone"
                         placeholder="Phone"
+                        onChange={(e) => {
+                          let value = e.target.value.replace(/[^0-9+]/g, "");
+
+                          if (value.length > 13) {
+                            value = value.slice(0, 13);
+                          }
+
+                          setFieldValue("phone", value);
+                        }}
                         className={`contact-form-field ${
                           errors.phone && touched.phone ? "error-field" : ""
                         }`}

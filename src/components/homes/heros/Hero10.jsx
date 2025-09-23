@@ -81,7 +81,7 @@ export default function Hero10() {
                 data-aos-delay="250"
                 className="hero__text text-white text-rajdhani"
               >
-                The Sky, Reserved for You
+                The Skies, Reserved for You
               </div>
               <h1
                 data-aos="fade-up"

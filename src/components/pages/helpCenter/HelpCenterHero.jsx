@@ -4,7 +4,7 @@ export default function HelpCenterHero() {
   return (
     <section className="pageHeader -type-1">
       <div className="pageHeader__bg">
-        <img src="/img/hero/corporate.png" alt="image" />
+        <img src="/img/helicopter/TPS00844-min.JPG" alt="image" />
         <div className="overlay"></div>
       </div>
 
