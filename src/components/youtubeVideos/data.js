@@ -21,12 +21,12 @@ export const videoData = [
   },
   {
     id: 5,
-    thumbnail: "/img/video-thumbnails/3.png",
-    videoId: "LPb4QYl_VQU?si=7xuTbJdP4pnZD-Yx",
+    thumbnail: "/img/video-thumbnails/5.png",
+    videoId: "Nc7G6wF_s8g?si=CrWwGXWVMJn87zhc",
   },
   {
     id: 6,
-    thumbnail: "/img/video-thumbnails/2.png",
-    videoId: "qNTGSqGt7ks?si=OoAELbPRV7xxCV1Z",
-  }
+    thumbnail: "/img/video-thumbnails/6.png",
+    videoId: "un_YkJUgOoA?si=SflpgDgj-Ss-xaMB",
+  },
 ];
