@@ -77,16 +77,16 @@ const FlightRequestMenu = () => {
   const requestHandler = async () => {
     let formErrors = {};
     if (!fromLocation.trim()) {
-      formErrors.fromLocation = "from is required";
+      formErrors.fromLocation = "Flying From field is Required";
     }
 
     // Validate password field
     if (!toLocation.trim()) {
-      formErrors.toLocation = "to is required";
+      formErrors.toLocation = "Flying To field is Required";
     }
 
     if (!dateRef.current.value) {
-      formErrors.startDate = "Start date is required";
+      formErrors.startDate = "Flight Start Date & Time is Required";
     }
 
     if (!termsAccepted) {
@@ -304,7 +304,9 @@ const FlightRequestMenu = () => {
                     value={fromLocation}
                     onChange={(e) => setFromLocation(e.target.value)}
                     color="primary"
-                    helperText={errors.fromLocation && "From is Required"}
+                    helperText={
+                      errors.fromLocation && "Flying From field is Required"
+                    }
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
@@ -330,7 +332,9 @@ const FlightRequestMenu = () => {
                     value={toLocation}
                     onChange={(e) => setToLocation(e.target.value)}
                     color="primary"
-                    helperText={errors.toLocation && "To is Required"}
+                    helperText={
+                      errors.toLocation && "Flying To field is Required"
+                    }
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
@@ -450,7 +454,7 @@ const FlightRequestMenu = () => {
                       id="start_time"
                       name="start_time"
                       label="Flight Start Time"
-                      format="DD/MM/YYYY HH:MM A"
+                      format="DD/MM/YYYY h:m A"
                       onChange={startDateChangeHandler}
                       className="datePicker"
                       slotProps={{
@@ -477,6 +481,40 @@ const FlightRequestMenu = () => {
                       renderLoading={() => <CircularProgress />}
                     />
                   </LocalizationProvider>
+                  {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DateTimePicker
+                      inputRef={dateRef}
+                      fullWidth
+                      id="start_time"
+                      name="start_time"
+                      label="Flight Start Time"
+                      format="DD/MM/YYYY HH:MM A"
+                      onChange={startDateChangeHandler}
+                      className="datePicker"
+                      slotProps={{
+                        field: {
+                          readOnly: true,
+                        },
+                        textField: {
+                          placeholder: "Flight Start Time",
+                          InputLabelProps: {
+                            shrink: true,
+                          },
+                          helperText: errors.startDate && errors.startDate,
+                        },
+                      }}
+                      shouldDisableTime={(value, view) => {
+                        const inIsoFormat = value.toISOString();
+                        return intervalSet.has(inIsoFormat);
+                      }}
+                      disablePast
+                      onMonthChange={(d) => dateChangeHandler(d.toDate())}
+                      onYearChange={(d) => dateChangeHandler(d.toDate())}
+                      onOpen={() => dateChangeHandler(new Date())}
+                      loading={startDateLoading}
+                      renderLoading={() => <CircularProgress />}
+                    />
+                  </LocalizationProvider> */}
                 </div>
               </div>
 

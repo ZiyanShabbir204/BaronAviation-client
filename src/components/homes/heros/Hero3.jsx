@@ -74,12 +74,12 @@ export default function Hero3() {
   const requestHandler = async () => {
     let formErrors = {};
     if (!fromLocation.trim()) {
-      formErrors.fromLocation = "from is required";
+      formErrors.fromLocation = "Flying From field is Required";
     }
 
     // Validate password field
     if (!toLocation.trim()) {
-      formErrors.toLocation = "to is required";
+      formErrors.toLocation = "Flying To field is Required";
     }
 
     // Check if there are any errors

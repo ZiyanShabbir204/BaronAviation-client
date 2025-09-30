@@ -76,16 +76,16 @@ const DashboardFlightRequest = () => {
   const requestHandler = async () => {
     let formErrors = {};
     if (!dateRef.current.value) {
-      formErrors.startDate = "Start date is required";
+      formErrors.startDate = "Flight Start Date & Time is Required";
     }
 
     if (!fromLocation.trim()) {
-      formErrors.fromLocation = "from is required";
+      formErrors.fromLocation = "Flying From field is Required";
     }
 
     // Validate password field
     if (!toLocation.trim()) {
-      formErrors.toLocation = "to is required";
+      formErrors.toLocation = "Flying To field is Required";
     }
 
     if (!termsAccepted) {
@@ -304,7 +304,9 @@ const DashboardFlightRequest = () => {
                     value={fromLocation}
                     onChange={(e) => setFromLocation(e.target.value)}
                     color="primary"
-                    helperText={errors.fromLocation && "From is Required"}
+                    helperText={
+                      errors.fromLocation && "Flying From field is Required"
+                    }
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
@@ -330,7 +332,9 @@ const DashboardFlightRequest = () => {
                     value={toLocation}
                     onChange={(e) => setToLocation(e.target.value)}
                     color="primary"
-                    helperText={errors.toLocation && "To is Required"}
+                    helperText={
+                      errors.toLocation && "Flying To field is Required"
+                    }
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
@@ -519,8 +523,10 @@ const DashboardFlightRequest = () => {
                   />
                   <label htmlFor="term-condtion">
                     I have read and agree to the{" "}
-                    <Link to="/terms-and-conditions" >
-                      <span style={{ color: "var(--color-vivid-orange)" }}>Terms and Conditions</span>
+                    <Link to="/terms-and-conditions">
+                      <span style={{ color: "var(--color-vivid-orange)" }}>
+                        Terms and Conditions
+                      </span>
                     </Link>
                     .
                   </label>
