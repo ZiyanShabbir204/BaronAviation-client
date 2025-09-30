@@ -30,7 +30,7 @@ export default function FooterTwo() {
                   <div className="col-auto">
                     <div className="text-20 fw-500  hero-heading">
                       Speak to our flight team 24/7{" "}
-                      <span className="text-gradient-vivid-orange">
+                      <span className="text-gradient-vivid-orange mobile-block">
                         +92-326-0000121
                       </span>
                     </div>

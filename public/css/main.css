@@ -5040,7 +5040,7 @@ h6 {
     padding: 0;
     border-radius: 12px !important;
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     padding-top: 20px;
   }
 
@@ -14714,6 +14714,10 @@ table.table-4.-border-bottom tbody>tr {
   .video {
     padding-top: 80px;
     padding-bottom: 80px;
+  }
+
+  .mobile-block {
+    display: block;
   }
 }
 

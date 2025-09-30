@@ -29,7 +29,7 @@ export default function Services({ showServices }) {
 
               <div
                 className="accordion__content"
-                style={currentActiveFaq == i ? { maxHeight: "150px" } : {}}
+                style={currentActiveFaq == i ? { maxHeight: "350px" } : {}}
               >
                 <div className="pt-20">
                   <p>{elm.answer}</p>

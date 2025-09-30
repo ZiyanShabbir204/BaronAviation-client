@@ -123,7 +123,7 @@ export default function AttendantForm() {
                               <Field
                                 as={AttendantTextfield}
                                 name={`attendants[${index}].first_name`}
-                                label="First Name"
+                                label="First Name*"
                                 fullWidth
                                 error={
                                   touched.attendants?.[index]?.first_name &&
@@ -142,7 +142,7 @@ export default function AttendantForm() {
                               <Field
                                 as={AttendantTextfield}
                                 name={`attendants[${index}].last_name`}
-                                label="Last Name"
+                                label="Last Name*"
                                 fullWidth
                                 error={
                                   touched.attendants?.[index]?.last_name &&
@@ -161,7 +161,7 @@ export default function AttendantForm() {
                                 as={AttendantTextfield}
                                 select
                                 name={`attendants[${index}].gender`}
-                                label="Gender"
+                                label="Gender*"
                                 fullWidth
                                 error={
                                   touched.attendants?.[index]?.gender &&
@@ -182,7 +182,7 @@ export default function AttendantForm() {
                               <Field
                                 as={AttendantTextfield}
                                 name={`attendants[${index}].age`}
-                                label="Age"
+                                label="Age*"
                                 type="number"
                                 fullWidth
                                 error={
@@ -201,7 +201,7 @@ export default function AttendantForm() {
                               <Field
                                 as={AttendantTextfield}
                                 name={`attendants[${index}].weight`}
-                                label="Passenger Weight (Kg)"
+                                label="Passenger Weight (Kg)*"
                                 type="number"
                                 fullWidth
                                 error={
@@ -238,7 +238,7 @@ export default function AttendantForm() {
                               <Field
                                 as={AttendantTextfield}
                                 name={`attendants[${index}].identity_number`}
-                                label="Identity Number"
+                                label="Identity Number*"
                                 fullWidth
                                 error={
                                   touched.attendants?.[index]

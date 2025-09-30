@@ -18,7 +18,7 @@ export default function FooterSix() {
 
                   <div className="col-auto">
                     <div className="text-20 fw-500 text-white text-white">
-                      Speak to our flight team 24/7
+                      Speak to our team 24/7
                       <span className="text-white">+92-326-0000121</span>
                     </div>
                   </div>

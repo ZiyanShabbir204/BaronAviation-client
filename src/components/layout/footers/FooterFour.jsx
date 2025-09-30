@@ -19,7 +19,7 @@ export default function FooterFour() {
                   <div className="col-auto">
                     <div className="text-20 fw-500 text-white text-white">
                       Speak to our flight team 24/7
-                      <span className="text-white">+92-326-0000121</span>
+                      <span className="text-white">+26-0000121</span>
                     </div>
                   </div>
                 </div>

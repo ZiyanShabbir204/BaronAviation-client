@@ -27,7 +27,7 @@ export default function FeturesTwo() {
             />
           </div> */}
           <div className="row y-gap-30 justify-center items-center ">
-            <div className="col-lg-6 col-md-6 p-30">
+            <div className="col-lg-6 col-md-6">
               <h2
                 data-aos="fade-up"
                 data-aos-delay=""

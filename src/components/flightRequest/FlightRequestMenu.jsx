@@ -550,16 +550,18 @@ const FlightRequestMenu = () => {
                 >
                   Request
                 </Button>
-                <Typography
-                  variant="caption"
-                  style={{
-                    color: "#aeaeae",
-                    marginTop: "10px",
-                  }}
-                >
-                  You are not logged in. After requesting a flight, you'll be
-                  redirected to log in before completing your registration
-                </Typography>
+                {!user && (
+                  <Typography
+                    variant="caption"
+                    style={{
+                      color: "#aeaeae",
+                      marginTop: "10px",
+                    }}
+                  >
+                    You are not logged in. After requesting a flight, you'll be
+                    redirected to log in before completing your registration
+                  </Typography>
+                )}
               </Stack>
             </div>
           </div>
