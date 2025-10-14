@@ -205,7 +205,15 @@ export default function Register() {
                       fullWidth
                       required
                       value={values.phoneNumber}
-                      onChange={handleChange}
+                      onChange={(e) => {
+                        let value = e.target.value.replace(/[^0-9+]/g, "");
+
+                        if (value.length > 13) {
+                          value = value.slice(0, 13);
+                        }
+
+                        setFieldValue("phoneNumber", value);
+                      }}
                       onBlur={handleBlur}
                       error={touched.phoneNumber && Boolean(errors.phoneNumber)}
                       helperText={
