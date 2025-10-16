@@ -153,6 +153,7 @@ export default function Register() {
                   touched,
                   errors,
                   isSubmitting,
+                  setFieldValue,
                 }) => (
                   <Form className="border-1 rounded-12 px-60 py-60 md:px-25 md:py-30 bg-dark-grey">
                     <TextField
@@ -206,6 +207,7 @@ export default function Register() {
                       required
                       value={values.phoneNumber}
                       onChange={(e) => {
+                        debugger;
                         let value = e.target.value.replace(/[^0-9+]/g, "");
 
                         if (value.length > 13) {
